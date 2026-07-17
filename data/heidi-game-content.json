@@ -57,29 +57,29 @@
           "hasAudio": false
         }
       ],
-      "languageGoal": "Bauernregeln als verdichtete Alltagssprache verstehen, mit Beobachtungen verbinden und vorsichtig in eigene Worte übertragen.",
-      "laptopFrame": "Auf der Alp werden Wetter, Tiere und Arbeit oft in kurzen Sprüchen erklärt. Heidi hört solche Bauernregeln und merkt: Sie klingen einfach, aber man muss fragen, was sie bedeuten.",
+      "languageGoal": "Bauernregeln als verdichtete Alltagssprache verstehen, mit Beobachtungen verbinden und selbst eine vorsichtige Regel erfinden.",
+      "laptopFrame": "Auf der Alp werden Wetter, Tiere und Arbeit oft in kurzen Sprüchen erklärt. Heidi hört solche Bauernregeln und merkt: Sie klingen einfach, aber man muss fragen, was sie bedeuten. Danach versucht sie, aus einer eigenen Beobachtung selbst eine kleine Bauernregel zu machen.",
       "roleA": {
         "name": "Heidi beobachtet",
-        "prompt": "Du bist nah bei Heidi. Sie sieht die Ziegen, die Weite, das Licht und die Hütte. Sie ist neugierig, aber unsicher: Der Großvater sagt wenig, und sie weiß noch nicht, ob eine Bauernregel Warnung, Erfahrung oder Scherz ist.",
-        "tokens": ["Ziegen beobachten", "Himmel anschauen", "nicht sicher sein", "nachfragen"]
+        "prompt": "Du bist nah bei Heidi. Sie sieht die Ziegen, die Weite, das Licht und die Hütte. Sammle eine konkrete Beobachtung, aus der später eine eigene Bauernregel entstehen könnte.",
+        "tokens": ["Ziegen beobachten", "Himmel anschauen", "Licht verändert sich", "eigene Beobachtung"]
       },
       "roleB": {
-        "name": "Bauernregeln",
-        "prompt": "Du hast alte Sprüche, die Heidi hören könnte: 'Abendrot, Schönwetterbot.' 'Morgenrot mit Regen droht.' 'Kräht der Hahn auf dem Mist, ändert sich das Wetter oder es bleibt, wie es ist.'",
-        "tokens": ["Abendrot", "Morgenrot", "Erfahrung", "gilt nicht immer"]
+        "name": "Bauernregeln bauen",
+        "prompt": "Du hast alte Sprüche als Vorbild: 'Abendrot, Schönwetterbot.' 'Morgenrot mit Regen droht.' 'Kräht der Hahn auf dem Mist, ändert sich das Wetter oder es bleibt, wie es ist.' Achte auf Kürze, Rhythmus und Vorsicht.",
+        "tokens": ["kurz", "gereimt", "Erfahrung", "gilt nicht immer"]
       },
-      "teamTask": "Wählt eine Bauernregel aus. Lasst Heidi zuerst sagen, was sie sieht, und dann den Großvater fragen, was die Regel bedeutet. Formuliert am Ende eine vorsichtige Erklärung in eigenen Worten.",
+      "teamTask": "Erfindet eine eigene Bauernregel aus einer sichtbaren Beobachtung auf der Alp. Schreibt zuerst die Beobachtung, dann euren Spruch und danach eine vorsichtige Erklärung: Was könnte daran stimmen, und warum gilt es nicht immer?",
       "voiceQuest": {
         "required": true,
         "roles": ["A"],
-        "prompt": "Sprich aus Heidis Perspektive eine neugierige Frage zu einer Bauernregel ins Handy. Beginne mit: Großvater, was bedeutet eigentlich ...?",
+        "prompt": "Sprich aus Heidis Perspektive zuerst eine Beobachtung ins Handy. Beginne mit: Ich sehe ... Daraus machen wir gleich eine Bauernregel.",
         "minWords": 8
       },
-      "hint": "Bauernregeln sind keine magischen Wahrheiten. Sie verdichten Erfahrung, Beobachtung und manchmal auch Humor. Eine gute Erklärung bleibt deshalb vorsichtig.",
-      "revisionPrompt": "Überarbeitet eure Szene so, dass Beobachtung, Bauernregel, Frage an den Großvater und vorsichtige Erklärung vorkommen.",
-      "example": "Heidi schaut zum rötlichen Himmel und fragt: 'Großvater, warum sagt man Abendrot, Schönwetterbot?' Der Großvater antwortet knapp: 'Weil man es oft so erlebt hat. Aber verlassen darf man sich nie ganz darauf.'",
-      "reflection": "Woran merkt man, ob eine Bauernregel eher Erfahrung, Warnung oder Scherz ist?"
+      "hint": "Eine erfundene Bauernregel soll nicht wie Wissenschaft klingen. Sie darf knapp, bildhaft oder gereimt sein, muss aber aus einer echten Beobachtung entstehen.",
+      "revisionPrompt": "Überarbeitet eure Bauernregel so, dass sie kürzer, sprechbarer und vorsichtiger wird. Ergänzt eine Erklärung, die nicht behauptet, immer recht zu haben.",
+      "example": "Beobachtung: Die Ziegen bleiben nahe beieinander, und der Wind wird kühler. Eigene Bauernregel: 'Drängen die Ziegen dicht zum Stein, zieht bald kühler Wind herein.' Erklärung: Vielleicht spüren die Tiere Wind und Kälte früher; sicher ist das aber nicht.",
+      "reflection": "Was macht eure erfundene Bauernregel glaubwürdig: die Beobachtung, der Klang oder die vorsichtige Erklärung?"
     },
     {
       "id": "ziegen-ansprechen",
