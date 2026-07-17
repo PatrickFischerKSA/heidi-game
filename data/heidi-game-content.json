@@ -4,8 +4,8 @@
     "type": "video",
     "src": "/heidi-game/assets/alpatmosphaere-loop.m4v",
     "label": "Alpatmosphäre",
-    "caption": "Ein ruhiger Einstieg in die Alp: Die Spielwelt beginnt mit Wind, Weite und Zeichen, bevor sie Worte bekommt.",
-    "hasAudio": true
+    "caption": "Ein ruhiger Einstieg in die Alp: Die Spielwelt beginnt mit Wind, Weite, Licht und sichtbaren Zeichen, bevor sie Worte bekommt.",
+    "hasAudio": false
   },
   "assumptions": [
     "Der Prototyp sammelt keine Namen und speichert Raumdaten nur im laufenden Serverprozess.",
@@ -38,16 +38,16 @@
         "type": "video",
         "src": "/heidi-game/assets/ziegen-loop.m4v",
         "label": "Ziegen auf der Alp",
-        "caption": "Tierverhalten, Geräusche und Bewegung werden zum ersten Zeichensystem der Aufgabe.",
-        "hasAudio": true
+        "caption": "Tierverhalten, Nähe, Abstand und Bewegung werden zum ersten Zeichensystem der Aufgabe. Achtet auf das Sichtbare, nicht auf Ton.",
+        "hasAudio": false
       },
       "mediaItems": [
         {
           "type": "video",
           "src": "/heidi-game/assets/ziegen-loop.m4v",
           "label": "Ziegen auf der Alp",
-          "caption": "Tierverhalten, Geräusche und Bewegung werden zum ersten Zeichensystem der Aufgabe.",
-          "hasAudio": true
+          "caption": "Tierverhalten, Nähe, Abstand und Bewegung werden zum ersten Zeichensystem der Aufgabe. Achtet auf das Sichtbare, nicht auf Ton.",
+          "hasAudio": false
         },
         {
           "type": "video",
@@ -57,12 +57,12 @@
           "hasAudio": true
         }
       ],
-      "languageGoal": "Naturzeichen, Tierverhalten und Geräusche wahrnehmen und deuten.",
-      "laptopFrame": "Am Nachmittag verändert sich die Alp. Noch bevor jemand spricht, geben Wind, Wolken und Tiere Zeichen.",
+      "languageGoal": "Naturzeichen, Tierverhalten, Nähe, Abstand und Bewegung wahrnehmen und deuten.",
+      "laptopFrame": "Am Nachmittag verändert sich die Alp. Noch bevor jemand spricht, geben Wind, Wolken, Licht und Tiere sichtbare Zeichen.",
       "roleA": {
         "name": "Wahrnehmen",
-        "prompt": "Du siehst, wie eine Ziege nicht mehr weiterfrisst. Sie drängt sich an einen Felsen. Gleichzeitig wird der Wind kälter und kommt in Stößen.",
-        "tokens": ["Ziege am Felsen", "kalter Wind", "unruhige Herde", "dunkle Wolken"]
+        "prompt": "Du siehst, wie eine Ziege nicht mehr weiterfrisst. Sie bleibt nahe am Felsen und die Herde wirkt enger beisammen. Gleichzeitig verdunkelt sich das Licht über der Wiese.",
+        "tokens": ["Ziege am Felsen", "enge Herde", "dunkleres Licht", "Wolken über der Wiese"]
       },
       "roleB": {
         "name": "Versprachlichen",
@@ -73,12 +73,12 @@
       "voiceQuest": {
         "required": true,
         "roles": ["A"],
-        "prompt": "Sprich deine Beobachtung zuerst laut ins Handy, ohne sie sofort zu deuten. Beginne mit: Ich sehe ...",
+        "prompt": "Sprich deine sichtbare Beobachtung zuerst laut ins Handy, ohne sie sofort zu deuten. Beginne mit: Ich sehe ...",
         "minWords": 6
       },
-      "hint": "Der Almöhi würde wahrscheinlich nicht viel erklären. Er würde auf Wolken, Wind und Tiere achten. Welche sichtbaren Zeichen stützen eure Deutung?",
-      "revisionPrompt": "Überarbeitet eure Warnung so, dass sie mindestens ein Naturzeichen, eine vorsichtige Deutung und eine Handlung enthält.",
-      "example": "Die Ziege sucht Schutz am Felsen, und der Wind wird kälter. Das könnte ein Zeichen für ein nahes Unwetter sein. Wir sollten die Herde zur Hütte führen.",
+      "hint": "Der Almöhi würde wahrscheinlich nicht viel erklären. Er würde auf Wolken, Licht, Bewegungen und die Stellung der Tiere achten. Welche sichtbaren Zeichen stützen eure Deutung?",
+      "revisionPrompt": "Überarbeitet eure Warnung so, dass sie mindestens ein sichtbares Naturzeichen, eine vorsichtige Deutung und eine Handlung enthält.",
+      "example": "Die Ziege bleibt nahe am Felsen, und die Herde steht enger beisammen. Zusammen mit dem dunkleren Licht könnte das ein Zeichen für einen Wetterwechsel sein. Wir sollten die Herde zur Hütte führen.",
       "reflection": "Welche Zeichen habt ihr zuerst nur gesehen und erst später in Worte gefasst?"
     },
     {
@@ -117,8 +117,8 @@
         "type": "video",
         "src": "/heidi-game/assets/alpatmosphaere-loop.m4v",
         "label": "Alpatmosphäre",
-        "caption": "Wind, Weite und wenige Worte: Die Szene lenkt auf Zeichen, Pausen und genaues Hören.",
-        "hasAudio": true,
+        "caption": "Wind, Weite und wenige Worte: Das stumme Bild lenkt auf sichtbare Zeichen und Pausen; der Alpsegen kann bewusst als eigener Hörimpuls zugeschaltet werden.",
+        "hasAudio": false,
         "audio": {
           "src": "/heidi-game/assets/alpsegen.mp3",
           "label": "Alpsegen anhören"
