@@ -100,17 +100,17 @@ function renderHome() {
   app.innerHTML = html`
     ${topbar("home")}
     <section class="hero">
+      ${sceneMedia(state.content)}
       <div class="hero-copy">
         <p class="eyebrow">Browserbasiertes Partnerspiel</p>
         <h1>Heidi - Die Welt bekommt Worte</h1>
         <p>${escapeHtml(state.content.learningConcept.short)}</p>
       </div>
-      ${sceneMedia(state.content)}
       <div class="mode-grid">
         <article class="card">
           <h2>Partnermodus</h2>
-          <p>Laptop als Spielleitung, zwei Handys mit komplementaeren Rolleninformationen.</p>
-          <button type="button" data-start-room>Spielraum eroeffnen</button>
+          <p>Laptop als Spielleitung, zwei Handys mit komplementären Rolleninformationen.</p>
+          <button type="button" data-start-room>Spielraum eröffnen</button>
         </article>
         <article class="card">
           <h2>Desktopmodus</h2>
@@ -120,12 +120,12 @@ function renderHome() {
         <article class="card">
           <h2>Demomodus</h2>
           <p>Beide Handyansichten, Beispielantworten, Kapitelwahl und didaktische Hinweise auf einem Desktop.</p>
-          <button type="button" data-nav="demo">Demo oeffnen</button>
+          <button type="button" data-nav="demo">Demo öffnen</button>
         </article>
         <article class="card">
           <h2>Lehrpersonenansicht</h2>
-          <p>Einstellungen, Datenmodell, Export und Hinweise fuer den schulischen Einsatz.</p>
-          <button type="button" data-nav="teacher">Ansicht oeffnen</button>
+          <p>Einstellungen, Datenmodell, Export und Hinweise für den schulischen Einsatz.</p>
+          <button type="button" data-nav="teacher">Ansicht öffnen</button>
         </article>
       </div>
     </section>
@@ -244,7 +244,7 @@ function teamTaskPanel() {
   return html`
     <div class="panel stack">
       <p class="eyebrow">Gemeinsame Aufgabe</p>
-      ${bothReady ? `<h2>${escapeHtml(c.teamTask)}</h2>${answerForm()}` : `<div class="notice"><strong>Noch gesperrt.</strong><p>Die Aufgabe erscheint, sobald beide Rollen ihre Beobachtungen ausgetauscht und auf dem Handy bestaetigt haben.</p></div>`}
+      ${bothReady ? `<h2>${escapeHtml(c.teamTask)}</h2>${answerForm()}` : `<div class="notice"><strong>Noch gesperrt.</strong><p>Die Aufgabe erscheint, sobald beide Rollen ihre Beobachtungen ausgetauscht und auf dem Handy bestätigt haben.</p></div>`}
     </div>
   `;
 }
@@ -255,7 +255,7 @@ function answerForm(prefill = "") {
     <form class="stack" data-answer-form>
       <label>Erste Formulierung<textarea name="first" required>${escapeHtml(prefill)}</textarea></label>
       <div class="feedback-box"><strong>Hinweis statt Richtig-falsch:</strong><p>${escapeHtml(c.hint)}</p></div>
-      <label>Ueberarbeitete Fassung<textarea name="revision" required></textarea></label>
+      <label>Überarbeitete Fassung<textarea name="revision" required></textarea></label>
       <label>Kurze Reflexion<textarea name="reflection" required placeholder="${escapeHtml(c.reflection)}"></textarea></label>
       <div class="toolbar">
         <button type="submit">Lernspur speichern</button>
@@ -391,8 +391,8 @@ function renderPhoneRole() {
       <h1>${escapeHtml(roleData.name)}</h1>
       ${roleCard(role, roleData)}
       ${voiceQuestPanel(role, c)}
-      <button type="button" data-ready="${role}" ${voiceComplete ? "" : "disabled"}>${state.room.roleReady?.[role] ? "Austausch bestaetigt" : "Ich habe meine Informationen geteilt"}</button>
-      <div class="notice"><p>${needsVoice ? "Diese Rolle muss zuerst den mündlichen Beitrag per Handy-Mikrofon festhalten." : "Sprich mit der Partnerperson."} Auf dem Laptop wird die Schreibaufgabe erst nach beiden Bestaetigungen freigeschaltet.</p></div>
+      <button type="button" data-ready="${role}" ${voiceComplete ? "" : "disabled"}>${state.room.roleReady?.[role] ? "Austausch bestätigt" : "Ich habe meine Informationen geteilt"}</button>
+      <div class="notice"><p>${needsVoice ? "Diese Rolle muss zuerst den mündlichen Beitrag per Handy-Mikrofon festhalten." : "Sprich mit der Partnerperson."} Auf dem Laptop wird die Schreibaufgabe erst nach beiden Bestätigungen freigeschaltet.</p></div>
     </section>
   `;
 }
@@ -423,14 +423,14 @@ function renderDesktop() {
         </div>
         ${chapterTabs()}
         <div class="panel stack">
-          <h2>Rollenkarten nacheinander oeffnen</h2>
+          <h2>Rollenkarten nacheinander öffnen</h2>
           <div class="toolbar">
-            <button type="button" class="secondary" data-reveal="A">${state.revealA ? "Rolle A verbergen" : "Rolle A oeffnen"}</button>
-            <button type="button" class="secondary" data-reveal="B">${state.revealB ? "Rolle B verbergen" : "Rolle B oeffnen"}</button>
+            <button type="button" class="secondary" data-reveal="A">${state.revealA ? "Rolle A verbergen" : "Rolle A öffnen"}</button>
+            <button type="button" class="secondary" data-reveal="B">${state.revealB ? "Rolle B verbergen" : "Rolle B öffnen"}</button>
           </div>
           <div class="chapter-grid">
             ${state.revealA ? roleCard("A", c.roleA) : `<div class="card"><h3>Rolle A ist verdeckt</h3><p>Eine Person liest zuerst die andere Karte nicht mit.</p></div>`}
-            ${state.revealB ? roleCard("B", c.roleB) : `<div class="card"><h3>Rolle B ist verdeckt</h3><p>Oeffnet diese Karte erst nach dem Rollenwechsel.</p></div>`}
+            ${state.revealB ? roleCard("B", c.roleB) : `<div class="card"><h3>Rolle B ist verdeckt</h3><p>Öffnet diese Karte erst nach dem Rollenwechsel.</p></div>`}
           </div>
         </div>
         ${(state.revealA && state.revealB) ? `<div class="panel stack"><p class="eyebrow">Gemeinsame Aufgabe</p><h2>${escapeHtml(c.teamTask)}</h2>${answerForm()}</div>` : ""}
@@ -455,7 +455,7 @@ function renderDemo() {
           ${sceneMedia(c)}
           <div class="toolbar">
             <button type="button" class="secondary" data-toggle-didactics>${state.showDidactics ? "Didaktik ausblenden" : "Didaktik einblenden"}</button>
-            <button type="button" class="danger" data-reset-local>Aufgabe zuruecksetzen</button>
+            <button type="button" class="danger" data-reset-local>Aufgabe zurücksetzen</button>
           </div>
         </div>
         ${chapterTabs()}
@@ -482,7 +482,7 @@ function didacticsPanel() {
       <h2>Didaktischer Hinweis</h2>
       <p><strong>Sprachliches Ziel:</strong> ${escapeHtml(c.languageGoal)}</p>
       <ol class="cycle">
-        ${["wahrnehmen", "erste Vermutung aeussern", "Informationen austauschen", "Bedeutung aushandeln", "muendlich formulieren", "schriftlich festhalten", "Hinweis erhalten", "ueberarbeiten", "reflektieren"].map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+        ${["wahrnehmen", "erste Vermutung äußern", "Informationen austauschen", "Bedeutung aushandeln", "mündlich formulieren", "schriftlich festhalten", "Hinweis erhalten", "überarbeiten", "reflektieren"].map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
       </ol>
     </div>
   `;
@@ -497,7 +497,7 @@ function renderTeacher() {
       <div class="panel">
         <p class="eyebrow">Lehrpersonenansicht</p>
         <h1>Einstellungen und Inhaltsmodell</h1>
-        <p>Die Aufgaben, Hinweise, Rolleninformationen und Beispielantworten liegen in <strong>data/heidi-game-content.json</strong> und koennen ohne Programmlogik angepasst werden.</p>
+        <p>Die Aufgaben, Hinweise, Rolleninformationen und Beispielantworten liegen in <strong>data/heidi-game-content.json</strong> und können ohne Programmlogik angepasst werden.</p>
       </div>
       <div class="teacher-grid">
         <form class="panel stack" data-teacher-form>
@@ -505,7 +505,7 @@ function renderTeacher() {
           <label>Sprachniveau<input name="languageLevel" value="${escapeHtml(state.teacher.languageLevel)}"></label>
           <label>Anzahl Kapitel<input type="number" min="1" max="6" name="chapterCount" value="${escapeHtml(state.teacher.chapterCount)}"></label>
           <label>Spielzeit<input name="playTime" value="${escapeHtml(state.teacher.playTime)}"></label>
-          <label>Ueberarbeitung<select name="revisionRequired"><option value="true" ${state.teacher.revisionRequired ? "selected" : ""}>Pflicht</option><option value="false" ${!state.teacher.revisionRequired ? "selected" : ""}>freiwillig</option></select></label>
+          <label>Überarbeitung<select name="revisionRequired"><option value="true" ${state.teacher.revisionRequired ? "selected" : ""}>Pflicht</option><option value="false" ${!state.teacher.revisionRequired ? "selected" : ""}>freiwillig</option></select></label>
           <label><input type="checkbox" name="showExamples" ${state.teacher.showExamples ? "checked" : ""}> Beispielantworten anzeigen</label>
           <label><input type="checkbox" name="showDidactics" ${state.teacher.showDidactics ? "checked" : ""}> Didaktische Hinweise anzeigen</label>
           <button type="submit">Einstellungen speichern</button>
@@ -517,12 +517,12 @@ function renderTeacher() {
       </div>
       <div class="panel stack">
         <h2>Datenmodell</h2>
-        <p>Jedes Kapitel enthaelt: id, title, place, languageGoal, laptopFrame, roleA, roleB, teamTask, hint, revisionPrompt, example und reflection. Die Spiellogik liest diese Felder generisch aus.</p>
-        <p>Optionale Mikrofon-Aufgaben werden ueber <strong>voiceQuest</strong> gesteuert: required, roles, prompt und minWords.</p>
+        <p>Jedes Kapitel enthält: id, title, place, languageGoal, laptopFrame, roleA, roleB, teamTask, hint, revisionPrompt, example und reflection. Die Spiellogik liest diese Felder generisch aus.</p>
+        <p>Optionale Mikrofon-Aufgaben werden über <strong>voiceQuest</strong> gesteuert: required, roles, prompt und minWords.</p>
         <div class="toolbar">
           <button type="button" data-export-journal>Export Lernspur</button>
           <button type="button" class="secondary" data-print>Journal drucken</button>
-          <button type="button" class="danger" data-reset-local>Lokale Lernspur loeschen</button>
+          <button type="button" class="danger" data-reset-local>Lokale Lernspur löschen</button>
         </div>
       </div>
       ${journalPanel()}
@@ -535,7 +535,7 @@ function journalPanel() {
   return html`
     <div class="panel stack">
       <h2>Lernspur</h2>
-      ${entries.length ? `<div class="journal-grid">${entries.map(renderJournalEntry).join("")}</div>` : `<p>Noch keine Eintraege gespeichert.</p>`}
+      ${entries.length ? `<div class="journal-grid">${entries.map(renderJournalEntry).join("")}</div>` : `<p>Noch keine Einträge gespeichert.</p>`}
       <div class="toolbar">
         <button type="button" class="secondary" data-export-journal>Export</button>
         <button type="button" class="secondary" data-print>Drucken</button>
@@ -800,5 +800,5 @@ async function boot() {
 }
 
 boot().catch((error) => {
-  app.innerHTML = `<div class="panel"><h1>Start nicht moeglich</h1><p>${escapeHtml(error.message)}</p></div>`;
+  app.innerHTML = `<div class="panel"><h1>Start nicht möglich</h1><p>${escapeHtml(error.message)}</p></div>`;
 });

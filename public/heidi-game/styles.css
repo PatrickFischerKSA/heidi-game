@@ -25,21 +25,13 @@ body {
   min-height: 100vh;
   color: var(--ink);
   background:
-    linear-gradient(180deg, rgba(198, 219, 221, 0.82) 0%, rgba(242, 235, 219, 0.76) 46%, rgba(223, 218, 194, 0.9) 100%),
-    linear-gradient(145deg, #bfd6d8 0%, #e8d8bd 42%, #7e8d63 100%);
+    linear-gradient(180deg, rgba(241, 238, 226, 0.96) 0%, rgba(231, 225, 207, 0.96) 46%, rgba(197, 205, 174, 0.92) 100%),
+    #eef0e5;
   font-family: "Avenir Next", "Segoe UI", system-ui, sans-serif;
 }
 
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background:
-    linear-gradient(150deg, transparent 0 30%, rgba(246, 243, 233, 0.86) 30.2% 37%, rgba(93, 105, 91, 0.58) 37.2% 52%, transparent 52.2%) 0 64px / 58% 42% no-repeat,
-    linear-gradient(28deg, transparent 0 42%, rgba(246, 243, 233, 0.76) 42.2% 49%, rgba(74, 89, 80, 0.5) 49.2% 64%, transparent 64.2%) 100% 72px / 66% 44% no-repeat,
-    linear-gradient(177deg, transparent 0 62%, rgba(56, 91, 61, 0.24) 62.2% 73%, rgba(126, 141, 99, 0.32) 73.2% 100%),
-    linear-gradient(90deg, rgba(77, 69, 55, 0.12), transparent 22%, rgba(50, 77, 49, 0.14) 76%, rgba(42, 65, 43, 0.22));
+  content: none;
 }
 
 body::after {
@@ -226,24 +218,13 @@ p {
 .hero {
   display: grid;
   gap: 24px;
-  min-height: 62vh;
-  align-content: end;
+  align-content: start;
   padding: 46px 0 28px;
   position: relative;
 }
 
 .hero::before {
-  content: "";
-  min-height: 240px;
-  border: 1px solid rgba(255, 252, 245, 0.48);
-  border-radius: 8px;
-  display: block;
-  background:
-    linear-gradient(180deg, rgba(169, 203, 210, 0.42), rgba(246, 243, 233, 0.2) 36%, rgba(69, 102, 57, 0.3) 100%),
-    linear-gradient(145deg, transparent 0 33%, rgba(250, 249, 241, 0.92) 33.2% 41%, rgba(105, 111, 103, 0.7) 41.2% 56%, transparent 56.2%),
-    linear-gradient(24deg, transparent 0 39%, rgba(248, 247, 239, 0.8) 39.2% 46%, rgba(69, 84, 77, 0.65) 46.2% 61%, transparent 61.2%),
-    linear-gradient(180deg, #b9d2d6 0%, #d8d2bc 48%, #5d794d 100%);
-  box-shadow: var(--shadow);
+  content: none;
 }
 
 .hero-copy {
@@ -262,7 +243,7 @@ p {
 .teacher-grid,
 .journal-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 14px;
 }
 
@@ -288,6 +269,12 @@ p {
   display: grid;
   gap: 12px;
   text-align: left;
+  min-width: 0;
+}
+
+.card h2 {
+  font-size: clamp(1.35rem, 2.2vw, 1.95rem);
+  overflow-wrap: anywhere;
 }
 
 .card button {
@@ -368,7 +355,8 @@ p {
 .scene-media video {
   display: block;
   width: 100%;
-  max-height: 420px;
+  max-height: 520px;
+  aspect-ratio: 16 / 7;
   object-fit: cover;
   background: #172019;
 }

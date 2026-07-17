@@ -3,5 +3,6 @@ data/*.json
 !data/heidi-game-content.json
 public/data/heidi-game-content.json
 dist-cloudflare/
+.wrangler/
 .DS_Store
 npm-debug.log*
