@@ -281,6 +281,15 @@ p {
   width: fit-content;
 }
 
+.host-login {
+  display: grid;
+  gap: 10px;
+}
+
+.host-login input {
+  margin-top: 6px;
+}
+
 .layout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 340px;
@@ -386,31 +395,42 @@ p {
   gap: 10px;
 }
 
-.code-box {
+.qr-grid {
   display: grid;
-  place-items: center;
-  min-height: 118px;
-  border: 2px dashed rgba(40, 69, 53, 0.38);
+  gap: 12px;
+}
+
+.qr-card {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.56);
 }
 
-.room-code {
-  font-size: clamp(2.4rem, 9vw, 4.6rem);
-  letter-spacing: 0.12em;
-  font-weight: 900;
-  color: var(--forest);
+.qr-card h3 {
+  font-size: 1.45rem;
 }
 
-.qr-placeholder {
-  width: 112px;
-  aspect-ratio: 1;
-  border: 8px solid var(--ink);
-  background:
-    linear-gradient(90deg, var(--ink) 10px, transparent 10px 20px, var(--ink) 20px 30px, transparent 30px),
-    linear-gradient(var(--ink) 10px, transparent 10px 20px, var(--ink) 20px 30px, transparent 30px);
-  background-size: 40px 40px;
-  opacity: 0.78;
+.qr-card p {
+  overflow-wrap: anywhere;
+}
+
+.qr-card.role-a {
+  border-top: 5px solid var(--role-a);
+}
+
+.qr-card.role-b {
+  border-top: 5px solid var(--role-b);
+}
+
+.qr-code {
+  width: min(100%, 190px);
+  height: auto;
+  border: 8px solid #fffaf0;
+  border-radius: 8px;
+  box-shadow: 0 8px 18px rgba(23, 32, 25, 0.16);
 }
 
 .chapter-tabs {

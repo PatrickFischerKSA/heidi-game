@@ -1,6 +1,7 @@
 const app = document.querySelector("#app");
 const storage = {
   clientId: "heidi.clientId",
+  hostName: "heidi.hostName",
   journal: "heidi.localJournal",
   teacher: "heidi.teacherSettings"
 };
@@ -10,6 +11,7 @@ const state = {
   mode: new URLSearchParams(location.search).get("mode") || routeMode(),
   room: null,
   role: null,
+  hostName: localStorage.getItem(storage.hostName) || "",
   clientId: localStorage.getItem(storage.clientId) || crypto.randomUUID(),
   chapterIndex: 0,
   revealA: false,
@@ -43,6 +45,243 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function gfMultiply(left, right) {
+  let result = 0;
+  for (let index = 0; index < 8; index += 1) {
+    if (right & 1) result ^= left;
+    const carry = left & 0x80;
+    left = (left << 1) & 0xff;
+    if (carry) left ^= 0x1d;
+    right >>= 1;
+  }
+  return result;
+}
+
+function rsGenerator(degree) {
+  let result = [1];
+  let root = 1;
+  for (let index = 0; index < degree; index += 1) {
+    const next = Array(result.length + 1).fill(0);
+    result.forEach((coefficient, position) => {
+      next[position] ^= coefficient;
+      next[position + 1] ^= gfMultiply(coefficient, root);
+    });
+    result = next;
+    root = gfMultiply(root, 2);
+  }
+  return result;
+}
+
+function rsRemainder(data, degree) {
+  const generator = rsGenerator(degree);
+  const result = Array(degree).fill(0);
+  for (const value of data) {
+    const factor = value ^ result.shift();
+    result.push(0);
+    generator.slice(1).forEach((coefficient, index) => {
+      result[index] ^= gfMultiply(coefficient, factor);
+    });
+  }
+  return result;
+}
+
+function appendBits(bits, value, length) {
+  for (let index = length - 1; index >= 0; index -= 1) {
+    bits.push((value >>> index) & 1);
+  }
+}
+
+function bitsToCodewords(bits) {
+  const bytes = [];
+  for (let index = 0; index < bits.length; index += 8) {
+    let value = 0;
+    for (let offset = 0; offset < 8; offset += 1) {
+      value = (value << 1) | (bits[index + offset] || 0);
+    }
+    bytes.push(value);
+  }
+  return bytes;
+}
+
+function qrDataCodewords(text) {
+  const encoder = new TextEncoder();
+  const bytes = [...encoder.encode(text)];
+  const capacity = 108;
+  if (bytes.length > 106) return null;
+  const bits = [];
+  appendBits(bits, 0b0100, 4);
+  appendBits(bits, bytes.length, 8);
+  bytes.forEach((byte) => appendBits(bits, byte, 8));
+  appendBits(bits, 0, Math.min(4, capacity * 8 - bits.length));
+  while (bits.length % 8) bits.push(0);
+  const data = bitsToCodewords(bits);
+  for (let pad = 0xec; data.length < capacity; pad = pad === 0xec ? 0x11 : 0xec) {
+    data.push(pad);
+  }
+  return data;
+}
+
+function drawFinder(modules, reserved, x, y) {
+  for (let row = -1; row <= 7; row += 1) {
+    for (let col = -1; col <= 7; col += 1) {
+      const yy = y + row;
+      const xx = x + col;
+      if (yy < 0 || yy >= modules.length || xx < 0 || xx >= modules.length) continue;
+      const dark = row >= 0 && row <= 6 && col >= 0 && col <= 6 && (row === 0 || row === 6 || col === 0 || col === 6 || (row >= 2 && row <= 4 && col >= 2 && col <= 4));
+      modules[yy][xx] = dark;
+      reserved[yy][xx] = true;
+    }
+  }
+}
+
+function drawAlignment(modules, reserved, centerX, centerY) {
+  for (let row = -2; row <= 2; row += 1) {
+    for (let col = -2; col <= 2; col += 1) {
+      const dark = Math.max(Math.abs(row), Math.abs(col)) !== 1;
+      modules[centerY + row][centerX + col] = dark;
+      reserved[centerY + row][centerX + col] = true;
+    }
+  }
+}
+
+function qrBase() {
+  const size = 37;
+  const modules = Array.from({ length: size }, () => Array(size).fill(false));
+  const reserved = Array.from({ length: size }, () => Array(size).fill(false));
+  drawFinder(modules, reserved, 0, 0);
+  drawFinder(modules, reserved, size - 7, 0);
+  drawFinder(modules, reserved, 0, size - 7);
+  drawAlignment(modules, reserved, 30, 30);
+  for (let index = 8; index < size - 8; index += 1) {
+    const dark = index % 2 === 0;
+    modules[6][index] = dark;
+    modules[index][6] = dark;
+    reserved[6][index] = true;
+    reserved[index][6] = true;
+  }
+  modules[29][8] = true;
+  reserved[29][8] = true;
+  for (let index = 0; index < 9; index += 1) {
+    reserved[8][index] = true;
+    reserved[index][8] = true;
+    reserved[8][size - 1 - index] = true;
+    reserved[size - 1 - index][8] = true;
+  }
+  return { modules, reserved };
+}
+
+function qrMask(mask, row, col) {
+  if (mask === 0) return (row + col) % 2 === 0;
+  if (mask === 1) return row % 2 === 0;
+  if (mask === 2) return col % 3 === 0;
+  if (mask === 3) return (row + col) % 3 === 0;
+  if (mask === 4) return (Math.floor(row / 2) + Math.floor(col / 3)) % 2 === 0;
+  if (mask === 5) return ((row * col) % 2) + ((row * col) % 3) === 0;
+  if (mask === 6) return (((row * col) % 2) + ((row * col) % 3)) % 2 === 0;
+  return (((row + col) % 2) + ((row * col) % 3)) % 2 === 0;
+}
+
+function placeData(modules, reserved, codewords, mask) {
+  const size = modules.length;
+  const bits = codewords.flatMap((byte) => Array.from({ length: 8 }, (_, index) => (byte >>> (7 - index)) & 1));
+  let bitIndex = 0;
+  let upward = true;
+  for (let right = size - 1; right >= 1; right -= 2) {
+    if (right === 6) right -= 1;
+    for (let offset = 0; offset < size; offset += 1) {
+      const row = upward ? size - 1 - offset : offset;
+      for (const col of [right, right - 1]) {
+        if (reserved[row][col]) continue;
+        let dark = Boolean(bits[bitIndex] || 0);
+        if (qrMask(mask, row, col)) dark = !dark;
+        modules[row][col] = dark;
+        bitIndex += 1;
+      }
+    }
+    upward = !upward;
+  }
+}
+
+function formatBits(mask) {
+  let value = (1 << 3) | mask;
+  let data = value << 10;
+  const generator = 0x537;
+  for (let index = 14; index >= 10; index -= 1) {
+    if ((data >>> index) & 1) data ^= generator << (index - 10);
+  }
+  return (((value << 10) | data) ^ 0x5412) & 0x7fff;
+}
+
+function placeFormat(modules, mask) {
+  const size = modules.length;
+  const bits = formatBits(mask);
+  const first = [[8,0],[8,1],[8,2],[8,3],[8,4],[8,5],[8,7],[8,8],[7,8],[5,8],[4,8],[3,8],[2,8],[1,8],[0,8]];
+  const second = [[size-1,8],[size-2,8],[size-3,8],[size-4,8],[size-5,8],[size-6,8],[size-7,8],[size-8,8],[8,size-7],[8,size-6],[8,size-5],[8,size-4],[8,size-3],[8,size-2],[8,size-1]];
+  first.forEach(([row, col], index) => { modules[row][col] = Boolean((bits >>> index) & 1); });
+  second.forEach(([row, col], index) => { modules[row][col] = Boolean((bits >>> index) & 1); });
+}
+
+function penaltyScore(modules) {
+  const size = modules.length;
+  let score = 0;
+  for (let row = 0; row < size; row += 1) {
+    let runColor = modules[row][0];
+    let run = 1;
+    for (let col = 1; col < size; col += 1) {
+      if (modules[row][col] === runColor) run += 1;
+      else {
+        if (run >= 5) score += run - 2;
+        runColor = modules[row][col];
+        run = 1;
+      }
+    }
+    if (run >= 5) score += run - 2;
+  }
+  for (let col = 0; col < size; col += 1) {
+    let runColor = modules[0][col];
+    let run = 1;
+    for (let row = 1; row < size; row += 1) {
+      if (modules[row][col] === runColor) run += 1;
+      else {
+        if (run >= 5) score += run - 2;
+        runColor = modules[row][col];
+        run = 1;
+      }
+    }
+    if (run >= 5) score += run - 2;
+  }
+  for (let row = 0; row < size - 1; row += 1) {
+    for (let col = 0; col < size - 1; col += 1) {
+      const color = modules[row][col];
+      if (modules[row][col + 1] === color && modules[row + 1][col] === color && modules[row + 1][col + 1] === color) score += 3;
+    }
+  }
+  const dark = modules.flat().filter(Boolean).length;
+  score += Math.floor(Math.abs(dark * 20 - size * size * 10) / (size * size)) * 10;
+  return score;
+}
+
+function qrSvg(text) {
+  const data = qrDataCodewords(text);
+  if (!data) return "";
+  const codewords = [...data, ...rsRemainder(data, 26)];
+  let best = null;
+  for (let mask = 0; mask < 8; mask += 1) {
+    const { modules, reserved } = qrBase();
+    placeData(modules, reserved, codewords, mask);
+    placeFormat(modules, mask);
+    const score = penaltyScore(modules);
+    if (!best || score < best.score) best = { modules, score };
+  }
+  const size = best.modules.length;
+  const quiet = 4;
+  const rects = [];
+  best.modules.forEach((row, y) => row.forEach((dark, x) => {
+    if (dark) rects.push(`M${x + quiet},${y + quiet}h1v1h-1z`);
+  }));
+  return `<svg class="qr-code" viewBox="0 0 ${size + quiet * 2} ${size + quiet * 2}" role="img" aria-label="QR-Code"><rect width="100%" height="100%" fill="#fffaf0"/><path d="${rects.join("")}" fill="#1d3027"/></svg>`;
 }
 
 function chapter() {
@@ -111,8 +350,11 @@ function renderHome() {
       <div class="mode-grid">
         <article class="card">
           <h2>Partnermodus</h2>
-          <p>Laptop als Spielleitung, zwei Handys mit komplementären Rolleninformationen.</p>
-          <button type="button" data-start-room>Spielraum eröffnen</button>
+          <p>Hauptcomputer als Spielleitung, zwei Handys mit QR-Codes für die Rollen.</p>
+          <form class="host-login" data-host-login>
+            <label>Hauptcomputer<input name="hostName" value="${escapeHtml(state.hostName)}" placeholder="z. B. Klasse 2b oder Lehrperson" required></label>
+            <button type="submit">Spielraum eröffnen</button>
+          </form>
         </article>
         <article class="card">
           <h2>Desktopmodus</h2>
@@ -134,7 +376,13 @@ function renderHome() {
   `;
 }
 
-async function startRoom() {
+async function startRoom(hostName = state.hostName) {
+  state.hostName = String(hostName || "").trim();
+  if (!state.hostName) {
+    renderHome();
+    return;
+  }
+  localStorage.setItem(storage.hostName, state.hostName);
   const room = await api("/api/rooms", { method: "POST", body: "{}" });
   state.mode = "partner";
   state.room = room;
@@ -143,10 +391,26 @@ async function startRoom() {
   startPolling();
 }
 
-function joinAddress() {
+function joinAddress(role = "") {
   const url = new URL("/join", location.origin);
   url.searchParams.set("code", state.room?.code || "");
+  if (role) url.searchParams.set("role", role);
   return url.toString();
+}
+
+function qrCard(role, title, subtitle) {
+  const url = joinAddress(role);
+  return html`
+    <article class="qr-card role-${role.toLowerCase()}">
+      <div>
+        <p class="eyebrow">${escapeHtml(title)}</p>
+        <h3>Rolle ${escapeHtml(role)}</h3>
+        <p>${escapeHtml(subtitle)}</p>
+      </div>
+      ${qrSvg(url)}
+      <p class="small">${escapeHtml(url)}</p>
+    </article>
+  `;
 }
 
 function renderPartner() {
@@ -168,11 +432,16 @@ function renderPartner() {
         ${teamTaskPanel()}
       </section>
       <aside class="stack">
-        <div class="panel">
-          <h2>Raumcode</h2>
-          <div class="code-box"><div class="room-code">${escapeHtml(state.room?.code || "----")}</div></div>
-          <p class="small">Beitrittsadresse: <strong>${escapeHtml(joinAddress())}</strong></p>
-          <div class="qr-placeholder" aria-label="Stilisierter QR-Platzhalter"></div>
+        <div class="panel stack">
+          <div>
+            <p class="eyebrow">Hauptcomputer</p>
+            <h2>${escapeHtml(state.hostName)}</h2>
+            <p>Handys scannen ihren Rollen-Code. Der Raumcode bleibt nur als Reserve sichtbar: <strong>${escapeHtml(state.room?.code || "----")}</strong></p>
+          </div>
+          <div class="qr-grid">
+            ${qrCard("A", "Handy 1", "Beobachten, sprechen, erste Rolle")}
+            ${qrCard("B", "Handy 2", "Wortmaterial, nachfragen, zweite Rolle")}
+          </div>
         </div>
         ${journalPanel()}
       </aside>
@@ -350,6 +619,7 @@ function renderPhone() {
   state.mode = "phone";
   const params = new URLSearchParams(location.search);
   const code = params.get("code") || "";
+  const role = (params.get("role") || "").toUpperCase();
   app.innerHTML = html`
     ${topbar("phone")}
     <section class="phone-frame stack">
@@ -359,7 +629,7 @@ function renderPhone() {
       </div>
       <form class="stack" data-join-form>
         <label>Raumcode<input name="code" value="${escapeHtml(code)}" maxlength="6" required></label>
-        <label>Rolle<select name="role"><option value="">automatisch</option><option value="A">A - Wahrnehmen</option><option value="B">B - Versprachlichen</option></select></label>
+        <label>Rolle<select name="role"><option value="">automatisch</option><option value="A" ${role === "A" ? "selected" : ""}>A - Wahrnehmen</option><option value="B" ${role === "B" ? "selected" : ""}>B - Versprachlichen</option></select></label>
         <button type="submit">Beitreten</button>
       </form>
     </section>
@@ -772,6 +1042,10 @@ app.addEventListener("input", (event) => {
 
 app.addEventListener("submit", async (event) => {
   event.preventDefault();
+  if (event.target.matches("[data-host-login]")) {
+    const data = new FormData(event.target);
+    await startRoom(data.get("hostName"));
+  }
   if (event.target.matches("[data-join-form]")) await joinRoom(event.target);
   if (event.target.matches("[data-answer-form]")) await saveAnswer(event.target);
   if (event.target.matches("[data-teacher-form]")) {
