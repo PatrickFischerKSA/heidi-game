@@ -4,7 +4,7 @@
     "type": "video",
     "src": "/heidi-game/assets/alpatmosphaere-loop.m4v",
     "label": "Alpatmosphäre",
-    "caption": "Ein ruhiger Einstieg in die Alp: Die Spielwelt beginnt mit Wind, Weite, Licht und sichtbaren Zeichen, bevor sie Worte bekommt.",
+    "caption": "Ein ruhiger Einstieg in die Alp: Die Spielwelt beginnt mit Wind, Weite, Tieren, Arbeit und kurzen Sprüchen aus dem Alltag.",
     "hasAudio": false
   },
   "assumptions": [
@@ -82,32 +82,39 @@
       "reflection": "Woran merkt man, ob eine Bauernregel eher Erfahrung, Warnung oder Scherz ist?"
     },
     {
-      "id": "woerter-wahrnehmungen",
-      "title": "Wörter für Wahrnehmungen",
+      "id": "ziegen-ansprechen",
+      "title": "Mit den Ziegen sprechen",
       "place": "Alpweg",
-      "languageGoal": "Den Wortschatz präzisieren.",
-      "laptopFrame": "Heidi merkt: Ein allgemeines Wort reicht oft nicht aus, wenn jemand die Szene wirklich verstehen soll.",
+      "media": {
+        "type": "video",
+        "src": "/heidi-game/assets/ziegen-loop.m4v",
+        "label": "Ziegen auf der Alp",
+        "caption": "Die Szene hat keinen eigenen Ton. Genau deshalb erfinden die Spielenden eine glaubwürdige Stimme für Heidi, Peter und die Tiere.",
+        "hasAudio": false
+      },
+      "languageGoal": "Freundliche Anrede, genaue Tierbeobachtung und kurze gesprochene Sätze verbinden.",
+      "laptopFrame": "Heidi ist mit den Ziegen draußen. Sie muss nicht erklären, was Tiere denken. Sie kann aber beobachten, wie sie sich bewegen, und ihnen so sprechen, wie ein Kind auf der Alp sprechen könnte.",
       "roleA": {
-        "name": "Wahrnehmen",
-        "prompt": "Du beobachtest drei Bewegungen: Peter kommt schnell den Hang hinunter, Heidi setzt vorsichtig einen Fuß vor den anderen, ein Kind bleibt an einem Stein hängen.",
-        "tokens": ["schnell bergab", "vorsichtig", "hängen bleiben", "unsicherer Tritt"]
+        "name": "Heidi bei den Ziegen",
+        "prompt": "Du beobachtest, wie eine Ziege stehen bleibt, eine andere näherkommt und Peter die Herde zusammenhält. Heidi möchte freundlich sprechen, ohne kindisch oder übertrieben zu klingen.",
+        "tokens": ["stehen bleiben", "näherkommen", "ruhig sprechen", "Peter fragen"]
       },
       "roleB": {
-        "name": "Versprachlichen",
-        "prompt": "Du hast genauere Verben und Klangwörter: eilen, schleichen, stolpern, stapfen, schrill, dumpf, leise, heiser.",
-        "tokens": ["eilen", "schleichen", "stolpern", "stapfen", "schrill", "dumpf"]
+        "name": "Wortmaterial",
+        "prompt": "Du sammelst passende Wörter für Bewegung und Stimme: meckern, zupfen, springen, trotten, locken, beruhigen, rufen, flüstern.",
+        "tokens": ["meckern", "zupfen", "trotten", "beruhigen", "rufen", "flüstern"]
       },
-      "teamTask": "Ersetzt in einem kurzen Satz mindestens drei allgemeine Wörter durch genauere Wörter.",
+      "teamTask": "Schreibt eine kurze Szene mit drei Sätzen: Heidi spricht eine Ziege an, Peter reagiert praktisch, und Heidi lernt ein genaueres Wort für das, was die Ziege tut.",
       "voiceQuest": {
-        "required": false,
-        "roles": ["B"],
-        "prompt": "Lies deine genaueren Wörter laut vor und betone die Unterschiede zwischen den Bewegungen.",
-        "minWords": 5
+        "required": true,
+        "roles": ["A"],
+        "prompt": "Sprich Heidis Satz an eine Ziege ins Handy. Er soll freundlich, kurz und natürlich klingen.",
+        "minWords": 7
       },
-      "hint": "Prüft, ob das Wort zur Bewegung passt. 'Eilen' klingt zielgerichtet, 'stolpern' zeigt einen Unfall oder eine Unsicherheit.",
-      "revisionPrompt": "Überarbeitet euren Satz so, dass die Lesenden die Bewegung hören oder sehen können.",
-      "example": "Peter eilt den Hang hinunter, Heidi setzt vorsichtig die Füße, und das Kind stolpert über einen Stein.",
-      "reflection": "Welches genaue Wort verändert das Bild im Kopf am stärksten?"
+      "hint": "Die Tiere müssen nicht wie Menschen antworten. Stark wird die Szene, wenn Heidi genau sieht, was passiert, und Peter mit einem einfachen Alpwort oder einer praktischen Bemerkung hilft.",
+      "revisionPrompt": "Überarbeitet eure Szene so, dass ein genaues Verb vorkommt und Heidis Satz wirklich gesprochen werden könnte.",
+      "example": "Heidi sagt leise: 'Komm nur, Schneehöppli, ich tue dir nichts.' Peter lacht: 'Sie zupft nur am Kraut, die läuft gleich weiter.' Da merkt Heidi: Die Ziege frisst nicht einfach, sie zupft.",
+      "reflection": "Warum klingt eine kurze, genaue Tieransprache glaubwürdiger als eine lange Erklärung?"
     },
     {
       "id": "almoehi-sprechen",
@@ -117,7 +124,7 @@
         "type": "video",
         "src": "/heidi-game/assets/alpatmosphaere-loop.m4v",
         "label": "Alpatmosphäre",
-        "caption": "Wind, Weite und wenige Worte: Das stumme Bild lenkt auf sichtbare Zeichen und Pausen; der Alpsegen kann bewusst als eigener Hörimpuls zugeschaltet werden.",
+        "caption": "Wind, Weite und wenige Worte: Das Bild lenkt auf Arbeit, Pausen und vorsichtige Gespräche; der Alpsegen kann bewusst als eigener Hörimpuls zugeschaltet werden.",
         "hasAudio": false,
         "audio": {
           "src": "/heidi-game/assets/alpsegen.mp3",
@@ -150,7 +157,7 @@
     },
     {
       "id": "frankfurter-stimmen",
-      "title": "Frankfurter Stimmen",
+      "title": "Frankfurt: fremde Regeln",
       "place": "Frankfurt",
       "mediaItems": [
         {
@@ -177,7 +184,7 @@
       ],
       "historicalNote": "Spyris Frankfurt ist kein heutiges Frankfurt. Die Stadt, ihre Straßenbilder, Innenräume und sozialen Zeichen gehören zu einer historischen Welt, die durch Modernisierung und besonders durch die Zerstörungen des Zweiten Weltkriegs tiefgreifend verändert wurde.",
       "languageGoal": "Zwischen wörtlicher Aussage, Tonfall, sozialer Regel und Absicht unterscheiden.",
-      "laptopFrame": "In Frankfurt gibt es viele Wörter, aber nicht alles wird dadurch klarer. Zugleich ist dieses Frankfurt ein historischer, heute so nicht mehr vorhandener Stadtraum.",
+      "laptopFrame": "In Frankfurt gibt es viele Wörter, Regeln und Erwartungen, aber Heidi versteht nicht automatisch, was von ihr verlangt wird. Dieses Frankfurt ist außerdem ein historischer Stadtraum, der heute so nicht mehr existiert.",
       "roleA": {
         "name": "Wahrnehmen",
         "prompt": "Eine erwachsene Stimme sagt: 'Das macht man hier nicht.' Die Worte klingen ruhig, aber sehr scharf.",
@@ -188,7 +195,7 @@
         "prompt": "Die Situation: Heidi kennt die Hausregel nicht. Fräulein Rottenmeier will Ordnung herstellen und zugleich zeigen, wer bestimmt.",
         "tokens": ["Hausregel", "Macht", "Beschämung", "Korrektur"]
       },
-      "teamTask": "Erklärt in drei Sätzen: Was wird wörtlich gesagt? Was wird durch Tonfall und Situation gemeint? Wie könnte man Heidi fairer helfen?",
+      "teamTask": "Erklärt in drei Sätzen: Was wird wörtlich gesagt? Was wird durch Tonfall und Situation gemeint? Wie könnte man Heidi fairer helfen, ohne sie zu beschämen?",
       "voiceQuest": {
         "required": false,
         "roles": ["A"],
@@ -198,11 +205,11 @@
       "hint": "Achtet darauf, ob die Aussage eine Information, eine Regel, eine Kritik oder eine Machtausübung ist.",
       "revisionPrompt": "Überarbeitet eure Erklärung so, dass zwischen Aussage, Absicht und fairer Hilfe unterschieden wird.",
       "example": "Wörtlich wird eine Regel genannt. Der scharfe Ton zeigt aber auch Tadel und Abstand. Fairer wäre: 'In diesem Haus bleiben die Schuhe hier; ich zeige es dir.'",
-      "reflection": "Welche Missverständnisse entstehen, obwohl viele Worte gesprochen werden?"
+      "reflection": "Warum kann eine Stadt voller Wörter für Heidi trotzdem sprachlich fremd sein?"
     },
     {
       "id": "peter-lernt-anders",
-      "title": "Peter lernt anders",
+      "title": "Bei der Großmutter lernen",
       "place": "Alp und Schule",
       "media": {
         "type": "video",
@@ -228,7 +235,7 @@
         }
       ],
       "languageGoal": "Einen Lernweg erklären, prüfen und verbessern.",
-      "laptopFrame": "Peter lernt nicht automatisch so, wie Heidi lernt. Ein guter Lernweg beginnt bei seiner Welt.",
+      "laptopFrame": "Bei der Großmutter wird Lernen konkret: Vorlesen, Zuhören, Wiederholen und Ermutigen. Peter lernt nicht automatisch so, wie Heidi lernt; ein guter Lernweg beginnt bei seiner Welt.",
       "roleA": {
         "name": "Wahrnehmen",
         "prompt": "Peter kennt Wege, Wetter, Ziegen und praktische Aufgaben. Lange Erklärungen in der Stube machen ihn unruhig.",
@@ -239,7 +246,7 @@
         "prompt": "Mögliche Vermittlungswege: bedeutungsvolle Wörter, Bild und Wort verbinden, laut vorlesen, kurze Anwendung, ermutigende Rückmeldung.",
         "tokens": ["Bild und Wort", "bedeutungsvolle Wörter", "Anwendung", "Ermutigung"]
       },
-      "teamTask": "Entwerft einen Lernweg für Peter mit drei Schritten. Erklärt, warum Drohung oder Beschämung hier problematisch wären.",
+      "teamTask": "Entwerft einen Lernweg für Peter mit drei Schritten. Verbindet Großmutters ruhiges Zuhören mit Peters Welt auf der Alp und erklärt, warum Drohung oder Beschämung hier problematisch wären.",
       "voiceQuest": {
         "required": true,
         "roles": ["A", "B"],
@@ -252,22 +259,22 @@
       "reflection": "Was muss sich ändern, wenn ein Lernweg für eine andere Person passen soll?"
     },
     {
-      "id": "heidi-schreibt-weiter",
-      "title": "Heidi schreibt weiter",
+      "id": "heidi-erzaehlt-weiter",
+      "title": "Heidi erzählt weiter",
       "place": "Offene Weitererzählung",
       "languageGoal": "Erfahrungen ordnen, erzählen, verschriftlichen und überarbeiten.",
-      "laptopFrame": "In Spyris Heidi-Bänden wird Heidi nicht ausdrücklich Schriftstellerin. Dieses Kapitel ist eine offene Weitererzählung: Was könnte sie später mit ihren Erfahrungen anfangen?",
+      "laptopFrame": "In Spyris Heidi-Bänden wird Heidi nicht ausdrücklich Schriftstellerin. Dieses Kapitel ist eine offene Weitererzählung: Heidi ordnet später, was sie auf der Alp, in Frankfurt und bei der Großmutter gelernt haben könnte.",
       "roleA": {
         "name": "Wahrnehmen",
-        "prompt": "Erzähle aus Heidis Perspektive eine Erinnerung: ein Bild der Alp, ein Gefühl in Frankfurt, eine Person, die ihr geholfen hat.",
-        "tokens": ["Alpbild", "Frankfurt-Gefühl", "helfende Person", "Erkenntnis"]
+        "prompt": "Erzähle aus Heidis Perspektive eine Erinnerung: eine Bauernregel auf der Alp, ein Gefühl in Frankfurt, eine Person, die ihr geholfen hat.",
+        "tokens": ["Bauernregel", "Frankfurt-Gefühl", "helfende Person", "Erkenntnis"]
       },
       "roleB": {
         "name": "Versprachlichen",
         "prompt": "Höre gezielt auf Wahrnehmung, Gefühl, zeitliche Abfolge und Erkenntnis. Frage nach, wenn etwas unklar bleibt.",
         "tokens": ["Zuerst", "Dann", "Dabei fühlte ich", "Heute verstehe ich"]
       },
-      "teamTask": "Schreibt gemeinsam den Anfang einer möglichen Fortsetzung aus Heidis späterer Sicht.",
+      "teamTask": "Schreibt gemeinsam den Anfang einer möglichen Fortsetzung aus Heidis späterer Sicht. Verwendet eine Bauernregel oder eine konkrete Erinnerung, aber macht klar, dass es eure Weitererzählung ist.",
       "voiceQuest": {
         "required": true,
         "roles": ["A"],
@@ -276,8 +283,8 @@
       },
       "hint": "Eine gute Weitererzählung macht kenntlich, dass sie interpretiert: 'Vielleicht', 'Ich stelle mir vor', 'Später könnte Heidi ...'.",
       "revisionPrompt": "Überarbeitet euren Anfang so, dass Wahrnehmung, Gefühl und Erkenntnis verbunden sind.",
-      "example": "Vielleicht hätte Heidi später geschrieben: Wenn der Wind über die Alp kam, wusste ich wieder, dass nicht nur Menschen sprechen. Ich hatte gelernt, Zeichen zu sehen und Worte dafür zu suchen.",
-      "reflection": "Wie hat sich eure Sprache vom ersten Kapitel bis hier verändert?"
+      "example": "Vielleicht hätte Heidi später erzählt: Wenn der Himmel am Abend rot wurde, hörte ich wieder Großvaters Stimme. Er hatte gesagt, man solle solche Regeln kennen, aber auch die Augen offen behalten.",
+      "reflection": "Wie hat sich eure Sprache vom ersten Kapitel bis hier verändert: vom Beobachten über das Fragen bis zum Erzählen?"
     }
   ]
 }

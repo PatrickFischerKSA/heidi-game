@@ -63,9 +63,11 @@ function saveLocalEntry(entry) {
 
 async function api(path, options = {}) {
   const response = await fetch(path, {
+    cache: "no-store",
     ...options,
     headers: {
       "Content-Type": "application/json",
+      "Cache-Control": "no-cache",
       ...(options.headers || {})
     }
   });
