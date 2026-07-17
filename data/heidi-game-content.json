@@ -32,13 +32,13 @@
   "chapters": [
     {
       "id": "alp-spricht",
-      "title": "Heidi kommt auf der Alp an",
+      "title": "Heidi hört Bauernregeln",
       "place": "Alp",
       "media": {
         "type": "video",
         "src": "/heidi-game/assets/ziegen-loop.m4v",
         "label": "Ziegen auf der Alp",
-        "caption": "Tierverhalten, Nähe, Abstand und Bewegung werden zum ersten Zeichensystem der Aufgabe. Achtet auf das Sichtbare, nicht auf Ton.",
+        "caption": "Ziegen, Himmel, Licht und Bewegung liefern Beobachtungen. Daraus werden keine sicheren Vorhersagen, sondern Fragen an alte Bauernregeln.",
         "hasAudio": false
       },
       "mediaItems": [
@@ -46,40 +46,40 @@
           "type": "video",
           "src": "/heidi-game/assets/ziegen-loop.m4v",
           "label": "Ziegen auf der Alp",
-          "caption": "Die Tiere sind für Heidi keine Kulisse. Sie werden zu ersten Gesprächspartnern, an denen sie Nähe, Staunen und Vertrauen ausprobiert.",
+          "caption": "Die Tiere sind für Heidi keine Kulisse. An ihnen beobachtet sie Ruhe, Unruhe, Nähe und Abstand und findet erste Worte.",
           "hasAudio": false
         },
         {
           "type": "video",
           "src": "/heidi-game/assets/alpatmosphaere-loop.m4v",
           "label": "Ankommen auf der Alp",
-          "caption": "Die Weite der Alp verändert Heidis Innenleben: Aus Unsicherheit werden Neugier, Freude und der Wunsch, sich mitzuteilen.",
+          "caption": "Die Weite der Alp verändert Heidis Innenleben: Aus Unsicherheit werden Neugier, Freude und der Wunsch, den Großvater zu fragen.",
           "hasAudio": false
         }
       ],
-      "languageGoal": "Innere Wahrnehmungen, Staunen und erste Beziehungsangebote sprachlich fassen.",
-      "laptopFrame": "Heidi kommt auf der Alp an. Sie erlebt Weite, Tiere und den stillen Großvater zugleich: Freude, Unsicherheit und Neugier liegen eng beieinander.",
+      "languageGoal": "Bauernregeln als verdichtete Alltagssprache verstehen, mit Beobachtungen verbinden und vorsichtig in eigene Worte übertragen.",
+      "laptopFrame": "Auf der Alp werden Wetter, Tiere und Arbeit oft in kurzen Sprüchen erklärt. Heidi hört solche Bauernregeln und merkt: Sie klingen einfach, aber man muss fragen, was sie bedeuten.",
       "roleA": {
-        "name": "Heidis Innenleben",
-        "prompt": "Du bist nah bei Heidi. Sie sieht die Ziegen, die Weite und die Hütte. Sie ist neugierig und glücklich, aber auch unsicher: Der Großvater sagt wenig, und sie weiß noch nicht, wie sie ihm begegnen soll.",
-        "tokens": ["Staunen", "Unsicherheit", "Neugier", "Nähe suchen"]
+        "name": "Heidi beobachtet",
+        "prompt": "Du bist nah bei Heidi. Sie sieht die Ziegen, die Weite, das Licht und die Hütte. Sie ist neugierig, aber unsicher: Der Großvater sagt wenig, und sie weiß noch nicht, ob eine Bauernregel Warnung, Erfahrung oder Scherz ist.",
+        "tokens": ["Ziegen beobachten", "Himmel anschauen", "nicht sicher sein", "nachfragen"]
       },
       "roleB": {
-        "name": "Worte finden",
-        "prompt": "Du sammelst mögliche Sätze für Heidi: zu den Ziegen freundlich sprechen, dem Großvater eine einfache Frage stellen, nicht drängen, aber zeigen, dass sie dazugehören möchte.",
-        "tokens": ["Ich darf doch?", "Wie heißt sie?", "Ich helfe gern.", "Komm her, kleine Ziege."]
+        "name": "Bauernregeln",
+        "prompt": "Du hast alte Sprüche, die Heidi hören könnte: 'Abendrot, Schönwetterbot.' 'Morgenrot mit Regen droht.' 'Kräht der Hahn auf dem Mist, ändert sich das Wetter oder es bleibt, wie es ist.'",
+        "tokens": ["Abendrot", "Morgenrot", "Erfahrung", "gilt nicht immer"]
       },
-      "teamTask": "Formuliert eine kurze Szene: Heidi spricht zuerst mit einer Ziege und versucht danach, mit dem Großvater ins Gespräch zu kommen. Zeigt dabei, was sie fühlt und warum sie vorsichtig spricht.",
+      "teamTask": "Wählt eine Bauernregel aus. Lasst Heidi zuerst sagen, was sie sieht, und dann den Großvater fragen, was die Regel bedeutet. Formuliert am Ende eine vorsichtige Erklärung in eigenen Worten.",
       "voiceQuest": {
         "required": true,
         "roles": ["A"],
-        "prompt": "Sprich aus Heidis Perspektive einen ersten Satz zu einer Ziege ins Handy. Der Satz soll freundlich klingen und zeigen, wie Heidi sich fühlt.",
+        "prompt": "Sprich aus Heidis Perspektive eine neugierige Frage zu einer Bauernregel ins Handy. Beginne mit: Großvater, was bedeutet eigentlich ...?",
         "minWords": 8
       },
-      "hint": "Achtet darauf, dass Heidi nicht sofort alles erklären muss. Eine glaubwürdige Szene zeigt ihr Staunen, ihre vorsichtige Annäherung und die knappe Art des Großvaters.",
-      "revisionPrompt": "Überarbeitet eure Szene so, dass ein Tier angesprochen wird, eine innere Empfindung sichtbar wird und Heidis Frage an den Großvater nicht aufdringlich klingt.",
-      "example": "Heidi streicht der Ziege vorsichtig über den Rücken und flüstert: 'Du kennst dich hier schon aus, nicht wahr?' Dann sieht sie zum Großvater hinüber und fragt leise: 'Darf ich morgen wieder mit den Ziegen hinaus?'",
-      "reflection": "Wie verändert sich Heidis Sprache, wenn sie mit Tieren spricht und wenn sie den Großvater anspricht?"
+      "hint": "Bauernregeln sind keine magischen Wahrheiten. Sie verdichten Erfahrung, Beobachtung und manchmal auch Humor. Eine gute Erklärung bleibt deshalb vorsichtig.",
+      "revisionPrompt": "Überarbeitet eure Szene so, dass Beobachtung, Bauernregel, Frage an den Großvater und vorsichtige Erklärung vorkommen.",
+      "example": "Heidi schaut zum rötlichen Himmel und fragt: 'Großvater, warum sagt man Abendrot, Schönwetterbot?' Der Großvater antwortet knapp: 'Weil man es oft so erlebt hat. Aber verlassen darf man sich nie ganz darauf.'",
+      "reflection": "Woran merkt man, ob eine Bauernregel eher Erfahrung, Warnung oder Scherz ist?"
     },
     {
       "id": "woerter-wahrnehmungen",
@@ -124,29 +124,29 @@
           "label": "Alpsegen anhören"
         }
       },
-      "languageGoal": "Präzise und offene Fragen formulieren.",
-      "laptopFrame": "Der Almöhi spricht wenig. Heidi muss deshalb lernen, eine Frage so zu stellen, dass sie Nähe anbietet, ohne ihn zu bedrängen.",
+      "languageGoal": "Präzise und offene Fragen zu Erfahrungssprache formulieren.",
+      "laptopFrame": "Der Almöhi spricht wenig. Wenn er eine Bauernregel sagt, muss Heidi lernen, so nachzufragen, dass aus einem kurzen Spruch ein Gespräch wird.",
       "roleA": {
-        "name": "Heidi beobachtet",
-        "prompt": "Der Großvater arbeitet ruhig weiter. Er schaut Heidi nur kurz an, sagt wenig und wirkt nicht unfreundlich, aber schwer erreichbar. Heidi möchte etwas wissen, will ihn aber nicht verärgern.",
-        "tokens": ["kurzer Blick", "wenige Worte", "nicht drängen", "vorsichtig fragen"]
+        "name": "Großvaters Spruch",
+        "prompt": "Der Großvater arbeitet ruhig weiter und sagt nur einen kurzen Satz: 'Morgenrot mit Regen droht.' Heidi versteht nicht alles. Sie möchte wissen, woran er das merkt, will ihn aber nicht verärgern.",
+        "tokens": ["kurzer Spruch", "nicht alles verstehen", "Wetter", "vorsichtig fragen"]
       },
       "roleB": {
-        "name": "Gespräch eröffnen",
-        "prompt": "Gute Fragen an den Großvater sind einfach, konkret und respektvoll: Darf ich dir helfen? Wie macht man das? Warum machst du es so? Soll ich still sein oder darf ich fragen?",
-        "tokens": ["Darf ich helfen?", "Wie macht man das?", "Warum so?", "Darf ich fragen?"]
+        "name": "Nachfragen",
+        "prompt": "Gute Fragen an den Großvater sind einfach, konkret und respektvoll: Was bedeutet diese Regel? Woran siehst du das? Gilt sie immer? Kannst du es mir zeigen?",
+        "tokens": ["Was bedeutet das?", "Woran siehst du es?", "Gilt das immer?", "Zeigst du es mir?"]
       },
-      "teamTask": "Formuliert zwei Fragen, mit denen Heidi den Großvater behutsam ins Gespräch bringt. Eine Frage soll Hilfe anbieten, eine Frage soll echtes Interesse zeigen.",
+      "teamTask": "Formuliert zwei Fragen, mit denen Heidi aus einer Bauernregel ein Gespräch mit dem Großvater macht. Eine Frage soll die Bedeutung klären, eine Frage soll nach einem sichtbaren Beispiel fragen.",
       "voiceQuest": {
         "required": true,
         "roles": ["B"],
-        "prompt": "Sprich eine vorsichtige Frage an den Großvater ins Handy. Sie soll respektvoll klingen und ein Gespräch möglich machen.",
+        "prompt": "Sprich eine vorsichtige Frage an den Großvater ins Handy. Sie soll sich auf eine Bauernregel beziehen und ein Gespräch möglich machen.",
         "minWords": 7
       },
-      "hint": "Wenn Heidi zu schnell oder zu allgemein fragt, bekommt sie vielleicht nur eine knappe Antwort. Eine gute Frage zeigt: Ich sehe, was du tust, und ich möchte verstehen.",
-      "revisionPrompt": "Verbessert eine eurer Fragen so, dass sie konkret, höflich und anschlussfähig ist.",
-      "example": "Darf ich dir beim Holz helfen, Großvater, und zeigst du mir, wie ich es richtig halte?",
-      "reflection": "Welche Wörter machen aus einer neugierigen Frage ein vorsichtiges Gesprächsangebot?"
+      "hint": "Heidi soll die Regel nicht blind glauben und den Großvater nicht belehren. Gute Fragen prüfen die Regel, ohne das Gespräch kaputtzumachen.",
+      "revisionPrompt": "Verbessert eine eurer Fragen so, dass sie die Bauernregel nennt, höflich bleibt und nach einer Beobachtung fragt.",
+      "example": "Großvater, du hast gesagt: 'Morgenrot mit Regen droht.' Woran siehst du heute, ob wirklich Regen kommen könnte?",
+      "reflection": "Welche Frage hilft Heidi mehr: eine Frage nach der Bedeutung oder eine Frage nach einem sichtbaren Beispiel?"
     },
     {
       "id": "frankfurter-stimmen",

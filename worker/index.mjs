@@ -233,7 +233,18 @@ export default {
 
     if (pathname === "/api/content") {
       const assetUrl = new URL("/data/heidi-game-content.json", url.origin);
-      return env.ASSETS.fetch(new Request(assetUrl, request));
+      const contentResponse = await env.ASSETS.fetch(new Request(assetUrl, {
+        method: "GET",
+        headers: { "cache-control": "no-cache" }
+      }));
+      return new Response(contentResponse.body, {
+        status: contentResponse.status,
+        statusText: contentResponse.statusText,
+        headers: {
+          "content-type": "application/json; charset=utf-8",
+          "cache-control": "no-store"
+        }
+      });
     }
 
     if (pathname === "/api/rooms" && request.method === "POST") {
