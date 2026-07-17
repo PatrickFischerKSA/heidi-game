@@ -1,0 +1,7 @@
+node_modules/
+data/*.json
+!data/heidi-game-content.json
+public/data/heidi-game-content.json
+dist-cloudflare/
+.DS_Store
+npm-debug.log*

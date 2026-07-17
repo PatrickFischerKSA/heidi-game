@@ -1,0 +1,21 @@
+{
+  "name": "heidi-game",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Browserbasiertes Partnerspiel zu Johanna Spyris Heidi mit Rollenmodus, Lernjournal und Lehrpersonenansicht.",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs",
+    "test": "node --test",
+    "sync:content": "node scripts/sync-public-content.mjs",
+    "build:cloudflare": "node scripts/build-cloudflare.mjs",
+    "deploy:cloudflare": "npm run build:cloudflare && npx wrangler deploy"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
