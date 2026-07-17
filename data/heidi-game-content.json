@@ -32,7 +32,7 @@
   "chapters": [
     {
       "id": "alp-spricht",
-      "title": "Die Alp spricht",
+      "title": "Heidi kommt auf der Alp an",
       "place": "Alp",
       "media": {
         "type": "video",
@@ -46,40 +46,40 @@
           "type": "video",
           "src": "/heidi-game/assets/ziegen-loop.m4v",
           "label": "Ziegen auf der Alp",
-          "caption": "Tierverhalten, Nähe, Abstand und Bewegung werden zum ersten Zeichensystem der Aufgabe. Achtet auf das Sichtbare, nicht auf Ton.",
+          "caption": "Die Tiere sind für Heidi keine Kulisse. Sie werden zu ersten Gesprächspartnern, an denen sie Nähe, Staunen und Vertrauen ausprobiert.",
           "hasAudio": false
         },
         {
           "type": "video",
-          "src": "/heidi-game/assets/gewitter-berge-loop.m4v",
-          "label": "Gewitter in den Bergen",
-          "caption": "Wolken, Licht und Donner verdichten die Frage: Welche Zeichen warnen, bevor jemand spricht?",
-          "hasAudio": true
+          "src": "/heidi-game/assets/alpatmosphaere-loop.m4v",
+          "label": "Ankommen auf der Alp",
+          "caption": "Die Weite der Alp verändert Heidis Innenleben: Aus Unsicherheit werden Neugier, Freude und der Wunsch, sich mitzuteilen.",
+          "hasAudio": false
         }
       ],
-      "languageGoal": "Naturzeichen, Tierverhalten, Nähe, Abstand und Bewegung wahrnehmen und deuten.",
-      "laptopFrame": "Am Nachmittag verändert sich die Alp. Noch bevor jemand spricht, geben Wind, Wolken, Licht und Tiere sichtbare Zeichen.",
+      "languageGoal": "Innere Wahrnehmungen, Staunen und erste Beziehungsangebote sprachlich fassen.",
+      "laptopFrame": "Heidi kommt auf der Alp an. Sie erlebt Weite, Tiere und den stillen Großvater zugleich: Freude, Unsicherheit und Neugier liegen eng beieinander.",
       "roleA": {
-        "name": "Wahrnehmen",
-        "prompt": "Du siehst, wie eine Ziege nicht mehr weiterfrisst. Sie bleibt nahe am Felsen und die Herde wirkt enger beisammen. Gleichzeitig verdunkelt sich das Licht über der Wiese.",
-        "tokens": ["Ziege am Felsen", "enge Herde", "dunkleres Licht", "Wolken über der Wiese"]
+        "name": "Heidis Innenleben",
+        "prompt": "Du bist nah bei Heidi. Sie sieht die Ziegen, die Weite und die Hütte. Sie ist neugierig und glücklich, aber auch unsicher: Der Großvater sagt wenig, und sie weiß noch nicht, wie sie ihm begegnen soll.",
+        "tokens": ["Staunen", "Unsicherheit", "Neugier", "Nähe suchen"]
       },
       "roleB": {
-        "name": "Versprachlichen",
-        "prompt": "Dir stehen diese Bedeutungen und Wörter zur Verfügung: Schutz suchen, Unwetter, Gefahr rechtzeitig merken, zur Hütte zurückkehren.",
-        "tokens": ["Schutz", "Unwetter", "Warnung", "zurückkehren"]
+        "name": "Worte finden",
+        "prompt": "Du sammelst mögliche Sätze für Heidi: zu den Ziegen freundlich sprechen, dem Großvater eine einfache Frage stellen, nicht drängen, aber zeigen, dass sie dazugehören möchte.",
+        "tokens": ["Ich darf doch?", "Wie heißt sie?", "Ich helfe gern.", "Komm her, kleine Ziege."]
       },
-      "teamTask": "Formuliert eine Warnung, die Beobachtung und Deutung trennt: Was ist zu sehen? Was könnte es bedeuten? Was soll geschehen?",
+      "teamTask": "Formuliert eine kurze Szene: Heidi spricht zuerst mit einer Ziege und versucht danach, mit dem Großvater ins Gespräch zu kommen. Zeigt dabei, was sie fühlt und warum sie vorsichtig spricht.",
       "voiceQuest": {
         "required": true,
         "roles": ["A"],
-        "prompt": "Sprich deine sichtbare Beobachtung zuerst laut ins Handy, ohne sie sofort zu deuten. Beginne mit: Ich sehe ...",
-        "minWords": 6
+        "prompt": "Sprich aus Heidis Perspektive einen ersten Satz zu einer Ziege ins Handy. Der Satz soll freundlich klingen und zeigen, wie Heidi sich fühlt.",
+        "minWords": 8
       },
-      "hint": "Der Almöhi würde wahrscheinlich nicht viel erklären. Er würde auf Wolken, Licht, Bewegungen und die Stellung der Tiere achten. Welche sichtbaren Zeichen stützen eure Deutung?",
-      "revisionPrompt": "Überarbeitet eure Warnung so, dass sie mindestens ein sichtbares Naturzeichen, eine vorsichtige Deutung und eine Handlung enthält.",
-      "example": "Die Ziege bleibt nahe am Felsen, und die Herde steht enger beisammen. Zusammen mit dem dunkleren Licht könnte das ein Zeichen für einen Wetterwechsel sein. Wir sollten die Herde zur Hütte führen.",
-      "reflection": "Welche Zeichen habt ihr zuerst nur gesehen und erst später in Worte gefasst?"
+      "hint": "Achtet darauf, dass Heidi nicht sofort alles erklären muss. Eine glaubwürdige Szene zeigt ihr Staunen, ihre vorsichtige Annäherung und die knappe Art des Großvaters.",
+      "revisionPrompt": "Überarbeitet eure Szene so, dass ein Tier angesprochen wird, eine innere Empfindung sichtbar wird und Heidis Frage an den Großvater nicht aufdringlich klingt.",
+      "example": "Heidi streicht der Ziege vorsichtig über den Rücken und flüstert: 'Du kennst dich hier schon aus, nicht wahr?' Dann sieht sie zum Großvater hinüber und fragt leise: 'Darf ich morgen wieder mit den Ziegen hinaus?'",
+      "reflection": "Wie verändert sich Heidis Sprache, wenn sie mit Tieren spricht und wenn sie den Großvater anspricht?"
     },
     {
       "id": "woerter-wahrnehmungen",
@@ -125,28 +125,28 @@
         }
       },
       "languageGoal": "Präzise und offene Fragen formulieren.",
-      "laptopFrame": "Der Almöhi spricht wenig. Das heisst aber nicht, dass er nichts mitteilt.",
+      "laptopFrame": "Der Almöhi spricht wenig. Heidi muss deshalb lernen, eine Frage so zu stellen, dass sie Nähe anbietet, ohne ihn zu bedrängen.",
       "roleA": {
-        "name": "Wahrnehmen",
-        "prompt": "Der Almöhi legt Holz nach, schaut zum Himmel und bindet die Tür fester zu. Auf die Frage 'Ist alles gut?' nickt er nur halb.",
-        "tokens": ["Holz nachlegen", "Blick zum Himmel", "Tür festbinden", "halbes Nicken"]
+        "name": "Heidi beobachtet",
+        "prompt": "Der Großvater arbeitet ruhig weiter. Er schaut Heidi nur kurz an, sagt wenig und wirkt nicht unfreundlich, aber schwer erreichbar. Heidi möchte etwas wissen, will ihn aber nicht verärgern.",
+        "tokens": ["kurzer Blick", "wenige Worte", "nicht drängen", "vorsichtig fragen"]
       },
       "roleB": {
-        "name": "Versprachlichen",
-        "prompt": "Gute Fragen beginnen hier mit: Woran merkst du ...? Was sollen wir tun, wenn ...? Warum bindest du ...? Welche Zeichen zeigen ...?",
-        "tokens": ["Woran merkst du?", "Was sollen wir tun?", "Warum?", "Welche Zeichen?"]
+        "name": "Gespräch eröffnen",
+        "prompt": "Gute Fragen an den Großvater sind einfach, konkret und respektvoll: Darf ich dir helfen? Wie macht man das? Warum machst du es so? Soll ich still sein oder darf ich fragen?",
+        "tokens": ["Darf ich helfen?", "Wie macht man das?", "Warum so?", "Darf ich fragen?"]
       },
-      "teamTask": "Formuliert zwei offene Fragen an den Almöhi, die nicht nur mit Ja oder Nein beantwortet werden können.",
+      "teamTask": "Formuliert zwei Fragen, mit denen Heidi den Großvater behutsam ins Gespräch bringt. Eine Frage soll Hilfe anbieten, eine Frage soll echtes Interesse zeigen.",
       "voiceQuest": {
         "required": true,
         "roles": ["B"],
-        "prompt": "Sprich eine offene Frage an den Almöhi ins Handy. Sie muss nach einem Zeichen, einem Grund oder einer Handlung fragen.",
+        "prompt": "Sprich eine vorsichtige Frage an den Großvater ins Handy. Sie soll respektvoll klingen und ein Gespräch möglich machen.",
         "minWords": 7
       },
-      "hint": "Wenn ihr fragt 'Ist es gefährlich?', kann er schweigen oder nicken. Eine offene Frage holt sein Zeichenwissen hervor.",
-      "revisionPrompt": "Verbessert eine eurer Fragen so, dass sie nach einem Zeichen, einer Begründung oder einer Handlung fragt.",
-      "example": "Woran merkst du an den Wolken, dass wir die Tür festbinden sollen?",
-      "reflection": "Wann ist Schweigen in dieser Szene trotzdem eine Antwort?"
+      "hint": "Wenn Heidi zu schnell oder zu allgemein fragt, bekommt sie vielleicht nur eine knappe Antwort. Eine gute Frage zeigt: Ich sehe, was du tust, und ich möchte verstehen.",
+      "revisionPrompt": "Verbessert eine eurer Fragen so, dass sie konkret, höflich und anschlussfähig ist.",
+      "example": "Darf ich dir beim Holz helfen, Großvater, und zeigst du mir, wie ich es richtig halte?",
+      "reflection": "Welche Wörter machen aus einer neugierigen Frage ein vorsichtiges Gesprächsangebot?"
     },
     {
       "id": "frankfurter-stimmen",

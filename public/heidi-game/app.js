@@ -794,7 +794,7 @@ window.addEventListener("popstate", () => {
 });
 
 async function boot() {
-  state.content = await api("/api/content");
+  state.content = await api(`/api/content?v=${Date.now()}`);
   state.teacher = state.content.teacherDefaults;
   renderCurrentMode();
 }
