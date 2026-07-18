@@ -39,7 +39,12 @@
         "src": "/heidi-game/assets/ziegen-loop.m4v",
         "label": "Ziegen auf der Alp",
         "caption": "Ziegen, Himmel, Licht und Bewegung liefern Beobachtungen. Daraus werden keine sicheren Vorhersagen, sondern Fragen an alte Bauernregeln.",
-        "hasAudio": false
+        "hasAudio": false,
+        "audio": {
+          "src": "/heidi-game/assets/ziegen-meckern.mp3",
+          "label": "Ziegenmeckern einschalten",
+          "loop": true
+        }
       },
       "mediaItems": [
         {
@@ -47,7 +52,12 @@
           "src": "/heidi-game/assets/ziegen-loop.m4v",
           "label": "Ziegen auf der Alp",
           "caption": "Die Tiere sind für Heidi keine Kulisse. An ihnen beobachtet sie Ruhe, Unruhe, Nähe und Abstand und findet erste Worte.",
-          "hasAudio": false
+          "hasAudio": false,
+          "audio": {
+            "src": "/heidi-game/assets/ziegen-meckern.mp3",
+            "label": "Ziegenmeckern einschalten",
+            "loop": true
+          }
         },
         {
           "type": "video",
@@ -90,7 +100,12 @@
         "src": "/heidi-game/assets/ziegen-loop.m4v",
         "label": "Ziegen auf der Alp",
         "caption": "Die Szene hat keinen eigenen Ton. Genau deshalb erfinden die Spielenden eine glaubwürdige Stimme für Heidi, Peter und die Tiere.",
-        "hasAudio": false
+        "hasAudio": false,
+        "audio": {
+          "src": "/heidi-game/assets/ziegen-meckern.mp3",
+          "label": "Ziegenmeckern einschalten",
+          "loop": true
+        }
       },
       "languageGoal": "Freundliche Anrede, genaue Tierbeobachtung und kurze gesprochene Sätze verbinden.",
       "laptopFrame": "Heidi ist mit den Ziegen draußen. Sie muss nicht erklären, was Tiere denken. Sie kann aber beobachten, wie sie sich bewegen, und ihnen so sprechen, wie ein Kind auf der Alp sprechen könnte.",
@@ -365,7 +380,12 @@
         "src": "/heidi-game/assets/ziegen-loop.m4v",
         "label": "Ziegen auf der Alp",
         "caption": "Die Ziegen werden über Namen, Eigenheiten und Peters praktische Sprache unterscheidbar.",
-        "hasAudio": false
+        "hasAudio": false,
+        "audio": {
+          "src": "/heidi-game/assets/ziegen-meckern.mp3",
+          "label": "Ziegenmeckern einschalten",
+          "loop": true
+        }
       },
       "languageGoal": "Figuren und Tiere durch konkrete Eigenheiten unterscheiden.",
       "laptopFrame": "Peter kennt die Herde nicht allgemein, sondern einzeln. Für Heidi bekommen die Ziegen Namen, Gewohnheiten und kleine Unterschiede.",
@@ -851,7 +871,12 @@
         "src": "/heidi-game/assets/ziegen-loop.m4v",
         "label": "Ziegen auf der Alp",
         "caption": "Eine fehlende Ziege macht aus Beobachtung, Wegsprache und Zusammenarbeit eine konkrete Suchaufgabe.",
-        "hasAudio": false
+        "hasAudio": false,
+        "audio": {
+          "src": "/heidi-game/assets/ziegen-meckern.mp3",
+          "label": "Ziegenmeckern einschalten",
+          "loop": true
+        }
       },
       "languageGoal": "Suchsprache mit Ortsangaben und Vermutungen verbinden.",
       "laptopFrame": "Eine Ziege ist nicht dort, wo Peter sie erwartet. Jetzt müssen Heidi und Peter genau sprechen: Wo zuletzt? Welche Spur? Welcher Weg?",

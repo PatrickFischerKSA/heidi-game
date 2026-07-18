@@ -732,7 +732,7 @@ function sceneMedia(c) {
             <span>${escapeHtml(media.caption || "")}</span>
             <div class="media-controls">
               ${media.hasAudio ? `<button type="button" class="secondary" data-toggle-media-sound>Videoton einschalten</button>` : ""}
-              ${media.audio?.src ? `<button type="button" class="secondary" data-toggle-scene-audio>${escapeHtml(media.audio.label || "Audio einschalten")}</button><audio src="${escapeHtml(media.audio.src)}" preload="metadata"></audio>` : ""}
+              ${media.audio?.src ? `<button type="button" class="secondary" data-audio-label="${escapeHtml(media.audio.label || "Audio")}" data-toggle-scene-audio>${escapeHtml(media.audio.label || "Audio einschalten")}</button><audio src="${escapeHtml(media.audio.src)}" preload="metadata" ${media.audio.loop ? "loop" : ""}></audio>` : ""}
             </div>
           </figcaption>
         </figure>
@@ -1401,12 +1401,13 @@ app.addEventListener("click", async (event) => {
   if (button.dataset.toggleSceneAudio !== undefined) {
     const audio = button.closest(".scene-media")?.querySelector("audio");
     if (audio) {
+      const label = button.dataset.audioLabel || "Audio";
       if (audio.paused) {
         await audio.play();
-        button.textContent = "Audio pausieren";
+        button.textContent = `${label.replace(" einschalten", "")} pausieren`;
       } else {
         audio.pause();
-        button.textContent = button.textContent.includes("Alpsegen") ? button.textContent : "Audio fortsetzen";
+        button.textContent = `${label.replace(" einschalten", "")} fortsetzen`;
       }
     }
   }
