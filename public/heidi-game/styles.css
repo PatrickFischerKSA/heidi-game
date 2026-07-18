@@ -981,6 +981,51 @@ p {
   border-top: 5px solid var(--role-b);
 }
 
+.goat-guide {
+  display: grid;
+  gap: 10px;
+  border: 1px solid rgba(35, 63, 49, 0.16);
+  border-radius: 8px;
+  padding: 12px;
+  background:
+    linear-gradient(110deg, rgba(232, 244, 241, 0.64), rgba(255, 252, 245, 0.78));
+}
+
+.goat-guide > strong {
+  color: var(--forest);
+  font-size: 1.12rem;
+}
+
+.goat-guide ol {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.goat-guide li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 9px;
+  align-items: start;
+}
+
+.goat-guide li > span {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fffaf0;
+  background: var(--forest);
+  font-weight: 850;
+}
+
+.goat-guide.is-compact ol {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
+
 .qr-code {
   width: min(100%, 190px);
   height: auto;
@@ -1315,6 +1360,23 @@ p {
 
 .phone-frame .role-card {
   box-shadow: none;
+}
+
+.goat-job {
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(232, 244, 241, 0.66);
+  border-left: 5px solid var(--role-a);
+}
+
+.role-b .goat-job {
+  border-left-color: var(--role-b);
+}
+
+.goat-job strong {
+  color: var(--forest);
 }
 
 .goat-board {

@@ -981,21 +981,53 @@ function playerProfile(role, label = "") {
       <img src="${escapeHtml(profile.src)}" alt="${escapeHtml(profile.alt)}" loading="lazy">
       <div>
         <strong>${escapeHtml(label || profile.name)}</strong>
-        <span>${role === "A" ? "Beobachten und sprechen" : "Wörter finden und nachfragen"}</span>
+        <span>${escapeHtml(goatJob(role).short)}</span>
       </div>
     </div>
   `;
 }
 
+function goatJob(role) {
+  if (role === "A") {
+    return {
+      short: "sieht zuerst",
+      title: "Schwänli sieht zuerst.",
+      text: "Du sammelst, was in der Szene wirklich sichtbar, hörbar oder spürbar ist. Sag es kurz, bevor ihr deutet.",
+      prompt: "Beginne mit: Ich sehe ... / Ich höre ... / Mir fällt auf ..."
+    };
+  }
+  return {
+    short: "fragt nach",
+    title: "Schnecke fragt nach.",
+    text: "Du bringst Wörter, Fragen und Ordnung hinein. Hilf, aus Schwänlis Beobachtung eine brauchbare Antwort zu machen.",
+    prompt: "Frage: Welches Wort passt genauer? Was fehlt noch? Wie klingt es vorsichtiger?"
+  };
+}
+
+function goatCardGuide(compact = false) {
+  return html`
+    <aside class="goat-guide ${compact ? "is-compact" : ""}">
+      <strong>So funktionieren die Geissenkarten</strong>
+      <ol>
+        <li><span>1</span><p><strong>Getrennt lesen.</strong> Schwänli und Schnecke bekommen verschiedene Hinweise. Nicht sofort alles vermischen.</p></li>
+        <li><span>2</span><p><strong>Laut austauschen.</strong> Jede Geiss sagt ihren Hinweis in eigenen Worten. Wenn ein Mikrofon verlangt wird, zuerst ins Handy sprechen.</p></li>
+        <li><span>3</span><p><strong>Gemeinsam schreiben.</strong> Erst danach öffnet ihr die Schreibwerkstatt und macht aus beiden Hinweisen eine Antwort.</p></li>
+      </ol>
+    </aside>
+  `;
+}
+
 function qrCard(role, title, subtitle) {
   const url = joinAddress(role);
+  const job = goatJob(role);
   return html`
     <article class="qr-card role-${role.toLowerCase()}">
       ${playerProfile(role, title)}
       <div>
-        <p class="eyebrow">${escapeHtml(title)}</p>
+        <p class="eyebrow">Handykarte</p>
         <h3>${role === "A" ? "Schwänli" : "Schnecke"}</h3>
-        <p>${escapeHtml(subtitle)}</p>
+        <p><strong>${escapeHtml(job.title)}</strong> ${escapeHtml(job.text)}</p>
+        <p class="small">${escapeHtml(subtitle)}</p>
       </div>
       ${qrSvg(url)}
       <p class="small">${escapeHtml(url)}</p>
@@ -1026,9 +1058,10 @@ function renderPartner() {
             <h2>${escapeHtml(state.hostName)}</h2>
             <p>Die Handys scannen den Code ihrer Geiss. Der Raumcode bleibt nur als Reserve sichtbar: <strong>${escapeHtml(state.room?.code || "----")}</strong></p>
           </div>
+          ${goatCardGuide()}
           <div class="qr-grid">
-            ${qrCard("A", "Schwänli", "Beobachten und zuerst sprechen")}
-            ${qrCard("B", "Schnecke", "Wörter finden und nachfragen")}
+            ${qrCard("A", "Schwänli", "Diese Karte gehört der Person mit Schwänli.")}
+            ${qrCard("B", "Schnecke", "Diese Karte gehört der Person mit Schnecke.")}
           </div>
         </div>
       ` : ""}
@@ -1316,18 +1349,18 @@ function taskFlow(c) {
     <div class="task-flow" aria-label="Arbeitsfluss">
       <article>
         <span>1</span>
-        <strong>Austauschen</strong>
-        <p>Schwänli: ${escapeHtml(c.roleA.name)}. Schnecke: ${escapeHtml(c.roleB.name)}.</p>
+        <strong>Schwänli sagt, was da ist</strong>
+        <p>${escapeHtml(c.roleA.name)}: Beobachtung, Stimme oder erster Eindruck aus der Szene.</p>
       </article>
       <article>
         <span>2</span>
-        <strong>Formulieren</strong>
-        <p>${escapeHtml(c.languageGoal)}</p>
+        <strong>Schnecke macht es genauer</strong>
+        <p>${escapeHtml(c.roleB.name)}: Wörter, Fragen, Ordnung oder Vorsicht für die Antwort.</p>
       </article>
       <article>
         <span>3</span>
-        <strong>Schärfen</strong>
-        <p>${escapeHtml(c.revisionPrompt)}</p>
+        <strong>Ihr schreibt gemeinsam</strong>
+        <p>Verbindet beide Karten zu einer Antwort. Danach überarbeitet ihr: ${escapeHtml(c.revisionPrompt)}</p>
       </article>
     </div>
   `;
@@ -1630,9 +1663,15 @@ function renderPhoneRole() {
 }
 
 function roleCard(role, roleData) {
+  const job = goatJob(role);
   return html`
     <article class="role-card role-${role.toLowerCase()}">
       ${playerProfile(role)}
+      <div class="goat-job">
+        <strong>${escapeHtml(job.title)}</strong>
+        <p>${escapeHtml(job.text)}</p>
+        <p class="small">${escapeHtml(job.prompt)}</p>
+      </div>
       <h2>${role === "A" ? "Schwänli" : "Schnecke"}: ${escapeHtml(roleData.name)}</h2>
       <p>${escapeHtml(roleData.prompt)}</p>
       <ul class="token-list">${roleData.tokens.map((token) => `<li>${escapeHtml(token)}</li>`).join("")}</ul>
@@ -1657,15 +1696,19 @@ function renderDesktop() {
       ${playSectionMenu(sections, active)}
       ${active === "cards" ? html`
         <div class="goat-board panel stack">
-          <h2>Geissenkarten nacheinander öffnen</h2>
+          <div>
+            <p class="eyebrow">Geissenkarten</p>
+            <h2>Erst getrennt lesen, dann zusammenführen</h2>
+          </div>
+          ${goatCardGuide()}
           ${taskFlow(c)}
           <div class="toolbar">
             <button type="button" class="secondary" data-reveal="A">${state.revealA ? "Schwänli verbergen" : "Schwänli öffnen"}</button>
             <button type="button" class="secondary" data-reveal="B">${state.revealB ? "Schnecke verbergen" : "Schnecke öffnen"}</button>
           </div>
           <div class="goat-stage">
-            ${state.revealA ? roleCard("A", c.roleA) : `<div class="goat-card-placeholder role-a">${playerProfile("A", "Schwänli")}<h3>Schwänli ist verdeckt</h3><p>Eine Person liest zuerst die andere Karte nicht mit.</p></div>`}
-            ${state.revealB ? roleCard("B", c.roleB) : `<div class="goat-card-placeholder role-b">${playerProfile("B", "Schnecke")}<h3>Schnecke ist verdeckt</h3><p>Öffnet diese Karte erst nach dem Wechsel.</p></div>`}
+            ${state.revealA ? roleCard("A", c.roleA) : `<div class="goat-card-placeholder role-a">${playerProfile("A", "Schwänli")}<h3>Schwänli wartet</h3><p>Öffnet diese Karte für die Person, die zuerst beobachtet und spricht.</p></div>`}
+            ${state.revealB ? roleCard("B", c.roleB) : `<div class="goat-card-placeholder role-b">${playerProfile("B", "Schnecke")}<h3>Schnecke wartet</h3><p>Öffnet diese Karte für die Person, die nachfragt und die Wörter schärft.</p></div>`}
           </div>
         </div>
       ` : ""}
@@ -1699,8 +1742,9 @@ function renderDemo() {
         <div class="goat-board panel stack">
           <div>
             <p class="eyebrow">Geissenkarten</p>
-            <h2>Schwänli und Schnecke tauschen ihre Hinweise aus</h2>
+            <h2>Schwänli und Schnecke bringen zwei Hälften zusammen</h2>
           </div>
+          ${goatCardGuide(true)}
           <div class="goat-stage demo-goats">
             <div class="goat-handset">${roleCard("A", c.roleA)}${voiceQuestPanel("A", c)}</div>
             <div class="goat-handset">${roleCard("B", c.roleB)}${voiceQuestPanel("B", c)}</div>
