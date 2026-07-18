@@ -904,29 +904,33 @@ function renderHome() {
   app.innerHTML = html`
     ${topbar("home")}
     <section class="hero">
-        ${sceneMedia(state.content)}
+      <div class="front-video" aria-hidden="true">
+        <video src="/heidi-game/assets/alpfeeling-front.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <div class="front-scrim" aria-hidden="true"></div>
+      <div class="front-content">
         <div class="hero-copy">
           <p class="eyebrow">Browserbasiertes Partnerspiel</p>
-        <h1>Heidi - Geissen, Regeln, Stimmen</h1>
-        <p>${escapeHtml(STORY.premise)}</p>
-        ${alpInventory()}
-      </div>
-      <div class="mode-river">
-        <section class="mode-primary">
-          <div>
-            <p class="eyebrow">Für die Klasse</p>
-            <h2>Spielraum mit zwei Handys eröffnen</h2>
-            <p>Der Hauptcomputer führt durch die Quest. Schwänli und Schnecke bekommen ihre Geissenkarten per QR-Code aufs Handy.</p>
+          <h1>Heidi - Geissen, Regeln, Stimmen</h1>
+          <p>${escapeHtml(STORY.premise)}</p>
+        </div>
+        <div class="mode-river">
+          <section class="mode-primary">
+            <div>
+              <p class="eyebrow">Für die Klasse</p>
+              <h2>Spielraum mit zwei Handys eröffnen</h2>
+              <p>Der Hauptcomputer führt durch die Quest. Schwänli und Schnecke bekommen ihre Geissenkarten per QR-Code aufs Handy.</p>
+            </div>
+            <form class="host-login" data-host-login>
+              <label>Hauptcomputer<input name="hostName" value="${escapeHtml(state.hostName)}" placeholder="z. B. Klasse 2b oder Lehrperson" required></label>
+              <button type="submit">Spielraum eröffnen</button>
+            </form>
+          </section>
+          <div class="mode-actions" aria-label="Weitere Einstiege">
+            <button type="button" class="mode-link" data-nav="desktop"><strong>Desktop</strong><span>Zwei Personen spielen an einem Bildschirm.</span></button>
+            <button type="button" class="mode-link" data-nav="demo"><strong>Demo</strong><span>Handyansichten, Beispiele und Kapitelwahl ansehen.</span></button>
+            <button type="button" class="mode-link" data-nav="teacher"><strong>Lehrpersonen</strong><span>Einstellungen, Inhaltsmodell und Export öffnen.</span></button>
           </div>
-          <form class="host-login" data-host-login>
-            <label>Hauptcomputer<input name="hostName" value="${escapeHtml(state.hostName)}" placeholder="z. B. Klasse 2b oder Lehrperson" required></label>
-            <button type="submit">Spielraum eröffnen</button>
-          </form>
-        </section>
-        <div class="mode-actions" aria-label="Weitere Einstiege">
-          <button type="button" class="mode-link" data-nav="desktop"><strong>Desktop</strong><span>Zwei Personen spielen an einem Bildschirm.</span></button>
-          <button type="button" class="mode-link" data-nav="demo"><strong>Demo</strong><span>Handyansichten, Beispiele und Kapitelwahl ansehen.</span></button>
-          <button type="button" class="mode-link" data-nav="teacher"><strong>Lehrpersonen</strong><span>Einstellungen, Inhaltsmodell und Export öffnen.</span></button>
         </div>
       </div>
     </section>
