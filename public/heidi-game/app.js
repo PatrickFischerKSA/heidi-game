@@ -270,7 +270,7 @@ const FEEDBACK_PROFILES = {
 
 const STORY = {
   name: "Fräulein Rottenmeier",
-  premise: "Eine Frankfurter Geiss ist aus der Stadt ausgebüxt und behauptet steif und fest, sie sei Fräulein Rottenmeier. Sie kennt Salons, Verbote und Hausregeln, aber keine Alp. Schwänli und Schnecke müssen ihr zeigen, wie man hier überlebt: hören, riechen, fragen, vorsichtig urteilen und nicht jedes Meckern für ein Gesetz halten.",
+  premise: "Auf der Alp treffen Heidis Staunen, Schwänlis Meckern, Schneckes Eigensinn und Fräulein Rottenmeiers Regelstimme aufeinander. Die Spielenden helfen, aus Beobachtung, Tadel, Fragen und Heimweh eine Sprache zu machen, die trägt.",
   journey: [
     {
       title: "1. Ihr erreicht die Alp",
@@ -320,7 +320,7 @@ const STORY = {
     "schlusskreis": "Zum Schluss zählt nicht alles zugleich. Eine Szene, ein Wort, eine Frage sollen bleiben."
   },
   rewards: [
-    { object: "hay", text: "Heubüschel gewonnen: Die Frankfurter Geiss kaut endlich, bevor sie befiehlt." },
+    { object: "hay", text: "Heubüschel gewonnen: Erst wird beobachtet, dann wird geurteilt." },
     { object: "bell", text: "Glockenklang gewonnen: Schwänli und Schnecke dürfen eine Regel in Ruhe prüfen." },
     { object: "step", text: "Alpschritt gewonnen: Heidi kommt einen Schritt näher an eine eigene Stimme." },
     { object: "hat", text: "Rottenmeiers Hut wackelt: Eure Antwort hat eine starre Regel beweglich gemacht." },
@@ -329,7 +329,7 @@ const STORY = {
   ],
   kicks: [
     { object: "hoof", text: "Geissentritt: Fräulein Rottenmeier stampft, weil die Antwort noch zu allgemein bleibt." },
-    { object: "bell", text: "Geissentritt: Die Frankfurter Geiss meckert dazwischen. Es fehlt eine genaue Beobachtung." },
+    { object: "bell", text: "Geissentritt: Es meckert dazwischen. Eine genaue Beobachtung fehlt noch." },
     { object: "hoof", text: "Geissentritt: Zu glatt formuliert. Schwänli verlangt ein sichtbares Detail." },
     { object: "word", text: "Geissentritt: Schnecke kaut auf dem Satz herum. Die Begründung ist noch dünn." }
   ],
@@ -337,14 +337,14 @@ const STORY = {
     {
       object: "rule",
       title: "Sie frisst die Hausregel",
-      text: "Die Frankfurter Geiss schnappt nach der wichtigsten Regel im Raum und kaut daran herum, als wäre Papier Heu.",
+      text: "Rottenmeiers Regelstimme schnappt nach der wichtigsten Regel im Raum und macht daraus sofort ein Verbot.",
       task: "Rettet die Regel: Sagt in einem Satz, was davon nützlich ist, und streicht den Teil, der nur einschüchtert.",
       example: "Nützlich ist, dass Heidi weiß, was am Tisch gilt; unnötig ist der scharfe Befehlston."
     },
     {
       object: "rule",
       title: "Sie frisst etwas Verbotenes",
-      text: "Rottenmeier-Geiss hat an einem Gegenstand geknabbert, der bestimmt nicht für Geissen gedacht war.",
+      text: "Schnecke hat an einem Gegenstand geknabbert, der bestimmt nicht für Geissen gedacht war.",
       task: "Beschreibt den Schaden konkret und formuliert eine ruhige Reaktion, die nicht sofort in Geschrei kippt.",
       example: "Die Ecke der Regel ist angefressen; Heidi nimmt das Blatt weg und sagt ruhig: Das ist kein Heu."
     },
@@ -358,7 +358,7 @@ const STORY = {
     {
       object: "bell",
       title: "Sie meckert alles durcheinander",
-      text: "Aus der Geiss kommt ein wütendes Meckern: halb Frankfurter Tischregel, halb Alpwetter, halb beleidigter Salon.",
+      text: "Aus der Geiss kommt ein wütendes Meckern: halb Tischregel, halb Alpwetter, halb beleidigter Salon.",
       task: "Sortiert das Meckern: Was ist Beobachtung, was ist Angst, was ist nur Befehlston?",
       example: "Beobachtung: Der Wind wird kalt. Angst: Sie kennt die Alp nicht. Befehlston: Alles sofort ordentlich!"
     },
@@ -372,7 +372,7 @@ const STORY = {
     {
       object: "word",
       title: "Sie klaut ein Alpwörterchen",
-      text: "Schnecke bemerkt: Ein wichtiges Wort ist weg. Die Frankfurter Geiss trägt es im Maul davon.",
+      text: "Schnecke bemerkt: Ein wichtiges Wort ist weg. Zwischen Meckern und Regelton ist es verschwunden.",
       task: "Holt das Wort zurück, indem ihr es in einem neuen, klaren Satz benutzt.",
       example: "Das Wort 'zupfen' gehört zurück: Schnecke zupft am Kraut, statt einfach nur zu fressen."
     },
@@ -386,7 +386,7 @@ const STORY = {
     {
       object: "stool",
       title: "Melkzeit mit Widerstand",
-      text: "Schwänli steht bereit, aber die Frankfurter Geiss erklärt den Melkschemel für unzulässig und kneift die Knie zusammen.",
+      text: "Schwänli steht bereit, aber Rottenmeiers Regelstimme erklärt den Melkschemel für unzulässig.",
       task: "Formuliert eine ruhige Melk-Anweisung in drei Schritten: annähern, beruhigen, melken.",
       example: "Zuerst stellt Heidi den Schemel leise hin, dann streicht sie Schwänli über den Hals, danach beginnt sie langsam zu melken."
     },
@@ -423,7 +423,7 @@ const STORY = {
     "ziegen-ansprechen": [{
       object: "bell",
       title: "Die Geiss hört nicht auf 'Sie da!'",
-      text: "Die Frankfurter Geiss ruft steif in die Wiese. Schwänli hebt nur kurz den Kopf, Schnecke zupft weiter am Kraut.",
+      text: "Rottenmeiers Stimme ruft steif in die Wiese. Schwänli hebt nur kurz den Kopf, Schnecke zupft weiter am Kraut.",
       task: "Schreibt drei Sätze: Heidi ruft eine Geiss natürlich an, Peter erklärt mit einem genauen Verb, was sie tut, und Heidi übernimmt dieses Wort.",
       example: "Heidi sagt: 'Schwänli, komm nur ein Stück näher.' Peter sagt: 'Sie zupft am Kraut, die läuft gleich weiter.' Heidi merkt sich: zupfen ist genauer als fressen."
     }],
@@ -437,7 +437,7 @@ const STORY = {
     "frankfurter-stimmen": [{
       object: "hat",
       title: "Die Geiss meckert wie eine Hausordnung",
-      text: "In Frankfurt klingt jede Hilfe plötzlich nach Befehl. Die Geiss macht daraus: 'Sofort ordentlich sein!'",
+      text: "In Frankfurt klingt jede Hilfe plötzlich nach Befehl. Rottenmeiers Regelstimme macht daraus: 'Sofort ordentlich sein!'",
       task: "Schreibt drei klare Sätze: Was wurde wörtlich gesagt? Was macht der Tonfall daraus? Wie könnte derselbe Hinweis Heidi fair helfen?",
       example: "Wörtlich wird eine Tischregel genannt. Der scharfe Ton beschämt Heidi. Fair wäre: 'Leg die Serviette hierher; ich zeige dir, wann du sie nimmst.'"
     }],
@@ -499,7 +499,7 @@ const STORY = {
     }],
     "ankunft-frankfurt": [{
       object: "hat",
-      title: "Die Frankfurter Geiss sperrt die Tür auf und tut vornehm",
+      title: "Rottenmeiers Stimme steht in der Tür",
       text: "Treppen, Türen, Stimmen, enge Blicke: Heidi kommt nicht in eine Alp, sondern in ein Haus voller Regeln.",
       task: "Schreibt einen Ankunftsabsatz mit drei Stadtbeobachtungen und zwei vorsichtigen Vergleichen zur Alp.",
       example: "Die Häuser standen dicht, und der Himmel war nur ein Streifen. Auf der Alp konnte der Blick weit laufen. Hier führte jede Tür zur nächsten Regel."
@@ -527,7 +527,7 @@ const STORY = {
     }],
     "frankfurt-verlorene-stadt": [{
       object: "rule",
-      title: "Die Geiss legt zwei Frankfurt-Bilder übereinander",
+      title: "Zwei Frankfurt-Bilder liegen übereinander",
       text: "Ein Bild zeigt eine rekonstruierte Stadt um 1890, das andere die Zerstörung 1944. Fräulein Rottenmeier tut so, als sei beides dieselbe Gegenwart.",
       task: "Erklärt in drei Sätzen: rekonstruiertes Frankfurt um 1890, Zerstörung 1944, heutiger Abstand zu Spyris Stadtraum.",
       example: "Die 1890-Szene nähert sich der Stadtwelt an, die Heidi fremd gewesen sein könnte. 1944 kam eine spätere Katastrophe. Darum existiert Spyris Frankfurt heute so nicht mehr."
@@ -577,36 +577,36 @@ const STORY = {
     "schlusskreis": [{
       object: "cheese",
       title: "Der letzte Käse wird nur verteilt, wenn etwas hängen bleibt",
-      text: "Die Geiss will alles auf einmal: Alp, Frankfurt, Schule, Regeln, Glocken. Der Schlusskreis braucht Auswahl.",
+      text: "Am Ende drängt alles auf einmal herein: Alp, Frankfurt, Schule, Regeln, Glocken. Der Schlusskreis braucht Auswahl.",
       task: "Wählt eine Szene, ein genaueres Wort, eine gute Frage und einen Satz darüber, was Heidi dadurch gelernt haben könnte.",
       example: "Ich wähle die Szene mit der fehlenden Geiss, weil Heidi dort genauer sprechen muss. Das Wort 'oberhalb' hilft. Die Frage 'Wo stand sie zuletzt?' macht aus Angst einen Plan."
     }]
   },
   beats: {
-    "alp-spricht": ["Rottenmeier-Geiss hält Bauernregeln für Amtsbefehle: Wenn Abendrot ist, müsse das Wetter gehorchen.", "Erfindet eine Regel, die klingt wie Alp-Erfahrung, aber nicht so tut, als könne sie den Himmel kommandieren."],
-    "ziegen-ansprechen": ["Die Frankfurter Geiss ruft jede Geiss mit 'Sie da!' und wundert sich, dass niemand folgt.", "Findet eine Stimme, mit der Heidi eine Geiss wirklich ansprechen könnte: kurz, freundlich, beobachtend."],
-    "almoehi-sprechen": ["Rottenmeier-Geiss will den Almöhi verhören: Name, Zweck, Wetterzuständigkeit.", "Heidi braucht eine Frage, die den Großvater öffnet, statt ihn wie ein Formular auszufüllen."],
-    "frankfurter-stimmen": ["In Frankfurt merkt die Geiss: Auch Menschen meckern Regeln. Manche helfen, manche machen klein.", "Trennt Hausregel, Tonfall und faire Hilfe, damit Heidi nicht nur gehorcht, sondern versteht."],
-    "peter-lernt-anders": ["Rottenmeier-Geiss will Peter an den Tisch nageln, bis die Buchstaben ordentlich stehen.", "Baut einen Lernweg, der von Peters Wegen, Geissen und Händen ausgeht."],
+    "alp-spricht": ["Rottenmeiers Regelstimme hält Bauernregeln für Amtsbefehle: Wenn Abendrot ist, müsse das Wetter gehorchen.", "Erfindet eine Regel, die klingt wie Alp-Erfahrung, aber nicht so tut, als könne sie den Himmel kommandieren."],
+    "ziegen-ansprechen": ["Rottenmeiers Stimme ruft jede Geiss mit 'Sie da!' und wundert sich, dass niemand folgt.", "Findet eine Stimme, mit der Heidi eine Geiss wirklich ansprechen könnte: kurz, freundlich, beobachtend."],
+    "almoehi-sprechen": ["Rottenmeiers Regelstimme will den Almöhi verhören: Name, Zweck, Wetterzuständigkeit.", "Heidi braucht eine Frage, die den Großvater öffnet, statt ihn wie ein Formular auszufüllen."],
+    "frankfurter-stimmen": ["In Frankfurt merkt Heidi: Auch Menschen können mit Regeln verletzen. Manche Sätze helfen, manche machen klein.", "Trennt Hausregel, Tonfall und faire Hilfe, damit Heidi nicht nur gehorcht, sondern versteht."],
+    "peter-lernt-anders": ["Rottenmeiers Regelstimme will Peter an den Tisch nageln, bis die Buchstaben ordentlich stehen.", "Baut einen Lernweg, der von Peters Wegen, Geissen und Händen ausgeht."],
     "heidi-erzaehlt-weiter": ["Die Geiss behauptet, alles müsse exakt im Buch stehen, sonst sei es verboten.", "Markiert eure Weitererzählung als möglich und verankert sie in einer konkreten Erinnerung."],
-    "huette-einrichten": ["Rottenmeier-Geiss sucht in der Hütte nach Klingel, Teppichordnung und Besuchsformular.", "Macht sichtbar, wie Heidi über Gegenstände und Handgriffe ankommt."],
-    "bett-im-heu": ["Die Frankfurter Geiss erklärt Heu zum unzulässigen Bettmaterial.", "Zeigt, warum das Heu für Heidi nicht Armut, sondern Wärme, Geruch und Ruhe bedeutet."],
-    "peter-stellt-ziegen-vor": ["Rottenmeier-Geiss will Nummern statt Namen: Geiss 1, Geiss 2, Geiss 3.", "Gebt den Geissen Eigenheiten, damit aus Herde einzelne Wesen werden."],
-    "gewitter-kommt": ["Rottenmeier-Geiss verlangt einen schriftlichen Donner-Antrag, während die Wolken schon tief hängen.", "Macht aus Beobachtung einen schnellen, praktischen Plan."],
-    "alpsegen-hoeren": ["Die Frankfurter Geiss hört den Alpsegen und fragt, ob das eine Hausordnung mit Melodie sei.", "Findet Worte dafür, wie ein Ruf Schutz, Abend und Gemeinschaft bedeuten kann."],
-    "grossvater-arbeitet": ["Rottenmeier-Geiss kommentiert jeden Handgriff, bis kein Holz mehr gespalten wird.", "Beschreibt Arbeit so genau, dass Schweigen und Können verständlich werden."],
-    "ankunft-frankfurt": ["Die Geiss aus Frankfurt erkennt ihre Stadt kaum wieder und tut trotzdem, als sei alles selbstverständlich.", "Zeigt Heidis erste Überforderung: Geräusche, Regeln, Höhe, Enge."],
-    "clara-kennenlernen": ["Rottenmeier-Geiss will Freundschaft nach Sitzordnung vergeben.", "Lasst Clara und Heidi vorsichtig Kontakt aufnehmen, ohne dass eine die andere vorführt."],
-    "rottenmeier-tisch": ["Am Tisch fühlt sich die Frankfurter Geiss plötzlich mächtig: Serviette, Haltung, Schweigen!", "Verwandelt eine steife Tischregel in einen Satz, der Heidi wirklich helfen könnte."],
-    "sehnsucht-alp": ["Rottenmeier-Geiss findet Heimweh unordentlich: Gefühle sollen bitte im Schrank bleiben.", "Macht Heidis Sehnsucht konkret, ohne sie zu verkitschen."],
-    "frankfurt-verlorene-stadt": ["Die Geiss sucht Spyris Frankfurt und stolpert durch Bilder einer Stadt, die so nicht mehr existiert.", "Erklärt den historischen Bruch, ohne die Heidi-Szene zu verlieren."],
-    "rueckkehr-alp": ["Rottenmeier-Geiss will die Rückkehr als Reisebericht abstempeln lassen.", "Zeigt, was sich an Heidi verändert hat, wenn sie wieder oben ankommt."],
+    "huette-einrichten": ["Rottenmeiers Regelstimme sucht in der Hütte nach Klingel, Teppichordnung und Besuchsformular.", "Macht sichtbar, wie Heidi über Gegenstände und Handgriffe ankommt."],
+    "bett-im-heu": ["Rottenmeiers Stimme erklärt Heu zum unzulässigen Bettmaterial.", "Zeigt, warum das Heu für Heidi nicht Armut, sondern Wärme, Geruch und Ruhe bedeutet."],
+    "peter-stellt-ziegen-vor": ["Rottenmeiers Regelstimme will Nummern statt Namen: Geiss 1, Geiss 2, Geiss 3.", "Gebt den Geissen Eigenheiten, damit aus Herde einzelne Wesen werden."],
+    "gewitter-kommt": ["Rottenmeiers Regelstimme verlangt einen schriftlichen Donner-Antrag, während die Wolken schon tief hängen.", "Macht aus Beobachtung einen schnellen, praktischen Plan."],
+    "alpsegen-hoeren": ["Rottenmeiers Stimme hört den Alpsegen und fragt, ob das eine Hausordnung mit Melodie sei.", "Findet Worte dafür, wie ein Ruf Schutz, Abend und Gemeinschaft bedeuten kann."],
+    "grossvater-arbeitet": ["Rottenmeiers Regelstimme kommentiert jeden Handgriff, bis kein Holz mehr gespalten wird.", "Beschreibt Arbeit so genau, dass Schweigen und Können verständlich werden."],
+    "ankunft-frankfurt": ["Frankfurt tut so, als sei alles selbstverständlich: Türen, Treppen, Stimmen, Regeln.", "Zeigt Heidis erste Überforderung: Geräusche, Regeln, Höhe, Enge."],
+    "clara-kennenlernen": ["Rottenmeiers Regelstimme will Freundschaft nach Sitzordnung vergeben.", "Lasst Clara und Heidi vorsichtig Kontakt aufnehmen, ohne dass eine die andere vorführt."],
+    "rottenmeier-tisch": ["Am Tisch fühlt sich Rottenmeiers Regelstimme plötzlich mächtig: Serviette, Haltung, Schweigen!", "Verwandelt eine steife Tischregel in einen Satz, der Heidi wirklich helfen könnte."],
+    "sehnsucht-alp": ["Rottenmeiers Regelstimme findet Heimweh unordentlich: Gefühle sollen bitte im Schrank bleiben.", "Macht Heidis Sehnsucht konkret, ohne sie zu verkitschen."],
+    "frankfurt-verlorene-stadt": ["Heidi sucht Spyris Frankfurt und stößt auf Bilder einer Stadt, die so nicht mehr existiert.", "Erklärt den historischen Bruch, ohne die Heidi-Szene zu verlieren."],
+    "rueckkehr-alp": ["Rottenmeiers Regelstimme will die Rückkehr als Reisebericht abstempeln lassen.", "Zeigt, was sich an Heidi verändert hat, wenn sie wieder oben ankommt."],
     "grossmutter-hoert": ["Die Geiss spricht extra laut, weil sie Zuhören mit Lautstärke verwechselt.", "Findet eine Sprache, die Rücksicht nimmt und trotzdem lebendig erzählt."],
-    "peter-eifersucht": ["Rottenmeier-Geiss würde Peters Eifersucht sofort bestrafen und abhaken.", "Sucht die Kränkung hinter der Tat und eine Antwort, die Verantwortung möglich macht."],
-    "dorfschule-peter": ["Die Frankfurter Geiss marschiert in die Dorfschule und will alle Buchstaben geradeziehen.", "Entwerft eine Aufgabe, bei der Peter nicht beschämt wird."],
-    "clara-auf-der-alp": ["Rottenmeier-Geiss ruft: 'Alp ist kein Sanatorium!' und tritt fast in den Wassereimer.", "Beschreibt Claras Ankommen auf der Alp konkret und vorsichtig."],
-    "ziegen-verloren": ["Eine Geiss fehlt, und Rottenmeier-Geiss möchte zuerst ein Verlustprotokoll.", "Macht aus Sorge einen Suchplan mit Ortswörtern und Lockruf."],
-    "schlusskreis": ["Am Ende will Rottenmeier-Geiss wissen, ob sie jetzt wieder Mensch, Geiss oder Hausordnung ist.", "Wählt die stärkste Szene und erklärt, was sie an Sprache verändert hat."]
+    "peter-eifersucht": ["Rottenmeiers Regelstimme würde Peters Eifersucht sofort bestrafen und abhaken.", "Sucht die Kränkung hinter der Tat und eine Antwort, die Verantwortung möglich macht."],
+    "dorfschule-peter": ["Rottenmeiers Regelstimme marschiert in die Dorfschule und will alle Buchstaben geradeziehen.", "Entwerft eine Aufgabe, bei der Peter nicht beschämt wird."],
+    "clara-auf-der-alp": ["Rottenmeiers Stimme ruft: 'Alp ist kein Sanatorium!' und macht Claras ersten Schritt unnötig schwer.", "Beschreibt Claras Ankommen auf der Alp konkret und vorsichtig."],
+    "ziegen-verloren": ["Eine Geiss fehlt, und Rottenmeiers Regelstimme möchte zuerst ein Verlustprotokoll.", "Macht aus Sorge einen Suchplan mit Ortswörtern und Lockruf."],
+    "schlusskreis": ["Am Ende will Rottenmeiers Regelstimme wissen, ob jetzt endlich Ordnung herrscht.", "Wählt die stärkste Szene und erklärt, was sie an Sprache verändert hat."]
   }
 };
 
@@ -890,7 +890,7 @@ function topbar(active = state.mode) {
   ];
   return html`
     <header class="topbar">
-      <div class="brand"><span class="brand-mark" aria-hidden="true">H</span><span>Heidi und die Frankfurter Geiss</span></div>
+      <div class="brand"><span class="brand-mark" aria-hidden="true">H</span><span>Heidi - Geissen, Regeln, Stimmen</span></div>
       <nav class="nav-pills" aria-label="Modus">
         ${items.map(([id, href, label]) => `<button type="button" data-nav="${id}" aria-current="${active === id ? "page" : "false"}">${label}</button>`).join("")}
       </nav>
@@ -904,37 +904,30 @@ function renderHome() {
   app.innerHTML = html`
     ${topbar("home")}
     <section class="hero">
-      ${sceneMedia(state.content)}
-      <div class="hero-copy">
-        <p class="eyebrow">Browserbasiertes Partnerspiel</p>
-        <h1>Heidi und die Frankfurter Geiss</h1>
+        ${sceneMedia(state.content)}
+        <div class="hero-copy">
+          <p class="eyebrow">Browserbasiertes Partnerspiel</p>
+        <h1>Heidi - Geissen, Regeln, Stimmen</h1>
         <p>${escapeHtml(STORY.premise)}</p>
         ${alpInventory()}
       </div>
-      <div class="mode-grid">
-        <article class="card">
-          <h2>Partnermodus</h2>
-          <p>Hauptcomputer als Spielleitung, zwei Handys mit QR-Codes für Schwänli und Schnecke.</p>
+      <div class="mode-river">
+        <section class="mode-primary">
+          <div>
+            <p class="eyebrow">Für die Klasse</p>
+            <h2>Spielraum mit zwei Handys eröffnen</h2>
+            <p>Der Hauptcomputer führt durch die Quest. Schwänli und Schnecke bekommen ihre Geissenkarten per QR-Code aufs Handy.</p>
+          </div>
           <form class="host-login" data-host-login>
             <label>Hauptcomputer<input name="hostName" value="${escapeHtml(state.hostName)}" placeholder="z. B. Klasse 2b oder Lehrperson" required></label>
             <button type="submit">Spielraum eröffnen</button>
           </form>
-        </article>
-        <article class="card">
-          <h2>Desktopmodus</h2>
-          <p>Zwei Personen spielen an einem Bildschirm. Die Geissenkarten werden nacheinander freigegeben.</p>
-          <button type="button" data-nav="desktop">Desktop starten</button>
-        </article>
-        <article class="card">
-          <h2>Demomodus</h2>
-          <p>Beide Handyansichten, Beispielantworten, Kapitelwahl und didaktische Hinweise auf einem Desktop.</p>
-          <button type="button" data-nav="demo">Demo öffnen</button>
-        </article>
-        <article class="card">
-          <h2>Lehrpersonenansicht</h2>
-          <p>Einstellungen, Datenmodell, Export und Hinweise für den schulischen Einsatz.</p>
-          <button type="button" data-nav="teacher">Ansicht öffnen</button>
-        </article>
+        </section>
+        <div class="mode-actions" aria-label="Weitere Einstiege">
+          <button type="button" class="mode-link" data-nav="desktop"><strong>Desktop</strong><span>Zwei Personen spielen an einem Bildschirm.</span></button>
+          <button type="button" class="mode-link" data-nav="demo"><strong>Demo</strong><span>Handyansichten, Beispiele und Kapitelwahl ansehen.</span></button>
+          <button type="button" class="mode-link" data-nav="teacher"><strong>Lehrpersonen</strong><span>Einstellungen, Inhaltsmodell und Export öffnen.</span></button>
+        </div>
       </div>
     </section>
   `;
@@ -1235,7 +1228,7 @@ function alpInventory() {
 
 function storyBeatText(c) {
   return STORY.beats[c.id] || [
-    "Die Frankfurter Geiss will aus der Szene sofort eine starre Vorschrift machen.",
+    "Rottenmeiers Regelstimme will aus der Szene sofort eine starre Vorschrift machen.",
     "Schwänli und Schnecke müssen zeigen, was man wirklich sieht, hört oder sagen kann."
   ];
 }
