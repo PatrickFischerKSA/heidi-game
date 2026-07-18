@@ -680,7 +680,7 @@ function renderHome() {
         <p class="eyebrow">Browserbasiertes Partnerspiel</p>
         <h1>Heidi und die Frankfurter Geiss</h1>
         <p>${escapeHtml(STORY.premise)}</p>
-        <p>${escapeHtml(state.content.learningConcept.short)}</p>
+        ${alpInventory()}
       </div>
       <div class="mode-grid">
         <article class="card">
@@ -872,6 +872,13 @@ function chaosPanel(c) {
         <span>Sofort reagieren</span>
         <p>${escapeHtml(chaos.task)}</p>
       </div>
+      <form class="object-response" data-chaos-form>
+        <label>
+          <span>Schreib direkt hier</span>
+          <textarea name="response" required placeholder="Ein Satz, der die Situation rettet: beruhigen, halten, wischen, melken, erklären ..."></textarea>
+        </label>
+        <button type="submit">Objekt retten</button>
+      </form>
       <details class="chaos-details">
         <summary>Milch, Sauerei, Käse?</summary>
         <p>Wenn ihr die Geiss ruhig und genau durch die Szene bringt, bleibt Milch im Kübel. Wenn nicht, gibt es Sauerei. Im besten Fall: Käse.</p>
@@ -883,9 +890,22 @@ function chaosPanel(c) {
 
 function objectCutout(type = "word", label = "Spielobjekt") {
   const normalized = String(type || "word").replace(/[^a-z-]/g, "");
+  const assets = {
+    bell: "bell",
+    "bucket-spill": "bucket-spill",
+    bucket: "bucket",
+    cheese: "cheese",
+    cloth: "cloth",
+    hay: "hay",
+    milk: "bucket-spill",
+    rule: "rule",
+    stool: "stool",
+    word: "rule"
+  };
+  const asset = assets[normalized];
   return html`
     <span class="object-cutout is-${escapeHtml(normalized)}" aria-label="${escapeHtml(label)}" title="${escapeHtml(label)}">
-      <span class="object-shape" aria-hidden="true"></span>
+      ${asset ? `<img src="/heidi-game/assets/objects/${escapeHtml(asset)}.png" alt="" loading="lazy">` : `<span class="object-shape" aria-hidden="true"></span>`}
     </span>
   `;
 }
@@ -909,7 +929,7 @@ function alpInventory() {
       ${["bucket", "cheese", "hay", "bell", "rule", "stool", "cloth"].map((item) => objectCutout(item, item)).join("")}
       <div>
         <strong>Alp-Inventar</strong>
-        <span>Kübel, Käse, Heu, Glocke, Regel, Schemel, Lappen.</span>
+        <span>Kübel, Käse, Heu, Glocke, Regel, Schemel, Lappen. Diese Dinge werden bespielt.</span>
       </div>
     </div>
   `;
@@ -1687,6 +1707,31 @@ async function saveVoiceDraft(key) {
   renderCurrentMode();
 }
 
+async function saveChaosResponse(form) {
+  const data = new FormData(form);
+  const text = String(data.get("response") || "").trim();
+  if (!text) return;
+  const c = chapter();
+  const chaos = currentChaos(c);
+  const feedback = qualifiedFeedback(c, "chaos", text);
+  const reaction = feedback.reward || feedback.kick;
+  const entryText = [
+    `${chaos.title}: ${text}`,
+    `Objekt: ${chaos.object || "Spielobjekt"}`,
+    `Spielreaktion: ${reactionText(reaction)}`
+  ].join("\n");
+
+  if (state.mode === "partner" && state.room?.code) {
+    state.room = (await api(`/api/rooms/${state.room.code}/submissions`, {
+      method: "POST",
+      body: JSON.stringify({ chapterIndex: state.chapterIndex, kind: "chaos", role: "team", text: entryText, words: collectWords(text) })
+    })).room;
+  } else {
+    saveLocalEntry({ chapterIndex: state.chapterIndex, kind: "chaos", role: "team", text: entryText, words: collectWords(text) });
+  }
+  renderCurrentMode();
+}
+
 function exportJournal() {
   const payload = {
     title: state.content.title,
@@ -1811,6 +1856,7 @@ app.addEventListener("submit", async (event) => {
   }
   if (event.target.matches("[data-join-form]")) await joinRoom(event.target);
   if (event.target.matches("[data-answer-form]")) await saveAnswer(event.target);
+  if (event.target.matches("[data-chaos-form]")) await saveChaosResponse(event.target);
   if (event.target.matches("[data-teacher-form]")) {
     const data = new FormData(event.target);
     state.teacher = {
