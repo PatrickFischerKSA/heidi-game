@@ -867,33 +867,34 @@ function chaosPanel(c) {
   const chaos = currentChaos(c);
   return html`
     <aside class="chaos-panel">
+      <section class="main-assignment">
+        <p class="eyebrow">Hauptauftrag dieser Quest</p>
+        <h2>${escapeHtml(c.teamTask)}</h2>
+        <p class="small">Das ist die eigentliche Aufgabe. Die Geiss stört nur dazwischen.</p>
+      </section>
       <div class="object-card-head">
         ${objectCutout(chaos.object, chaos.title)}
         <div>
-          <p class="eyebrow">Unberechenbare Geiss</p>
+          <p class="eyebrow">Störung</p>
           <strong>${escapeHtml(chaos.title)}</strong>
         </div>
       </div>
       <div class="chaos-plain">
-        <span>1. Das ist passiert</span>
+        <span>Was ist passiert?</span>
         <p>${escapeHtml(chaos.text)}</p>
       </div>
       <div class="chaos-task">
-        <span>2. Dein Auftrag</span>
-        <p>${escapeHtml(chaos.task)}</p>
+        <span>Was müsst ihr jetzt tun?</span>
+        <p>Schreibt unten eure Lösung zum Hauptauftrag. Baut die Störung der Geiss sinnvoll ein.</p>
       </div>
       <form class="object-response" data-chaos-form>
         <label>
-          <span>3. Antwortfeld: Tippt hier eure Lösung ein</span>
-          <textarea name="response" required placeholder="${escapeHtml(chaos.example || "Schreibt einen konkreten Rettungssatz.")}"></textarea>
+          <span>Antwortfeld: Hier schreibt ihr eure Lösung</span>
+          <textarea name="response" required placeholder="${escapeHtml(c.example || chaos.example || "Schreibt eure Lösung hier hinein.")}"></textarea>
         </label>
-        <p class="small">Nicht kommentieren, sondern lösen: Schreibt 1-3 Sätze, die genau diesen Vorfall klären.</p>
-        <button type="submit">Rettungssatz speichern</button>
+        <p class="small">Für diese Quest: ${escapeHtml(c.revisionPrompt)}</p>
+        <button type="submit">Questantwort speichern</button>
       </form>
-      <details class="chaos-details">
-        <summary>Was passiert nach dem Speichern?</summary>
-        <p>Wenn ihr die Geiss ruhig und genau durch die Szene bringt, bleibt Milch im Kübel. Wenn nicht, gibt es Sauerei. Im besten Fall: Käse.</p>
-      </details>
       <button type="button" class="secondary" data-chaos>Geiss bricht wieder aus</button>
     </aside>
   `;
@@ -1710,21 +1711,22 @@ async function saveChaosResponse(form) {
   if (!text) return;
   const c = chapter();
   const chaos = currentChaos(c);
-  const feedback = qualifiedFeedback(c, "chaos", text);
+  const feedback = qualifiedFeedback(c, "first", text);
   const reaction = feedback.reward || feedback.kick;
   const entryText = [
-    `${chaos.title}: ${text}`,
-    `Objekt: ${chaos.object || "Spielobjekt"}`,
+    `Hauptauftrag: ${c.teamTask}`,
+    `Störung: ${chaos.title}`,
+    `Antwort: ${text}`,
     `Spielreaktion: ${reactionText(reaction)}`
   ].join("\n");
 
   if (state.mode === "partner" && state.room?.code) {
     state.room = (await api(`/api/rooms/${state.room.code}/submissions`, {
       method: "POST",
-      body: JSON.stringify({ chapterIndex: state.chapterIndex, kind: "chaos", role: "team", text: entryText, words: collectWords(text) })
+      body: JSON.stringify({ chapterIndex: state.chapterIndex, kind: "questantwort", role: "team", text: entryText, words: collectWords(text) })
     })).room;
   } else {
-    saveLocalEntry({ chapterIndex: state.chapterIndex, kind: "chaos", role: "team", text: entryText, words: collectWords(text) });
+    saveLocalEntry({ chapterIndex: state.chapterIndex, kind: "questantwort", role: "team", text: entryText, words: collectWords(text) });
   }
   renderCurrentMode();
 }
