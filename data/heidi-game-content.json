@@ -22,7 +22,7 @@
   },
   "teacherDefaults": {
     "languageLevel": "B1/B2",
-    "chapterCount": 6,
+    "chapterCount": 24,
     "playTime": "45-70 Minuten",
     "availableHelp": ["Hinweiskarte", "Beispielvariante", "Partnerfeedback", "Rückfrage einer Figur"],
     "revisionRequired": true,
@@ -285,6 +285,625 @@
       "revisionPrompt": "Überarbeitet euren Anfang so, dass Wahrnehmung, Gefühl und Erkenntnis verbunden sind.",
       "example": "Vielleicht hätte Heidi später erzählt: Wenn der Himmel am Abend rot wurde, hörte ich wieder Großvaters Stimme. Er hatte gesagt, man solle solche Regeln kennen, aber auch die Augen offen behalten.",
       "reflection": "Wie hat sich eure Sprache vom ersten Kapitel bis hier verändert: vom Beobachten über das Fragen bis zum Erzählen?"
+    },
+    {
+      "id": "huette-einrichten",
+      "title": "In der Hütte ankommen",
+      "place": "Almhütte",
+      "media": {
+        "type": "video",
+        "src": "/heidi-game/assets/alpatmosphaere-loop.m4v",
+        "label": "Alpatmosphäre",
+        "caption": "Die Hütte wird nicht erklärt, sondern über Arbeit, Gegenstände und kurze Sätze erschlossen.",
+        "hasAudio": false
+      },
+      "languageGoal": "Gegenstände, Handgriffe und höfliche Bitten genau benennen.",
+      "laptopFrame": "Heidi kommt in eine einfache Hütte. Alles hat einen Zweck: Bank, Tisch, Kessel, Schüssel, Heu, Decke. Wer hier leben will, muss nicht viele Worte machen, aber die richtigen Wörter finden.",
+      "roleA": {
+        "name": "Heidi sieht sich um",
+        "prompt": "Du siehst die Hütte mit Heidis Augen: Sie will nichts falsch machen und sucht einen Platz für sich. Sie bemerkt einfache Dinge, die neu und wichtig sind.",
+        "tokens": ["Bank", "Schüssel", "Heu", "Decke", "vorsichtig fragen"]
+      },
+      "roleB": {
+        "name": "Großvaters knappe Hilfe",
+        "prompt": "Der Großvater spricht kurz und praktisch. Er erklärt nicht alles, aber er zeigt mit Handgriffen, was wohin gehört.",
+        "tokens": ["Stell es dorthin", "nimm die Decke", "hier schläfst du", "so macht man es"]
+      },
+      "teamTask": "Schreibt eine Szene mit vier Sätzen: Heidi benennt zwei Gegenstände, bittet um Erlaubnis und versteht aus einem Handgriff des Großvaters, wo ihr Platz ist.",
+      "voiceQuest": {
+        "required": true,
+        "roles": ["A"],
+        "prompt": "Sprich Heidis vorsichtige Bitte in der Hütte ins Handy. Sie soll einen konkreten Gegenstand nennen.",
+        "minWords": 8
+      },
+      "hint": "Die Szene wird stärker, wenn nicht erklärt wird, dass die Hütte einfach ist. Lasst die Gegenstände und Handgriffe sprechen.",
+      "revisionPrompt": "Ersetzt allgemeine Wörter wie 'Ding' oder 'machen' durch konkrete Gegenstände und Handgriffe.",
+      "example": "Heidi bleibt bei der Bank stehen und fragt: 'Darf ich die Decke hier zum Heu legen, Großvater?' Er nickt nur und schiebt ihr die Schüssel näher.",
+      "reflection": "Welche konkreten Wörter machen die Hütte sofort sichtbar?"
+    },
+    {
+      "id": "bett-im-heu",
+      "title": "Das Bett im Heu",
+      "place": "Almhütte",
+      "media": {
+        "type": "video",
+        "src": "/heidi-game/assets/heidihaus-loop.m4v",
+        "label": "Haus der Großmutter",
+        "caption": "Ein einfacher Innenraum hilft, über Schlaf, Geborgenheit und Geräusche zu sprechen.",
+        "hasAudio": true
+      },
+      "languageGoal": "Sinneseindrücke ohne Kitsch beschreiben.",
+      "laptopFrame": "Heidi schläft nicht in einem prächtigen Zimmer. Gerade deshalb müssen die Wörter sorgfältig sein: Geruch, Wärme, Rascheln, Dunkelheit, Atem, Ruhe.",
+      "roleA": {
+        "name": "Heidis Müdigkeit",
+        "prompt": "Heidi ist erschöpft und zugleich wach vor neuen Eindrücken. Sie riecht das Heu, hört kleine Geräusche und spürt, dass dieser Schlafplatz anders ist als alles Gewohnte.",
+        "tokens": ["Heugeruch", "Rascheln", "warm", "fremd", "geborgen"]
+      },
+      "roleB": {
+        "name": "Wörter ohne Übertreibung",
+        "prompt": "Du achtest darauf, dass die Beschreibung nicht kitschig wird. Sie soll genau, leise und glaubwürdig bleiben.",
+        "tokens": ["nicht süßlich", "konkret", "leise", "ein Geräusch", "ein Geruch"]
+      },
+      "teamTask": "Schreibt einen Absatz von fünf Sätzen über Heidis erstes Einschlafen im Heu. Verwendet mindestens einen Geruch, ein Geräusch und eine Körperempfindung.",
+      "voiceQuest": {
+        "required": false,
+        "roles": ["A"],
+        "prompt": "Lies den ersten Satz langsam vor. Prüft, ob er ruhig und glaubwürdig klingt.",
+        "minWords": 8
+      },
+      "hint": "Vermeidet Wörter wie 'wunderschön' als Ersatz für Beobachtung. Zeigt lieber, was Heidi riecht, hört und spürt.",
+      "revisionPrompt": "Streicht ein übertreibendes Adjektiv und ersetzt es durch eine konkrete Wahrnehmung.",
+      "example": "Im Heu roch es trocken und warm. Wenn Heidi den Kopf bewegte, raschelten die Halme an ihrem Ohr. Draußen wurde es stiller, nur der Wind blieb an der Hütte.",
+      "reflection": "Wann wirkt eine Beschreibung natürlich, obwohl sie Gefühle zeigt?"
+    },
+    {
+      "id": "peter-stellt-ziegen-vor",
+      "title": "Peter stellt die Ziegen vor",
+      "place": "Alpweide",
+      "media": {
+        "type": "video",
+        "src": "/heidi-game/assets/ziegen-loop.m4v",
+        "label": "Ziegen auf der Alp",
+        "caption": "Die Ziegen werden über Namen, Eigenheiten und Peters praktische Sprache unterscheidbar.",
+        "hasAudio": false
+      },
+      "languageGoal": "Figuren und Tiere durch konkrete Eigenheiten unterscheiden.",
+      "laptopFrame": "Peter kennt die Herde nicht allgemein, sondern einzeln. Für Heidi bekommen die Ziegen Namen, Gewohnheiten und kleine Unterschiede.",
+      "roleA": {
+        "name": "Heidi fragt nach Namen",
+        "prompt": "Heidi möchte wissen, welche Ziege welche ist. Sie fragt nicht wie in einer Prüfung, sondern neugierig und freundlich.",
+        "tokens": ["Wie heißt sie?", "welche ist frech?", "welche bleibt zurück?", "merken"]
+      },
+      "roleB": {
+        "name": "Peters Herdenwissen",
+        "prompt": "Peter antwortet knapp und praktisch. Er kennt Eigenheiten: eine Ziege drängt, eine zupft langsam, eine bleibt gern beim Felsen.",
+        "tokens": ["Schwänli", "Bärli", "zupft langsam", "drängt vor", "bleibt zurück"]
+      },
+      "teamTask": "Erfindet für drei Ziegen je einen Namen und eine konkrete Eigenheit. Schreibt daraus einen Dialog zwischen Heidi und Peter.",
+      "voiceQuest": {
+        "required": true,
+        "roles": ["B"],
+        "prompt": "Sprich Peters Erklärung zu einer Ziege ins Handy. Sie soll kurz, praktisch und nicht schulmeisterlich klingen.",
+        "minWords": 8
+      },
+      "hint": "Eine Eigenheit ist besser als eine Bewertung. 'Zupft langsam am Kraut' ist genauer als 'ist lieb'.",
+      "revisionPrompt": "Ersetzt mindestens eine bloße Eigenschaft durch ein sichtbares Verhalten.",
+      "example": "Peter zeigt auf die helle Ziege: 'Das ist Schwänli. Die läuft nie zuerst, aber sie findet jedes Kraut am Wegrand.' Heidi wiederholt den Namen, damit sie ihn nicht vergisst.",
+      "reflection": "Wie verändert ein genauer Name oder eine kleine Gewohnheit unsere Vorstellung von einem Tier?"
+    },
+    {
+      "id": "gewitter-kommt",
+      "title": "Wenn das Gewitter kommt",
+      "place": "Bergwiese",
+      "media": {
+        "type": "video",
+        "src": "/heidi-game/assets/gewitter-berge-loop.m4v",
+        "label": "Gewitter in den Bergen",
+        "caption": "Das Gewitter ist keine Mutprobe, sondern eine Situation für genaue Warnsprache und besonnenes Handeln.",
+        "hasAudio": true
+      },
+      "languageGoal": "Warnungen, Beobachtungen und Handlungsanweisungen klar unterscheiden.",
+      "laptopFrame": "Auf der Alp kann Wetter schnell ernst werden. Jetzt zählt, ob die Sprache hilft: Was sieht man? Was bedeutet Gefahr? Was muss man tun?",
+      "roleA": {
+        "name": "Heidi merkt Veränderung",
+        "prompt": "Heidi sieht dunklere Wolken, spürt Wind und merkt, dass die Tiere enger zusammenbleiben. Sie soll nicht dramatisieren, aber rechtzeitig sprechen.",
+        "tokens": ["dunkle Wolken", "Windstoß", "enge Herde", "unsicher werden"]
+      },
+      "roleB": {
+        "name": "Peters Rückweg",
+        "prompt": "Peter denkt an den Weg zurück: Felsen, nasses Gras, Herde sammeln, nicht rennen, nah beieinander bleiben.",
+        "tokens": ["zur Hütte", "nicht rennen", "Herde sammeln", "nasses Gras"]
+      },
+      "teamTask": "Schreibt eine Notfall-Abfolge in fünf kurzen Sätzen: Beobachtung, Warnung, Entscheidung, Handgriff, Rückweg.",
+      "voiceQuest": {
+        "required": true,
+        "roles": ["A", "B"],
+        "prompt": "Sprecht nacheinander eine Warnung und eine klare Anweisung ins Handy. Keine Panik, aber deutlich.",
+        "minWords": 10
+      },
+      "hint": "Eine Warnung sagt, warum Eile nötig ist. Eine Anweisung sagt, was jetzt konkret zu tun ist.",
+      "revisionPrompt": "Markiert in euren fünf Sätzen: Beobachtung, Warnung, Entscheidung, Handgriff und Rückweg.",
+      "example": "Die Wolken liegen tief über dem Grat. Peter sagt: 'Wir gehen zurück, bevor das Gras rutschig wird.' Heidi hält die hintere Ziege nahe am Weg.",
+      "reflection": "Welche Wörter beruhigen, obwohl sie vor Gefahr warnen?"
+    },
+    {
+      "id": "alpsegen-hoeren",
+      "title": "Den Alpsegen hören",
+      "place": "Alp",
+      "media": {
+        "type": "video",
+        "src": "/heidi-game/assets/alpatmosphaere-loop.m4v",
+        "label": "Alpatmosphäre mit Alpsegen",
+        "caption": "Der Alpsegen wird als Hörimpuls genutzt: Klang, Wiederholung und Schutzwunsch stehen im Mittelpunkt.",
+        "hasAudio": false,
+        "audio": {
+          "src": "/heidi-game/assets/alpsegen.mp3",
+          "label": "Alpsegen anhören"
+        }
+      },
+      "languageGoal": "Klang, Wiederholung und religiös-kulturelle Sprache respektvoll beschreiben.",
+      "laptopFrame": "Der Alpsegen ist kein Rätsel und keine Zauberformel. Er ist ein gesprochener oder gesungener Schutzwunsch in einer bestimmten alpinen Tradition.",
+      "roleA": {
+        "name": "Hören",
+        "prompt": "Du achtest auf Klang, Pausen, Wiederholung und Stimmung. Du musst nicht jedes Wort verstehen, aber du sollst beschreiben, wie die Stimme wirkt.",
+        "tokens": ["getragen", "wiederholt", "weit", "ruhig", "Schutzwunsch"]
+      },
+      "roleB": {
+        "name": "Einordnen",
+        "prompt": "Du erklärst vorsichtig, dass hier Menschen um Schutz für Tiere, Menschen und Ort bitten. Keine Ironie, keine Übertreibung.",
+        "tokens": ["Tradition", "Bitte", "Schutz", "Respekt", "nicht nachmachen"]
+      },
+      "teamTask": "Schreibt eine kurze Hörnotiz: Was hört ihr? Was könnte der Alpsegen leisten? Welche Wörter zeigen Respekt vor dieser Tradition?",
+      "voiceQuest": {
+        "required": false,
+        "roles": ["A"],
+        "prompt": "Beschreibe den Klang des Alpsegens mündlich, ohne ihn nachzuahmen.",
+        "minWords": 10
+      },
+      "hint": "Beschreibt den Alpsegen, statt ihn zu bewerten. Wörter wie 'getragen', 'langgezogen' oder 'schutzsuchend' helfen.",
+      "revisionPrompt": "Entfernt eine vorschnelle Bewertung und ersetzt sie durch eine Hörbeobachtung.",
+      "example": "Die Stimme klingt weit und getragen. Die Wiederholung macht den Spruch ruhig. Es wirkt wie eine Bitte, dass Mensch und Tier gut durch die Nacht kommen.",
+      "reflection": "Wie kann man eine Tradition beschreiben, ohne sie lächerlich zu machen oder zu verklären?"
+    },
+    {
+      "id": "grossvater-arbeitet",
+      "title": "Beim Großvater mithelfen",
+      "place": "Almhütte",
+      "media": {
+        "type": "video",
+        "src": "/heidi-game/assets/alpatmosphaere-loop.m4v",
+        "label": "Arbeit auf der Alp",
+        "caption": "Die Aufgabe macht aus stiller Arbeit eine Abfolge genauer Verben.",
+        "hasAudio": false
+      },
+      "languageGoal": "Arbeitsabläufe mit präzisen Verben erklären.",
+      "laptopFrame": "Der Großvater erklärt wenig mit langen Sätzen. Heidi lernt, indem sie zusieht: nehmen, halten, schieben, gießen, tragen, warten.",
+      "roleA": {
+        "name": "Heidi schaut auf Hände",
+        "prompt": "Du beobachtest nicht das Gesicht, sondern die Hände des Großvaters. Welche Bewegung kommt zuerst, welche danach?",
+        "tokens": ["halten", "heben", "gießen", "warten", "nachmachen"]
+      },
+      "roleB": {
+        "name": "Arbeitswörter",
+        "prompt": "Du sammelst genaue Verben und verbindest sie mit Reihenfolge-Wörtern: zuerst, dann, danach, erst wenn, am Schluss.",
+        "tokens": ["zuerst", "dann", "danach", "erst wenn", "am Schluss"]
+      },
+      "teamTask": "Schreibt eine Anleitung für einen kleinen Handgriff in der Hütte. Sie muss so konkret sein, dass Heidi ihn nachmachen könnte.",
+      "voiceQuest": {
+        "required": true,
+        "roles": ["B"],
+        "prompt": "Sprich die Anleitung als Großvater ins Handy: knapp, ruhig und mit mindestens drei Handgriffen.",
+        "minWords": 12
+      },
+      "hint": "Eine gute Anleitung besteht aus Reihenfolge und Handlung, nicht aus allgemeinen Ratschlägen.",
+      "revisionPrompt": "Prüft jedes Verb: Könnte Heidi genau sehen, was sie tun soll?",
+      "example": "Zuerst hältst du die Schüssel mit beiden Händen. Dann gießt du langsam ein. Erst wenn nichts mehr tropft, stellst du sie auf die Bank.",
+      "reflection": "Warum können genaue Verben freundlicher sein als lange Erklärungen?"
+    },
+    {
+      "id": "ankunft-frankfurt",
+      "title": "Ankunft in Frankfurt",
+      "place": "Frankfurt",
+      "mediaItems": [
+        {
+          "type": "video",
+          "src": "/heidi-game/assets/frankfurt-1890-loop.m4v",
+          "label": "Frankfurt um 1890 (rekonstruiert)",
+          "caption": "Die Stadtszene dient als Kontrast zur Alp: Enge, Ordnung, Kutschen, Fassaden und fremde Abläufe.",
+          "hasAudio": true
+        },
+        {
+          "type": "video",
+          "src": "/heidi-game/assets/frankfurt-1944-loop.m4v",
+          "label": "Frankfurt 1944",
+          "caption": "Der spätere Bruch macht sichtbar, dass Spyris Frankfurt historisch und heute nicht einfach vorhanden ist.",
+          "hasAudio": true
+        }
+      ],
+      "historicalNote": "Die Frankfurt-Szenen arbeiten mit historischem Abstand: Spyris Stadtraum gehört ins 19. Jahrhundert und wurde durch spätere Geschichte tief verändert.",
+      "languageGoal": "Ortswechsel durch konkrete Kontraste erzählen.",
+      "laptopFrame": "Heidi kommt aus der Weite in eine Stadt. Der Unterschied soll nicht abstrakt heißen 'Stadt ist schlecht', sondern konkret werden: Geräusche, Wege, Kleidung, Hausordnung, Blickachsen.",
+      "roleA": {
+        "name": "Heidi staunt",
+        "prompt": "Du sammelst, was Heidi sofort auffallen könnte: enge Straßen, fremde Stimmen, hohe Häuser, Regeln an Türen und Treppen.",
+        "tokens": ["enge Straße", "hohe Häuser", "fremde Stimmen", "Treppen", "Hausordnung"]
+      },
+      "roleB": {
+        "name": "Kontrast zur Alp",
+        "prompt": "Du hältst den Vergleich zur Alp bereit, aber ohne platte Wertung. Was ist anders an Bewegung, Luft, Blick und Sprechen?",
+        "tokens": ["Weite", "Luft", "Blick", "Tempo", "Ordnung"]
+      },
+      "teamTask": "Schreibt einen Ankunftsabsatz: drei konkrete Stadtbeobachtungen und zwei vorsichtige Vergleiche mit der Alp.",
+      "voiceQuest": {
+        "required": true,
+        "roles": ["A"],
+        "prompt": "Sprich Heidis ersten Eindruck von Frankfurt ins Handy. Beginne nicht mit 'Frankfurt ist', sondern mit einer konkreten Beobachtung.",
+        "minWords": 12
+      },
+      "hint": "Konkrete Kontraste sind stärker als Urteile. 'Die Straße nimmt den Blick weg' ist besser als 'Die Stadt ist schlimm'.",
+      "revisionPrompt": "Streicht ein pauschales Urteil über die Stadt und ersetzt es durch eine Beobachtung.",
+      "example": "Die Häuser standen so dicht, dass Heidi den Himmel nur als schmalen Streifen sah. Auf der Alp hatte ihr Blick weiter laufen können. Hier führten Türen und Treppen immer gleich zur nächsten Regel.",
+      "reflection": "Welche Stadtbeobachtung zeigt Heidis Fremdheit am deutlichsten?"
+    },
+    {
+      "id": "clara-kennenlernen",
+      "title": "Clara kennenlernen",
+      "place": "Frankfurt",
+      "languageGoal": "Behutsame Fragen stellen und Gemeinsamkeiten finden.",
+      "laptopFrame": "Heidi und Clara begegnen sich nicht als Thema, sondern als zwei Kinder mit sehr verschiedenen Alltagen. Gute Fragen öffnen Nähe, ohne neugierig zu verletzen.",
+      "roleA": {
+        "name": "Heidis Fragen",
+        "prompt": "Heidi ist direkt, aber nicht böse. Sie muss lernen, Clara so zu fragen, dass die Frage freundlich bleibt.",
+        "tokens": ["Darf ich fragen?", "Wie ist es für dich?", "Was magst du?", "ich erzähle dir"]
+      },
+      "roleB": {
+        "name": "Claras Antwort",
+        "prompt": "Clara kennt Bücher, Zimmer, Unterricht und Einschränkungen. Sie möchte nicht nur bemitleidet werden.",
+        "tokens": ["nicht bemitleiden", "Bücher", "Fenster", "Unterricht", "Freundschaft"]
+      },
+      "teamTask": "Schreibt einen Dialog von sechs Zeilen, in dem Heidi und Clara je eine Frage stellen und je etwas aus ihrer eigenen Welt anbieten.",
+      "voiceQuest": {
+        "required": true,
+        "roles": ["A", "B"],
+        "prompt": "Sprecht je eine Frage aus eurer Rolle ins Handy. Beide Fragen sollen freundlich und nicht verletzend sein.",
+        "minWords": 14
+      },
+      "hint": "Freundschaft entsteht nicht durch Mitleid, sondern durch echtes Interesse und Gegenseitigkeit.",
+      "revisionPrompt": "Prüft jede Frage: Würde Clara oder Heidi sich dadurch ernst genommen fühlen?",
+      "example": "Heidi fragt: 'Darf ich dir erzählen, wie Peter die Ziegen ruft?' Clara lächelt: 'Ja, und danach zeige ich dir mein Buch mit den Bildern von Bergen.'",
+      "reflection": "Welche Frage öffnet ein Gespräch, ohne die andere Person festzulegen?"
+    },
+    {
+      "id": "rottenmeier-tisch",
+      "title": "Am Frankfurter Tisch",
+      "place": "Frankfurt",
+      "languageGoal": "Regelsprache, Tadel und hilfreiche Erklärung unterscheiden.",
+      "laptopFrame": "Am Tisch werden Regeln sichtbar. Entscheidend ist, ob Sprache nur beschämt oder ob sie erklärt, was jemand lernen kann.",
+      "roleA": {
+        "name": "Heidi versteht die Regel nicht",
+        "prompt": "Heidi merkt zu spät, dass am Tisch andere Erwartungen gelten. Sie braucht Erklärung, nicht bloß Tadel.",
+        "tokens": ["Besteck", "Serviette", "falscher Moment", "erschrecken", "lernen"]
+      },
+      "roleB": {
+        "name": "Drei Arten zu sprechen",
+        "prompt": "Du unterscheidest drei Fassungen: bloßer Tadel, knappe Regel, hilfreiche Erklärung.",
+        "tokens": ["Das tut man nicht", "Hier gilt", "Ich zeige dir", "nächstes Mal"]
+      },
+      "teamTask": "Schreibt dieselbe Tischregel in drei Fassungen: verletzend, neutral und hilfreich. Entscheidet, welche Fassung Heidi wirklich weiterbringt.",
+      "voiceQuest": {
+        "required": false,
+        "roles": ["B"],
+        "prompt": "Sprich die hilfreiche Fassung der Tischregel ins Handy. Sie soll klar sein, aber nicht beschämen.",
+        "minWords": 10
+      },
+      "hint": "Hilfreiche Sprache nennt die Regel und zeigt den nächsten Schritt.",
+      "revisionPrompt": "Macht die hilfreiche Fassung noch konkreter: Was genau soll Heidi tun?",
+      "example": "Verletzend: 'Wie kann man nur so essen!' Neutral: 'Die Serviette bleibt auf dem Schoß.' Hilfreich: 'Leg die Serviette hierher; ich zeige dir, wann du sie nimmst.'",
+      "reflection": "Warum ist eine klare Regel manchmal freundlicher als ein langer Tadel?"
+    },
+    {
+      "id": "sehnsucht-alp",
+      "title": "Heidis Heimweh",
+      "place": "Frankfurt",
+      "languageGoal": "Heimweh über Körper, Erinnerung und Umgebung erzählen.",
+      "laptopFrame": "Heidis Heimweh soll nicht allgemein behauptet werden. Es zeigt sich darin, was ihr Körper tut, welche Bilder wiederkommen und was in Frankfurt fehlt.",
+      "roleA": {
+        "name": "Körperzeichen",
+        "prompt": "Heidi merkt Heimweh an kleinen Dingen: sie isst wenig, schaut aus dem Fenster, hört innerlich die Alp, schläft unruhig.",
+        "tokens": ["Fenster", "wenig essen", "unruhig schlafen", "inneres Bild", "Atem"]
+      },
+      "roleB": {
+        "name": "Erinnerungsbilder",
+        "prompt": "Du sammelst konkrete Bilder der Alp, die in Frankfurt wieder auftauchen: Wind, Ziegen, Heu, Großvaters Hütte, Peters Ruf.",
+        "tokens": ["Wind", "Heu", "Ziegen", "Hütte", "Peters Ruf"]
+      },
+      "teamTask": "Schreibt eine Heimweh-Szene ohne das Wort 'Heimweh' zu verwenden. Mindestens ein Körperzeichen und ein Erinnerungsbild müssen vorkommen.",
+      "voiceQuest": {
+        "required": true,
+        "roles": ["A"],
+        "prompt": "Sprich einen Satz aus Heidis innerer Stimme ins Handy, ohne das Wort Heimweh zu benutzen.",
+        "minWords": 10
+      },
+      "hint": "Das Verbot des Wortes 'Heimweh' zwingt euch, genauer zu zeigen, was passiert.",
+      "revisionPrompt": "Streicht das Wort 'traurig', falls es vorkommt, und ersetzt es durch Handlung, Blick oder Erinnerung.",
+      "example": "Heidi stand am Fenster und suchte zwischen den Dächern nach einem Streifen Himmel. Beim Abendessen blieb ihr Brot fast unberührt. In ihrem Kopf hörte sie, wie Peter die Ziegen rief.",
+      "reflection": "Welche Beobachtung zeigt Heidis Heimweh am stärksten?"
+    },
+    {
+      "id": "frankfurt-verlorene-stadt",
+      "title": "Das verschwundene Frankfurt",
+      "place": "Frankfurt historisch",
+      "mediaItems": [
+        {
+          "type": "video",
+          "src": "/heidi-game/assets/frankfurt-1890-loop.m4v",
+          "label": "Frankfurt um 1890 (rekonstruiert)",
+          "caption": "Diese Darstellung nähert sich der historischen Stadtwelt an, in der Spyris Frankfurt-Szenen vorstellbar werden.",
+          "hasAudio": true
+        },
+        {
+          "type": "video",
+          "src": "/heidi-game/assets/frankfurt-1944-loop.m4v",
+          "label": "Frankfurt 1944",
+          "caption": "Die Zerstörung macht deutlich, dass dieser Stadtraum heute nicht mehr einfach besucht werden kann.",
+          "hasAudio": true
+        }
+      ],
+      "historicalNote": "Diese Quest kombiniert die Frankfurt-Materialien ausdrücklich: Das Frankfurt, wie Spyri es beschrieb, ist durch Modernisierung, Krieg und Wiederaufbau nicht mehr in derselben Gestalt vorhanden.",
+      "languageGoal": "Historische Veränderung verständlich und vorsichtig erklären.",
+      "laptopFrame": "Die Spielenden sehen zwei sehr unterschiedliche Bilder von Frankfurt. Ihre Aufgabe ist nicht Sensation, sondern historische Einordnung: Was kann man vergleichen, was darf man nicht gleichsetzen?",
+      "roleA": {
+        "name": "Bild 1890",
+        "prompt": "Du achtest auf das rekonstruierte Stadtbild: Straßen, Kleidung, Fassaden, Bewegung und bürgerliche Ordnung.",
+        "tokens": ["rekonstruiert", "Fassaden", "Kutschen", "Straßenbild", "Ordnung"]
+      },
+      "roleB": {
+        "name": "Bild 1944",
+        "prompt": "Du achtest auf Zerstörung und Bruch. Wichtig: nicht sensationslustig sprechen, sondern erklären, warum historische Orte verschwinden können.",
+        "tokens": ["Zerstörung", "Krieg", "Wiederaufbau", "nicht gleichsetzen", "historischer Bruch"]
+      },
+      "teamTask": "Schreibt eine Erklärung für Mitschülerinnen und Mitschüler: Warum existiert Spyris Frankfurt heute so nicht mehr? Verwendet beide Filme, aber formuliert respektvoll.",
+      "voiceQuest": {
+        "required": true,
+        "roles": ["A", "B"],
+        "prompt": "Sprecht je einen Satz: Rolle A zum rekonstruierten Frankfurt, Rolle B zum zerstörten Frankfurt. Danach verbindet ihr beide Sätze.",
+        "minWords": 16
+      },
+      "hint": "Vermeidet 'damals war alles schön' und 'danach war alles weg' als Vereinfachung. Historische Erklärung braucht Genauigkeit.",
+      "revisionPrompt": "Ergänzt einen Satz, der klar macht, dass die 1890-Szene rekonstruiert und die 1944-Szene ein späterer historischer Bruch ist.",
+      "example": "Das rekonstruierte Frankfurt zeigt eine Stadtwelt, die Heidi fremd gewesen sein könnte. Die Bilder von 1944 gehören zu einer späteren Katastrophe. Deshalb kann man Spyris Stadtraum heute nicht einfach unverändert besuchen.",
+      "reflection": "Welche Wörter helfen, über Zerstörung zu sprechen, ohne sie als bloßes Spektakel zu benutzen?"
+    },
+    {
+      "id": "rueckkehr-alp",
+      "title": "Zurück auf der Alp",
+      "place": "Alp",
+      "media": {
+        "type": "video",
+        "src": "/heidi-game/assets/alpatmosphaere-loop.m4v",
+        "label": "Rückkehr auf die Alp",
+        "caption": "Die Rückkehr ist kein einfacher Reset: Heidi kommt verändert zurück.",
+        "hasAudio": false
+      },
+      "languageGoal": "Wiedersehen mit Veränderung erzählen.",
+      "laptopFrame": "Heidi kehrt zur Alp zurück. Sie kennt den Ort, aber sie ist nicht mehr genau dieselbe. Das Wiedersehen braucht alte und neue Wörter.",
+      "roleA": {
+        "name": "Heidis erster Blick",
+        "prompt": "Heidi erkennt vieles wieder: Hütte, Weide, Wind, Großvater. Zugleich trägt sie Frankfurt-Erfahrung in sich.",
+        "tokens": ["wiedererkennen", "Hütte", "Wind", "Frankfurt im Kopf", "ankommen"]
+      },
+      "roleB": {
+        "name": "Großvaters Reaktion",
+        "prompt": "Der Großvater sagt vielleicht wenig. Trotzdem kann seine Reaktion sichtbar sein: Blick, Handgriff, Platz am Tisch, kurze Frage.",
+        "tokens": ["kurzer Blick", "Bank", "Schüssel", "Setz dich", "du bist da"]
+      },
+      "teamTask": "Schreibt die ersten fünf Sätze der Rückkehr. Mindestens ein Satz zeigt, dass Heidi den Ort kennt, und einer zeigt, dass sie verändert zurückkommt.",
+      "voiceQuest": {
+        "required": true,
+        "roles": ["A"],
+        "prompt": "Sprich Heidis ersten Satz bei der Rückkehr ins Handy. Er soll kurz sein und viel tragen.",
+        "minWords": 6
+      },
+      "hint": "Wiedersehen muss nicht laut sein. Ein kleiner Satz kann mehr Gewicht haben als eine große Rede.",
+      "revisionPrompt": "Kürzt Heidis ersten Satz, bis er natürlich klingt.",
+      "example": "Heidi blieb vor der Hütte stehen. Der Wind roch wieder nach Gras und Holz. 'Großvater', sagte sie nur, und in dem einen Wort lag Frankfurt schon hinter ihr.",
+      "reflection": "Woran merkt man, dass eine Figur zurückkehrt, aber nicht unverändert ist?"
+    },
+    {
+      "id": "grossmutter-hoert",
+      "title": "Die Großmutter hört zu",
+      "place": "Haus der Großmutter",
+      "media": {
+        "type": "video",
+        "src": "/heidi-game/assets/heidihaus-loop.m4v",
+        "label": "Haus der Großmutter",
+        "caption": "Zuhören, Vorlesen und Geduld werden als sprachliche Handlungen sichtbar.",
+        "hasAudio": true
+      },
+      "languageGoal": "Zuhören als aktive sprachliche Handlung darstellen.",
+      "laptopFrame": "Bei der Großmutter geht es nicht nur darum, dass jemand spricht. Zuhören kann trösten, ordnen und Mut machen.",
+      "roleA": {
+        "name": "Großmutters Zuhören",
+        "prompt": "Die Großmutter hört mit Geduld. Sie fragt nicht hastig nach, sondern lässt Zeit und erkennt, was wichtig ist.",
+        "tokens": ["leise fragen", "warten", "nicht unterbrechen", "merken", "ermutigen"]
+      },
+      "roleB": {
+        "name": "Heidi erzählt",
+        "prompt": "Heidi erzählt etwas von der Alp oder Frankfurt. Sie braucht jemanden, der nicht sofort urteilt.",
+        "tokens": ["zuerst stocken", "dann erzählen", "sich erinnern", "vertrauen", "weiterreden"]
+      },
+      "teamTask": "Schreibt eine Zuhörszene: Die Großmutter spricht höchstens zwei kurze Sätze, und trotzdem verändert sich Heidis Erzählen.",
+      "voiceQuest": {
+        "required": false,
+        "roles": ["A"],
+        "prompt": "Sprich einen kurzen Satz der Großmutter ins Handy. Er soll zum Weitererzählen einladen.",
+        "minWords": 5
+      },
+      "hint": "Zuhören zeigt sich in Pausen, Blicken, kurzen Rückfragen und darin, dass die andere Person weiterreden kann.",
+      "revisionPrompt": "Streicht eine erklärende Rede der Großmutter und ersetzt sie durch eine kurze Rückfrage oder eine Pause.",
+      "example": "Die Großmutter sagte nur: 'Erzähl weiter, Kind.' Heidi sah auf ihre Hände und begann noch einmal, diesmal langsamer. Beim zweiten Mal fand sie das Wort für ihre Angst.",
+      "reflection": "Wie kann eine Figur wichtig sein, obwohl sie wenig spricht?"
+    },
+    {
+      "id": "peter-eifersucht",
+      "title": "Peter und die Eifersucht",
+      "place": "Alp",
+      "languageGoal": "Ein schwieriges Gefühl benennen, ohne die Figur zu verurteilen.",
+      "laptopFrame": "Peter kann eifersüchtig, trotzig oder beschämt sein. Die Aufgabe ist, sein Verhalten ernst zu nehmen, ohne es einfach zu entschuldigen.",
+      "roleA": {
+        "name": "Peters Blick",
+        "prompt": "Peter sieht, dass Heidi Zeit mit Clara verbringt oder anders spricht als früher. Er fühlt sich zurückgesetzt, sagt es aber nicht sauber.",
+        "tokens": ["zurückgesetzt", "trotzig", "nicht sagen können", "wegschauen", "knappe Antwort"]
+      },
+      "roleB": {
+        "name": "Faire Deutung",
+        "prompt": "Du unterscheidest Gefühl, Handlung und Verantwortung. Ein Gefühl kann verständlich sein, eine verletzende Handlung trotzdem falsch.",
+        "tokens": ["Gefühl", "Handlung", "Verantwortung", "nicht entschuldigen", "verstehen"]
+      },
+      "teamTask": "Schreibt eine Szene, in der Peter eifersüchtig ist. Danach formuliert ihr zwei Sätze: einer versteht sein Gefühl, einer benennt eine Grenze.",
+      "voiceQuest": {
+        "required": true,
+        "roles": ["B"],
+        "prompt": "Sprich den Grenzsatz ins Handy. Er soll klar sein, aber Peter nicht beschimpfen.",
+        "minWords": 9
+      },
+      "hint": "Literarische Figuren werden interessanter, wenn man Gefühl und Handlung auseinanderhält.",
+      "revisionPrompt": "Prüft, ob ihr Peter nur verurteilt oder nur entschuldigt. Ergänzt die fehlende Seite.",
+      "example": "Peter tritt einen Stein den Hang hinunter und sagt nichts. Man kann verstehen, dass er Angst hat, Heidi zu verlieren. Trotzdem darf er Clara nicht verletzen oder ihr etwas wegnehmen.",
+      "reflection": "Warum ist es wichtig, eine Figur nicht auf ihre schlechteste Handlung zu reduzieren?"
+    },
+    {
+      "id": "dorfschule-peter",
+      "title": "Peter in der Dorfschule",
+      "place": "Dorfschule",
+      "media": {
+        "type": "video",
+        "src": "/heidi-game/assets/dorfschule-loop.m4v",
+        "label": "Die eigentliche Dorfschule",
+        "caption": "Die Dorfschule zeigt Lernen als konkrete soziale Situation, nicht als abstrakten Leistungsdruck.",
+        "hasAudio": true
+      },
+      "languageGoal": "Eine Lernschwierigkeit konkret und ermutigend beschreiben.",
+      "laptopFrame": "Peter sitzt in der Schule nicht einfach als 'schlechter Schüler'. Er bringt eine andere Lebenswelt mit. Sprache kann ihn beschämen oder ihm einen Weg zeigen.",
+      "roleA": {
+        "name": "Peter im Unterricht",
+        "prompt": "Peter sieht Buchstaben, aber sie hängen noch nicht sicher mit Dingen aus seiner Welt zusammen.",
+        "tokens": ["Buchstaben", "zögern", "Weg", "Ziege", "Name", "laut lesen"]
+      },
+      "roleB": {
+        "name": "Lehrhilfe",
+        "prompt": "Du suchst eine Aufgabe, die Peters Welt benutzt: Ziegennamen, Wegschilder, kurze Nachrichten, Bilder.",
+        "tokens": ["Ziegennamen", "Wegkarte", "Bildkarte", "kurzer Satz", "loben"]
+      },
+      "teamTask": "Entwerft eine konkrete Schulaufgabe für Peter mit Material, Satz und Rückmeldung. Sie muss in der Dorfschule spielbar sein.",
+      "voiceQuest": {
+        "required": true,
+        "roles": ["A", "B"],
+        "prompt": "Sprecht Peters Lesesatz und eine ermutigende Rückmeldung ins Handy.",
+        "minWords": 12
+      },
+      "hint": "Eine gute Aufgabe ist klein genug, dass Peter Erfolg erleben kann, und sinnvoll genug, dass Lesen Bedeutung bekommt.",
+      "revisionPrompt": "Macht die Aufgabe konkreter: Welches Material liegt auf dem Tisch? Welchen Satz liest Peter?",
+      "example": "Material: drei Karten mit Ziegennamen. Satz: 'Schwänli geht zum Steg.' Rückmeldung: 'Du hast Schwänli erkannt; jetzt lesen wir nur noch das Wegwort.'",
+      "reflection": "Wann wird Lesen für Peter mehr als eine Pflicht?"
+    },
+    {
+      "id": "clara-auf-der-alp",
+      "title": "Clara auf der Alp",
+      "place": "Alp",
+      "media": {
+        "type": "video",
+        "src": "/heidi-game/assets/alpatmosphaere-loop.m4v",
+        "label": "Alpatmosphäre",
+        "caption": "Die Alp wird für Clara ein neuer Erfahrungsraum, der behutsam beschrieben werden muss.",
+        "hasAudio": false
+      },
+      "languageGoal": "Neue Erfahrung aus zwei Perspektiven erzählen.",
+      "laptopFrame": "Clara erlebt die Alp anders als Heidi. Was für Heidi vertraut ist, kann für Clara neu, anstrengend oder befreiend sein.",
+      "roleA": {
+        "name": "Claras erster Alp-Morgen",
+        "prompt": "Clara spürt Luft, Licht, Geräusche und Unsicherheit. Sie möchte nicht als schwach dargestellt werden, sondern als aufmerksam.",
+        "tokens": ["frische Luft", "helles Licht", "ungewohnter Weg", "aufmerksam", "Mut"]
+      },
+      "roleB": {
+        "name": "Heidis Begleitung",
+        "prompt": "Heidi kennt die Alp und muss erklären, ohne Clara zu überfordern. Sie bietet Hilfe an, aber nimmt Clara ernst.",
+        "tokens": ["ich zeige dir", "langsam", "Pause", "du kannst", "nicht drängen"]
+      },
+      "teamTask": "Schreibt eine Szene aus zwei Perspektiven: erst Claras Wahrnehmung, dann Heidis behutsame Begleitung.",
+      "voiceQuest": {
+        "required": true,
+        "roles": ["B"],
+        "prompt": "Sprich Heidis ermutigenden Satz an Clara ins Handy. Er soll helfen, aber nicht bevormunden.",
+        "minWords": 9
+      },
+      "hint": "Hilfe wird glaubwürdig, wenn sie der anderen Person Wahl und Würde lässt.",
+      "revisionPrompt": "Ersetzt eine bevormundende Formulierung durch ein Angebot.",
+      "example": "Clara blinzelte, weil das Licht auf der Wiese so hell war. Heidi sagte: 'Wir müssen nicht schnell gehen; ich zeige dir erst den flachen Weg zur Bank.'",
+      "reflection": "Welche Wörter zeigen Hilfe, ohne die andere Person klein zu machen?"
+    },
+    {
+      "id": "ziegen-verloren",
+      "title": "Eine Ziege fehlt",
+      "place": "Alpweide",
+      "media": {
+        "type": "video",
+        "src": "/heidi-game/assets/ziegen-loop.m4v",
+        "label": "Ziegen auf der Alp",
+        "caption": "Eine fehlende Ziege macht aus Beobachtung, Wegsprache und Zusammenarbeit eine konkrete Suchaufgabe.",
+        "hasAudio": false
+      },
+      "languageGoal": "Suchsprache mit Ortsangaben und Vermutungen verbinden.",
+      "laptopFrame": "Eine Ziege ist nicht dort, wo Peter sie erwartet. Jetzt müssen Heidi und Peter genau sprechen: Wo zuletzt? Welche Spur? Welcher Weg?",
+      "roleA": {
+        "name": "Heidis Beobachtung",
+        "prompt": "Heidi erinnert sich an eine Stelle, an der die Ziege stehen blieb. Sie muss genau sagen, wo das war.",
+        "tokens": ["beim Felsen", "oberhalb des Stegs", "am Kraut", "vorhin", "stehen geblieben"]
+      },
+      "roleB": {
+        "name": "Peters Suchplan",
+        "prompt": "Peter kennt die Wege. Er macht einen Suchplan, ohne kopflos loszurennen.",
+        "tokens": ["zuerst", "dann", "am Bach", "nicht allein", "zurückrufen"]
+      },
+      "teamTask": "Schreibt einen Suchplan in vier Schritten und einen kurzen Ruf, mit dem Heidi die Ziege lockt.",
+      "voiceQuest": {
+        "required": true,
+        "roles": ["A"],
+        "prompt": "Sprich Heidis Lockruf ins Handy. Er soll natürlich klingen und zur vorher erfundenen Ziege passen.",
+        "minWords": 5
+      },
+      "hint": "Gute Suchsprache braucht Ortsangaben. 'Dort drüben' reicht nicht, wenn man wirklich suchen muss.",
+      "revisionPrompt": "Ersetzt ungenaue Ortswörter durch genaue Angaben zum Weg, Felsen, Bach oder Hang.",
+      "example": "Zuerst gehen wir zum flachen Stein oberhalb des Stegs. Dort blieb Schwänli vorhin am Kraut stehen. Heidi ruft: 'Schwänli, komm her, hier ist der Weg!'",
+      "reflection": "Welche Ortsangabe würde euch beim Suchen wirklich helfen?"
+    },
+    {
+      "id": "schlusskreis",
+      "title": "Schlusskreis: Was bleibt?",
+      "place": "Auswertung",
+      "languageGoal": "Lernweg zusammenfassen und begründet auswählen.",
+      "laptopFrame": "Die letzte Quest sammelt nicht alles, sondern wählt. Welche Szene, welches Wort und welche Frage bleiben aus dem Spiel hängen?",
+      "roleA": {
+        "name": "Eine Szene wählen",
+        "prompt": "Du wählst eine konkrete Szene aus dem Spiel: Hütte, Ziegen, Großvater, Frankfurt, Großmutter, Schule oder Rückkehr.",
+        "tokens": ["ich wähle", "weil", "Szene", "Wort", "Frage"]
+      },
+      "roleB": {
+        "name": "Begründung schärfen",
+        "prompt": "Du fragst nach: Warum diese Szene? Welches Wort wurde genauer? Welche Frage hat ein Gespräch geöffnet?",
+        "tokens": ["Warum?", "genauer", "geöffnet", "verändert", "Beleg"]
+      },
+      "teamTask": "Schreibt euren Schlusskreis-Beitrag: eine Szene, ein genaueres Wort, eine gute Frage und ein Satz darüber, was Heidi dadurch gelernt haben könnte.",
+      "voiceQuest": {
+        "required": true,
+        "roles": ["A"],
+        "prompt": "Sprich euren Schlusskreis-Beitrag zuerst mündlich. Er soll eine Szene, ein Wort und eine Frage nennen.",
+        "minWords": 18
+      },
+      "hint": "Ein guter Schluss wählt aus. Er listet nicht alle Kapitel auf, sondern zeigt an einem Beispiel, was sich verändert hat.",
+      "revisionPrompt": "Streicht eine bloße Aufzählung und ergänzt eine Begründung mit 'weil'.",
+      "example": "Ich wähle die Szene mit der fehlenden Ziege, weil Heidi dort genauer sprechen muss. Das Wort 'oberhalb' hilft beim Suchen. Die Frage 'Wo stand sie zuletzt?' macht aus Angst einen Plan.",
+      "reflection": "Welche sprachliche Fähigkeit war am Ende wichtiger: beobachten, fragen, erklären oder erzählen?"
     }
   ]
 }

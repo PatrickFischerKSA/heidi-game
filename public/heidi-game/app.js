@@ -775,7 +775,7 @@ function renderTeacher() {
         <form class="panel stack" data-teacher-form>
           <h2>Einstellungen</h2>
           <label>Sprachniveau<input name="languageLevel" value="${escapeHtml(state.teacher.languageLevel)}"></label>
-          <label>Anzahl Kapitel<input type="number" min="1" max="6" name="chapterCount" value="${escapeHtml(state.teacher.chapterCount)}"></label>
+          <label>Anzahl Kapitel<input type="number" min="1" max="24" name="chapterCount" value="${escapeHtml(state.teacher.chapterCount)}"></label>
           <label>Spielzeit<input name="playTime" value="${escapeHtml(state.teacher.playTime)}"></label>
           <label>Überarbeitung<select name="revisionRequired"><option value="true" ${state.teacher.revisionRequired ? "selected" : ""}>Pflicht</option><option value="false" ${!state.teacher.revisionRequired ? "selected" : ""}>freiwillig</option></select></label>
           <label><input type="checkbox" name="showExamples" ${state.teacher.showExamples ? "checked" : ""}> Beispielantworten anzeigen</label>

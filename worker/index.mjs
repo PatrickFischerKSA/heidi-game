@@ -1,5 +1,5 @@
 const ROLE_IDS = ["A", "B"];
-const MAX_CHAPTER_INDEX = 5;
+const MAX_CHAPTER_INDEX = 23;
 
 function json(data, init = {}) {
   return new Response(JSON.stringify(data), {
