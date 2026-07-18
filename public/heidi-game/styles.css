@@ -819,6 +819,23 @@ p {
   background: rgba(255, 255, 255, 0.78);
 }
 
+.example-drawer {
+  border: 1px solid rgba(35, 63, 49, 0.18);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: rgba(255, 252, 245, 0.62);
+}
+
+.example-drawer summary {
+  cursor: pointer;
+  font-weight: 800;
+  color: var(--forest);
+}
+
+.example-drawer p {
+  margin-top: 6px;
+}
+
 .object-response button {
   justify-self: start;
 }

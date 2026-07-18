@@ -364,6 +364,176 @@ const STORY = {
       example: "Bleibt die Geiss ruhig und der Kübel sauber, kann aus der Milch später Käse werden."
     }
   ],
+  questChaos: {
+    "alp-spricht": [{
+      object: "rule",
+      title: "Die Geiss frisst die Bauernregel an",
+      text: "Auf dem Zettel steht nur noch: 'Wenn die Geissen dicht beim Stein ...' Der Schluss fehlt, und Fräulein Rottenmeier behauptet, das Wetter müsse jetzt gehorchen.",
+      task: "Schreibt eine eigene Bauernregel aus einer sichtbaren Alp-Beobachtung. Sie braucht drei Teile: Beobachtung, kurzer Spruch, vorsichtige Erklärung.",
+      example: "Beobachtung: Die Geissen drängen zum Stein. Regel: 'Drängen die Geissen dicht zum Stein, zieht oft kühler Wind herein.' Erklärung: Vielleicht spüren sie Wind früher; sicher ist es nicht."
+    }],
+    "ziegen-ansprechen": [{
+      object: "bell",
+      title: "Die Geiss hört nicht auf 'Sie da!'",
+      text: "Die Frankfurter Geiss ruft steif in die Wiese. Schwänli hebt nur kurz den Kopf, Schnecke zupft weiter am Kraut.",
+      task: "Schreibt drei Sätze: Heidi ruft eine Geiss natürlich an, Peter erklärt mit einem genauen Verb, was sie tut, und Heidi übernimmt dieses Wort.",
+      example: "Heidi sagt: 'Schwänli, komm nur ein Stück näher.' Peter sagt: 'Sie zupft am Kraut, die läuft gleich weiter.' Heidi merkt sich: zupfen ist genauer als fressen."
+    }],
+    "almoehi-sprechen": [{
+      object: "stool",
+      title: "Die Geiss stellt sich zwischen Heidi und den Großvater",
+      text: "Gerade will Heidi fragen, da schiebt die Geiss den Schemel vor den Großvater, als müsse erst ein Verhör beginnen.",
+      task: "Formuliert zwei höfliche Fragen an den Großvater: eine zur Bedeutung der Bauernregel, eine zu einem sichtbaren Beispiel auf der Alp.",
+      example: "Großvater, du hast gesagt: 'Morgenrot mit Regen droht.' Was bedeutet das? Woran siehst du heute, ob wirklich Regen kommen könnte?"
+    }],
+    "frankfurter-stimmen": [{
+      object: "hat",
+      title: "Die Geiss meckert wie eine Hausordnung",
+      text: "In Frankfurt klingt jede Hilfe plötzlich nach Befehl. Die Geiss macht daraus: 'Sofort ordentlich sein!'",
+      task: "Schreibt drei klare Sätze: Was wurde wörtlich gesagt? Was macht der Tonfall daraus? Wie könnte derselbe Hinweis Heidi fair helfen?",
+      example: "Wörtlich wird eine Tischregel genannt. Der scharfe Ton beschämt Heidi. Fair wäre: 'Leg die Serviette hierher; ich zeige dir, wann du sie nimmst.'"
+    }],
+    "peter-lernt-anders": [{
+      object: "hay",
+      title: "Die Geiss schiebt die Buchstaben ins Heu",
+      text: "Peter soll lesen, aber die Geiss verstreut die Karten zwischen Heu, Wegbild und Geissennamen.",
+      task: "Entwerft einen Lernweg in drei Schritten, der zu Peter passt: Material, Lesesatz, ermutigende Rückmeldung.",
+      example: "1. Peter legt Geissennamen zu Bildern. 2. Er liest: 'Schwänli geht zum Steg.' 3. Die Großmutter sagt: 'Du hast den Namen erkannt; jetzt lesen wir das Wegwort.'"
+    }],
+    "heidi-erzaehlt-weiter": [{
+      object: "cloth",
+      title: "Die Geiss zieht die letzte Buchseite weg",
+      text: "Fräulein Rottenmeier blökt: 'Was nicht im Buch steht, ist verboten!' Heidi darf aber eine mögliche Fortsetzung erzählen, wenn sie sie als eigene Erfindung kennzeichnet.",
+      task: "Schreibt den Anfang einer möglichen Fortsetzung. Beginnt so, dass klar ist: Das ist eure Weitererzählung, keine Behauptung über Spyri.",
+      example: "Vielleicht hätte Heidi später erzählt: Wenn der Abendhimmel rot wurde, hörte ich wieder Großvaters Stimme und prüfte erst, was ich wirklich sah."
+    }],
+    "huette-einrichten": [{
+      object: "bucket",
+      title: "Der Kübel steht am falschen Platz",
+      text: "In der Hütte ist wenig Platz. Die Geiss stößt fast an Kübel, Bank und Decke, weil niemand genau sagt, was wohin gehört.",
+      task: "Schreibt vier Sätze: zwei Gegenstände benennen, Heidi höflich fragen lassen, einen Handgriff des Großvaters zeigen.",
+      example: "Heidi bleibt bei der Bank stehen. 'Darf ich die Decke zum Heu legen?' Der Großvater schiebt ihr die Schüssel näher und stellt den Kübel an die Wand."
+    }],
+    "bett-im-heu": [{
+      object: "hay",
+      title: "Die Geiss erklärt das Heu zum Durcheinander",
+      text: "Schnecke wühlt im Heu, Fräulein Rottenmeier rümpft die Nase. Für Heidi ist das Heu aber kein Chaos, sondern ein Schlafplatz mit Geruch, Geräusch und Wärme.",
+      task: "Schreibt fünf Sätze über Heidis Einschlafen. Mindestens ein Geruch, ein Geräusch und eine Körperempfindung müssen vorkommen.",
+      example: "Das Heu roch trocken und warm. Wenn Heidi den Kopf bewegte, raschelten die Halme. Ihr Rücken wurde schwer, und draußen blieb nur der Wind."
+    }],
+    "peter-stellt-ziegen-vor": [{
+      object: "bell",
+      title: "Die Geiss vertauscht die Namensglocken",
+      text: "Fräulein Rottenmeier will Nummern statt Namen. Peter hält dagegen: Jede Geiss hat eine Eigenheit.",
+      task: "Erfindet drei Geissennamen mit je einer sichtbaren Eigenheit und macht daraus einen Dialog zwischen Heidi und Peter.",
+      example: "Peter sagt: 'Das ist Schwänli. Sie läuft nie zuerst, findet aber jedes Kraut am Wegrand.' Heidi fragt: 'Und warum heißt die andere Schnecke?'"
+    }],
+    "gewitter-kommt": [{
+      object: "bucket-spill",
+      title: "Die Geiss stößt den Kübel an, als der Wind dreht",
+      text: "Der Himmel wird dunkler, der Wind kühler, und die Herde rückt enger zusammen. Jetzt hilft kein langer Vortrag.",
+      task: "Schreibt fünf kurze Sätze: Beobachtung, Warnung, Entscheidung, Handgriff, Rückweg.",
+      example: "Die Wolken hängen tief. Peter warnt: 'Wir gehen zurück.' Heidi hält Schwänli nahe am Weg. Schnecke läuft hinterher. Bei der Hütte zählen sie die Herde."
+    }],
+    "alpsegen-hoeren": [{
+      object: "bell",
+      title: "Die Glocke mischt sich in den Alpsegen",
+      text: "Zwischen Stimme, Echo und Glocke meckert die Geiss dazwischen. Trotzdem soll zuerst gehört werden, bevor erklärt wird.",
+      task: "Schreibt eine Hörnotiz: Was klingt? Was könnte der Alpsegen leisten? Welche Wörter zeigen Respekt?",
+      example: "Die Stimme klingt weit und getragen. Die Wiederholung wirkt ruhig. Es ist wie eine Bitte um Schutz für Menschen und Tiere in der Nacht."
+    }],
+    "grossvater-arbeitet": [{
+      object: "stool",
+      title: "Der Schemel steht genau im Arbeitsweg",
+      text: "Der Großvater sagt wenig. Die Geiss steht im Weg. Nur genaue Handgriffe bringen Heidi weiter.",
+      task: "Schreibt eine Anleitung für einen kleinen Handgriff in der Hütte. Die Verben müssen sichtbar machen, was Heidi tun soll.",
+      example: "Zuerst hältst du die Schüssel mit beiden Händen. Dann gießt du langsam ein. Erst wenn nichts mehr tropft, stellst du sie auf die Bank."
+    }],
+    "ankunft-frankfurt": [{
+      object: "hat",
+      title: "Die Frankfurter Geiss sperrt die Tür auf und tut vornehm",
+      text: "Treppen, Türen, Stimmen, enge Blicke: Heidi kommt nicht in eine Alp, sondern in ein Haus voller Regeln.",
+      task: "Schreibt einen Ankunftsabsatz mit drei Stadtbeobachtungen und zwei vorsichtigen Vergleichen zur Alp.",
+      example: "Die Häuser standen dicht, und der Himmel war nur ein Streifen. Auf der Alp konnte der Blick weit laufen. Hier führte jede Tür zur nächsten Regel."
+    }],
+    "clara-kennenlernen": [{
+      object: "cloth",
+      title: "Die Geiss zieht den Vorhang zwischen Heidi und Clara",
+      text: "Fräulein Rottenmeier möchte das Kennenlernen ordnen. Heidi und Clara brauchen aber echte Fragen, keine Vorführung.",
+      task: "Schreibt sechs Dialogzeilen. Heidi und Clara stellen je eine Frage und bieten je etwas aus ihrer eigenen Welt an.",
+      example: "Heidi fragt: 'Darf ich dir erzählen, wie Peter die Geissen ruft?' Clara sagt: 'Ja, und danach zeige ich dir mein Bergbuch.'"
+    }],
+    "rottenmeier-tisch": [{
+      object: "cloth",
+      title: "Die Serviette wird zum Amtsblatt",
+      text: "Die Geiss legt die Serviette hin, als wäre sie ein Gesetz. Heidi soll lernen, aber nicht beschämt werden.",
+      task: "Schreibt dieselbe Tischregel in drei Fassungen: verletzend, neutral, hilfreich. Entscheidet, welche Fassung Heidi weiterbringt.",
+      example: "Verletzend: 'Wie kann man nur so essen!' Neutral: 'Die Serviette bleibt auf dem Schoß.' Hilfreich: 'Leg die Serviette hierher; ich zeige es dir.'"
+    }],
+    "sehnsucht-alp": [{
+      object: "hay",
+      title: "Die Geiss versteckt ein Stück Alp im Zimmer",
+      text: "Ein Heuhalm, ein Geruch, ein Klang: In Frankfurt kommt die Alp in Heidis Kopf zurück, ohne dass jemand das Wort Heimweh sagen muss.",
+      task: "Schreibt eine Heimweh-Szene ohne das Wort 'Heimweh'. Zeigt ein Körperzeichen und ein Erinnerungsbild.",
+      example: "Heidi stand am Fenster und suchte Himmel zwischen den Dächern. Das Brot blieb liegen. In ihrem Kopf hörte sie Peters Ruf nach Schwänli."
+    }],
+    "frankfurt-verlorene-stadt": [{
+      object: "rule",
+      title: "Die Geiss legt zwei Frankfurt-Bilder übereinander",
+      text: "Ein Bild zeigt eine rekonstruierte Stadt um 1890, das andere die Zerstörung 1944. Fräulein Rottenmeier tut so, als sei beides dieselbe Gegenwart.",
+      task: "Erklärt in drei Sätzen: rekonstruiertes Frankfurt um 1890, Zerstörung 1944, heutiger Abstand zu Spyris Stadtraum.",
+      example: "Die 1890-Szene nähert sich der Stadtwelt an, die Heidi fremd gewesen sein könnte. 1944 kam eine spätere Katastrophe. Darum existiert Spyris Frankfurt heute so nicht mehr."
+    }],
+    "rueckkehr-alp": [{
+      object: "bell",
+      title: "Die Glocke läutet zu früh zur Rückkehr",
+      text: "Die Geiss will sofort Jubel. Aber Heidis Rückkehr ist zugleich vertraut und verändert.",
+      task: "Schreibt die ersten fünf Sätze der Rückkehr. Zeigt einmal Wiedererkennen und einmal, dass Frankfurt in Heidi nachwirkt.",
+      example: "Heidi blieb vor der Hütte stehen. Der Wind roch wieder nach Gras. 'Großvater', sagte sie nur. Frankfurt lag hinter ihr, aber nicht ganz fort."
+    }],
+    "grossmutter-hoert": [{
+      object: "bell",
+      title: "Die Geiss meckert zu laut neben der Großmutter",
+      text: "Lauter wird es nicht besser. Die Großmutter hört gerade deshalb gut zu, weil sie Pausen zulässt.",
+      task: "Schreibt eine Zuhörszene: höchstens zwei kurze Sätze der Großmutter, dazu eine Pause oder ein Blick, der Heidis Erzählen verändert.",
+      example: "Die Großmutter sagte: 'Erzähl weiter, Kind.' Dann wartete sie. Heidi sah auf ihre Hände und begann langsamer, bis sie das Wort für ihre Angst fand."
+    }],
+    "peter-eifersucht": [{
+      object: "hoof",
+      title: "Die Geiss tritt neben Peters Gefühl",
+      text: "Peter ist verletzt, aber ein Tritt macht nichts besser. Die Szene muss Gefühl und Grenze auseinanderhalten.",
+      task: "Schreibt eine kurze Szene und danach zwei Auswertungssätze: einer versteht Peters Gefühl, einer setzt eine klare Grenze.",
+      example: "Peter tritt einen Stein weg und schweigt. Man kann verstehen, dass er Angst hat, Heidi zu verlieren. Trotzdem darf er Clara nicht verletzen."
+    }],
+    "dorfschule-peter": [{
+      object: "rule",
+      title: "Die Geiss frisst die Lesekarte an",
+      text: "Auf der Karte steht nur noch: 'Schwänli geht zum ...' Peter braucht eine Aufgabe, die er spielen und lesen kann.",
+      task: "Entwerft eine Schulaufgabe mit Material, Lesesatz und ermutigender Rückmeldung.",
+      example: "Material: Karten mit Geissennamen und Wegbildern. Satz: 'Schwänli geht zum Steg.' Rückmeldung: 'Du hast Schwänli erkannt; jetzt lesen wir das Wegwort.'"
+    }],
+    "clara-auf-der-alp": [{
+      object: "bucket",
+      title: "Die Geiss schiebt Clara den Milchkübel vor die Füße",
+      text: "Alles ist hell, nah und ungewohnt. Heidi darf Clara helfen, aber nicht über sie bestimmen.",
+      task: "Schreibt zwei Perspektiven: zuerst Claras Wahrnehmung, dann Heidis behutsames Angebot.",
+      example: "Clara blinzelte, weil das Licht auf der Wiese so hell war. Heidi sagte: 'Wir müssen nicht schnell gehen; ich zeige dir erst den flachen Weg.'"
+    }],
+    "ziegen-verloren": [{
+      object: "bell",
+      title: "Eine Glocke fehlt im Klang",
+      text: "Schwänli ist nicht bei der Herde. Jetzt braucht es keine Panik, sondern Orte, Reihenfolge und einen Ruf.",
+      task: "Schreibt einen Suchplan in vier Schritten und einen kurzen Lockruf für die Geiss.",
+      example: "Zuerst gehen wir zum flachen Stein oberhalb des Stegs. Dann schauen wir beim Bach. Heidi ruft: 'Schwänli, komm her, hier ist der Weg!'"
+    }],
+    "schlusskreis": [{
+      object: "cheese",
+      title: "Der letzte Käse wird nur verteilt, wenn etwas hängen bleibt",
+      text: "Die Geiss will alles auf einmal: Alp, Frankfurt, Schule, Regeln, Glocken. Der Schlusskreis braucht Auswahl.",
+      task: "Wählt eine Szene, ein genaueres Wort, eine gute Frage und einen Satz darüber, was Heidi dadurch gelernt haben könnte.",
+      example: "Ich wähle die Szene mit der fehlenden Geiss, weil Heidi dort genauer sprechen muss. Das Wort 'oberhalb' hilft. Die Frage 'Wo stand sie zuletzt?' macht aus Angst einen Plan."
+    }]
+  },
   beats: {
     "alp-spricht": ["Rottenmeier-Geiss hält Bauernregeln für Amtsbefehle: Wenn Abendrot ist, müsse das Wetter gehorchen.", "Erfindet eine Regel, die klingt wie Alp-Erfahrung, aber nicht so tut, als könne sie den Himmel kommandieren."],
     "ziegen-ansprechen": ["Die Frankfurter Geiss ruft jede Geiss mit 'Sie da!' und wundert sich, dass niemand folgt.", "Findet eine Stimme, mit der Heidi eine Geiss wirklich ansprechen könnte: kurz, freundlich, beobachtend."],
@@ -856,46 +1026,54 @@ function chaosKey(c = chapter()) {
 }
 
 function currentChaos(c = chapter()) {
+  const options = questChaosOptions(c);
   const key = chaosKey(c);
   if (state.chaosEvents[key] === undefined) {
-    state.chaosEvents[key] = Math.floor(Math.random() * STORY.chaos.length);
+    state.chaosEvents[key] = Math.floor(Math.random() * options.length);
   }
-  return STORY.chaos[state.chaosEvents[key] % STORY.chaos.length];
+  return options[state.chaosEvents[key] % options.length];
+}
+
+function questChaosOptions(c = chapter()) {
+  return STORY.questChaos?.[c.id] || STORY.chaos;
 }
 
 function chaosPanel(c) {
   const chaos = currentChaos(c);
+  const options = questChaosOptions(c);
   return html`
     <aside class="chaos-panel">
       <section class="main-assignment">
-        <p class="eyebrow">Hauptauftrag dieser Quest</p>
-        <h2>${escapeHtml(c.teamTask)}</h2>
-        <p class="small">Das ist die eigentliche Aufgabe. Die Geiss stört nur dazwischen.</p>
+        <p class="eyebrow">Auftrag</p>
+        <h2>${escapeHtml(chaos.assignment || c.teamTask)}</h2>
       </section>
       <div class="object-card-head">
         ${objectCutout(chaos.object, chaos.title)}
         <div>
-          <p class="eyebrow">Störung</p>
+          <p class="eyebrow">Störung der Geiss</p>
           <strong>${escapeHtml(chaos.title)}</strong>
         </div>
       </div>
       <div class="chaos-plain">
-        <span>Was ist passiert?</span>
+        <span>Das passiert gerade</span>
         <p>${escapeHtml(chaos.text)}</p>
       </div>
       <div class="chaos-task">
-        <span>Was müsst ihr jetzt tun?</span>
-        <p>Schreibt unten eure Lösung zum Hauptauftrag. Baut die Störung der Geiss sinnvoll ein.</p>
+        <span>So löst ihr die Quest</span>
+        <p>${escapeHtml(chaos.task)}</p>
       </div>
       <form class="object-response" data-chaos-form>
         <label>
-          <span>Antwortfeld: Hier schreibt ihr eure Lösung</span>
-          <textarea name="response" required placeholder="${escapeHtml(c.example || chaos.example || "Schreibt eure Lösung hier hinein.")}"></textarea>
+          <span>Schreibfeld: Eure Questantwort</span>
+          <textarea name="response" required placeholder="Hier eure eigene Antwort schreiben."></textarea>
         </label>
-        <p class="small">Für diese Quest: ${escapeHtml(c.revisionPrompt)}</p>
+        <details class="example-drawer">
+          <summary>Beispiel anzeigen</summary>
+          <p>${escapeHtml(chaos.example || c.example || "Schreibt konkret, kurz und passend zur Szene.")}</p>
+        </details>
         <button type="submit">Questantwort speichern</button>
       </form>
-      <button type="button" class="secondary" data-chaos>Geiss bricht wieder aus</button>
+      ${options.length > 1 ? `<button type="button" class="secondary" data-chaos>Neue passende Störung</button>` : ""}
     </aside>
   `;
 }
@@ -1757,10 +1935,11 @@ app.addEventListener("click", async (event) => {
   }
   if (button.dataset.chaos !== undefined) {
     const key = chaosKey();
+    const options = questChaosOptions();
     const current = state.chaosEvents[key] ?? -1;
-    let next = Math.floor(Math.random() * STORY.chaos.length);
-    if (STORY.chaos.length > 1 && next === current) {
-      next = (next + 1) % STORY.chaos.length;
+    let next = Math.floor(Math.random() * options.length);
+    if (options.length > 1 && next === current) {
+      next = (next + 1) % options.length;
     }
     state.chaosEvents[key] = next;
     renderCurrentMode();
