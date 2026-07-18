@@ -271,6 +271,54 @@ const FEEDBACK_PROFILES = {
 const STORY = {
   name: "Fräulein Rottenmeier",
   premise: "Eine Frankfurter Geiss ist aus der Stadt ausgebüxt und behauptet steif und fest, sie sei Fräulein Rottenmeier. Sie kennt Salons, Verbote und Hausregeln, aber keine Alp. Schwänli und Schnecke müssen ihr zeigen, wie man hier überlebt: hören, riechen, fragen, vorsichtig urteilen und nicht jedes Meckern für ein Gesetz halten.",
+  journey: [
+    {
+      title: "1. Auf der Alp ankommen",
+      ids: ["huette-einrichten", "bett-im-heu", "peter-stellt-ziegen-vor", "ziegen-ansprechen", "alp-spricht", "almoehi-sprechen"],
+      line: "Heidi findet zuerst Dinge, Orte, Geissen, Stimmen und Fragen. Aus Staunen wird Sprache."
+    },
+    {
+      title: "2. Alpleben bestehen",
+      ids: ["grossvater-arbeitet", "gewitter-kommt", "alpsegen-hoeren", "grossmutter-hoert", "peter-lernt-anders", "dorfschule-peter"],
+      line: "Jetzt muss Sprache praktisch werden: arbeiten, warnen, hören, lernen und jemandem helfen."
+    },
+    {
+      title: "3. Frankfurt widerspricht",
+      ids: ["ankunft-frankfurt", "frankfurter-stimmen", "clara-kennenlernen", "rottenmeier-tisch", "sehnsucht-alp", "frankfurt-verlorene-stadt"],
+      line: "Die Stadt bringt Regeln, Enge und fremde Stimmen. Heidi lernt, Tonfall und Macht zu unterscheiden."
+    },
+    {
+      title: "4. Zurückkommen und neu erzählen",
+      ids: ["rueckkehr-alp", "clara-auf-der-alp", "peter-eifersucht", "ziegen-verloren", "heidi-erzaehlt-weiter", "schlusskreis"],
+      line: "Die Rückkehr ist kein Reset: Clara, Peter und Heidi brauchen genauere, gerechtere Sprache."
+    }
+  ],
+  transitions: {
+    "huette-einrichten": "Erst muss Heidi begreifen, wofür die Dinge in der Hütte da sind. Danach merkt sie im Heu, dass dieser Ort auch ein Körpergefühl hat.",
+    "bett-im-heu": "Aus Geruch und Rascheln wird Vertrautheit. Am nächsten Morgen werden aus der Herde einzelne Geissen mit Namen.",
+    "peter-stellt-ziegen-vor": "Wenn Schwänli und Schnecke unterscheidbar sind, kann Heidi sie auch glaubwürdig ansprechen.",
+    "ziegen-ansprechen": "Aus Lockrufen und genauen Verben entstehen erste Alp-Beobachtungen. Daraus wachsen Bauernregeln.",
+    "alp-spricht": "Die Bauernregel reicht nicht als fertige Wahrheit. Heidi muss lernen, den Großvater danach zu fragen.",
+    "almoehi-sprechen": "Nach dem Fragen kommt das Mithelfen: Heidi versteht den Großvater auch über Handgriffe.",
+    "grossvater-arbeitet": "Wer Handgriffe versteht, kann im Ernstfall schneller handeln. Das Gewitter prüft diese Sprache.",
+    "gewitter-kommt": "Nach der Gefahr wird der Abend hörbar. Der Alpsegen ordnet Mensch, Tier und Nacht anders als ein Befehl.",
+    "alpsegen-hoeren": "Vom Hören führt der Weg zur Großmutter: Dort wird Zuhören selbst zu einer Handlung.",
+    "grossmutter-hoert": "Aus geduldigem Zuhören entsteht ein Lernweg für Peter, der nicht von oben herab funktioniert.",
+    "peter-lernt-anders": "Der Lernweg wird jetzt konkret in der Dorfschule: Material, Satz, Rückmeldung.",
+    "dorfschule-peter": "Nach Alp und Schule kippt die Welt: Frankfurt bringt andere Räume, Regeln und Stimmen.",
+    "ankunft-frankfurt": "Die fremde Stadt wird nicht nur gesehen, sondern gehört: Manche Sätze helfen, andere beschämen.",
+    "frankfurter-stimmen": "Wenn Heidi Tonfall und Macht hört, kann sie Clara anders begegnen: nicht als Vorschrift, sondern als Gespräch.",
+    "clara-kennenlernen": "Freundschaft muss sich auch an Regeln bewähren. Am Tisch zeigt sich, ob Sprache hilft oder klein macht.",
+    "rottenmeier-tisch": "Harte Regeln lösen Heidis Fremdheit nicht. Im Heimweh wird sichtbar, was Frankfurt ihr nimmt.",
+    "sehnsucht-alp": "Das persönliche Heimweh führt zum historischen Blick: Auch Frankfurt selbst ist nicht unverändert geblieben.",
+    "frankfurt-verlorene-stadt": "Nach dem Blick auf den Bruch kann Heidi zurückkehren, aber nicht unverändert.",
+    "rueckkehr-alp": "Heidi bringt Frankfurt-Erfahrung auf die Alp zurück. Clara erlebt denselben Ort ganz anders.",
+    "clara-auf-der-alp": "Wenn Clara dazukommt, verändert sich auch Peter. Sein Gefühl braucht Verständnis und Grenze.",
+    "peter-eifersucht": "Aus Peters Kränkung wird eine konkrete Situation: Eine Geiss fehlt, und alle müssen sachlich handeln.",
+    "ziegen-verloren": "Der Suchplan bündelt Beobachten, Ortswörter und Zusammenarbeit. Danach kann Heidi erzählen, was sie gelernt hat.",
+    "heidi-erzaehlt-weiter": "Die Weitererzählung sammelt den Spielweg. Im Schlusskreis wird ausgewählt, was wirklich bleibt.",
+    "schlusskreis": "Ende des Spielwegs: Die Frankfurter Geiss hat nicht gesiegt; aus Meckern wurde brauchbare Sprache."
+  },
   rewards: [
     { object: "hay", text: "Heubüschel gewonnen: Die Frankfurter Geiss kaut endlich, bevor sie befiehlt." },
     { object: "bell", text: "Glockenklang gewonnen: Schwänli und Schnecke dürfen eine Regel in Ruhe prüfen." },
@@ -1003,6 +1051,7 @@ function questStage(c, label) {
           <span>${escapeHtml(c.place || "Spielort")}</span>
           <span>Quest ${state.chapterIndex + 1} von ${state.content.chapters.length}</span>
         </div>
+        ${journeyMarker(c)}
         <h1>${escapeHtml(c.title)}</h1>
         ${alpInventory()}
         <details class="story-drawer">
@@ -1011,6 +1060,7 @@ function questStage(c, label) {
         </details>
         <p class="scene-context"><strong>Heute stört:</strong> ${escapeHtml(trouble)}</p>
         ${chaosPanel(c)}
+        ${transitionNote(c)}
         ${historicalNote(c)}
         <div class="quest-actions">
           <button type="button" class="secondary" data-prev-chapter ${state.chapterIndex === 0 ? "disabled" : ""}>Vorige Quest</button>
@@ -1018,6 +1068,31 @@ function questStage(c, label) {
         </div>
       </div>
     </section>
+  `;
+}
+
+function journeyPhase(c = chapter()) {
+  return STORY.journey.find((phase) => phase.ids.includes(c.id)) || STORY.journey[0];
+}
+
+function journeyMarker(c = chapter()) {
+  const phase = journeyPhase(c);
+  return html`
+    <div class="journey-marker">
+      <strong>${escapeHtml(phase.title)}</strong>
+      <span>${escapeHtml(phase.line)}</span>
+    </div>
+  `;
+}
+
+function transitionNote(c = chapter()) {
+  const line = STORY.transitions[c.id];
+  if (!line) return "";
+  return html`
+    <aside class="transition-note">
+      <strong>Warum jetzt?</strong>
+      <p>${escapeHtml(line)}</p>
+    </aside>
   `;
 }
 

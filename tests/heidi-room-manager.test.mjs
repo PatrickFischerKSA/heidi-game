@@ -46,13 +46,13 @@ test("stores first draft, revision and reflection in the journal", () => {
   manager.addSubmission(room.code, {
     chapterIndex: 0,
     kind: "first",
-    text: "Die Ziege steht am Felsen.",
-    words: ["Ziege", "Felsen"]
+    text: "Die Geiss steht am Felsen.",
+    words: ["Geiss", "Felsen"]
   });
   manager.addSubmission(room.code, {
     chapterIndex: 0,
     kind: "revision",
-    text: "Die Ziege sucht Schutz am Felsen, weil Wind aufkommt."
+    text: "Die Geiss sucht Schutz am Felsen, weil Wind aufkommt."
   });
 
   const updated = manager.getRoom(room.code);
