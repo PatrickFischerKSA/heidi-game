@@ -918,12 +918,12 @@ function renderHome() {
           <section class="mode-primary">
             <div>
               <p class="eyebrow">Für die Klasse</p>
-              <h2>Spielraum mit zwei Handys eröffnen</h2>
-              <p>Der Hauptcomputer führt durch die Quest. Schwänli und Schnecke bekommen ihre Geissenkarten per QR-Code aufs Handy.</p>
+              <h2>Als Gruppe spielen</h2>
+              <p>Tragt euren Gruppennamen ein. Danach erscheinen zwei QR-Codes: einer für Schwänli, einer für Schnecke.</p>
             </div>
             <form class="host-login" data-host-login>
-              <label>Hauptcomputer<input name="hostName" value="${escapeHtml(state.hostName)}" placeholder="z. B. Klasse 2b oder Lehrperson" required></label>
-              <button type="submit">Spielraum eröffnen</button>
+              <label>Gruppenname<input name="hostName" value="${escapeHtml(state.hostName)}" placeholder="z. B. Tisch 3, Gruppe Alpwind oder Klasse 2b" required></label>
+              <button type="submit">Gruppe anmelden</button>
             </form>
           </section>
           <div class="mode-actions" aria-label="Weitere Einstiege">
@@ -1051,9 +1051,9 @@ function renderPartner() {
       ${active === "join" ? html`
         <div class="panel stack">
           <div>
-            <p class="eyebrow">Hauptcomputer</p>
+            <p class="eyebrow">Eure Gruppe</p>
             <h2>${escapeHtml(state.hostName)}</h2>
-            <p>Die Handys scannen den Code ihrer Geiss. Der Raumcode bleibt nur als Reserve sichtbar: <strong>${escapeHtml(state.room?.code || "----")}</strong></p>
+            <p>Scanne den passenden QR-Code: eine Person bekommt Schwänli, eine Person bekommt Schnecke. Der Raumcode bleibt als Reserve sichtbar: <strong>${escapeHtml(state.room?.code || "----")}</strong></p>
           </div>
           ${goatCardGuide()}
           <div class="qr-grid">
