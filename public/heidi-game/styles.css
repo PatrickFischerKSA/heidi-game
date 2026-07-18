@@ -503,16 +503,12 @@ p {
   color: var(--forest);
 }
 
-.event-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  overflow-x: auto;
-  padding: 4px 2px 14px;
-}
-
-.event-row > * {
-  flex: 0 0 min(420px, 84vw);
+.scene-context {
+  max-width: 760px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(255, 252, 245, 0.68);
+  border-left: 5px solid var(--clay);
 }
 
 .historical-note {
@@ -533,39 +529,10 @@ p {
   margin-top: 4px;
 }
 
-.story-beat {
-  display: grid;
-  gap: 8px;
-  border-left: 6px solid var(--clay);
-  border-radius: 0 8px 8px 0;
-  padding: 13px 14px;
-  background:
-    linear-gradient(90deg, rgba(165, 84, 59, 0.18), rgba(255, 252, 245, 0.76)),
-    rgba(255, 252, 245, 0.7);
-  transform: rotate(-0.35deg);
-}
-
-.story-beat strong {
-  color: var(--forest);
-}
-
-.story-rules {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.story-rules span {
-  border-radius: 999px;
-  padding: 6px 10px;
-  background: rgba(255, 252, 245, 0.72);
-  border: 1px solid rgba(35, 63, 49, 0.14);
-  font-weight: 750;
-}
-
 .chaos-panel {
   display: grid;
   gap: 10px;
+  max-width: 760px;
   border: 1px solid rgba(155, 80, 57, 0.34);
   border-radius: 8px;
   padding: 13px 14px;

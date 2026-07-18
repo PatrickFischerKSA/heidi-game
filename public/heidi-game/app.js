@@ -823,6 +823,7 @@ function renderPartner() {
 }
 
 function questStage(c, label) {
+  const [trouble] = storyBeatText(c);
   return html`
     <section class="quest-stage">
       ${sceneMedia(c)}
@@ -838,10 +839,8 @@ function questStage(c, label) {
           <summary>Worum geht es?</summary>
           <p>${escapeHtml(c.laptopFrame)}</p>
         </details>
-        <div class="event-row">
-          ${storyBeat(c)}
-          ${chaosPanel(c)}
-        </div>
+        <p class="scene-context"><strong>Heute stört:</strong> ${escapeHtml(trouble)}</p>
+        ${chaosPanel(c)}
         ${historicalNote(c)}
         <div class="quest-actions">
           <button type="button" class="secondary" data-prev-chapter ${state.chapterIndex === 0 ? "disabled" : ""}>Vorige Quest</button>
@@ -885,10 +884,10 @@ function chaosPanel(c) {
       </div>
       <form class="object-response" data-chaos-form>
         <label>
-          <span>3. Hier kommt euer Text hinein</span>
+          <span>3. Antwortfeld: Tippt hier eure Lösung ein</span>
           <textarea name="response" required placeholder="${escapeHtml(chaos.example || "Schreibt einen konkreten Rettungssatz.")}"></textarea>
         </label>
-        <p class="small">Schreibt 1-3 Sätze. Danach speichert das Spiel eure Antwort in der Lernspur und gibt Belohnung oder Geissentritt.</p>
+        <p class="small">Nicht kommentieren, sondern lösen: Schreibt 1-3 Sätze, die genau diesen Vorfall klären.</p>
         <button type="submit">Rettungssatz speichern</button>
       </form>
       <details class="chaos-details">
@@ -947,25 +946,11 @@ function alpInventory() {
   `;
 }
 
-function storyBeat(c) {
-  const [trouble, aim] = STORY.beats[c.id] || [
+function storyBeatText(c) {
+  return STORY.beats[c.id] || [
     "Die Frankfurter Geiss will aus der Szene sofort eine starre Vorschrift machen.",
     "Schwänli und Schnecke müssen zeigen, was man wirklich sieht, hört oder sagen kann."
   ];
-  return html`
-    <aside class="story-beat">
-      <p class="eyebrow">Störfall: ${escapeHtml(STORY.name)}</p>
-      <strong>${escapeHtml(trouble)}</strong>
-      <details>
-        <summary>Auftrag</summary>
-        <p>${escapeHtml(aim)}</p>
-        <div class="story-rules">
-          <span>Belohnung</span>
-          <span>Geissentritt</span>
-        </div>
-      </details>
-    </aside>
-  `;
 }
 
 function chapterTabs() {
