@@ -275,7 +275,9 @@ const STORY = {
     "Heubüschel gewonnen: Die Frankfurter Geiss kaut endlich, bevor sie befiehlt.",
     "Glockenklang gewonnen: Schwänli und Schnecke dürfen eine Regel in Ruhe prüfen.",
     "Alpschritt gewonnen: Heidi kommt einen Schritt näher an eine eigene Stimme.",
-    "Rottenmeiers Hut wackelt: Eure Antwort hat eine starre Regel beweglich gemacht."
+    "Rottenmeiers Hut wackelt: Eure Antwort hat eine starre Regel beweglich gemacht.",
+    "Käselaib gewonnen: Die Milch ist gerettet, und aus der guten Antwort wird etwas Handfestes.",
+    "Rahm im Kübel: Eure Formulierung war ruhig genug, dass die Geiss beim Melken stehen blieb."
   ],
   kicks: [
     "Geissentritt: Fräulein Rottenmeier stampft, weil die Antwort noch zu allgemein bleibt.",
@@ -318,6 +320,26 @@ const STORY = {
       title: "Sie verwechselt Hilfe mit Befehl",
       text: "Die Geiss will helfen, aber alles klingt wie Kommandoton: sofort, ordentlich, still!",
       task: "Schreibt den Befehl in eine hilfreiche Bitte um."
+    },
+    {
+      title: "Melkzeit mit Widerstand",
+      text: "Schwänli steht bereit, aber die Frankfurter Geiss erklärt den Melkschemel für unzulässig und kneift die Knie zusammen.",
+      task: "Formuliert eine ruhige Melk-Anweisung in drei Schritten: annähern, beruhigen, melken."
+    },
+    {
+      title: "Der Kübel kippt",
+      text: "Ein bockiger Tritt, und der Milchkübel fällt um. Die Milch läuft über den Boden, unter die Bank, mitten durch die schöne Ordnung.",
+      task: "Beschreibt die Sauerei genau und macht daraus einen Plan: Wer hält die Geiss, wer rettet den Rest, wer wischt?"
+    },
+    {
+      title: "Milch durch die Gegend",
+      text: "Die Geiss meckert triumphierend, während eine weiße Spur quer durch die Hütte läuft.",
+      task: "Verwandelt das Chaos in Sprache: ein Satz über das sichtbare Durcheinander, ein Satz über die Lösung."
+    },
+    {
+      title: "Fast Käse",
+      text: "Diesmal bleibt der Kübel stehen. Wenn die Antwort genau genug ist, kann aus der Milch später Käse werden.",
+      task: "Schreibt eine kurze Käse-Regel: Was muss zuerst ruhig, sauber oder geduldig geschehen?"
     }
   ],
   beats: {
@@ -827,6 +849,7 @@ function chaosPanel(c) {
         <span>Sofort reagieren</span>
         <p>${escapeHtml(chaos.task)}</p>
       </div>
+      <p class="small">Wenn ihr die Geiss ruhig und genau durch die Szene bringt, bleibt Milch im Kübel. Wenn nicht, gibt es Sauerei. Im besten Fall: Käse.</p>
       <button type="button" class="secondary" data-chaos>Geiss bricht wieder aus</button>
     </aside>
   `;
