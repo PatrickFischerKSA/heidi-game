@@ -15,7 +15,7 @@
   "learningConcept": {
     "short": "Die Spielwelt wird sprachlich zugänglicher, je genauer die Spielenden wahrnehmen, Begriffe aushandeln, Fragen stellen, lesen, erklären und überarbeiten.",
     "whyItWorks": [
-      "Rolleninformationen sind komplementär: Beobachtung und Wortmaterial müssen mündlich zusammengeführt werden.",
+      "Die beiden Ziegenperspektiven sind komplementär: Beobachtung und Wortmaterial müssen mündlich zusammengeführt werden.",
       "Die erste Formulierung bleibt sichtbar und wird erst durch Hinweis, Kontext oder Partnerfeedback überarbeitet.",
       "Das Lernjournal macht sichtbar, ob Sprache genauer, zusammenhängender und begründeter wird."
     ]
@@ -565,7 +565,7 @@
       "voiceQuest": {
         "required": true,
         "roles": ["A", "B"],
-        "prompt": "Sprecht je eine Frage aus eurer Rolle ins Handy. Beide Fragen sollen freundlich und nicht verletzend sein.",
+        "prompt": "Sprecht je eine Frage aus eurer Ziegenperspektive ins Handy. Beide Fragen sollen freundlich und nicht verletzend sein.",
         "minWords": 14
       },
       "hint": "Freundschaft entsteht nicht durch Mitleid, sondern durch echtes Interesse und Gegenseitigkeit.",
@@ -666,7 +666,7 @@
       "voiceQuest": {
         "required": true,
         "roles": ["A", "B"],
-        "prompt": "Sprecht je einen Satz: Rolle A zum rekonstruierten Frankfurt, Rolle B zum zerstörten Frankfurt. Danach verbindet ihr beide Sätze.",
+        "prompt": "Sprecht je einen Satz: Schwänli zum rekonstruierten Frankfurt, Schnecke zum zerstörten Frankfurt. Danach verbindet ihr beide Sätze.",
         "minWords": 16
       },
       "hint": "Vermeidet 'damals war alles schön' und 'danach war alles weg' als Vereinfachung. Historische Erklärung braucht Genauigkeit.",

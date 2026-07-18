@@ -569,7 +569,7 @@ function renderHome() {
       <div class="mode-grid">
         <article class="card">
           <h2>Partnermodus</h2>
-          <p>Hauptcomputer als Spielleitung, zwei Handys mit QR-Codes für die Rollen.</p>
+          <p>Hauptcomputer als Spielleitung, zwei Handys mit QR-Codes für Schwänli und Schnecke.</p>
           <form class="host-login" data-host-login>
             <label>Hauptcomputer<input name="hostName" value="${escapeHtml(state.hostName)}" placeholder="z. B. Klasse 2b oder Lehrperson" required></label>
             <button type="submit">Spielraum eröffnen</button>
@@ -577,7 +577,7 @@ function renderHome() {
         </article>
         <article class="card">
           <h2>Desktopmodus</h2>
-          <p>Zwei Personen spielen an einem Bildschirm. Rollenkarten werden nacheinander freigegeben.</p>
+          <p>Zwei Personen spielen an einem Bildschirm. Die Ziegenkarten werden nacheinander freigegeben.</p>
           <button type="button" data-nav="desktop">Desktop starten</button>
         </article>
         <article class="card">
@@ -620,14 +620,14 @@ function joinAddress(role = "") {
 function playerProfile(role, label = "") {
   const profiles = {
     A: {
-      name: "Ziege A",
+      name: "Schwänli",
       src: "/heidi-game/assets/player-goat-a.jpg",
-      alt: "Weiße Ziege als Profilbild für Rolle A"
+      alt: "Schwänli, die weiße Ziege"
     },
     B: {
-      name: "Ziege B",
+      name: "Schnecke",
       src: "/heidi-game/assets/player-goat-b.jpeg",
-      alt: "Gefleckte Ziege als Profilbild für Rolle B"
+      alt: "Schnecke, die gefleckte Ziege"
     }
   };
   const profile = profiles[role] || profiles.A;
@@ -636,7 +636,7 @@ function playerProfile(role, label = "") {
       <img src="${escapeHtml(profile.src)}" alt="${escapeHtml(profile.alt)}" loading="lazy">
       <div>
         <strong>${escapeHtml(label || profile.name)}</strong>
-        <span>Rolle ${escapeHtml(role)}</span>
+        <span>${role === "A" ? "Beobachten und sprechen" : "Wörter finden und nachfragen"}</span>
       </div>
     </div>
   `;
@@ -649,7 +649,7 @@ function qrCard(role, title, subtitle) {
       ${playerProfile(role, title)}
       <div>
         <p class="eyebrow">${escapeHtml(title)}</p>
-        <h3>Rolle ${escapeHtml(role)}</h3>
+        <h3>${role === "A" ? "Schwänli" : "Schnecke"}</h3>
         <p>${escapeHtml(subtitle)}</p>
       </div>
       ${qrSvg(url)}
@@ -681,11 +681,11 @@ function renderPartner() {
           <div>
             <p class="eyebrow">Hauptcomputer</p>
             <h2>${escapeHtml(state.hostName)}</h2>
-            <p>Handys scannen ihren Rollen-Code. Der Raumcode bleibt nur als Reserve sichtbar: <strong>${escapeHtml(state.room?.code || "----")}</strong></p>
+            <p>Die Handys scannen den Code ihrer Ziege. Der Raumcode bleibt nur als Reserve sichtbar: <strong>${escapeHtml(state.room?.code || "----")}</strong></p>
           </div>
           <div class="qr-grid">
-            ${qrCard("A", "Handy 1", "Beobachten, sprechen, erste Rolle")}
-            ${qrCard("B", "Handy 2", "Wortmaterial, nachfragen, zweite Rolle")}
+            ${qrCard("A", "Schwänli", "Beobachten und zuerst sprechen")}
+            ${qrCard("B", "Schnecke", "Wörter finden und nachfragen")}
           </div>
         </div>
         ${journalPanel()}
@@ -709,8 +709,8 @@ function statusStrip() {
   const ready = state.room?.roleReady || {};
   return html`
     <div class="status-strip">
-      <div class="status-item">${playerProfile("A", "Spieler A")}<span>${occupied.A ? "verbunden" : "wartet"} · ${ready.A ? "ausgetauscht" : "noch geheim"}</span></div>
-      <div class="status-item">${playerProfile("B", "Spieler B")}<span>${occupied.B ? "verbunden" : "wartet"} · ${ready.B ? "ausgetauscht" : "noch geheim"}</span></div>
+      <div class="status-item">${playerProfile("A", "Schwänli")}<span>${occupied.A ? "verbunden" : "wartet"} · ${ready.A ? "ausgetauscht" : "noch geheim"}</span></div>
+      <div class="status-item">${playerProfile("B", "Schnecke")}<span>${occupied.B ? "verbunden" : "wartet"} · ${ready.B ? "ausgetauscht" : "noch geheim"}</span></div>
       <div class="status-item"><strong>Kapitel</strong><br>${state.chapterIndex + 1} von ${state.content.chapters.length}</div>
     </div>
   `;
@@ -760,7 +760,7 @@ function teamTaskPanel() {
   return html`
     <div class="panel stack">
       <p class="eyebrow">Gemeinsame Aufgabe</p>
-      ${bothReady ? `<h2>${escapeHtml(c.teamTask)}</h2>${answerForm()}` : `<div class="notice"><strong>Noch gesperrt.</strong><p>Die Aufgabe erscheint, sobald beide Rollen ihre Beobachtungen ausgetauscht und auf dem Handy bestätigt haben.</p></div>`}
+      ${bothReady ? `<h2>${escapeHtml(c.teamTask)}</h2>${answerForm()}` : `<div class="notice"><strong>Noch gesperrt.</strong><p>Die Aufgabe erscheint, sobald Schwänli und Schnecke ihre Beobachtungen ausgetauscht und auf dem Handy bestätigt haben.</p></div>`}
     </div>
   `;
 }
@@ -984,11 +984,11 @@ function renderPhone() {
     <section class="phone-frame stack">
       <div>
         <p class="eyebrow">Handyansicht</p>
-        <h1>Rolle beitreten</h1>
+        <h1>Ziege beitreten</h1>
       </div>
       <form class="stack" data-join-form>
         <label>Raumcode<input name="code" value="${escapeHtml(code)}" maxlength="6" required></label>
-        <label>Rolle<select name="role"><option value="">automatisch</option><option value="A" ${role === "A" ? "selected" : ""}>A - Wahrnehmen</option><option value="B" ${role === "B" ? "selected" : ""}>B - Versprachlichen</option></select></label>
+        <label>Ziege<select name="role"><option value="">automatisch</option><option value="A" ${role === "A" ? "selected" : ""}>Schwänli</option><option value="B" ${role === "B" ? "selected" : ""}>Schnecke</option></select></label>
         <button type="submit">Beitreten</button>
       </form>
     </section>
@@ -1018,12 +1018,12 @@ function renderPhoneRole() {
   app.innerHTML = html`
     ${topbar("phone")}
     <section class="phone-frame stack">
-      <p class="eyebrow">Raum ${escapeHtml(state.room.code)} · Rolle ${escapeHtml(role)}</p>
+      <p class="eyebrow">Raum ${escapeHtml(state.room.code)} · ${role === "A" ? "Schwänli" : "Schnecke"}</p>
       <h1>${escapeHtml(roleData.name)}</h1>
       ${roleCard(role, roleData)}
       ${voiceQuestPanel(role, c)}
       <button type="button" data-ready="${role}" ${voiceComplete ? "" : "disabled"}>${state.room.roleReady?.[role] ? "Austausch bestätigt" : "Ich habe meine Informationen geteilt"}</button>
-      <div class="notice"><p>${needsVoice ? "Diese Rolle muss zuerst den mündlichen Beitrag per Handy-Mikrofon festhalten." : "Sprich mit der Partnerperson."} Auf dem Laptop wird die Schreibaufgabe erst nach beiden Bestätigungen freigeschaltet.</p></div>
+      <div class="notice"><p>${needsVoice ? "Diese Ziege muss zuerst den mündlichen Beitrag per Handy-Mikrofon festhalten." : "Sprich mit der Partnerperson."} Auf dem Laptop wird die Schreibaufgabe erst nach beiden Bestätigungen freigeschaltet.</p></div>
     </section>
   `;
 }
@@ -1032,7 +1032,7 @@ function roleCard(role, roleData) {
   return html`
     <article class="role-card role-${role.toLowerCase()}">
       ${playerProfile(role)}
-      <h2>Rolle ${escapeHtml(role)}: ${escapeHtml(roleData.name)}</h2>
+      <h2>${role === "A" ? "Schwänli" : "Schnecke"}: ${escapeHtml(roleData.name)}</h2>
       <p>${escapeHtml(roleData.prompt)}</p>
       <ul class="token-list">${roleData.tokens.map((token) => `<li>${escapeHtml(token)}</li>`).join("")}</ul>
     </article>
@@ -1055,14 +1055,14 @@ function renderDesktop() {
         </div>
         ${chapterTabs()}
         <div class="panel stack">
-          <h2>Rollenkarten nacheinander öffnen</h2>
+          <h2>Ziegenkarten nacheinander öffnen</h2>
           <div class="toolbar">
-            <button type="button" class="secondary" data-reveal="A">${state.revealA ? "Rolle A verbergen" : "Rolle A öffnen"}</button>
-            <button type="button" class="secondary" data-reveal="B">${state.revealB ? "Rolle B verbergen" : "Rolle B öffnen"}</button>
+            <button type="button" class="secondary" data-reveal="A">${state.revealA ? "Schwänli verbergen" : "Schwänli öffnen"}</button>
+            <button type="button" class="secondary" data-reveal="B">${state.revealB ? "Schnecke verbergen" : "Schnecke öffnen"}</button>
           </div>
           <div class="chapter-grid">
-            ${state.revealA ? roleCard("A", c.roleA) : `<div class="card"><h3>Rolle A ist verdeckt</h3><p>Eine Person liest zuerst die andere Karte nicht mit.</p></div>`}
-            ${state.revealB ? roleCard("B", c.roleB) : `<div class="card"><h3>Rolle B ist verdeckt</h3><p>Öffnet diese Karte erst nach dem Rollenwechsel.</p></div>`}
+            ${state.revealA ? roleCard("A", c.roleA) : `<div class="card"><h3>Schwänli ist verdeckt</h3><p>Eine Person liest zuerst die andere Karte nicht mit.</p></div>`}
+            ${state.revealB ? roleCard("B", c.roleB) : `<div class="card"><h3>Schnecke ist verdeckt</h3><p>Öffnet diese Karte erst nach dem Wechsel.</p></div>`}
           </div>
         </div>
         ${(state.revealA && state.revealB) ? `<div class="panel stack"><p class="eyebrow">Gemeinsame Aufgabe</p><h2>${escapeHtml(c.teamTask)}</h2>${answerForm()}</div>` : ""}
@@ -1096,7 +1096,7 @@ function renderDemo() {
           <div class="phone-frame">${roleCard("B", c.roleB)}${voiceQuestPanel("B", c)}</div>
         </div>
         <div class="panel stack">
-          <p class="eyebrow">Laptop nach Rollenaustausch</p>
+          <p class="eyebrow">Laptop nach Austausch</p>
           <h2>${escapeHtml(c.teamTask)}</h2>
           ${answerForm(c.example)}
         </div>
@@ -1129,7 +1129,7 @@ function renderTeacher() {
       <div class="panel">
         <p class="eyebrow">Lehrpersonenansicht</p>
         <h1>Einstellungen und Inhaltsmodell</h1>
-        <p>Die Aufgaben, Hinweise, Rolleninformationen und Beispielantworten liegen in <strong>data/heidi-game-content.json</strong> und können ohne Programmlogik angepasst werden.</p>
+        <p>Die Aufgaben, Hinweise, Spielerinformationen und Beispielantworten liegen in <strong>data/heidi-game-content.json</strong> und können ohne Programmlogik angepasst werden.</p>
       </div>
       <div class="teacher-grid">
         <form class="panel stack" data-teacher-form>
