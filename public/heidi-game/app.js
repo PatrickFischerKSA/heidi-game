@@ -1365,14 +1365,21 @@ function answerForm(prefill = "") {
     <form class="answer-workshop stack" data-answer-form>
       <label><span>1. Erste Formulierung</span><textarea name="first" required>${escapeHtml(prefill)}</textarea></label>
       <div data-written-feedback="first">${feedbackMarkup(c, "first", prefill)}</div>
-      <div class="feedback-box"><strong>Hinweis statt Richtig-falsch:</strong><p>${escapeHtml(c.hint)}</p></div>
+      <div class="example-drawer" data-answer-help>
+        <button type="button" class="secondary" data-show-answer-help>Hilfe zur Quest anzeigen</button>
+        <div hidden>
+          <strong>Hinweis</strong>
+          <p>${escapeHtml(c.hint)}</p>
+          <strong>Beispiel</strong>
+          <p>${escapeHtml(c.example)}</p>
+        </div>
+      </div>
       <label><span>2. Überarbeitete Fassung</span><textarea name="revision" required></textarea></label>
       <div data-written-feedback="revision">${feedbackMarkup(c, "revision", "")}</div>
       <label><span>3. Kurze Reflexion</span><textarea name="reflection" required placeholder="${escapeHtml(c.reflection)}"></textarea></label>
       <div data-written-feedback="reflection">${feedbackMarkup(c, "reflection", "")}</div>
       <div class="toolbar">
         <button type="submit">Lernspur speichern</button>
-        <button type="button" class="secondary" data-example>Beispiel einsetzen</button>
       </div>
     </form>
   `;
@@ -1530,6 +1537,9 @@ function kickForFeedback(hits, words, kind) {
 }
 
 function feedbackMarkup(chapterData, kind, text) {
+  if (!String(text || "").trim()) {
+    return "";
+  }
   const feedback = qualifiedFeedback(chapterData, kind, text);
   const reaction = feedback.reward || feedback.kick;
   return html`
@@ -2062,6 +2072,12 @@ app.addEventListener("click", async (event) => {
     if (paragraph) paragraph.hidden = false;
     button.remove();
   }
+  if (button.dataset.showAnswerHelp !== undefined) {
+    const drawer = button.closest("[data-answer-help]");
+    const help = drawer?.querySelector("div");
+    if (help) help.hidden = false;
+    button.remove();
+  }
   if (button.dataset.startRoom !== undefined) await startRoom();
   if (button.dataset.prevChapter !== undefined) await setChapter(Math.max(0, state.chapterIndex - 1));
   if (button.dataset.nextChapter !== undefined) await setChapter(Math.min(state.content.chapters.length - 1, state.chapterIndex + 1));
@@ -2070,11 +2086,6 @@ app.addEventListener("click", async (event) => {
     if (button.dataset.reveal === "A") state.revealA = !state.revealA;
     if (button.dataset.reveal === "B") state.revealB = !state.revealB;
     renderDesktop();
-  }
-  if (button.dataset.example !== undefined) {
-    const form = button.closest("form");
-    form.elements.first.value = chapter().example;
-    form.elements.revision.value = chapter().revisionPrompt + " " + chapter().example;
   }
   if (button.dataset.ready) {
     const c = chapter();

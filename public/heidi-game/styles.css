@@ -1359,13 +1359,6 @@ p {
   background: rgba(213, 173, 85, 0.18);
 }
 
-.feedback-box {
-  border-left: 5px solid var(--clay);
-  border-radius: 0 8px 8px 0;
-  padding: 12px 14px;
-  background: rgba(165, 84, 59, 0.12);
-}
-
 .qualified-feedback {
   border: 1px solid rgba(45, 104, 117, 0.24);
   border-left: 0;
