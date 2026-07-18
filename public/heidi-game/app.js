@@ -22,7 +22,8 @@ const state = {
   recognition: null,
   listeningKey: "",
   pollTimer: null,
-  playSection: "cards"
+  playSection: "cards",
+  chaosEvents: {}
 };
 
 localStorage.setItem(storage.clientId, state.clientId);
@@ -281,6 +282,43 @@ const STORY = {
     "Geissentritt: Die Frankfurter Geiss meckert dazwischen. Es fehlt eine genaue Beobachtung.",
     "Geissentritt: Zu glatt formuliert. Schwänli verlangt ein sichtbares Detail.",
     "Geissentritt: Schnecke kaut auf dem Satz herum. Die Begründung ist noch dünn."
+  ],
+  chaos: [
+    {
+      title: "Sie frisst die Hausregel",
+      text: "Die Frankfurter Geiss schnappt nach der wichtigsten Regel im Raum und kaut daran herum, als wäre Papier Heu.",
+      task: "Rettet die Regel: Sagt in einem Satz, was davon nützlich ist, und streicht den Teil, der nur einschüchtert."
+    },
+    {
+      title: "Sie frisst etwas Verbotenes",
+      text: "Rottenmeier-Geiss hat an einem Gegenstand geknabbert, der bestimmt nicht für Geissen gedacht war.",
+      task: "Beschreibt den Schaden konkret und formuliert eine ruhige Reaktion, die nicht sofort in Geschrei kippt."
+    },
+    {
+      title: "Sie bockt am falschen Ort",
+      text: "Die Geiss stellt sich quer, senkt den Kopf und bewegt sich keinen Schritt weiter.",
+      task: "Findet eine Frage oder einen Lockruf, mit dem Heidi die Situation löst, ohne die Geiss zu beschämen."
+    },
+    {
+      title: "Sie meckert alles durcheinander",
+      text: "Aus der Geiss kommt ein wütendes Meckern: halb Frankfurter Tischregel, halb Alpwetter, halb beleidigter Salon.",
+      task: "Sortiert das Meckern: Was ist Beobachtung, was ist Angst, was ist nur Befehlston?"
+    },
+    {
+      title: "Sie tritt gegen den Satz",
+      text: "Kaum ist eine Antwort geschrieben, tritt die Geiss mit dem Huf daneben: Der Satz sei zu glatt.",
+      task: "Macht den Satz widerstandsfähiger: ein genaueres Verb, ein sichtbares Detail, eine vorsichtige Begründung."
+    },
+    {
+      title: "Sie klaut ein Alpwörterchen",
+      text: "Schnecke bemerkt: Ein wichtiges Wort ist weg. Die Frankfurter Geiss trägt es im Maul davon.",
+      task: "Holt das Wort zurück, indem ihr es in einem neuen, klaren Satz benutzt."
+    },
+    {
+      title: "Sie verwechselt Hilfe mit Befehl",
+      text: "Die Geiss will helfen, aber alles klingt wie Kommandoton: sofort, ordentlich, still!",
+      task: "Schreibt den Befehl in eine hilfreiche Bitte um."
+    }
   ],
   beats: {
     "alp-spricht": ["Rottenmeier-Geiss hält Bauernregeln für Amtsbefehle: Wenn Abendrot ist, müsse das Wetter gehorchen.", "Erfindet eine Regel, die klingt wie Alp-Erfahrung, aber nicht so tut, als könne sie den Himmel kommandieren."],
@@ -752,6 +790,7 @@ function questStage(c, label) {
         <h1>${escapeHtml(c.title)}</h1>
         <p>${escapeHtml(c.laptopFrame)}</p>
         ${storyBeat(c)}
+        ${chaosPanel(c)}
         ${historicalNote(c)}
         <div class="quest-actions">
           <button type="button" class="secondary" data-prev-chapter ${state.chapterIndex === 0 ? "disabled" : ""}>Vorige Quest</button>
@@ -760,6 +799,36 @@ function questStage(c, label) {
       </div>
       ${sceneMedia(c)}
     </section>
+  `;
+}
+
+function chaosKey(c = chapter()) {
+  return `${state.chapterIndex}:${c.id}`;
+}
+
+function currentChaos(c = chapter()) {
+  const key = chaosKey(c);
+  if (state.chaosEvents[key] === undefined) {
+    state.chaosEvents[key] = Math.floor(Math.random() * STORY.chaos.length);
+  }
+  return STORY.chaos[state.chaosEvents[key] % STORY.chaos.length];
+}
+
+function chaosPanel(c) {
+  const chaos = currentChaos(c);
+  return html`
+    <aside class="chaos-panel">
+      <div>
+        <p class="eyebrow">Unberechenbare Geiss</p>
+        <strong>${escapeHtml(chaos.title)}</strong>
+        <p>${escapeHtml(chaos.text)}</p>
+      </div>
+      <div class="chaos-task">
+        <span>Sofort reagieren</span>
+        <p>${escapeHtml(chaos.task)}</p>
+      </div>
+      <button type="button" class="secondary" data-chaos>Geiss bricht wieder aus</button>
+    </aside>
   `;
 }
 
@@ -1541,6 +1610,16 @@ app.addEventListener("click", async (event) => {
   if (button.dataset.nav) navigate(button.dataset.nav);
   if (button.dataset.playSection) {
     state.playSection = button.dataset.playSection;
+    renderCurrentMode();
+  }
+  if (button.dataset.chaos !== undefined) {
+    const key = chaosKey();
+    const current = state.chaosEvents[key] ?? -1;
+    let next = Math.floor(Math.random() * STORY.chaos.length);
+    if (STORY.chaos.length > 1 && next === current) {
+      next = (next + 1) % STORY.chaos.length;
+    }
+    state.chaosEvents[key] = next;
     renderCurrentMode();
   }
   if (button.dataset.startRoom !== undefined) await startRoom();
