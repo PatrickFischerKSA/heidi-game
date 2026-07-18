@@ -272,71 +272,82 @@ const STORY = {
   name: "Fräulein Rottenmeier",
   premise: "Eine Frankfurter Geiss ist aus der Stadt ausgebüxt und behauptet steif und fest, sie sei Fräulein Rottenmeier. Sie kennt Salons, Verbote und Hausregeln, aber keine Alp. Schwänli und Schnecke müssen ihr zeigen, wie man hier überlebt: hören, riechen, fragen, vorsichtig urteilen und nicht jedes Meckern für ein Gesetz halten.",
   rewards: [
-    "Heubüschel gewonnen: Die Frankfurter Geiss kaut endlich, bevor sie befiehlt.",
-    "Glockenklang gewonnen: Schwänli und Schnecke dürfen eine Regel in Ruhe prüfen.",
-    "Alpschritt gewonnen: Heidi kommt einen Schritt näher an eine eigene Stimme.",
-    "Rottenmeiers Hut wackelt: Eure Antwort hat eine starre Regel beweglich gemacht.",
-    "Käselaib gewonnen: Die Milch ist gerettet, und aus der guten Antwort wird etwas Handfestes.",
-    "Rahm im Kübel: Eure Formulierung war ruhig genug, dass die Geiss beim Melken stehen blieb."
+    { object: "hay", text: "Heubüschel gewonnen: Die Frankfurter Geiss kaut endlich, bevor sie befiehlt." },
+    { object: "bell", text: "Glockenklang gewonnen: Schwänli und Schnecke dürfen eine Regel in Ruhe prüfen." },
+    { object: "step", text: "Alpschritt gewonnen: Heidi kommt einen Schritt näher an eine eigene Stimme." },
+    { object: "hat", text: "Rottenmeiers Hut wackelt: Eure Antwort hat eine starre Regel beweglich gemacht." },
+    { object: "cheese", text: "Käselaib gewonnen: Die Milch ist gerettet, und aus der guten Antwort wird etwas Handfestes." },
+    { object: "bucket", text: "Rahm im Kübel: Eure Formulierung war ruhig genug, dass die Geiss beim Melken stehen blieb." }
   ],
   kicks: [
-    "Geissentritt: Fräulein Rottenmeier stampft, weil die Antwort noch zu allgemein bleibt.",
-    "Geissentritt: Die Frankfurter Geiss meckert dazwischen. Es fehlt eine genaue Beobachtung.",
-    "Geissentritt: Zu glatt formuliert. Schwänli verlangt ein sichtbares Detail.",
-    "Geissentritt: Schnecke kaut auf dem Satz herum. Die Begründung ist noch dünn."
+    { object: "hoof", text: "Geissentritt: Fräulein Rottenmeier stampft, weil die Antwort noch zu allgemein bleibt." },
+    { object: "bell", text: "Geissentritt: Die Frankfurter Geiss meckert dazwischen. Es fehlt eine genaue Beobachtung." },
+    { object: "hoof", text: "Geissentritt: Zu glatt formuliert. Schwänli verlangt ein sichtbares Detail." },
+    { object: "word", text: "Geissentritt: Schnecke kaut auf dem Satz herum. Die Begründung ist noch dünn." }
   ],
   chaos: [
     {
+      object: "rule",
       title: "Sie frisst die Hausregel",
       text: "Die Frankfurter Geiss schnappt nach der wichtigsten Regel im Raum und kaut daran herum, als wäre Papier Heu.",
       task: "Rettet die Regel: Sagt in einem Satz, was davon nützlich ist, und streicht den Teil, der nur einschüchtert."
     },
     {
+      object: "rule",
       title: "Sie frisst etwas Verbotenes",
       text: "Rottenmeier-Geiss hat an einem Gegenstand geknabbert, der bestimmt nicht für Geissen gedacht war.",
       task: "Beschreibt den Schaden konkret und formuliert eine ruhige Reaktion, die nicht sofort in Geschrei kippt."
     },
     {
+      object: "hoof",
       title: "Sie bockt am falschen Ort",
       text: "Die Geiss stellt sich quer, senkt den Kopf und bewegt sich keinen Schritt weiter.",
       task: "Findet eine Frage oder einen Lockruf, mit dem Heidi die Situation löst, ohne die Geiss zu beschämen."
     },
     {
+      object: "bell",
       title: "Sie meckert alles durcheinander",
       text: "Aus der Geiss kommt ein wütendes Meckern: halb Frankfurter Tischregel, halb Alpwetter, halb beleidigter Salon.",
       task: "Sortiert das Meckern: Was ist Beobachtung, was ist Angst, was ist nur Befehlston?"
     },
     {
+      object: "hoof",
       title: "Sie tritt gegen den Satz",
       text: "Kaum ist eine Antwort geschrieben, tritt die Geiss mit dem Huf daneben: Der Satz sei zu glatt.",
       task: "Macht den Satz widerstandsfähiger: ein genaueres Verb, ein sichtbares Detail, eine vorsichtige Begründung."
     },
     {
+      object: "word",
       title: "Sie klaut ein Alpwörterchen",
       text: "Schnecke bemerkt: Ein wichtiges Wort ist weg. Die Frankfurter Geiss trägt es im Maul davon.",
       task: "Holt das Wort zurück, indem ihr es in einem neuen, klaren Satz benutzt."
     },
     {
+      object: "hat",
       title: "Sie verwechselt Hilfe mit Befehl",
       text: "Die Geiss will helfen, aber alles klingt wie Kommandoton: sofort, ordentlich, still!",
       task: "Schreibt den Befehl in eine hilfreiche Bitte um."
     },
     {
+      object: "stool",
       title: "Melkzeit mit Widerstand",
       text: "Schwänli steht bereit, aber die Frankfurter Geiss erklärt den Melkschemel für unzulässig und kneift die Knie zusammen.",
       task: "Formuliert eine ruhige Melk-Anweisung in drei Schritten: annähern, beruhigen, melken."
     },
     {
+      object: "bucket-spill",
       title: "Der Kübel kippt",
       text: "Ein bockiger Tritt, und der Milchkübel fällt um. Die Milch läuft über den Boden, unter die Bank, mitten durch die schöne Ordnung.",
       task: "Beschreibt die Sauerei genau und macht daraus einen Plan: Wer hält die Geiss, wer rettet den Rest, wer wischt?"
     },
     {
+      object: "milk",
       title: "Milch durch die Gegend",
       text: "Die Geiss meckert triumphierend, während eine weiße Spur quer durch die Hütte läuft.",
       task: "Verwandelt das Chaos in Sprache: ein Satz über das sichtbare Durcheinander, ein Satz über die Lösung."
     },
     {
+      object: "cheese",
       title: "Fast Käse",
       text: "Diesmal bleibt der Kübel stehen. Wenn die Antwort genau genug ist, kann aus der Milch später Käse werden.",
       task: "Schreibt eine kurze Käse-Regel: Was muss zuerst ruhig, sauber oder geduldig geschehen?"
@@ -811,6 +822,7 @@ function questStage(c, label) {
           <span>Quest ${state.chapterIndex + 1} von ${state.content.chapters.length}</span>
         </div>
         <h1>${escapeHtml(c.title)}</h1>
+        ${alpInventory()}
         <details class="story-drawer">
           <summary>Worum geht es?</summary>
           <p>${escapeHtml(c.laptopFrame)}</p>
@@ -845,18 +857,61 @@ function chaosPanel(c) {
   const chaos = currentChaos(c);
   return html`
     <aside class="chaos-panel">
-      <div>
-        <p class="eyebrow">Unberechenbare Geiss</p>
-        <strong>${escapeHtml(chaos.title)}</strong>
-        <p>${escapeHtml(chaos.text)}</p>
+      <div class="object-card-head">
+        ${objectCutout(chaos.object, chaos.title)}
+        <div>
+          <p class="eyebrow">Unberechenbare Geiss</p>
+          <strong>${escapeHtml(chaos.title)}</strong>
+        </div>
       </div>
+      <details class="chaos-details">
+        <summary>Was ist passiert?</summary>
+        <p>${escapeHtml(chaos.text)}</p>
+      </details>
       <div class="chaos-task">
         <span>Sofort reagieren</span>
         <p>${escapeHtml(chaos.task)}</p>
       </div>
-      <p class="small">Wenn ihr die Geiss ruhig und genau durch die Szene bringt, bleibt Milch im Kübel. Wenn nicht, gibt es Sauerei. Im besten Fall: Käse.</p>
+      <details class="chaos-details">
+        <summary>Milch, Sauerei, Käse?</summary>
+        <p>Wenn ihr die Geiss ruhig und genau durch die Szene bringt, bleibt Milch im Kübel. Wenn nicht, gibt es Sauerei. Im besten Fall: Käse.</p>
+      </details>
       <button type="button" class="secondary" data-chaos>Geiss bricht wieder aus</button>
     </aside>
+  `;
+}
+
+function objectCutout(type = "word", label = "Spielobjekt") {
+  const normalized = String(type || "word").replace(/[^a-z-]/g, "");
+  return html`
+    <span class="object-cutout is-${escapeHtml(normalized)}" aria-label="${escapeHtml(label)}" title="${escapeHtml(label)}">
+      <span class="object-shape" aria-hidden="true"></span>
+    </span>
+  `;
+}
+
+function reactionText(reaction) {
+  return typeof reaction === "string" ? reaction : reaction?.text || "";
+}
+
+function reactionObject(reaction) {
+  return typeof reaction === "string" ? "word" : reaction?.object || "word";
+}
+
+function reactionTitle(reaction, fallback) {
+  const text = reactionText(reaction);
+  return text.split(":")[0] || fallback;
+}
+
+function alpInventory() {
+  return html`
+    <div class="alp-inventory" aria-label="Alp-Inventar">
+      ${["bucket", "cheese", "hay", "bell", "rule", "stool", "cloth"].map((item) => objectCutout(item, item)).join("")}
+      <div>
+        <strong>Alp-Inventar</strong>
+        <span>Kübel, Käse, Heu, Glocke, Regel, Schemel, Lappen.</span>
+      </div>
+    </div>
   `;
 }
 
@@ -1039,7 +1094,7 @@ async function saveAnswer(form) {
       `${kind}-feedback`,
       [
         feedback.title,
-        `Spielreaktion: ${feedback.reward || feedback.kick}`,
+        `Spielreaktion: ${reactionText(feedback.reward || feedback.kick)}`,
         feedback.summary,
         `Schon tragfähig: ${feedback.strengths.join(" ")}`,
         `Jetzt überarbeiten: ${feedback.nextSteps.join(" ")}`
@@ -1179,12 +1234,16 @@ function kickForFeedback(hits, words, kind) {
 
 function feedbackMarkup(chapterData, kind, text) {
   const feedback = qualifiedFeedback(chapterData, kind, text);
+  const reaction = feedback.reward || feedback.kick;
   return html`
     <div class="qualified-feedback">
       <strong>${escapeHtml(feedback.title)}</strong>
       <div class="game-feedback ${feedback.reward ? "is-reward" : "is-kick"}">
-        <strong>${feedback.reward ? "Belohnung" : "Geissentritt"}</strong>
-        <p>${escapeHtml(feedback.reward || feedback.kick)}</p>
+        ${objectCutout(reactionObject(reaction), reactionTitle(reaction, feedback.reward ? "Belohnung" : "Geissentritt"))}
+        <div>
+          <strong>${feedback.reward ? "Belohnung" : "Geissentritt"}</strong>
+          <p>${escapeHtml(reactionText(reaction))}</p>
+        </div>
       </div>
       <details class="feedback-details">
         <summary>Warum?</summary>
@@ -1595,7 +1654,7 @@ async function saveVoiceDraft(key) {
   const feedback = qualifiedFeedback(chapterData, "voice", text);
   const feedbackText = [
     feedback.title,
-    `Spielreaktion: ${feedback.reward || feedback.kick}`,
+    `Spielreaktion: ${reactionText(feedback.reward || feedback.kick)}`,
     feedback.summary,
     `Schon tragfähig: ${feedback.strengths.join(" ")}`,
     `Jetzt überarbeiten: ${feedback.nextSteps.join(" ")}`
