@@ -47,6 +47,225 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
+const FEEDBACK_PROFILES = {
+  "alp-spricht": {
+    aim: "Eine tragfähige Bauernregel entsteht aus Beobachtung, Spruchform und vorsichtiger Erklärung.",
+    checks: [
+      ["Beobachtung auf der Alp", ["ziege", "ziegen", "himmel", "wind", "licht", "wolke", "gras", "stein", "felsen"], "Nennt zuerst sichtbar, was Heidi wirklich bemerkt."],
+      ["Spruchform", ["regel", "spruch", "reim", "wenn", "steht", "zieht", "kommt", "droht"], "Formt die Beobachtung zu einem knappen Merksatz, nicht zu einer langen Erklärung."],
+      ["Vorsicht", ["vielleicht", "oft", "manchmal", "nicht immer", "kann", "könnte"], "Ergänzt, dass die Bauernregel Erfahrung ist und nicht immer stimmen muss."]
+    ],
+    upgrade: "Überarbeitet so: Beobachtung konkret machen, Spruch kürzen, dann mit 'oft', 'manchmal' oder 'vielleicht' einschränken."
+  },
+  "ziegen-ansprechen": {
+    aim: "Die Tieransprache soll natürlich klingen und zugleich genau beobachten.",
+    checks: [
+      ["Heidis Stimme", ["heidi", "komm", "nur", "kleine", "ruhig", "ich tue", "darf"], "Gebt Heidi einen kurzen Satz, der ein Kind auf der Alp wirklich sagen könnte."],
+      ["Ziegenverhalten", ["ziege", "meckert", "zupft", "trottet", "springt", "bleibt", "kommt"], "Zeigt, was die Ziege tut, statt sie menschlich denken zu lassen."],
+      ["Peters praktische Antwort", ["peter", "sagt", "lacht", "zeigt", "ruft", "weiß"], "Lasst Peter mit einem einfachen, praktischen Satz reagieren."]
+    ],
+    upgrade: "Kürzt Heidis Satz, ersetzt eine menschliche Tierdeutung durch ein sichtbares Verhalten und gebt Peter eine knappe Reaktion."
+  },
+  "almoehi-sprechen": {
+    aim: "Heidis Frage soll den Großvater öffnen, ohne ihn zu bedrängen.",
+    checks: [
+      ["Bauernregel genannt", ["morgenrot", "abendrot", "regen", "wetter", "bauernregel", "spruch"], "Nennt die Regel, auf die Heidi sich bezieht."],
+      ["Offene Frage", ["was bedeutet", "woran", "warum", "gilt", "zeigst", "kannst"], "Formuliert eine Frage, auf die der Großvater mehr als Ja oder Nein antworten kann."],
+      ["Respektvoller Ton", ["großvater", "darf", "bitte", "ich möchte", "verstehen"], "Macht hörbar, dass Heidi neugierig ist und nicht belehrt."]
+    ],
+    upgrade: "Baut die Frage nach dem Muster: 'Großvater, du hast gesagt ... Woran siehst du ...?'"
+  },
+  "frankfurter-stimmen": {
+    aim: "Die Antwort muss wörtliche Regel, Tonfall und faire Hilfe trennen.",
+    checks: [
+      ["Wörtliche Aussage", ["wörtlich", "gesagt", "regel", "das macht man", "hausregel"], "Schreibt zuerst, was tatsächlich gesagt wird."],
+      ["Tonfall und Macht", ["ton", "scharf", "tadel", "macht", "beschäm", "abstand"], "Erklärt, was durch Ton und Situation zusätzlich passiert."],
+      ["Faire Hilfe", ["fair", "zeige", "hilft", "nächstes mal", "ohne", "beschämen"], "Formuliert eine Alternative, die Heidi lernen lässt."]
+    ],
+    upgrade: "Dreiteilt die Antwort klar: Satz 1 wörtlich, Satz 2 Ton/Situation, Satz 3 faire Hilfe."
+  },
+  "peter-lernt-anders": {
+    aim: "Der Lernweg muss zu Peters Lebenswelt passen und ermutigen.",
+    checks: [
+      ["Peters Welt", ["ziege", "ziegen", "weg", "steg", "hang", "herde", "alp"], "Bindet Lesen an etwas, das Peter kennt."],
+      ["Drei Schritte", ["1.", "2.", "3.", "zuerst", "dann", "danach"], "Ordnet den Lernweg in nachvollziehbare Schritte."],
+      ["Ermutigung statt Drohung", ["ermutig", "lob", "du hast", "noch einmal", "nicht beschäm", "ohne drohung"], "Zeigt, wie Peter Rückmeldung bekommt, ohne beschämt zu werden."]
+    ],
+    upgrade: "Macht aus dem Plan eine kleine Unterrichtssequenz: Material, Lesesatz, Rückmeldung."
+  },
+  "heidi-erzaehlt-weiter": {
+    aim: "Die Weitererzählung muss als möglich markiert und aus konkreter Erinnerung gebaut sein.",
+    checks: [
+      ["Offene Markierung", ["vielleicht", "ich stelle mir", "später könnte", "möglicherweise"], "Markiert, dass es eine Weitererzählung ist, nicht Spyris Behauptung."],
+      ["Konkrete Erinnerung", ["bauernregel", "frankfurt", "großmutter", "alp", "großvater", "wind"], "Verankert Heidis Erzählen in einer konkreten Erfahrung."],
+      ["Zeitliche Ordnung", ["zuerst", "dann", "später", "heute", "damals"], "Macht erkennbar, wann Heidi erinnert und wann sie erzählt."]
+    ],
+    upgrade: "Beginnt mit 'Vielleicht hätte Heidi später erzählt ...' und hängt eine konkrete Erinnerung daran."
+  },
+  "huette-einrichten": {
+    aim: "Die Hütte soll über Gegenstände und Handgriffe sichtbar werden.",
+    checks: [
+      ["Gegenstände", ["bank", "schüssel", "decke", "heu", "tisch", "kessel"], "Nennt mindestens zwei Dinge, die in der Hütte eine Funktion haben."],
+      ["Handgriff", ["legt", "stellt", "schiebt", "nimmt", "zeigt", "hält"], "Zeigt einen Handgriff statt nur zu erklären."],
+      ["Höfliche Bitte", ["darf", "kann ich", "bitte", "großvater"], "Lasst Heidi vorsichtig um Erlaubnis fragen."]
+    ],
+    upgrade: "Ersetzt 'Ding' und 'machen' durch Gegenstände und Verben wie stellen, legen, schieben, halten."
+  },
+  "bett-im-heu": {
+    aim: "Das Heubett soll sinnlich und ruhig beschrieben werden, ohne Kitsch.",
+    checks: [
+      ["Geruch", ["riecht", "geruch", "heu", "trocken", "warm"], "Fügt einen Geruch ein, nicht nur ein Gefühl."],
+      ["Geräusch", ["raschelt", "wind", "still", "hört", "geräusch"], "Lasst ein leises Geräusch vorkommen."],
+      ["Körperempfindung", ["müde", "warm", "kopf", "atem", "decke", "liegt"], "Zeigt, wie Heidi den Schlafplatz körperlich erlebt."]
+    ],
+    upgrade: "Streicht ein pauschales Adjektiv und ersetzt es durch Geruch, Geräusch oder Körperempfindung."
+  },
+  "peter-stellt-ziegen-vor": {
+    aim: "Die Ziegen sollen durch Namen und Verhalten unterscheidbar werden.",
+    checks: [
+      ["Namen", ["schwänli", "bärli", "name", "heißt"], "Gebt den Ziegen Namen oder macht deutlich, wie Peter sie nennt."],
+      ["Eigenheit", ["zupft", "drängt", "bleibt", "läuft", "findet", "langsam"], "Beschreibt eine sichtbare Gewohnheit jeder Ziege."],
+      ["Dialog", ["heidi", "peter", "fragt", "sagt"], "Schreibt die Information als Gespräch, nicht als Liste."]
+    ],
+    upgrade: "Macht aus einer Eigenschaft ein Verhalten: nicht 'lieb', sondern 'bleibt beim Felsen stehen'."
+  },
+  "gewitter-kommt": {
+    aim: "Die Gewitterquest braucht klare Warnsprache und Handlungsfolge.",
+    checks: [
+      ["Beobachtung", ["wolken", "wind", "gras", "herde", "dunkel", "donner"], "Beginnt mit einem sichtbaren oder hörbaren Wetterzeichen."],
+      ["Entscheidung", ["zurück", "hütte", "gehen", "nicht rennen", "bevor"], "Formuliert, was jetzt entschieden wird."],
+      ["Handgriff", ["hält", "sammelt", "ruft", "nimmt", "führt"], "Nennt eine konkrete Handlung mit der Herde."]
+    ],
+    upgrade: "Ordnet die fünf Sätze als Beobachtung, Warnung, Entscheidung, Handgriff, Rückweg."
+  },
+  "alpsegen-hoeren": {
+    aim: "Der Alpsegen soll als Hör- und Traditionsmoment respektvoll beschrieben werden.",
+    checks: [
+      ["Hörbeobachtung", ["stimme", "klingt", "getragen", "lang", "wiederholung", "pause"], "Beschreibt den Klang, bevor ihr deutet."],
+      ["Schutzwunsch", ["schutz", "bitte", "nacht", "mensch", "tier", "ort"], "Ordnet den Alpsegen als Bitte oder Schutzwunsch ein."],
+      ["Respekt", ["tradition", "respekt", "nicht nachahmen", "vorsichtig"], "Vermeidet Spott und vorschnelle Bewertung."]
+    ],
+    upgrade: "Ersetzt ein Urteil durch eine Hörbeobachtung: 'Die Stimme klingt ...', 'Die Wiederholung wirkt ...'."
+  },
+  "grossvater-arbeitet": {
+    aim: "Die Anleitung muss über genaue Verben und Reihenfolge funktionieren.",
+    checks: [
+      ["Reihenfolge", ["zuerst", "dann", "danach", "erst wenn", "am schluss"], "Ordnet die Arbeitsschritte klar."],
+      ["Handverben", ["hält", "nimmt", "gießt", "stellt", "schiebt", "hebt"], "Verwendet Verben, die Heidi nachmachen kann."],
+      ["Knappheit", ["kurz", "ruhig", "großvater"], "Lasst die Anleitung nicht wie einen langen Vortrag klingen."]
+    ],
+    upgrade: "Schreibt die Anleitung als drei knappe Sätze des Großvaters mit sichtbaren Handgriffen."
+  },
+  "ankunft-frankfurt": {
+    aim: "Frankfurt soll über konkrete Kontraste zur Alp erfahrbar werden.",
+    checks: [
+      ["Stadtbeobachtung", ["häuser", "straße", "treppe", "kutsche", "tür", "fenster"], "Nennt Dinge der Stadt, die Heidi sieht."],
+      ["Alp-Kontrast", ["alp", "weite", "luft", "himmel", "blick", "wind"], "Vergleicht vorsichtig mit der Alp."],
+      ["Kein Pauschalurteil", ["nicht einfach", "anders", "fremd", "wirkt"], "Vermeidet Stadt-ist-schlecht-Sätze und bleibt bei Beobachtungen."]
+    ],
+    upgrade: "Ersetzt 'Frankfurt ist schlimm' durch eine Beobachtung wie 'Der Himmel ist nur als Streifen zu sehen'."
+  },
+  "clara-kennenlernen": {
+    aim: "Heidi und Clara sollen sich gegenseitig fragen, nicht einander festlegen.",
+    checks: [
+      ["Heidis Frage", ["darf ich", "wie ist", "magst du", "heidi fragt"], "Lasst Heidi vorsichtig und offen fragen."],
+      ["Claras eigene Welt", ["clara", "buch", "fenster", "unterricht", "zimmer"], "Gebt Clara mehr als eine Rolle als Patientin."],
+      ["Gegenseitigkeit", ["danach", "ich erzähle", "zeigst du", "beide"], "Beide Kinder sollen etwas anbieten."]
+    ],
+    upgrade: "Prüft, ob Clara nur bemitleidet wird. Ergänzt etwas, das Clara Heidi zeigen oder fragen kann."
+  },
+  "rottenmeier-tisch": {
+    aim: "Die Tischregel muss in verletzend, neutral und hilfreich unterschieden werden.",
+    checks: [
+      ["Drei Fassungen", ["verletzend", "neutral", "hilfreich"], "Schreibt wirklich alle drei Fassungen aus."],
+      ["Konkrete Tischregel", ["serviette", "besteck", "tisch", "essen", "schoß"], "Nennt die konkrete Regel am Tisch."],
+      ["Nächster Schritt", ["leg", "nimm", "zeige", "nächstes mal", "hierher"], "Die hilfreiche Fassung soll sagen, was Heidi tun kann."]
+    ],
+    upgrade: "Macht die hilfreiche Fassung handlungsnah: 'Leg ...', 'Nimm ...', 'Ich zeige dir ...'."
+  },
+  "sehnsucht-alp": {
+    aim: "Heimweh soll gezeigt werden, ohne das Wort Heimweh zu benutzen.",
+    checks: [
+      ["Körperzeichen", ["isst", "schläft", "atem", "hände", "fenster", "brot"], "Zeigt Heidis Körper oder Handlung."],
+      ["Erinnerungsbild", ["alp", "wind", "ziegen", "heu", "peter", "hütte"], "Lasst ein Bild der Alp in Frankfurt auftauchen."],
+      ["Wortverzicht", ["heimweh"], "Falls 'Heimweh' vorkommt: Ersetzt es durch Szene, Blick oder Erinnerung."]
+    ],
+    upgrade: "Streicht 'Heimweh' oder 'traurig' und zeigt stattdessen Fensterblick, unberührtes Brot oder einen inneren Klang der Alp."
+  },
+  "frankfurt-verlorene-stadt": {
+    aim: "Die historische Erklärung muss Rekonstruktion, Zerstörung und heutigen Abstand trennen.",
+    checks: [
+      ["1890 rekonstruiert", ["1890", "rekonstruiert", "spyris", "stadtwelt"], "Markiert die alte Frankfurt-Szene als Annäherung."],
+      ["1944 als späterer Bruch", ["1944", "krieg", "zerstörung", "bomb", "katastrophe"], "Ordnet die Zerstörung als spätere historische Katastrophe ein."],
+      ["Heute nicht gleich", ["heute", "nicht mehr", "wiederaufbau", "existiert"], "Erklärt, warum Spyris Frankfurt heute so nicht mehr vorhanden ist."]
+    ],
+    upgrade: "Formuliert in drei Sätzen: rekonstruiertes 19. Jahrhundert, Zerstörung 1944, heutiger Abstand."
+  },
+  "rueckkehr-alp": {
+    aim: "Die Rückkehr muss Vertrautheit und Veränderung zugleich zeigen.",
+    checks: [
+      ["Wiedererkennen", ["wieder", "hütte", "wind", "gras", "großvater", "alp"], "Zeigt, was Heidi wiedererkennt."],
+      ["Veränderung", ["frankfurt", "anders", "nicht mehr", "hinter ihr", "gelernt"], "Macht sichtbar, dass Heidi verändert zurückkommt."],
+      ["Kurzer Satz", ["großvater", "ich bin", "da"], "Heidis erster Satz darf knapp und bedeutungsvoll sein."]
+    ],
+    upgrade: "Kürzt Heidis ersten Satz und ergänzt einen Hinweis, dass Frankfurt innerlich noch nachwirkt."
+  },
+  "grossmutter-hoert": {
+    aim: "Zuhören soll als Handlung sichtbar werden.",
+    checks: [
+      ["Kurzer Satz der Großmutter", ["erzähl", "kind", "langsam", "ich höre", "weiter"], "Lasst die Großmutter knapp zum Weitererzählen einladen."],
+      ["Pause oder Blick", ["pause", "wartet", "blick", "hände", "leise"], "Zeigt Zuhören körperlich, nicht nur durch Rede."],
+      ["Heidis Erzählen verändert sich", ["noch einmal", "langsamer", "beginnt", "findet", "wort"], "Macht sichtbar, dass Heidi durch Zuhören weiterkommt."]
+    ],
+    upgrade: "Streicht eine lange Rede der Großmutter und ersetzt sie durch Pause plus kurze Rückfrage."
+  },
+  "peter-eifersucht": {
+    aim: "Peters Gefühl soll verständlich werden, ohne falsches Verhalten zu entschuldigen.",
+    checks: [
+      ["Gefühl", ["eifersüchtig", "zurückgesetzt", "angst", "trotzig", "verliert"], "Benennt oder zeigt Peters schwieriges Gefühl."],
+      ["Handlung", ["tritt", "sagt nichts", "nimmt", "wegschaut", "verletzt"], "Nennt, was Peter tatsächlich tut."],
+      ["Grenze", ["trotzdem", "darf nicht", "grenze", "verantwortung"], "Setzt eine klare Grenze für verletzendes Verhalten."]
+    ],
+    upgrade: "Schreibt zwei Auswertungssätze: 'Man kann verstehen, dass ...' und 'Trotzdem darf ...'."
+  },
+  "dorfschule-peter": {
+    aim: "Die Schulaufgabe muss Material, Lesesatz und Rückmeldung enthalten.",
+    checks: [
+      ["Material", ["karte", "bild", "ziegenname", "weg", "tisch"], "Legt fest, womit Peter arbeitet."],
+      ["Lesesatz", ["liest", "satz", "schwänli", "steg", "geht"], "Schreibt den konkreten Satz, den Peter lesen soll."],
+      ["Rückmeldung", ["du hast", "erkannt", "noch einmal", "gut", "nächstes wort"], "Gebt eine ermutigende Rückmeldung."]
+    ],
+    upgrade: "Macht aus der Idee eine spielbare Aufgabe: Material auf dem Tisch, Peters Satz, genaue Rückmeldung."
+  },
+  "clara-auf-der-alp": {
+    aim: "Claras Alp-Erfahrung braucht Hilfe ohne Bevormundung.",
+    checks: [
+      ["Claras Wahrnehmung", ["clara", "licht", "luft", "weg", "wiese", "unsicher"], "Zeigt Claras eigene Wahrnehmung der Alp."],
+      ["Heidis Angebot", ["ich zeige", "langsam", "pause", "du kannst", "wenn du willst"], "Formuliert Hilfe als Angebot."],
+      ["Würde", ["nicht drängen", "nicht bevormunden", "ernst", "wahl"], "Achtet darauf, Clara nicht klein zu machen."]
+    ],
+    upgrade: "Ersetzt 'Du musst' durch 'Wir können' oder 'Wenn du willst, zeige ich dir ...'."
+  },
+  "ziegen-verloren": {
+    aim: "Die Suchaufgabe braucht genaue Ortsangaben und einen planvollen Ruf.",
+    checks: [
+      ["Ortsangabe", ["felsen", "steg", "bach", "hang", "oberhalb", "unterhalb"], "Ersetzt 'dort' durch eine echte Ortsangabe."],
+      ["Suchplan", ["zuerst", "dann", "danach", "zurück", "nicht allein"], "Ordnet die Suche in Schritte."],
+      ["Lockruf", ["komm", "schwänli", "ziege", "hier", "weg"], "Formuliert einen kurzen Ruf, der zur Ziege passt."]
+    ],
+    upgrade: "Schreibt: letzter Ort, erster Suchweg, zweiter Suchweg, Rückweg-Regel, Lockruf."
+  },
+  "schlusskreis": {
+    aim: "Der Schlusskreis soll auswählen, begründen und einen Lerngewinn benennen.",
+    checks: [
+      ["Eine Szene", ["ich wähle", "szene", "hütte", "ziege", "frankfurt", "schule", "alp"], "Wählt eine konkrete Szene statt alles aufzuzählen."],
+      ["Ein Wort und eine Frage", ["wort", "frage", "warum", "woran", "oberhalb", "weil"], "Nennt ein genaueres Wort und eine gute Frage."],
+      ["Begründung", ["weil", "dadurch", "deshalb", "gelernt"], "Begründet, was sich sprachlich verändert hat."]
+    ],
+    upgrade: "Formt den Beitrag so: Ich wähle ..., weil ... Das Wort ... hilft ... Die Frage ... öffnet ..."
+  }
+};
+
 function gfMultiply(left, right) {
   let result = 0;
   for (let index = 0; index < 8; index += 1) {
@@ -525,9 +744,12 @@ function answerForm(prefill = "") {
   return html`
     <form class="stack" data-answer-form>
       <label>Erste Formulierung<textarea name="first" required>${escapeHtml(prefill)}</textarea></label>
+      <div data-written-feedback="first">${feedbackMarkup(c, "first", prefill)}</div>
       <div class="feedback-box"><strong>Hinweis statt Richtig-falsch:</strong><p>${escapeHtml(c.hint)}</p></div>
       <label>Überarbeitete Fassung<textarea name="revision" required></textarea></label>
+      <div data-written-feedback="revision">${feedbackMarkup(c, "revision", "")}</div>
       <label>Kurze Reflexion<textarea name="reflection" required placeholder="${escapeHtml(c.reflection)}"></textarea></label>
+      <div data-written-feedback="reflection">${feedbackMarkup(c, "reflection", "")}</div>
       <div class="toolbar">
         <button type="submit">Lernspur speichern</button>
         <button type="button" class="secondary" data-example>Beispiel einsetzen</button>
@@ -543,9 +765,22 @@ async function saveAnswer(form) {
     ["revision", data.get("revision")],
     ["reflection", data.get("reflection")]
   ];
+  const feedbackEntries = entries.map(([kind, text]) => {
+    const feedback = qualifiedFeedback(chapter(), kind, text);
+    return [
+      `${kind}-feedback`,
+      [
+        feedback.title,
+        feedback.summary,
+        `Schon tragfähig: ${feedback.strengths.join(" ")}`,
+        `Jetzt überarbeiten: ${feedback.nextSteps.join(" ")}`
+      ].join("\n")
+    ];
+  });
+  const allEntries = entries.flatMap((entry, index) => [entry, feedbackEntries[index]]);
 
   if (state.mode === "partner") {
-    for (const [kind, text] of entries) {
+    for (const [kind, text] of allEntries) {
       await api(`/api/rooms/${state.room.code}/submissions`, {
         method: "POST",
         body: JSON.stringify({ chapterIndex: state.chapterIndex, kind, text, role: "team", words: collectWords(text) })
@@ -556,7 +791,7 @@ async function saveAnswer(form) {
     return;
   }
 
-  for (const [kind, text] of entries) {
+  for (const [kind, text] of allEntries) {
     saveLocalEntry({ chapterIndex: state.chapterIndex, kind, role: "team", text, words: collectWords(text) });
   }
   renderCurrentMode();
@@ -576,6 +811,98 @@ function speechRecognitionConstructor() {
 
 function wordCount(value) {
   return (String(value || "").trim().match(/\S+/g) || []).length;
+}
+
+function normalizeFeedbackText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replaceAll("ä", "ae")
+    .replaceAll("ö", "oe")
+    .replaceAll("ü", "ue")
+    .replaceAll("ß", "ss");
+}
+
+function feedbackIncludes(text, terms) {
+  const normalized = normalizeFeedbackText(text);
+  return terms.some((term) => normalized.includes(normalizeFeedbackText(term)));
+}
+
+function kindLabel(kind) {
+  if (kind === "first") return "erste Fassung";
+  if (kind === "revision") return "Überarbeitung";
+  if (kind === "reflection") return "Reflexion";
+  if (kind === "voice") return "mündlicher Beitrag";
+  return "Eingabe";
+}
+
+function qualifiedFeedback(chapterData, kind, text) {
+  const profile = FEEDBACK_PROFILES[chapterData.id];
+  const words = wordCount(text);
+  if (!profile) {
+    return {
+      title: "Feedback",
+      strengths: ["Die Eingabe ist gespeichert und kann mit dem Kapitelziel verglichen werden."],
+      nextSteps: [chapterData.revisionPrompt],
+      summary: chapterData.hint
+    };
+  }
+
+  const strengths = [];
+  const nextSteps = [];
+  for (const [label, terms, suggestion] of profile.checks) {
+    if (feedbackIncludes(text, terms)) {
+      strengths.push(`${label}: erkennbar angelegt.`);
+    } else {
+      nextSteps.push(`${label}: ${suggestion}`);
+    }
+  }
+
+  if (kind === "first" && words < 25) {
+    nextSteps.push("Erste Fassung: Ergänzt mindestens einen konkreten Satz mehr, damit die Szene oder Erklärung prüfbar wird.");
+  }
+  if (kind === "revision" && words < 25) {
+    nextSteps.push("Überarbeitung: Zeigt sichtbar, was ihr gegenüber der ersten Fassung verbessert habt.");
+  }
+  if (kind === "reflection" && !feedbackIncludes(text, ["weil", "dadurch", "deshalb", "darum"])) {
+    nextSteps.push("Reflexion: Begründet eure Einschätzung mit 'weil', 'dadurch' oder 'deshalb'.");
+  }
+  if (kind === "voice" && words < 8) {
+    nextSteps.push("Mündlicher Beitrag: Sprecht einen vollständigen Gedanken, nicht nur Stichwörter.");
+  }
+
+  if (!strengths.length) {
+    strengths.push(`Die ${kindLabel(kind)} ist ein Anfang, braucht aber noch deutlichere Spuren der konkreten Quest.`);
+  }
+  if (!nextSteps.length) {
+    nextSteps.push("Nächster Feinschliff: Kürzt eine schwache Stelle und macht ein Verb, eine Beobachtung oder eine Begründung genauer.");
+  }
+
+  return {
+    title: `Qualifiziertes Feedback zur ${kindLabel(kind)}`,
+    strengths,
+    nextSteps,
+    summary: `${profile.aim} ${profile.upgrade}`
+  };
+}
+
+function feedbackMarkup(chapterData, kind, text) {
+  const feedback = qualifiedFeedback(chapterData, kind, text);
+  return html`
+    <div class="qualified-feedback">
+      <strong>${escapeHtml(feedback.title)}</strong>
+      <p>${escapeHtml(feedback.summary)}</p>
+      <div class="feedback-columns">
+        <div>
+          <p class="small"><strong>Schon tragfähig</strong></p>
+          <ul>${feedback.strengths.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+        </div>
+        <div>
+          <p class="small"><strong>Jetzt überarbeiten</strong></p>
+          <ul>${feedback.nextSteps.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+        </div>
+      </div>
+    </div>
+  `;
 }
 
 function roleNeedsVoice(c, role) {
@@ -601,6 +928,7 @@ function voiceQuestPanel(role, c) {
       <label>Transkript
         <textarea name="voiceTranscript" data-voice-transcript="${escapeHtml(key)}" placeholder="${supportsSpeech ? "Tippe auf Aufnahme und sprich ins Handy." : "Dieser Browser bietet keine automatische Spracheingabe. Dokumentiert euren gesprochenen Beitrag hier."}">${escapeHtml(draft)}</textarea>
       </label>
+      <div data-feedback-for="${escapeHtml(key)}">${feedbackMarkup(c, "voice", draft)}</div>
       <div class="toolbar">
         ${supportsSpeech ? `<button type="button" data-start-voice="${escapeHtml(key)}">Aufnahme starten</button><button type="button" class="secondary" data-stop-voice>Stopp</button>` : ""}
         <button type="button" class="secondary" data-save-voice="${escapeHtml(key)}">Mündlichen Beitrag speichern</button>
@@ -613,6 +941,11 @@ function voiceQuestPanel(role, c) {
 function voiceTextarea(key) {
   return [...app.querySelectorAll("[data-voice-transcript]")]
     .find((element) => element.dataset.voiceTranscript === key) || null;
+}
+
+function feedbackTargetForVoice(key) {
+  return [...app.querySelectorAll("[data-feedback-for]")]
+    .find((element) => element.dataset.feedbackFor === key) || null;
 }
 
 function renderPhone() {
@@ -789,7 +1122,7 @@ function renderTeacher() {
       </div>
       <div class="panel stack">
         <h2>Datenmodell</h2>
-        <p>Jedes Kapitel enthält: id, title, place, languageGoal, laptopFrame, roleA, roleB, teamTask, hint, revisionPrompt, example und reflection. Die Spiellogik liest diese Felder generisch aus.</p>
+        <p>Jedes Kapitel enthält: id, title, place, languageGoal, laptopFrame, roleA, roleB, teamTask, hint, revisionPrompt, example und reflection. Zusätzlich besitzt jede Quest ein eigenes Feedbackprofil mit konkreten Prüfpunkten.</p>
         <p>Optionale Mikrofon-Aufgaben werden über <strong>voiceQuest</strong> gesteuert: required, roles, prompt und minWords.</p>
         <div class="toolbar">
           <button type="button" data-export-journal>Export Lernspur</button>
@@ -818,9 +1151,10 @@ function journalPanel() {
 
 function renderJournalEntry(entry) {
   const item = state.content.chapters[entry.chapterIndex] || {};
+  const isFeedback = String(entry.kind || "").includes("feedback");
   return html`
-    <article class="journal-entry">
-      <strong>${escapeHtml(item.title || "Kapitel")} · ${escapeHtml(entry.kind)}</strong>
+    <article class="journal-entry ${isFeedback ? "is-feedback" : ""}">
+      <strong>${escapeHtml(item.title || "Kapitel")} · ${isFeedback ? "qualifiziertes Feedback" : escapeHtml(entry.kind)}</strong>
       <p>${escapeHtml(entry.text)}</p>
       ${entry.words?.length ? `<ul class="token-list">${entry.words.map((word) => `<li>${escapeHtml(word)}</li>`).join("")}</ul>` : ""}
     </article>
@@ -913,6 +1247,10 @@ function startVoiceRecognition(key) {
     }
     textarea.value = `${finalText}${interimText ? ` ${interimText}` : ""}`.trim();
     state.voiceDrafts[key] = textarea.value;
+    const [chapterIndex] = key.split(":");
+    const chapterData = state.content.chapters[Number(chapterIndex)] || chapter();
+    const feedbackTarget = feedbackTargetForVoice(key);
+    if (feedbackTarget) feedbackTarget.innerHTML = feedbackMarkup(chapterData, "voice", textarea.value);
   };
   recognition.onend = () => {
     if (state.listeningKey === key) {
@@ -938,6 +1276,14 @@ async function saveVoiceDraft(key) {
   }
   state.voiceDrafts[key] = text;
   const [chapterIndex, role] = key.split(":");
+  const chapterData = state.content.chapters[Number(chapterIndex)] || chapter();
+  const feedback = qualifiedFeedback(chapterData, "voice", text);
+  const feedbackText = [
+    feedback.title,
+    feedback.summary,
+    `Schon tragfähig: ${feedback.strengths.join(" ")}`,
+    `Jetzt überarbeiten: ${feedback.nextSteps.join(" ")}`
+  ].join("\n");
   if (state.room?.code && state.mode === "phone") {
     state.room = (await api(`/api/rooms/${state.room.code}/submissions`, {
       method: "POST",
@@ -949,8 +1295,19 @@ async function saveVoiceDraft(key) {
         words: collectWords(text)
       })
     })).room;
+    state.room = (await api(`/api/rooms/${state.room.code}/submissions`, {
+      method: "POST",
+      body: JSON.stringify({
+        chapterIndex: Number(chapterIndex),
+        kind: "voice-feedback",
+        role,
+        text: feedbackText,
+        words: collectWords(feedbackText)
+      })
+    })).room;
   } else {
     saveLocalEntry({ chapterIndex: Number(chapterIndex), kind: "voice", role, text, words: collectWords(text) });
+    saveLocalEntry({ chapterIndex: Number(chapterIndex), kind: "voice-feedback", role, text: feedbackText, words: collectWords(feedbackText) });
   }
   renderCurrentMode();
 }
@@ -1036,8 +1393,22 @@ app.addEventListener("click", async (event) => {
 
 app.addEventListener("input", (event) => {
   const transcript = event.target.closest("[data-voice-transcript]");
-  if (!transcript) return;
-  state.voiceDrafts[transcript.dataset.voiceTranscript] = transcript.value;
+  if (transcript) {
+    const key = transcript.dataset.voiceTranscript;
+    state.voiceDrafts[key] = transcript.value;
+    const [chapterIndex] = key.split(":");
+    const chapterData = state.content.chapters[Number(chapterIndex)] || chapter();
+    const feedbackTarget = feedbackTargetForVoice(key);
+    if (feedbackTarget) feedbackTarget.innerHTML = feedbackMarkup(chapterData, "voice", transcript.value);
+    return;
+  }
+
+  const answerFormElement = event.target.closest("[data-answer-form]");
+  if (!answerFormElement || !event.target.name) return;
+  const kind = event.target.name;
+  if (!["first", "revision", "reflection"].includes(kind)) return;
+  const feedbackTarget = answerFormElement.querySelector(`[data-written-feedback="${kind}"]`);
+  if (feedbackTarget) feedbackTarget.innerHTML = feedbackMarkup(chapter(), kind, event.target.value);
 });
 
 app.addEventListener("submit", async (event) => {

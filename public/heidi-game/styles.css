@@ -530,6 +530,34 @@ p {
   background: rgba(165, 84, 59, 0.12);
 }
 
+.qualified-feedback {
+  border: 1px solid rgba(45, 104, 117, 0.24);
+  border-left: 5px solid var(--role-a);
+  border-radius: 0 8px 8px 0;
+  padding: 12px 14px;
+  background: rgba(232, 244, 241, 0.68);
+}
+
+.qualified-feedback ul {
+  margin: 6px 0 0;
+  padding-left: 20px;
+}
+
+.feedback-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px;
+}
+
+.journal-entry.is-feedback {
+  border-left: 5px solid var(--role-a);
+  background: rgba(232, 244, 241, 0.78);
+}
+
+.journal-entry p {
+  white-space: pre-line;
+}
+
 .voice-quest {
   display: grid;
   gap: 12px;
