@@ -665,13 +665,7 @@ function renderPartner() {
     ${topbar("partner")}
     <div class="layout">
       <section class="stack">
-        <div class="panel">
-          <p class="eyebrow">Laptop-Spielleitung</p>
-          <h1>${escapeHtml(c.title)}</h1>
-          <p>${escapeHtml(c.laptopFrame)}</p>
-          ${historicalNote(c)}
-          ${sceneMedia(c)}
-        </div>
+        ${questStage(c, "Laptop-Spielleitung")}
         ${chapterTabs()}
         ${statusStrip()}
         ${teamTaskPanel()}
@@ -694,11 +688,42 @@ function renderPartner() {
   `;
 }
 
-function chapterTabs() {
+function questStage(c, label) {
   return html`
-    <div class="panel">
+    <section class="quest-stage">
+      <div class="quest-copy">
+        <div class="quest-kicker">
+          <span>${escapeHtml(label)}</span>
+          <span>${escapeHtml(c.place || "Spielort")}</span>
+          <span>Quest ${state.chapterIndex + 1} von ${state.content.chapters.length}</span>
+        </div>
+        <h1>${escapeHtml(c.title)}</h1>
+        <p>${escapeHtml(c.laptopFrame)}</p>
+        ${historicalNote(c)}
+        <div class="quest-actions">
+          <button type="button" class="secondary" data-prev-chapter ${state.chapterIndex === 0 ? "disabled" : ""}>Vorige Quest</button>
+          <button type="button" data-next-chapter ${state.chapterIndex >= state.content.chapters.length - 1 ? "disabled" : ""}>Nächste Quest</button>
+        </div>
+      </div>
+      ${sceneMedia(c)}
+    </section>
+  `;
+}
+
+function chapterTabs() {
+  const progress = ((state.chapterIndex + 1) / state.content.chapters.length) * 100;
+  return html`
+    <div class="quest-map panel">
+      <div class="quest-map-head">
+        <div>
+          <p class="eyebrow">Questpfad</p>
+          <strong>${escapeHtml(chapter().title)}</strong>
+        </div>
+        <span>${state.chapterIndex + 1}/${state.content.chapters.length}</span>
+      </div>
+      <div class="quest-progress" aria-hidden="true"><span style="width:${progress}%"></span></div>
       <div class="chapter-tabs" aria-label="Kapitel">
-        ${state.content.chapters.map((item, index) => `<button type="button" data-chapter="${index}" aria-current="${index === state.chapterIndex}">${index + 1}</button>`).join("")}
+        ${state.content.chapters.map((item, index) => `<button type="button" title="${escapeHtml(item.title)}" data-chapter="${index}" aria-current="${index === state.chapterIndex}"><span>${index + 1}</span></button>`).join("")}
       </div>
     </div>
   `;
@@ -758,9 +783,35 @@ function teamTaskPanel() {
   const c = chapter();
   const bothReady = state.mode !== "partner" || (state.room?.roleReady?.A && state.room?.roleReady?.B);
   return html`
-    <div class="panel stack">
-      <p class="eyebrow">Gemeinsame Aufgabe</p>
-      ${bothReady ? `<h2>${escapeHtml(c.teamTask)}</h2>${answerForm()}` : `<div class="notice"><strong>Noch gesperrt.</strong><p>Die Aufgabe erscheint, sobald Schwänli und Schnecke ihre Beobachtungen ausgetauscht und auf dem Handy bestätigt haben.</p></div>`}
+    <div class="task-panel panel stack">
+      <div>
+        <p class="eyebrow">Gemeinsame Aufgabe</p>
+        <h2>${escapeHtml(c.teamTask)}</h2>
+      </div>
+      ${taskFlow(c)}
+      ${bothReady ? answerForm() : `<div class="notice"><strong>Noch gesperrt.</strong><p>Die Schreibwerkstatt öffnet sich, sobald Schwänli und Schnecke ihre Beobachtungen ausgetauscht und auf dem Handy bestätigt haben.</p></div>`}
+    </div>
+  `;
+}
+
+function taskFlow(c) {
+  return html`
+    <div class="task-flow" aria-label="Arbeitsfluss">
+      <article>
+        <span>1</span>
+        <strong>Austauschen</strong>
+        <p>Schwänli: ${escapeHtml(c.roleA.name)}. Schnecke: ${escapeHtml(c.roleB.name)}.</p>
+      </article>
+      <article>
+        <span>2</span>
+        <strong>Formulieren</strong>
+        <p>${escapeHtml(c.languageGoal)}</p>
+      </article>
+      <article>
+        <span>3</span>
+        <strong>Schärfen</strong>
+        <p>${escapeHtml(c.revisionPrompt)}</p>
+      </article>
     </div>
   `;
 }
@@ -768,13 +819,13 @@ function teamTaskPanel() {
 function answerForm(prefill = "") {
   const c = chapter();
   return html`
-    <form class="stack" data-answer-form>
-      <label>Erste Formulierung<textarea name="first" required>${escapeHtml(prefill)}</textarea></label>
+    <form class="answer-workshop stack" data-answer-form>
+      <label><span>1. Erste Formulierung</span><textarea name="first" required>${escapeHtml(prefill)}</textarea></label>
       <div data-written-feedback="first">${feedbackMarkup(c, "first", prefill)}</div>
       <div class="feedback-box"><strong>Hinweis statt Richtig-falsch:</strong><p>${escapeHtml(c.hint)}</p></div>
-      <label>Überarbeitete Fassung<textarea name="revision" required></textarea></label>
+      <label><span>2. Überarbeitete Fassung</span><textarea name="revision" required></textarea></label>
       <div data-written-feedback="revision">${feedbackMarkup(c, "revision", "")}</div>
-      <label>Kurze Reflexion<textarea name="reflection" required placeholder="${escapeHtml(c.reflection)}"></textarea></label>
+      <label><span>3. Kurze Reflexion</span><textarea name="reflection" required placeholder="${escapeHtml(c.reflection)}"></textarea></label>
       <div data-written-feedback="reflection">${feedbackMarkup(c, "reflection", "")}</div>
       <div class="toolbar">
         <button type="submit">Lernspur speichern</button>
@@ -1046,16 +1097,11 @@ function renderDesktop() {
     ${topbar("desktop")}
     <div class="layout">
       <section class="stack">
-        <div class="panel">
-          <p class="eyebrow">Desktopmodus</p>
-          <h1>${escapeHtml(c.title)}</h1>
-          <p>${escapeHtml(c.laptopFrame)}</p>
-          ${historicalNote(c)}
-          ${sceneMedia(c)}
-        </div>
+        ${questStage(c, "Desktopmodus")}
         ${chapterTabs()}
         <div class="panel stack">
           <h2>Ziegenkarten nacheinander öffnen</h2>
+          ${taskFlow(c)}
           <div class="toolbar">
             <button type="button" class="secondary" data-reveal="A">${state.revealA ? "Schwänli verbergen" : "Schwänli öffnen"}</button>
             <button type="button" class="secondary" data-reveal="B">${state.revealB ? "Schnecke verbergen" : "Schnecke öffnen"}</button>
@@ -1079,12 +1125,8 @@ function renderDemo() {
     ${topbar("demo")}
     <div class="layout">
       <section class="stack">
-        <div class="panel">
-          <p class="eyebrow">Demomodus</p>
-          <h1>${escapeHtml(c.title)}</h1>
-          <p>${escapeHtml(c.laptopFrame)}</p>
-          ${historicalNote(c)}
-          ${sceneMedia(c)}
+        <div class="stack">
+          ${questStage(c, "Demomodus")}
           <div class="toolbar">
             <button type="button" class="secondary" data-toggle-didactics>${state.showDidactics ? "Didaktik ausblenden" : "Didaktik einblenden"}</button>
             <button type="button" class="danger" data-reset-local>Aufgabe zurücksetzen</button>
@@ -1098,6 +1140,7 @@ function renderDemo() {
         <div class="panel stack">
           <p class="eyebrow">Laptop nach Austausch</p>
           <h2>${escapeHtml(c.teamTask)}</h2>
+          ${taskFlow(c)}
           ${answerForm(c.example)}
         </div>
         ${state.showDidactics ? didacticsPanel() : ""}
@@ -1360,6 +1403,8 @@ app.addEventListener("click", async (event) => {
 
   if (button.dataset.nav) navigate(button.dataset.nav);
   if (button.dataset.startRoom !== undefined) await startRoom();
+  if (button.dataset.prevChapter !== undefined) await setChapter(Math.max(0, state.chapterIndex - 1));
+  if (button.dataset.nextChapter !== undefined) await setChapter(Math.min(state.content.chapters.length - 1, state.chapterIndex + 1));
   if (button.dataset.chapter !== undefined) await setChapter(Number(button.dataset.chapter));
   if (button.dataset.reveal) {
     if (button.dataset.reveal === "A") state.revealA = !state.revealA;

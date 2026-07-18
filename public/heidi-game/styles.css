@@ -292,9 +292,14 @@ p {
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 340px;
-  gap: 16px;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 360px);
+  gap: 20px;
   align-items: start;
+}
+
+.layout > aside {
+  position: sticky;
+  top: 14px;
 }
 
 .stack {
@@ -316,7 +321,7 @@ p {
 
 .status-strip {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 10px;
 }
 
@@ -370,7 +375,60 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 12px;
-  margin: 18px 0 0;
+  margin: 0;
+}
+
+.quest-stage {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1.05fr);
+  gap: 16px;
+  align-items: stretch;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 252, 245, 0.9), rgba(232, 244, 241, 0.66)),
+    rgba(255, 252, 245, 0.78);
+  box-shadow: var(--shadow);
+}
+
+.quest-copy {
+  display: grid;
+  gap: 14px;
+  align-content: center;
+}
+
+.quest-copy h1 {
+  font-size: clamp(2.15rem, 5.2vw, 4.8rem);
+}
+
+.quest-kicker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quest-kicker span {
+  border-radius: 999px;
+  padding: 7px 10px;
+  color: var(--forest);
+  background: rgba(255, 255, 255, 0.62);
+  border: 1px solid rgba(35, 63, 49, 0.12);
+  font-weight: 750;
+}
+
+.quest-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.quest-stage .scene-media-grid {
+  align-content: stretch;
+}
+
+.quest-stage .scene-media {
+  height: 100%;
 }
 
 .historical-note {
@@ -472,6 +530,41 @@ p {
   box-shadow: 0 8px 18px rgba(23, 32, 25, 0.16);
 }
 
+.quest-map {
+  display: grid;
+  gap: 12px;
+}
+
+.quest-map-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+
+.quest-map-head span {
+  border-radius: 999px;
+  padding: 6px 10px;
+  color: #fffaf0;
+  background: var(--forest);
+  font-weight: 800;
+}
+
+.quest-progress {
+  height: 9px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(23, 32, 25, 0.12);
+}
+
+.quest-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--role-a), var(--ochre), var(--clay));
+  transition: width 220ms ease;
+}
+
 .chapter-tabs {
   display: flex;
   gap: 8px;
@@ -480,12 +573,69 @@ p {
 }
 
 .chapter-tabs button {
-  min-width: 44px;
-  padding: 9px 12px;
+  min-width: 42px;
+  aspect-ratio: 1;
+  padding: 0;
+  border-radius: 50%;
+  color: var(--forest);
+  background: rgba(255, 255, 255, 0.58);
+  border-color: rgba(35, 63, 49, 0.16);
+}
+
+.chapter-tabs button span {
+  font-weight: 850;
 }
 
 .chapter-tabs button[aria-current="true"] {
   background: var(--clay);
+  color: #fffaf0;
+  transform: translateY(-2px);
+}
+
+.task-panel h2 {
+  font-size: clamp(1.4rem, 2.7vw, 2rem);
+  line-height: 1.12;
+}
+
+.task-flow {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 10px;
+}
+
+.task-flow article {
+  display: grid;
+  gap: 7px;
+  padding: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.54);
+  border: 1px solid rgba(35, 63, 49, 0.12);
+}
+
+.task-flow article > span {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #fffaf0;
+  background: var(--forest);
+  font-weight: 850;
+}
+
+.answer-workshop {
+  padding: 14px;
+  border-radius: 8px;
+  background:
+    linear-gradient(180deg, rgba(248, 243, 232, 0.66), rgba(255, 255, 255, 0.48));
+  border: 1px solid rgba(35, 63, 49, 0.14);
+}
+
+.answer-workshop label > span {
+  display: inline-block;
+  margin-bottom: 6px;
+  color: var(--forest);
+  font-weight: 850;
 }
 
 .role-card {
@@ -668,6 +818,23 @@ p {
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;
+  }
+
+  .layout > aside {
+    position: static;
+  }
+
+  .quest-stage {
+    grid-template-columns: 1fr;
+    padding: 12px;
+  }
+
+  .quest-copy h1 {
+    font-size: clamp(2rem, 12vw, 3.4rem);
+  }
+
+  .scene-media video {
+    aspect-ratio: 4 / 3;
   }
 
   .topbar {
