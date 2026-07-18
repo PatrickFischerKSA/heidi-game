@@ -1,5 +1,5 @@
 {
-  "title": "Heidi - Die Welt bekommt Worte",
+  "title": "Heidi und die Frankfurter Geiss",
   "media": {
     "type": "video",
     "src": "/heidi-game/assets/alpatmosphaere-loop.m4v",
@@ -13,9 +13,9 @@
     "Freie Antworten werden nicht als sicher richtig oder falsch bewertet; Rückmeldungen regen Vergleich, Präzisierung und Überarbeitung an."
   ],
   "learningConcept": {
-    "short": "Die Spielwelt wird sprachlich zugänglicher, je genauer die Spielenden wahrnehmen, Begriffe aushandeln, Fragen stellen, lesen, erklären und überarbeiten.",
+    "short": "Eine Frankfurter Geiss hält sich für Fräulein Rottenmeier und will aus allem eine Vorschrift machen. Die Spielenden helfen Schwänli, Schnecke und Heidi, aus Meckern wieder brauchbare Sprache zu machen.",
     "whyItWorks": [
-      "Die beiden Ziegenperspektiven sind komplementär: Beobachtung und Wortmaterial müssen mündlich zusammengeführt werden.",
+      "Die beiden Geissenperspektiven sind komplementär: Beobachtung und Wortmaterial müssen mündlich zusammengeführt werden.",
       "Die erste Formulierung bleibt sichtbar und wird erst durch Hinweis, Kontext oder Partnerfeedback überarbeitet.",
       "Das Lernjournal macht sichtbar, ob Sprache genauer, zusammenhängender und begründeter wird."
     ]
@@ -37,12 +37,12 @@
       "media": {
         "type": "video",
         "src": "/heidi-game/assets/ziegen-loop.m4v",
-        "label": "Ziegen auf der Alp",
-        "caption": "Ziegen, Himmel, Licht und Bewegung liefern Beobachtungen. Daraus werden keine sicheren Vorhersagen, sondern Fragen an alte Bauernregeln.",
+        "label": "Geissen auf der Alp",
+        "caption": "Geissen, Himmel, Licht und Bewegung liefern Beobachtungen. Daraus werden keine sicheren Vorhersagen, sondern Fragen an alte Bauernregeln.",
         "hasAudio": false,
         "audio": {
           "src": "/heidi-game/assets/ziegen-meckern.mp3",
-          "label": "Ziegenmeckern einschalten",
+          "label": "Geissenmeckern einschalten",
           "loop": true
         }
       },
@@ -50,12 +50,12 @@
         {
           "type": "video",
           "src": "/heidi-game/assets/ziegen-loop.m4v",
-          "label": "Ziegen auf der Alp",
+          "label": "Geissen auf der Alp",
           "caption": "Die Tiere sind für Heidi keine Kulisse. An ihnen beobachtet sie Ruhe, Unruhe, Nähe und Abstand und findet erste Worte.",
           "hasAudio": false,
           "audio": {
             "src": "/heidi-game/assets/ziegen-meckern.mp3",
-            "label": "Ziegenmeckern einschalten",
+            "label": "Geissenmeckern einschalten",
             "loop": true
           }
         },
@@ -71,8 +71,8 @@
       "laptopFrame": "Auf der Alp werden Wetter, Tiere und Arbeit oft in kurzen Sprüchen erklärt. Heidi hört solche Bauernregeln und merkt: Sie klingen einfach, aber man muss fragen, was sie bedeuten. Danach versucht sie, aus einer eigenen Beobachtung selbst eine kleine Bauernregel zu machen.",
       "roleA": {
         "name": "Heidi beobachtet",
-        "prompt": "Du bist nah bei Heidi. Sie sieht die Ziegen, die Weite, das Licht und die Hütte. Sammle eine konkrete Beobachtung, aus der später eine eigene Bauernregel entstehen könnte.",
-        "tokens": ["Ziegen beobachten", "Himmel anschauen", "Licht verändert sich", "eigene Beobachtung"]
+        "prompt": "Du bist nah bei Heidi. Sie sieht die Geissen, die Weite, das Licht und die Hütte. Sammle eine konkrete Beobachtung, aus der später eine eigene Bauernregel entstehen könnte.",
+        "tokens": ["Geissen beobachten", "Himmel anschauen", "Licht verändert sich", "eigene Beobachtung"]
       },
       "roleB": {
         "name": "Bauernregeln bauen",
@@ -88,30 +88,30 @@
       },
       "hint": "Eine erfundene Bauernregel soll nicht wie Wissenschaft klingen. Sie darf knapp, bildhaft oder gereimt sein, muss aber aus einer echten Beobachtung entstehen.",
       "revisionPrompt": "Überarbeitet eure Bauernregel so, dass sie kürzer, sprechbarer und vorsichtiger wird. Ergänzt eine Erklärung, die nicht behauptet, immer recht zu haben.",
-      "example": "Beobachtung: Die Ziegen bleiben nahe beieinander, und der Wind wird kühler. Eigene Bauernregel: 'Drängen die Ziegen dicht zum Stein, zieht bald kühler Wind herein.' Erklärung: Vielleicht spüren die Tiere Wind und Kälte früher; sicher ist das aber nicht.",
+      "example": "Beobachtung: Die Geissen bleiben nahe beieinander, und der Wind wird kühler. Eigene Bauernregel: 'Drängen die Geissen dicht zum Stein, zieht bald kühler Wind herein.' Erklärung: Vielleicht spüren die Tiere Wind und Kälte früher; sicher ist das aber nicht.",
       "reflection": "Was macht eure erfundene Bauernregel glaubwürdig: die Beobachtung, der Klang oder die vorsichtige Erklärung?"
     },
     {
       "id": "ziegen-ansprechen",
-      "title": "Mit den Ziegen sprechen",
+      "title": "Mit den Geissen sprechen",
       "place": "Alpweg",
       "media": {
         "type": "video",
         "src": "/heidi-game/assets/ziegen-loop.m4v",
-        "label": "Ziegen auf der Alp",
+        "label": "Geissen auf der Alp",
         "caption": "Die Szene hat keinen eigenen Ton. Genau deshalb erfinden die Spielenden eine glaubwürdige Stimme für Heidi, Peter und die Tiere.",
         "hasAudio": false,
         "audio": {
           "src": "/heidi-game/assets/ziegen-meckern.mp3",
-          "label": "Ziegenmeckern einschalten",
+          "label": "Geissenmeckern einschalten",
           "loop": true
         }
       },
       "languageGoal": "Freundliche Anrede, genaue Tierbeobachtung und kurze gesprochene Sätze verbinden.",
-      "laptopFrame": "Heidi ist mit den Ziegen draußen. Sie muss nicht erklären, was Tiere denken. Sie kann aber beobachten, wie sie sich bewegen, und ihnen so sprechen, wie ein Kind auf der Alp sprechen könnte.",
+      "laptopFrame": "Heidi ist mit den Geissen draußen. Sie muss nicht erklären, was Tiere denken. Sie kann aber beobachten, wie sie sich bewegen, und ihnen so sprechen, wie ein Kind auf der Alp sprechen könnte.",
       "roleA": {
-        "name": "Heidi bei den Ziegen",
-        "prompt": "Du beobachtest, wie eine Ziege stehen bleibt, eine andere näherkommt und Peter die Herde zusammenhält. Heidi möchte freundlich sprechen, ohne kindisch oder übertrieben zu klingen.",
+        "name": "Heidi bei den Geissen",
+        "prompt": "Du beobachtest, wie eine Geiss stehen bleibt, eine andere näherkommt und Peter die Herde zusammenhält. Heidi möchte freundlich sprechen, ohne kindisch oder übertrieben zu klingen.",
         "tokens": ["stehen bleiben", "näherkommen", "ruhig sprechen", "Peter fragen"]
       },
       "roleB": {
@@ -119,16 +119,16 @@
         "prompt": "Du sammelst passende Wörter für Bewegung und Stimme: meckern, zupfen, springen, trotten, locken, beruhigen, rufen, flüstern.",
         "tokens": ["meckern", "zupfen", "trotten", "beruhigen", "rufen", "flüstern"]
       },
-      "teamTask": "Schreibt eine kurze Szene mit drei Sätzen: Heidi spricht eine Ziege an, Peter reagiert praktisch, und Heidi lernt ein genaueres Wort für das, was die Ziege tut.",
+      "teamTask": "Schreibt eine kurze Szene mit drei Sätzen: Heidi spricht eine Geiss an, Peter reagiert praktisch, und Heidi lernt ein genaueres Wort für das, was die Geiss tut.",
       "voiceQuest": {
         "required": true,
         "roles": ["A"],
-        "prompt": "Sprich Heidis Satz an eine Ziege ins Handy. Er soll freundlich, kurz und natürlich klingen.",
+        "prompt": "Sprich Heidis Satz an eine Geiss ins Handy. Er soll freundlich, kurz und natürlich klingen.",
         "minWords": 7
       },
       "hint": "Die Tiere müssen nicht wie Menschen antworten. Stark wird die Szene, wenn Heidi genau sieht, was passiert, und Peter mit einem einfachen Alpwort oder einer praktischen Bemerkung hilft.",
       "revisionPrompt": "Überarbeitet eure Szene so, dass ein genaues Verb vorkommt und Heidis Satz wirklich gesprochen werden könnte.",
-      "example": "Heidi sagt leise: 'Komm nur, Schneehöppli, ich tue dir nichts.' Peter lacht: 'Sie zupft nur am Kraut, die läuft gleich weiter.' Da merkt Heidi: Die Ziege frisst nicht einfach, sie zupft.",
+      "example": "Heidi sagt leise: 'Komm nur, Schneehöppli, ich tue dir nichts.' Peter lacht: 'Sie zupft nur am Kraut, die läuft gleich weiter.' Da merkt Heidi: Die Geiss frisst nicht einfach, sie zupft.",
       "reflection": "Warum klingt eine kurze, genaue Tieransprache glaubwürdiger als eine lange Erklärung?"
     },
     {
@@ -253,8 +253,8 @@
       "laptopFrame": "Bei der Großmutter wird Lernen konkret: Vorlesen, Zuhören, Wiederholen und Ermutigen. Peter lernt nicht automatisch so, wie Heidi lernt; ein guter Lernweg beginnt bei seiner Welt.",
       "roleA": {
         "name": "Wahrnehmen",
-        "prompt": "Peter kennt Wege, Wetter, Ziegen und praktische Aufgaben. Lange Erklärungen in der Stube machen ihn unruhig.",
-        "tokens": ["Ziegen", "Wege", "praktisch", "kurze Wiederholung"]
+        "prompt": "Peter kennt Wege, Wetter, Geissen und praktische Aufgaben. Lange Erklärungen in der Stube machen ihn unruhig.",
+        "tokens": ["Geissen", "Wege", "praktisch", "kurze Wiederholung"]
       },
       "roleB": {
         "name": "Versprachlichen",
@@ -270,7 +270,7 @@
       },
       "hint": "Ein Lernweg ist stärker, wenn Peter einen Grund erkennt, wofür Lesen nützlich ist.",
       "revisionPrompt": "Überarbeitet euren Plan so, dass jeder Schritt zu Peters Lebenswelt passt.",
-      "example": "1. Peter liest die Namen seiner Ziegen auf Bildkarten. 2. Er ordnet kurze Wegwörter wie 'Steg' und 'Hang' zu Bildern. 3. Er liest eine kleine Nachricht, die ihm bei der Herde hilft.",
+      "example": "1. Peter liest die Namen seiner Geissen auf Bildkarten. 2. Er ordnet kurze Wegwörter wie 'Steg' und 'Hang' zu Bildern. 3. Er liest eine kleine Nachricht, die ihm bei der Herde hilft.",
       "reflection": "Was muss sich ändern, wenn ein Lernweg für eine andere Person passen soll?"
     },
     {
@@ -373,42 +373,42 @@
     },
     {
       "id": "peter-stellt-ziegen-vor",
-      "title": "Peter stellt die Ziegen vor",
+      "title": "Peter stellt die Geissen vor",
       "place": "Alpweide",
       "media": {
         "type": "video",
         "src": "/heidi-game/assets/ziegen-loop.m4v",
-        "label": "Ziegen auf der Alp",
-        "caption": "Die Ziegen werden über Namen, Eigenheiten und Peters praktische Sprache unterscheidbar.",
+        "label": "Geissen auf der Alp",
+        "caption": "Die Geissen werden über Namen, Eigenheiten und Peters praktische Sprache unterscheidbar.",
         "hasAudio": false,
         "audio": {
           "src": "/heidi-game/assets/ziegen-meckern.mp3",
-          "label": "Ziegenmeckern einschalten",
+          "label": "Geissenmeckern einschalten",
           "loop": true
         }
       },
       "languageGoal": "Figuren und Tiere durch konkrete Eigenheiten unterscheiden.",
-      "laptopFrame": "Peter kennt die Herde nicht allgemein, sondern einzeln. Für Heidi bekommen die Ziegen Namen, Gewohnheiten und kleine Unterschiede.",
+      "laptopFrame": "Peter kennt die Herde nicht allgemein, sondern einzeln. Für Heidi bekommen die Geissen Namen, Gewohnheiten und kleine Unterschiede.",
       "roleA": {
         "name": "Heidi fragt nach Namen",
-        "prompt": "Heidi möchte wissen, welche Ziege welche ist. Sie fragt nicht wie in einer Prüfung, sondern neugierig und freundlich.",
+        "prompt": "Heidi möchte wissen, welche Geiss welche ist. Sie fragt nicht wie in einer Prüfung, sondern neugierig und freundlich.",
         "tokens": ["Wie heißt sie?", "welche ist frech?", "welche bleibt zurück?", "merken"]
       },
       "roleB": {
         "name": "Peters Herdenwissen",
-        "prompt": "Peter antwortet knapp und praktisch. Er kennt Eigenheiten: eine Ziege drängt, eine zupft langsam, eine bleibt gern beim Felsen.",
+        "prompt": "Peter antwortet knapp und praktisch. Er kennt Eigenheiten: eine Geiss drängt, eine zupft langsam, eine bleibt gern beim Felsen.",
         "tokens": ["Schwänli", "Bärli", "zupft langsam", "drängt vor", "bleibt zurück"]
       },
-      "teamTask": "Erfindet für drei Ziegen je einen Namen und eine konkrete Eigenheit. Schreibt daraus einen Dialog zwischen Heidi und Peter.",
+      "teamTask": "Erfindet für drei Geissen je einen Namen und eine konkrete Eigenheit. Schreibt daraus einen Dialog zwischen Heidi und Peter.",
       "voiceQuest": {
         "required": true,
         "roles": ["B"],
-        "prompt": "Sprich Peters Erklärung zu einer Ziege ins Handy. Sie soll kurz, praktisch und nicht schulmeisterlich klingen.",
+        "prompt": "Sprich Peters Erklärung zu einer Geiss ins Handy. Sie soll kurz, praktisch und nicht schulmeisterlich klingen.",
         "minWords": 8
       },
       "hint": "Eine Eigenheit ist besser als eine Bewertung. 'Zupft langsam am Kraut' ist genauer als 'ist lieb'.",
       "revisionPrompt": "Ersetzt mindestens eine bloße Eigenschaft durch ein sichtbares Verhalten.",
-      "example": "Peter zeigt auf die helle Ziege: 'Das ist Schwänli. Die läuft nie zuerst, aber sie findet jedes Kraut am Wegrand.' Heidi wiederholt den Namen, damit sie ihn nicht vergisst.",
+      "example": "Peter zeigt auf die helle Geiss: 'Das ist Schwänli. Die läuft nie zuerst, aber sie findet jedes Kraut am Wegrand.' Heidi wiederholt den Namen, damit sie ihn nicht vergisst.",
       "reflection": "Wie verändert ein genauer Name oder eine kleine Gewohnheit unsere Vorstellung von einem Tier?"
     },
     {
@@ -443,7 +443,7 @@
       },
       "hint": "Eine Warnung sagt, warum Eile nötig ist. Eine Anweisung sagt, was jetzt konkret zu tun ist.",
       "revisionPrompt": "Markiert in euren fünf Sätzen: Beobachtung, Warnung, Entscheidung, Handgriff und Rückweg.",
-      "example": "Die Wolken liegen tief über dem Grat. Peter sagt: 'Wir gehen zurück, bevor das Gras rutschig wird.' Heidi hält die hintere Ziege nahe am Weg.",
+      "example": "Die Wolken liegen tief über dem Grat. Peter sagt: 'Wir gehen zurück, bevor das Gras rutschig wird.' Heidi hält die hintere Geiss nahe am Weg.",
       "reflection": "Welche Wörter beruhigen, obwohl sie vor Gefahr warnen?"
     },
     {
@@ -585,12 +585,12 @@
       "voiceQuest": {
         "required": true,
         "roles": ["A", "B"],
-        "prompt": "Sprecht je eine Frage aus eurer Ziegenperspektive ins Handy. Beide Fragen sollen freundlich und nicht verletzend sein.",
+        "prompt": "Sprecht je eine Frage aus eurer Geissenperspektive ins Handy. Beide Fragen sollen freundlich und nicht verletzend sein.",
         "minWords": 14
       },
       "hint": "Freundschaft entsteht nicht durch Mitleid, sondern durch echtes Interesse und Gegenseitigkeit.",
       "revisionPrompt": "Prüft jede Frage: Würde Clara oder Heidi sich dadurch ernst genommen fühlen?",
-      "example": "Heidi fragt: 'Darf ich dir erzählen, wie Peter die Ziegen ruft?' Clara lächelt: 'Ja, und danach zeige ich dir mein Buch mit den Bildern von Bergen.'",
+      "example": "Heidi fragt: 'Darf ich dir erzählen, wie Peter die Geissen ruft?' Clara lächelt: 'Ja, und danach zeige ich dir mein Buch mit den Bildern von Bergen.'",
       "reflection": "Welche Frage öffnet ein Gespräch, ohne die andere Person festzulegen?"
     },
     {
@@ -634,8 +634,8 @@
       },
       "roleB": {
         "name": "Erinnerungsbilder",
-        "prompt": "Du sammelst konkrete Bilder der Alp, die in Frankfurt wieder auftauchen: Wind, Ziegen, Heu, Großvaters Hütte, Peters Ruf.",
-        "tokens": ["Wind", "Heu", "Ziegen", "Hütte", "Peters Ruf"]
+        "prompt": "Du sammelst konkrete Bilder der Alp, die in Frankfurt wieder auftauchen: Wind, Geissen, Heu, Großvaters Hütte, Peters Ruf.",
+        "tokens": ["Wind", "Heu", "Geissen", "Hütte", "Peters Ruf"]
       },
       "teamTask": "Schreibt eine Heimweh-Szene ohne das Wort 'Heimweh' zu verwenden. Mindestens ein Körperzeichen und ein Erinnerungsbild müssen vorkommen.",
       "voiceQuest": {
@@ -646,7 +646,7 @@
       },
       "hint": "Das Verbot des Wortes 'Heimweh' zwingt euch, genauer zu zeigen, was passiert.",
       "revisionPrompt": "Streicht das Wort 'traurig', falls es vorkommt, und ersetzt es durch Handlung, Blick oder Erinnerung.",
-      "example": "Heidi stand am Fenster und suchte zwischen den Dächern nach einem Streifen Himmel. Beim Abendessen blieb ihr Brot fast unberührt. In ihrem Kopf hörte sie, wie Peter die Ziegen rief.",
+      "example": "Heidi stand am Fenster und suchte zwischen den Dächern nach einem Streifen Himmel. Beim Abendessen blieb ihr Brot fast unberührt. In ihrem Kopf hörte sie, wie Peter die Geissen rief.",
       "reflection": "Welche Beobachtung zeigt Heidis Heimweh am stärksten?"
     },
     {
@@ -808,12 +808,12 @@
       "roleA": {
         "name": "Peter im Unterricht",
         "prompt": "Peter sieht Buchstaben, aber sie hängen noch nicht sicher mit Dingen aus seiner Welt zusammen.",
-        "tokens": ["Buchstaben", "zögern", "Weg", "Ziege", "Name", "laut lesen"]
+        "tokens": ["Buchstaben", "zögern", "Weg", "Geiss", "Name", "laut lesen"]
       },
       "roleB": {
         "name": "Lehrhilfe",
-        "prompt": "Du suchst eine Aufgabe, die Peters Welt benutzt: Ziegennamen, Wegschilder, kurze Nachrichten, Bilder.",
-        "tokens": ["Ziegennamen", "Wegkarte", "Bildkarte", "kurzer Satz", "loben"]
+        "prompt": "Du suchst eine Aufgabe, die Peters Welt benutzt: Geissennamen, Wegschilder, kurze Nachrichten, Bilder.",
+        "tokens": ["Geissennamen", "Wegkarte", "Bildkarte", "kurzer Satz", "loben"]
       },
       "teamTask": "Entwerft eine konkrete Schulaufgabe für Peter mit Material, Satz und Rückmeldung. Sie muss in der Dorfschule spielbar sein.",
       "voiceQuest": {
@@ -824,7 +824,7 @@
       },
       "hint": "Eine gute Aufgabe ist klein genug, dass Peter Erfolg erleben kann, und sinnvoll genug, dass Lesen Bedeutung bekommt.",
       "revisionPrompt": "Macht die Aufgabe konkreter: Welches Material liegt auf dem Tisch? Welchen Satz liest Peter?",
-      "example": "Material: drei Karten mit Ziegennamen. Satz: 'Schwänli geht zum Steg.' Rückmeldung: 'Du hast Schwänli erkannt; jetzt lesen wir nur noch das Wegwort.'",
+      "example": "Material: drei Karten mit Geissennamen. Satz: 'Schwänli geht zum Steg.' Rückmeldung: 'Du hast Schwänli erkannt; jetzt lesen wir nur noch das Wegwort.'",
       "reflection": "Wann wird Lesen für Peter mehr als eine Pflicht?"
     },
     {
@@ -864,25 +864,25 @@
     },
     {
       "id": "ziegen-verloren",
-      "title": "Eine Ziege fehlt",
+      "title": "Eine Geiss fehlt",
       "place": "Alpweide",
       "media": {
         "type": "video",
         "src": "/heidi-game/assets/ziegen-loop.m4v",
-        "label": "Ziegen auf der Alp",
-        "caption": "Eine fehlende Ziege macht aus Beobachtung, Wegsprache und Zusammenarbeit eine konkrete Suchaufgabe.",
+        "label": "Geissen auf der Alp",
+        "caption": "Eine fehlende Geiss macht aus Beobachtung, Wegsprache und Zusammenarbeit eine konkrete Suchaufgabe.",
         "hasAudio": false,
         "audio": {
           "src": "/heidi-game/assets/ziegen-meckern.mp3",
-          "label": "Ziegenmeckern einschalten",
+          "label": "Geissenmeckern einschalten",
           "loop": true
         }
       },
       "languageGoal": "Suchsprache mit Ortsangaben und Vermutungen verbinden.",
-      "laptopFrame": "Eine Ziege ist nicht dort, wo Peter sie erwartet. Jetzt müssen Heidi und Peter genau sprechen: Wo zuletzt? Welche Spur? Welcher Weg?",
+      "laptopFrame": "Eine Geiss ist nicht dort, wo Peter sie erwartet. Jetzt müssen Heidi und Peter genau sprechen: Wo zuletzt? Welche Spur? Welcher Weg?",
       "roleA": {
         "name": "Heidis Beobachtung",
-        "prompt": "Heidi erinnert sich an eine Stelle, an der die Ziege stehen blieb. Sie muss genau sagen, wo das war.",
+        "prompt": "Heidi erinnert sich an eine Stelle, an der die Geiss stehen blieb. Sie muss genau sagen, wo das war.",
         "tokens": ["beim Felsen", "oberhalb des Stegs", "am Kraut", "vorhin", "stehen geblieben"]
       },
       "roleB": {
@@ -890,11 +890,11 @@
         "prompt": "Peter kennt die Wege. Er macht einen Suchplan, ohne kopflos loszurennen.",
         "tokens": ["zuerst", "dann", "am Bach", "nicht allein", "zurückrufen"]
       },
-      "teamTask": "Schreibt einen Suchplan in vier Schritten und einen kurzen Ruf, mit dem Heidi die Ziege lockt.",
+      "teamTask": "Schreibt einen Suchplan in vier Schritten und einen kurzen Ruf, mit dem Heidi die Geiss lockt.",
       "voiceQuest": {
         "required": true,
         "roles": ["A"],
-        "prompt": "Sprich Heidis Lockruf ins Handy. Er soll natürlich klingen und zur vorher erfundenen Ziege passen.",
+        "prompt": "Sprich Heidis Lockruf ins Handy. Er soll natürlich klingen und zur vorher erfundenen Geiss passen.",
         "minWords": 5
       },
       "hint": "Gute Suchsprache braucht Ortsangaben. 'Dort drüben' reicht nicht, wenn man wirklich suchen muss.",
@@ -910,7 +910,7 @@
       "laptopFrame": "Die letzte Quest sammelt nicht alles, sondern wählt. Welche Szene, welches Wort und welche Frage bleiben aus dem Spiel hängen?",
       "roleA": {
         "name": "Eine Szene wählen",
-        "prompt": "Du wählst eine konkrete Szene aus dem Spiel: Hütte, Ziegen, Großvater, Frankfurt, Großmutter, Schule oder Rückkehr.",
+        "prompt": "Du wählst eine konkrete Szene aus dem Spiel: Hütte, Geissen, Großvater, Frankfurt, Großmutter, Schule oder Rückkehr.",
         "tokens": ["ich wähle", "weil", "Szene", "Wort", "Frage"]
       },
       "roleB": {
@@ -927,7 +927,7 @@
       },
       "hint": "Ein guter Schluss wählt aus. Er listet nicht alle Kapitel auf, sondern zeigt an einem Beispiel, was sich verändert hat.",
       "revisionPrompt": "Streicht eine bloße Aufzählung und ergänzt eine Begründung mit 'weil'.",
-      "example": "Ich wähle die Szene mit der fehlenden Ziege, weil Heidi dort genauer sprechen muss. Das Wort 'oberhalb' hilft beim Suchen. Die Frage 'Wo stand sie zuletzt?' macht aus Angst einen Plan.",
+      "example": "Ich wähle die Szene mit der fehlenden Geiss, weil Heidi dort genauer sprechen muss. Das Wort 'oberhalb' hilft beim Suchen. Die Frage 'Wo stand sie zuletzt?' macht aus Angst einen Plan.",
       "reflection": "Welche sprachliche Fähigkeit war am Ende wichtiger: beobachten, fragen, erklären oder erzählen?"
     }
   ]

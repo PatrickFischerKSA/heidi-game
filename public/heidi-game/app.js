@@ -52,17 +52,17 @@ const FEEDBACK_PROFILES = {
   "alp-spricht": {
     aim: "Eine tragfähige Bauernregel entsteht aus Beobachtung, Spruchform und vorsichtiger Erklärung.",
     checks: [
-      ["Beobachtung auf der Alp", ["ziege", "ziegen", "himmel", "wind", "licht", "wolke", "gras", "stein", "felsen"], "Nennt zuerst sichtbar, was Heidi wirklich bemerkt."],
+      ["Beobachtung auf der Alp", ["geiss", "geissen", "himmel", "wind", "licht", "wolke", "gras", "stein", "felsen"], "Nennt zuerst sichtbar, was Heidi wirklich bemerkt."],
       ["Spruchform", ["regel", "spruch", "reim", "wenn", "steht", "zieht", "kommt", "droht"], "Formt die Beobachtung zu einem knappen Merksatz, nicht zu einer langen Erklärung."],
       ["Vorsicht", ["vielleicht", "oft", "manchmal", "nicht immer", "kann", "könnte"], "Ergänzt, dass die Bauernregel Erfahrung ist und nicht immer stimmen muss."]
     ],
     upgrade: "Überarbeitet so: Beobachtung konkret machen, Spruch kürzen, dann mit 'oft', 'manchmal' oder 'vielleicht' einschränken."
   },
-  "ziegen-ansprechen": {
+  "geissen-ansprechen": {
     aim: "Die Tieransprache soll natürlich klingen und zugleich genau beobachten.",
     checks: [
       ["Heidis Stimme", ["heidi", "komm", "nur", "kleine", "ruhig", "ich tue", "darf"], "Gebt Heidi einen kurzen Satz, der ein Kind auf der Alp wirklich sagen könnte."],
-      ["Ziegenverhalten", ["ziege", "meckert", "zupft", "trottet", "springt", "bleibt", "kommt"], "Zeigt, was die Ziege tut, statt sie menschlich denken zu lassen."],
+      ["Geissenverhalten", ["geiss", "meckert", "zupft", "trottet", "springt", "bleibt", "kommt"], "Zeigt, was die Geiss tut, statt sie menschlich denken zu lassen."],
       ["Peters praktische Antwort", ["peter", "sagt", "lacht", "zeigt", "ruft", "weiß"], "Lasst Peter mit einem einfachen, praktischen Satz reagieren."]
     ],
     upgrade: "Kürzt Heidis Satz, ersetzt eine menschliche Tierdeutung durch ein sichtbares Verhalten und gebt Peter eine knappe Reaktion."
@@ -88,7 +88,7 @@ const FEEDBACK_PROFILES = {
   "peter-lernt-anders": {
     aim: "Der Lernweg muss zu Peters Lebenswelt passen und ermutigen.",
     checks: [
-      ["Peters Welt", ["ziege", "ziegen", "weg", "steg", "hang", "herde", "alp"], "Bindet Lesen an etwas, das Peter kennt."],
+      ["Peters Welt", ["geiss", "geissen", "weg", "steg", "hang", "herde", "alp"], "Bindet Lesen an etwas, das Peter kennt."],
       ["Drei Schritte", ["1.", "2.", "3.", "zuerst", "dann", "danach"], "Ordnet den Lernweg in nachvollziehbare Schritte."],
       ["Ermutigung statt Drohung", ["ermutig", "lob", "du hast", "noch einmal", "nicht beschäm", "ohne drohung"], "Zeigt, wie Peter Rückmeldung bekommt, ohne beschämt zu werden."]
     ],
@@ -121,11 +121,11 @@ const FEEDBACK_PROFILES = {
     ],
     upgrade: "Streicht ein pauschales Adjektiv und ersetzt es durch Geruch, Geräusch oder Körperempfindung."
   },
-  "peter-stellt-ziegen-vor": {
-    aim: "Die Ziegen sollen durch Namen und Verhalten unterscheidbar werden.",
+  "peter-stellt-geissen-vor": {
+    aim: "Die Geissen sollen durch Namen und Verhalten unterscheidbar werden.",
     checks: [
-      ["Namen", ["schwänli", "bärli", "name", "heißt"], "Gebt den Ziegen Namen oder macht deutlich, wie Peter sie nennt."],
-      ["Eigenheit", ["zupft", "drängt", "bleibt", "läuft", "findet", "langsam"], "Beschreibt eine sichtbare Gewohnheit jeder Ziege."],
+      ["Namen", ["schwänli", "bärli", "name", "heißt"], "Gebt den Geissen Namen oder macht deutlich, wie Peter sie nennt."],
+      ["Eigenheit", ["zupft", "drängt", "bleibt", "läuft", "findet", "langsam"], "Beschreibt eine sichtbare Gewohnheit jeder Geiss."],
       ["Dialog", ["heidi", "peter", "fragt", "sagt"], "Schreibt die Information als Gespräch, nicht als Liste."]
     ],
     upgrade: "Macht aus einer Eigenschaft ein Verhalten: nicht 'lieb', sondern 'bleibt beim Felsen stehen'."
@@ -188,7 +188,7 @@ const FEEDBACK_PROFILES = {
     aim: "Heimweh soll gezeigt werden, ohne das Wort Heimweh zu benutzen.",
     checks: [
       ["Körperzeichen", ["isst", "schläft", "atem", "hände", "fenster", "brot"], "Zeigt Heidis Körper oder Handlung."],
-      ["Erinnerungsbild", ["alp", "wind", "ziegen", "heu", "peter", "hütte"], "Lasst ein Bild der Alp in Frankfurt auftauchen."],
+      ["Erinnerungsbild", ["alp", "wind", "geissen", "heu", "peter", "hütte"], "Lasst ein Bild der Alp in Frankfurt auftauchen."],
       ["Wortverzicht", ["heimweh"], "Falls 'Heimweh' vorkommt: Ersetzt es durch Szene, Blick oder Erinnerung."]
     ],
     upgrade: "Streicht 'Heimweh' oder 'traurig' und zeigt stattdessen Fensterblick, unberührtes Brot oder einen inneren Klang der Alp."
@@ -232,7 +232,7 @@ const FEEDBACK_PROFILES = {
   "dorfschule-peter": {
     aim: "Die Schulaufgabe muss Material, Lesesatz und Rückmeldung enthalten.",
     checks: [
-      ["Material", ["karte", "bild", "ziegenname", "weg", "tisch"], "Legt fest, womit Peter arbeitet."],
+      ["Material", ["karte", "bild", "geissenname", "weg", "tisch"], "Legt fest, womit Peter arbeitet."],
       ["Lesesatz", ["liest", "satz", "schwänli", "steg", "geht"], "Schreibt den konkreten Satz, den Peter lesen soll."],
       ["Rückmeldung", ["du hast", "erkannt", "noch einmal", "gut", "nächstes wort"], "Gebt eine ermutigende Rückmeldung."]
     ],
@@ -247,23 +247,66 @@ const FEEDBACK_PROFILES = {
     ],
     upgrade: "Ersetzt 'Du musst' durch 'Wir können' oder 'Wenn du willst, zeige ich dir ...'."
   },
-  "ziegen-verloren": {
+  "geissen-verloren": {
     aim: "Die Suchaufgabe braucht genaue Ortsangaben und einen planvollen Ruf.",
     checks: [
       ["Ortsangabe", ["felsen", "steg", "bach", "hang", "oberhalb", "unterhalb"], "Ersetzt 'dort' durch eine echte Ortsangabe."],
       ["Suchplan", ["zuerst", "dann", "danach", "zurück", "nicht allein"], "Ordnet die Suche in Schritte."],
-      ["Lockruf", ["komm", "schwänli", "ziege", "hier", "weg"], "Formuliert einen kurzen Ruf, der zur Ziege passt."]
+      ["Lockruf", ["komm", "schwänli", "geiss", "hier", "weg"], "Formuliert einen kurzen Ruf, der zur Geiss passt."]
     ],
     upgrade: "Schreibt: letzter Ort, erster Suchweg, zweiter Suchweg, Rückweg-Regel, Lockruf."
   },
   "schlusskreis": {
     aim: "Der Schlusskreis soll auswählen, begründen und einen Lerngewinn benennen.",
     checks: [
-      ["Eine Szene", ["ich wähle", "szene", "hütte", "ziege", "frankfurt", "schule", "alp"], "Wählt eine konkrete Szene statt alles aufzuzählen."],
+      ["Eine Szene", ["ich wähle", "szene", "hütte", "geiss", "frankfurt", "schule", "alp"], "Wählt eine konkrete Szene statt alles aufzuzählen."],
       ["Ein Wort und eine Frage", ["wort", "frage", "warum", "woran", "oberhalb", "weil"], "Nennt ein genaueres Wort und eine gute Frage."],
       ["Begründung", ["weil", "dadurch", "deshalb", "gelernt"], "Begründet, was sich sprachlich verändert hat."]
     ],
     upgrade: "Formt den Beitrag so: Ich wähle ..., weil ... Das Wort ... hilft ... Die Frage ... öffnet ..."
+  }
+};
+
+const STORY = {
+  name: "Fräulein Rottenmeier",
+  premise: "Eine Frankfurter Geiss ist aus der Stadt ausgebüxt und behauptet steif und fest, sie sei Fräulein Rottenmeier. Sie kennt Salons, Verbote und Hausregeln, aber keine Alp. Schwänli und Schnecke müssen ihr zeigen, wie man hier überlebt: hören, riechen, fragen, vorsichtig urteilen und nicht jedes Meckern für ein Gesetz halten.",
+  rewards: [
+    "Heubüschel gewonnen: Die Frankfurter Geiss kaut endlich, bevor sie befiehlt.",
+    "Glockenklang gewonnen: Schwänli und Schnecke dürfen eine Regel in Ruhe prüfen.",
+    "Alpschritt gewonnen: Heidi kommt einen Schritt näher an eine eigene Stimme.",
+    "Rottenmeiers Hut wackelt: Eure Antwort hat eine starre Regel beweglich gemacht."
+  ],
+  kicks: [
+    "Geissentritt: Fräulein Rottenmeier stampft, weil die Antwort noch zu allgemein bleibt.",
+    "Geissentritt: Die Frankfurter Geiss meckert dazwischen. Es fehlt eine genaue Beobachtung.",
+    "Geissentritt: Zu glatt formuliert. Schwänli verlangt ein sichtbares Detail.",
+    "Geissentritt: Schnecke kaut auf dem Satz herum. Die Begründung ist noch dünn."
+  ],
+  beats: {
+    "alp-spricht": ["Rottenmeier-Geiss hält Bauernregeln für Amtsbefehle: Wenn Abendrot ist, müsse das Wetter gehorchen.", "Erfindet eine Regel, die klingt wie Alp-Erfahrung, aber nicht so tut, als könne sie den Himmel kommandieren."],
+    "ziegen-ansprechen": ["Die Frankfurter Geiss ruft jede Geiss mit 'Sie da!' und wundert sich, dass niemand folgt.", "Findet eine Stimme, mit der Heidi eine Geiss wirklich ansprechen könnte: kurz, freundlich, beobachtend."],
+    "almoehi-sprechen": ["Rottenmeier-Geiss will den Almöhi verhören: Name, Zweck, Wetterzuständigkeit.", "Heidi braucht eine Frage, die den Großvater öffnet, statt ihn wie ein Formular auszufüllen."],
+    "frankfurter-stimmen": ["In Frankfurt merkt die Geiss: Auch Menschen meckern Regeln. Manche helfen, manche machen klein.", "Trennt Hausregel, Tonfall und faire Hilfe, damit Heidi nicht nur gehorcht, sondern versteht."],
+    "peter-lernt-anders": ["Rottenmeier-Geiss will Peter an den Tisch nageln, bis die Buchstaben ordentlich stehen.", "Baut einen Lernweg, der von Peters Wegen, Geissen und Händen ausgeht."],
+    "heidi-erzaehlt-weiter": ["Die Geiss behauptet, alles müsse exakt im Buch stehen, sonst sei es verboten.", "Markiert eure Weitererzählung als möglich und verankert sie in einer konkreten Erinnerung."],
+    "huette-einrichten": ["Rottenmeier-Geiss sucht in der Hütte nach Klingel, Teppichordnung und Besuchsformular.", "Macht sichtbar, wie Heidi über Gegenstände und Handgriffe ankommt."],
+    "bett-im-heu": ["Die Frankfurter Geiss erklärt Heu zum unzulässigen Bettmaterial.", "Zeigt, warum das Heu für Heidi nicht Armut, sondern Wärme, Geruch und Ruhe bedeutet."],
+    "peter-stellt-ziegen-vor": ["Rottenmeier-Geiss will Nummern statt Namen: Geiss 1, Geiss 2, Geiss 3.", "Gebt den Geissen Eigenheiten, damit aus Herde einzelne Wesen werden."],
+    "gewitter-kommt": ["Rottenmeier-Geiss verlangt einen schriftlichen Donner-Antrag, während die Wolken schon tief hängen.", "Macht aus Beobachtung einen schnellen, praktischen Plan."],
+    "alpsegen-hoeren": ["Die Frankfurter Geiss hört den Alpsegen und fragt, ob das eine Hausordnung mit Melodie sei.", "Findet Worte dafür, wie ein Ruf Schutz, Abend und Gemeinschaft bedeuten kann."],
+    "grossvater-arbeitet": ["Rottenmeier-Geiss kommentiert jeden Handgriff, bis kein Holz mehr gespalten wird.", "Beschreibt Arbeit so genau, dass Schweigen und Können verständlich werden."],
+    "ankunft-frankfurt": ["Die Geiss aus Frankfurt erkennt ihre Stadt kaum wieder und tut trotzdem, als sei alles selbstverständlich.", "Zeigt Heidis erste Überforderung: Geräusche, Regeln, Höhe, Enge."],
+    "clara-kennenlernen": ["Rottenmeier-Geiss will Freundschaft nach Sitzordnung vergeben.", "Lasst Clara und Heidi vorsichtig Kontakt aufnehmen, ohne dass eine die andere vorführt."],
+    "rottenmeier-tisch": ["Am Tisch fühlt sich die Frankfurter Geiss plötzlich mächtig: Serviette, Haltung, Schweigen!", "Verwandelt eine steife Tischregel in einen Satz, der Heidi wirklich helfen könnte."],
+    "sehnsucht-alp": ["Rottenmeier-Geiss findet Heimweh unordentlich: Gefühle sollen bitte im Schrank bleiben.", "Macht Heidis Sehnsucht konkret, ohne sie zu verkitschen."],
+    "frankfurt-verlorene-stadt": ["Die Geiss sucht Spyris Frankfurt und stolpert durch Bilder einer Stadt, die so nicht mehr existiert.", "Erklärt den historischen Bruch, ohne die Heidi-Szene zu verlieren."],
+    "rueckkehr-alp": ["Rottenmeier-Geiss will die Rückkehr als Reisebericht abstempeln lassen.", "Zeigt, was sich an Heidi verändert hat, wenn sie wieder oben ankommt."],
+    "grossmutter-hoert": ["Die Geiss spricht extra laut, weil sie Zuhören mit Lautstärke verwechselt.", "Findet eine Sprache, die Rücksicht nimmt und trotzdem lebendig erzählt."],
+    "peter-eifersucht": ["Rottenmeier-Geiss würde Peters Eifersucht sofort bestrafen und abhaken.", "Sucht die Kränkung hinter der Tat und eine Antwort, die Verantwortung möglich macht."],
+    "dorfschule-peter": ["Die Frankfurter Geiss marschiert in die Dorfschule und will alle Buchstaben geradeziehen.", "Entwerft eine Aufgabe, bei der Peter nicht beschämt wird."],
+    "clara-auf-der-alp": ["Rottenmeier-Geiss ruft: 'Alp ist kein Sanatorium!' und tritt fast in den Wassereimer.", "Beschreibt Claras Ankommen auf der Alp konkret und vorsichtig."],
+    "ziegen-verloren": ["Eine Geiss fehlt, und Rottenmeier-Geiss möchte zuerst ein Verlustprotokoll.", "Macht aus Sorge einen Suchplan mit Ortswörtern und Lockruf."],
+    "schlusskreis": ["Am Ende will Rottenmeier-Geiss wissen, ob sie jetzt wieder Mensch, Geiss oder Hausordnung ist.", "Wählt die stärkste Szene und erklärt, was sie an Sprache verändert hat."]
   }
 };
 
@@ -547,7 +590,7 @@ function topbar(active = state.mode) {
   ];
   return html`
     <header class="topbar">
-      <div class="brand"><span class="brand-mark" aria-hidden="true">H</span><span>Heidi - Die Welt bekommt Worte</span></div>
+      <div class="brand"><span class="brand-mark" aria-hidden="true">H</span><span>Heidi und die Frankfurter Geiss</span></div>
       <nav class="nav-pills" aria-label="Modus">
         ${items.map(([id, href, label]) => `<button type="button" data-nav="${id}" aria-current="${active === id ? "page" : "false"}">${label}</button>`).join("")}
       </nav>
@@ -564,7 +607,8 @@ function renderHome() {
       ${sceneMedia(state.content)}
       <div class="hero-copy">
         <p class="eyebrow">Browserbasiertes Partnerspiel</p>
-        <h1>Heidi - Die Welt bekommt Worte</h1>
+        <h1>Heidi und die Frankfurter Geiss</h1>
+        <p>${escapeHtml(STORY.premise)}</p>
         <p>${escapeHtml(state.content.learningConcept.short)}</p>
       </div>
       <div class="mode-grid">
@@ -578,7 +622,7 @@ function renderHome() {
         </article>
         <article class="card">
           <h2>Desktopmodus</h2>
-          <p>Zwei Personen spielen an einem Bildschirm. Die Ziegenkarten werden nacheinander freigegeben.</p>
+          <p>Zwei Personen spielen an einem Bildschirm. Die Geissenkarten werden nacheinander freigegeben.</p>
           <button type="button" data-nav="desktop">Desktop starten</button>
         </article>
         <article class="card">
@@ -623,12 +667,12 @@ function playerProfile(role, label = "") {
     A: {
       name: "Schwänli",
       src: "/heidi-game/assets/player-goat-a.jpg",
-      alt: "Schwänli, die weiße Ziege"
+      alt: "Schwänli, die weiße Geiss"
     },
     B: {
       name: "Schnecke",
       src: "/heidi-game/assets/player-goat-b.jpeg",
-      alt: "Schnecke, die gefleckte Ziege"
+      alt: "Schnecke, die gefleckte Geiss"
     }
   };
   const profile = profiles[role] || profiles.A;
@@ -680,7 +724,7 @@ function renderPartner() {
           <div>
             <p class="eyebrow">Hauptcomputer</p>
             <h2>${escapeHtml(state.hostName)}</h2>
-            <p>Die Handys scannen den Code ihrer Ziege. Der Raumcode bleibt nur als Reserve sichtbar: <strong>${escapeHtml(state.room?.code || "----")}</strong></p>
+            <p>Die Handys scannen den Code ihrer Geiss. Der Raumcode bleibt nur als Reserve sichtbar: <strong>${escapeHtml(state.room?.code || "----")}</strong></p>
           </div>
           <div class="qr-grid">
             ${qrCard("A", "Schwänli", "Beobachten und zuerst sprechen")}
@@ -707,6 +751,7 @@ function questStage(c, label) {
         </div>
         <h1>${escapeHtml(c.title)}</h1>
         <p>${escapeHtml(c.laptopFrame)}</p>
+        ${storyBeat(c)}
         ${historicalNote(c)}
         <div class="quest-actions">
           <button type="button" class="secondary" data-prev-chapter ${state.chapterIndex === 0 ? "disabled" : ""}>Vorige Quest</button>
@@ -715,6 +760,24 @@ function questStage(c, label) {
       </div>
       ${sceneMedia(c)}
     </section>
+  `;
+}
+
+function storyBeat(c) {
+  const [trouble, aim] = STORY.beats[c.id] || [
+    "Die Frankfurter Geiss will aus der Szene sofort eine starre Vorschrift machen.",
+    "Schwänli und Schnecke müssen zeigen, was man wirklich sieht, hört oder sagen kann."
+  ];
+  return html`
+    <aside class="story-beat">
+      <p class="eyebrow">Störfall: ${escapeHtml(STORY.name)}</p>
+      <strong>${escapeHtml(trouble)}</strong>
+      <p>${escapeHtml(aim)}</p>
+      <div class="story-rules">
+        <span>Gute Antwort: Belohnung</span>
+        <span>Zu allgemein: Geissentritt</span>
+      </div>
+    </aside>
   `;
 }
 
@@ -868,6 +931,7 @@ async function saveAnswer(form) {
       `${kind}-feedback`,
       [
         feedback.title,
+        `Spielreaktion: ${feedback.reward || feedback.kick}`,
         feedback.summary,
         `Schon tragfähig: ${feedback.strengths.join(" ")}`,
         `Jetzt überarbeiten: ${feedback.nextSteps.join(" ")}`
@@ -936,18 +1000,25 @@ function qualifiedFeedback(chapterData, kind, text) {
   const profile = FEEDBACK_PROFILES[chapterData.id];
   const words = wordCount(text);
   if (!profile) {
+    const hits = words >= 20 ? 2 : 0;
     return {
       title: "Feedback",
       strengths: ["Die Eingabe ist gespeichert und kann mit dem Kapitelziel verglichen werden."],
       nextSteps: [chapterData.revisionPrompt],
-      summary: chapterData.hint
+      summary: chapterData.hint,
+      hits,
+      words,
+      reward: rewardForFeedback(hits, words, kind),
+      kick: kickForFeedback(hits, words, kind)
     };
   }
 
   const strengths = [];
   const nextSteps = [];
+  let hits = 0;
   for (const [label, terms, suggestion] of profile.checks) {
     if (feedbackIncludes(text, terms)) {
+      hits += 1;
       strengths.push(`${label}: erkennbar angelegt.`);
     } else {
       nextSteps.push(`${label}: ${suggestion}`);
@@ -978,8 +1049,24 @@ function qualifiedFeedback(chapterData, kind, text) {
     title: `Qualifiziertes Feedback zur ${kindLabel(kind)}`,
     strengths,
     nextSteps,
-    summary: `${profile.aim} ${profile.upgrade}`
+    summary: `${profile.aim} ${profile.upgrade}`,
+    hits,
+    words,
+    reward: rewardForFeedback(hits, words, kind),
+    kick: kickForFeedback(hits, words, kind)
   };
+}
+
+function rewardForFeedback(hits, words, kind) {
+  const enoughWords = kind === "voice" ? words >= 8 : words >= 25;
+  if (hits < 2 || !enoughWords) return "";
+  return STORY.rewards[(hits + words + kind.length) % STORY.rewards.length];
+}
+
+function kickForFeedback(hits, words, kind) {
+  const enoughWords = kind === "voice" ? words >= 8 : words >= 18;
+  if (hits >= 2 && enoughWords) return "";
+  return STORY.kicks[(hits + words + kind.length) % STORY.kicks.length];
 }
 
 function feedbackMarkup(chapterData, kind, text) {
@@ -988,6 +1075,10 @@ function feedbackMarkup(chapterData, kind, text) {
     <div class="qualified-feedback">
       <strong>${escapeHtml(feedback.title)}</strong>
       <p>${escapeHtml(feedback.summary)}</p>
+      <div class="game-feedback ${feedback.reward ? "is-reward" : "is-kick"}">
+        <strong>${feedback.reward ? "Belohnung" : "Geissentritt"}</strong>
+        <p>${escapeHtml(feedback.reward || feedback.kick)}</p>
+      </div>
       <div class="feedback-columns">
         <div>
           <p class="small"><strong>Schon tragfähig</strong></p>
@@ -1055,11 +1146,11 @@ function renderPhone() {
     <section class="phone-frame stack">
       <div>
         <p class="eyebrow">Handyansicht</p>
-        <h1>Ziege beitreten</h1>
+        <h1>Geiss beitreten</h1>
       </div>
       <form class="stack" data-join-form>
         <label>Raumcode<input name="code" value="${escapeHtml(code)}" maxlength="6" required></label>
-        <label>Ziege<select name="role"><option value="">automatisch</option><option value="A" ${role === "A" ? "selected" : ""}>Schwänli</option><option value="B" ${role === "B" ? "selected" : ""}>Schnecke</option></select></label>
+        <label>Geiss<select name="role"><option value="">automatisch</option><option value="A" ${role === "A" ? "selected" : ""}>Schwänli</option><option value="B" ${role === "B" ? "selected" : ""}>Schnecke</option></select></label>
         <button type="submit">Beitreten</button>
       </form>
     </section>
@@ -1094,7 +1185,7 @@ function renderPhoneRole() {
       ${roleCard(role, roleData)}
       ${voiceQuestPanel(role, c)}
       <button type="button" data-ready="${role}" ${voiceComplete ? "" : "disabled"}>${state.room.roleReady?.[role] ? "Austausch bestätigt" : "Ich habe meine Informationen geteilt"}</button>
-      <div class="notice"><p>${needsVoice ? "Diese Ziege muss zuerst den mündlichen Beitrag per Handy-Mikrofon festhalten." : "Sprich mit der Partnerperson."} Auf dem Laptop wird die Schreibaufgabe erst nach beiden Bestätigungen freigeschaltet.</p></div>
+      <div class="notice"><p>${needsVoice ? "Diese Geiss muss zuerst den mündlichen Beitrag per Handy-Mikrofon festhalten." : "Sprich mit der Partnerperson."} Auf dem Laptop wird die Schreibaufgabe erst nach beiden Bestätigungen freigeschaltet.</p></div>
     </section>
   `;
 }
@@ -1114,7 +1205,7 @@ function renderDesktop() {
   state.mode = "desktop";
   const c = chapter();
   const sections = [
-    { id: "cards", label: "Ziegenkarten" },
+    { id: "cards", label: "Geissenkarten" },
     { id: "write", label: "Schreibwerkstatt" },
     { id: "path", label: "Questpfad" },
     { id: "log", label: "Lernspur" }
@@ -1127,7 +1218,7 @@ function renderDesktop() {
       ${playSectionMenu(sections, active)}
       ${active === "cards" ? html`
         <div class="goat-board panel stack">
-          <h2>Ziegenkarten nacheinander öffnen</h2>
+          <h2>Geissenkarten nacheinander öffnen</h2>
           ${taskFlow(c)}
           <div class="toolbar">
             <button type="button" class="secondary" data-reveal="A">${state.revealA ? "Schwänli verbergen" : "Schwänli öffnen"}</button>
@@ -1139,7 +1230,7 @@ function renderDesktop() {
           </div>
         </div>
       ` : ""}
-      ${active === "write" ? (state.revealA && state.revealB ? `<div class="panel stack"><p class="eyebrow">Gemeinsame Aufgabe</p><h2>${escapeHtml(c.teamTask)}</h2>${answerForm()}</div>` : `<div class="panel notice"><strong>Noch gesperrt.</strong><p>Öffne zuerst Schwänli und Schnecke im Bereich Ziegenkarten. Danach erscheint hier die Schreibwerkstatt.</p></div>`) : ""}
+      ${active === "write" ? (state.revealA && state.revealB ? `<div class="panel stack"><p class="eyebrow">Gemeinsame Aufgabe</p><h2>${escapeHtml(c.teamTask)}</h2>${answerForm()}</div>` : `<div class="panel notice"><strong>Noch gesperrt.</strong><p>Öffne zuerst Schwänli und Schnecke im Bereich Geissenkarten. Danach erscheint hier die Schreibwerkstatt.</p></div>`) : ""}
       ${active === "path" ? chapterTabs() : ""}
       ${active === "log" ? journalPanel() : ""}
     </div>
@@ -1150,7 +1241,7 @@ function renderDemo() {
   state.mode = "demo";
   const c = chapter();
   const sections = [
-    { id: "cards", label: "Ziegenkarten" },
+    { id: "cards", label: "Geissenkarten" },
     { id: "write", label: "Schreibwerkstatt" },
     { id: "path", label: "Questpfad" },
     { id: "log", label: "Lernspur" },
@@ -1168,7 +1259,7 @@ function renderDemo() {
       ${active === "cards" ? html`
         <div class="goat-board panel stack">
           <div>
-            <p class="eyebrow">Ziegenkarten</p>
+            <p class="eyebrow">Geissenkarten</p>
             <h2>Schwänli und Schnecke tauschen ihre Hinweise aus</h2>
           </div>
           <div class="goat-stage demo-goats">
@@ -1395,6 +1486,7 @@ async function saveVoiceDraft(key) {
   const feedback = qualifiedFeedback(chapterData, "voice", text);
   const feedbackText = [
     feedback.title,
+    `Spielreaktion: ${feedback.reward || feedback.kick}`,
     feedback.summary,
     `Schon tragfähig: ${feedback.strengths.join(" ")}`,
     `Jetzt überarbeiten: ${feedback.nextSteps.join(" ")}`
