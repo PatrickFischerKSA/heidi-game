@@ -290,67 +290,78 @@ const STORY = {
       object: "rule",
       title: "Sie frisst die Hausregel",
       text: "Die Frankfurter Geiss schnappt nach der wichtigsten Regel im Raum und kaut daran herum, als wäre Papier Heu.",
-      task: "Rettet die Regel: Sagt in einem Satz, was davon nützlich ist, und streicht den Teil, der nur einschüchtert."
+      task: "Rettet die Regel: Sagt in einem Satz, was davon nützlich ist, und streicht den Teil, der nur einschüchtert.",
+      example: "Nützlich ist, dass Heidi weiß, was am Tisch gilt; unnötig ist der scharfe Befehlston."
     },
     {
       object: "rule",
       title: "Sie frisst etwas Verbotenes",
       text: "Rottenmeier-Geiss hat an einem Gegenstand geknabbert, der bestimmt nicht für Geissen gedacht war.",
-      task: "Beschreibt den Schaden konkret und formuliert eine ruhige Reaktion, die nicht sofort in Geschrei kippt."
+      task: "Beschreibt den Schaden konkret und formuliert eine ruhige Reaktion, die nicht sofort in Geschrei kippt.",
+      example: "Die Ecke der Regel ist angefressen; Heidi nimmt das Blatt weg und sagt ruhig: Das ist kein Heu."
     },
     {
       object: "hoof",
       title: "Sie bockt am falschen Ort",
       text: "Die Geiss stellt sich quer, senkt den Kopf und bewegt sich keinen Schritt weiter.",
-      task: "Findet eine Frage oder einen Lockruf, mit dem Heidi die Situation löst, ohne die Geiss zu beschämen."
+      task: "Findet eine Frage oder einen Lockruf, mit dem Heidi die Situation löst, ohne die Geiss zu beschämen.",
+      example: "Komm, Schwänli, nur bis zum Schemel; dort wartet frisches Heu."
     },
     {
       object: "bell",
       title: "Sie meckert alles durcheinander",
       text: "Aus der Geiss kommt ein wütendes Meckern: halb Frankfurter Tischregel, halb Alpwetter, halb beleidigter Salon.",
-      task: "Sortiert das Meckern: Was ist Beobachtung, was ist Angst, was ist nur Befehlston?"
+      task: "Sortiert das Meckern: Was ist Beobachtung, was ist Angst, was ist nur Befehlston?",
+      example: "Beobachtung: Der Wind wird kalt. Angst: Sie kennt die Alp nicht. Befehlston: Alles sofort ordentlich!"
     },
     {
       object: "hoof",
       title: "Sie tritt gegen den Satz",
       text: "Kaum ist eine Antwort geschrieben, tritt die Geiss mit dem Huf daneben: Der Satz sei zu glatt.",
-      task: "Macht den Satz widerstandsfähiger: ein genaueres Verb, ein sichtbares Detail, eine vorsichtige Begründung."
+      task: "Macht den Satz widerstandsfähiger: ein genaueres Verb, ein sichtbares Detail, eine vorsichtige Begründung.",
+      example: "Die Geissen drängen nicht nur zusammen; sie bleiben dicht beim Stein, weil der Wind kälter wird."
     },
     {
       object: "word",
       title: "Sie klaut ein Alpwörterchen",
       text: "Schnecke bemerkt: Ein wichtiges Wort ist weg. Die Frankfurter Geiss trägt es im Maul davon.",
-      task: "Holt das Wort zurück, indem ihr es in einem neuen, klaren Satz benutzt."
+      task: "Holt das Wort zurück, indem ihr es in einem neuen, klaren Satz benutzt.",
+      example: "Das Wort 'zupfen' gehört zurück: Schnecke zupft am Kraut, statt einfach nur zu fressen."
     },
     {
       object: "hat",
       title: "Sie verwechselt Hilfe mit Befehl",
       text: "Die Geiss will helfen, aber alles klingt wie Kommandoton: sofort, ordentlich, still!",
-      task: "Schreibt den Befehl in eine hilfreiche Bitte um."
+      task: "Schreibt den Befehl in eine hilfreiche Bitte um.",
+      example: "Statt 'Sofort still!' sagt Clara: Setz dich neben mich, ich zeige dir die Regel."
     },
     {
       object: "stool",
       title: "Melkzeit mit Widerstand",
       text: "Schwänli steht bereit, aber die Frankfurter Geiss erklärt den Melkschemel für unzulässig und kneift die Knie zusammen.",
-      task: "Formuliert eine ruhige Melk-Anweisung in drei Schritten: annähern, beruhigen, melken."
+      task: "Formuliert eine ruhige Melk-Anweisung in drei Schritten: annähern, beruhigen, melken.",
+      example: "Zuerst stellt Heidi den Schemel leise hin, dann streicht sie Schwänli über den Hals, danach beginnt sie langsam zu melken."
     },
     {
       object: "bucket-spill",
       title: "Der Kübel kippt",
       text: "Ein bockiger Tritt, und der Milchkübel fällt um. Die Milch läuft über den Boden, unter die Bank, mitten durch die schöne Ordnung.",
-      task: "Beschreibt die Sauerei genau und macht daraus einen Plan: Wer hält die Geiss, wer rettet den Rest, wer wischt?"
+      task: "Beschreibt die Sauerei genau und macht daraus einen Plan: Wer hält die Geiss, wer rettet den Rest, wer wischt?",
+      example: "Die Milch läuft unter die Bank; Peter hält die Geiss, Heidi stellt den Kübel auf, Schnecke holt den Lappen."
     },
     {
       object: "milk",
       title: "Milch durch die Gegend",
       text: "Die Geiss meckert triumphierend, während eine weiße Spur quer durch die Hütte läuft.",
-      task: "Verwandelt das Chaos in Sprache: ein Satz über das sichtbare Durcheinander, ein Satz über die Lösung."
+      task: "Verwandelt das Chaos in Sprache: ein Satz über das sichtbare Durcheinander, ein Satz über die Lösung.",
+      example: "Eine weiße Spur zieht vom Kübel zur Tür; Heidi wischt zuerst den Weg frei, damit niemand ausrutscht."
     },
     {
       object: "cheese",
       title: "Fast Käse",
       text: "Diesmal bleibt der Kübel stehen. Wenn die Antwort genau genug ist, kann aus der Milch später Käse werden.",
-      task: "Schreibt eine kurze Käse-Regel: Was muss zuerst ruhig, sauber oder geduldig geschehen?"
+      task: "Schreibt eine kurze Käse-Regel: Was muss zuerst ruhig, sauber oder geduldig geschehen?",
+      example: "Bleibt die Geiss ruhig und der Kübel sauber, kann aus der Milch später Käse werden."
     }
   ],
   beats: {
@@ -864,23 +875,24 @@ function chaosPanel(c) {
           <strong>${escapeHtml(chaos.title)}</strong>
         </div>
       </div>
-      <details class="chaos-details">
-        <summary>Was ist passiert?</summary>
+      <div class="chaos-plain">
+        <span>1. Das ist passiert</span>
         <p>${escapeHtml(chaos.text)}</p>
-      </details>
+      </div>
       <div class="chaos-task">
-        <span>Sofort reagieren</span>
+        <span>2. Dein Auftrag</span>
         <p>${escapeHtml(chaos.task)}</p>
       </div>
       <form class="object-response" data-chaos-form>
         <label>
-          <span>Schreib direkt hier</span>
-          <textarea name="response" required placeholder="Ein Satz, der die Situation rettet: beruhigen, halten, wischen, melken, erklären ..."></textarea>
+          <span>3. Hier kommt euer Text hinein</span>
+          <textarea name="response" required placeholder="${escapeHtml(chaos.example || "Schreibt einen konkreten Rettungssatz.")}"></textarea>
         </label>
-        <button type="submit">Objekt retten</button>
+        <p class="small">Schreibt 1-3 Sätze. Danach speichert das Spiel eure Antwort in der Lernspur und gibt Belohnung oder Geissentritt.</p>
+        <button type="submit">Rettungssatz speichern</button>
       </form>
       <details class="chaos-details">
-        <summary>Milch, Sauerei, Käse?</summary>
+        <summary>Was passiert nach dem Speichern?</summary>
         <p>Wenn ihr die Geiss ruhig und genau durch die Szene bringt, bleibt Milch im Kübel. Wenn nicht, gibt es Sauerei. Im besten Fall: Käse.</p>
       </details>
       <button type="button" class="secondary" data-chaos>Geiss bricht wieder aus</button>
