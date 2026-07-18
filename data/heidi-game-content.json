@@ -37,8 +37,8 @@
   "chapters": [
     {
       "id": "huette-einrichten",
-      "title": "In der Hütte ankommen",
-      "place": "Almhütte",
+      "title": "Ihr erreicht die Alphütte",
+      "place": "Alphütte",
       "media": {
         "type": "video",
         "src": "/heidi-game/assets/alpatmosphaere-loop.m4v",
@@ -85,8 +85,8 @@
     },
     {
       "id": "bett-im-heu",
-      "title": "Das Bett im Heu",
-      "place": "Almhütte",
+      "title": "Heidi schläft im Heu",
+      "place": "Alphütte",
       "media": {
         "type": "video",
         "src": "/heidi-game/assets/heidihaus-loop.m4v",
@@ -134,7 +134,7 @@
     },
     {
       "id": "peter-stellt-ziegen-vor",
-      "title": "Peter stellt die Geissen vor",
+      "title": "Peter kennt jede Geiss",
       "place": "Alpweide",
       "media": {
         "type": "video",
@@ -187,7 +187,7 @@
     },
     {
       "id": "ziegen-ansprechen",
-      "title": "Mit den Geissen sprechen",
+      "title": "Heidi ruft Schwänli",
       "place": "Alpweg",
       "media": {
         "type": "video",
@@ -241,7 +241,7 @@
     },
     {
       "id": "alp-spricht",
-      "title": "Heidi hört Bauernregeln",
+      "title": "Heidi prüft Bauernregeln",
       "place": "Alp",
       "media": {
         "type": "video",
@@ -314,7 +314,7 @@
     },
     {
       "id": "almoehi-sprechen",
-      "title": "Mit dem Almöhi sprechen",
+      "title": "Heidi fragt den Almöhi",
       "place": "Hütte",
       "media": {
         "type": "video",
@@ -365,8 +365,8 @@
     },
     {
       "id": "grossvater-arbeitet",
-      "title": "Beim Großvater mithelfen",
-      "place": "Almhütte",
+      "title": "Der Großvater zeigt es",
+      "place": "Alphütte",
       "media": {
         "type": "video",
         "src": "/heidi-game/assets/alpatmosphaere-loop.m4v",
@@ -414,7 +414,7 @@
     },
     {
       "id": "gewitter-kommt",
-      "title": "Wenn das Gewitter kommt",
+      "title": "Der Himmel kippt",
       "place": "Bergwiese",
       "media": {
         "type": "video",
@@ -462,7 +462,7 @@
     },
     {
       "id": "alpsegen-hoeren",
-      "title": "Den Alpsegen hören",
+      "title": "Der Alpsegen klingt",
       "place": "Alp",
       "media": {
         "type": "video",
@@ -515,7 +515,7 @@
     },
     {
       "id": "grossmutter-hoert",
-      "title": "Die Großmutter hört zu",
+      "title": "Die Großmutter lässt Zeit",
       "place": "Haus der Großmutter",
       "media": {
         "type": "video",
@@ -564,7 +564,7 @@
     },
     {
       "id": "peter-lernt-anders",
-      "title": "Bei der Großmutter lernen",
+      "title": "Peter findet seinen Weg",
       "place": "Alp und Schule",
       "media": {
         "type": "video",
@@ -628,7 +628,7 @@
     },
     {
       "id": "dorfschule-peter",
-      "title": "Peter in der Dorfschule",
+      "title": "Peter liest in der Dorfschule",
       "place": "Dorfschule",
       "media": {
         "type": "video",
@@ -679,7 +679,7 @@
     },
     {
       "id": "ankunft-frankfurt",
-      "title": "Ankunft in Frankfurt",
+      "title": "Frankfurt rückt eng zusammen",
       "place": "Frankfurt",
       "mediaItems": [
         {
@@ -738,7 +738,7 @@
     },
     {
       "id": "frankfurter-stimmen",
-      "title": "Frankfurt: fremde Regeln",
+      "title": "Frankfurt spricht in Regeln",
       "place": "Frankfurt",
       "mediaItems": [
         {
@@ -802,7 +802,7 @@
     },
     {
       "id": "clara-kennenlernen",
-      "title": "Clara kennenlernen",
+      "title": "Heidi trifft Clara",
       "place": "Frankfurt",
       "languageGoal": "Behutsame Fragen stellen und Gemeinsamkeiten finden.",
       "laptopFrame": "Heidi und Clara begegnen sich nicht als Thema, sondern als zwei Kinder mit sehr verschiedenen Alltagen. Gute Fragen öffnen Nähe, ohne neugierig zu verletzen.",
@@ -844,7 +844,7 @@
     },
     {
       "id": "rottenmeier-tisch",
-      "title": "Am Frankfurter Tisch",
+      "title": "Die Serviette wird Gesetz",
       "place": "Frankfurt",
       "languageGoal": "Regelsprache, Tadel und hilfreiche Erklärung unterscheiden.",
       "laptopFrame": "Am Tisch werden Regeln sichtbar. Entscheidend ist, ob Sprache nur beschämt oder ob sie erklärt, was jemand lernen kann.",
@@ -885,7 +885,7 @@
     },
     {
       "id": "sehnsucht-alp",
-      "title": "Heidis Heimweh",
+      "title": "Heidi sucht den Himmel",
       "place": "Frankfurt",
       "languageGoal": "Heimweh über Körper, Erinnerung und Umgebung erzählen.",
       "laptopFrame": "Heidis Heimweh soll nicht allgemein behauptet werden. Es zeigt sich darin, was ihr Körper tut, welche Bilder wiederkommen und was in Frankfurt fehlt.",
@@ -927,7 +927,7 @@
     },
     {
       "id": "frankfurt-verlorene-stadt",
-      "title": "Das verschwundene Frankfurt",
+      "title": "Frankfurt ist nicht mehr dasselbe",
       "place": "Frankfurt historisch",
       "mediaItems": [
         {
@@ -987,7 +987,7 @@
     },
     {
       "id": "rueckkehr-alp",
-      "title": "Zurück auf der Alp",
+      "title": "Heidi kommt zurück",
       "place": "Alp",
       "media": {
         "type": "video",
@@ -1036,7 +1036,7 @@
     },
     {
       "id": "clara-auf-der-alp",
-      "title": "Clara auf der Alp",
+      "title": "Clara spürt die Alp",
       "place": "Alp",
       "media": {
         "type": "video",
@@ -1085,7 +1085,7 @@
     },
     {
       "id": "peter-eifersucht",
-      "title": "Peter und die Eifersucht",
+      "title": "Peter steht daneben",
       "place": "Alp",
       "languageGoal": "Ein schwieriges Gefühl benennen, ohne die Figur zu verurteilen.",
       "laptopFrame": "Peter kann eifersüchtig, trotzig oder beschämt sein. Die Aufgabe ist, sein Verhalten ernst zu nehmen, ohne es einfach zu entschuldigen.",
@@ -1127,7 +1127,7 @@
     },
     {
       "id": "ziegen-verloren",
-      "title": "Eine Geiss fehlt",
+      "title": "Schwänli fehlt",
       "place": "Alpweide",
       "media": {
         "type": "video",
@@ -1181,7 +1181,7 @@
     },
     {
       "id": "heidi-erzaehlt-weiter",
-      "title": "Heidi erzählt weiter",
+      "title": "Heidi ordnet die Erinnerung",
       "place": "Offene Weitererzählung",
       "languageGoal": "Erfahrungen ordnen, erzählen, verschriftlichen und überarbeiten.",
       "laptopFrame": "In Spyris Heidi-Bänden wird Heidi nicht ausdrücklich Schriftstellerin. Dieses Kapitel ist eine offene Weitererzählung: Heidi ordnet später, was sie auf der Alp, in Frankfurt und bei der Großmutter gelernt haben könnte.",
@@ -1221,7 +1221,7 @@
     },
     {
       "id": "schlusskreis",
-      "title": "Schlusskreis: Was bleibt?",
+      "title": "Was bleibt im Kreis?",
       "place": "Auswertung",
       "languageGoal": "Lernweg zusammenfassen und begründet auswählen.",
       "laptopFrame": "Die letzte Quest sammelt nicht alles, sondern wählt. Welche Szene, welches Wort und welche Frage bleiben aus dem Spiel hängen?",

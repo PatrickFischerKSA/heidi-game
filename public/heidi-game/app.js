@@ -273,51 +273,51 @@ const STORY = {
   premise: "Eine Frankfurter Geiss ist aus der Stadt ausgebüxt und behauptet steif und fest, sie sei Fräulein Rottenmeier. Sie kennt Salons, Verbote und Hausregeln, aber keine Alp. Schwänli und Schnecke müssen ihr zeigen, wie man hier überlebt: hören, riechen, fragen, vorsichtig urteilen und nicht jedes Meckern für ein Gesetz halten.",
   journey: [
     {
-      title: "1. Auf der Alp ankommen",
+      title: "1. Ihr erreicht die Alp",
       ids: ["huette-einrichten", "bett-im-heu", "peter-stellt-ziegen-vor", "ziegen-ansprechen", "alp-spricht", "almoehi-sprechen"],
-      line: "Heidi findet zuerst Dinge, Orte, Geissen, Stimmen und Fragen. Aus Staunen wird Sprache."
+      line: "Vor euch stehen Hütte, Heu, Geissen und der Großvater. Heidi sucht Wörter für das, was sie sieht."
     },
     {
-      title: "2. Alpleben bestehen",
+      title: "2. Die Alp wird ernst",
       ids: ["grossvater-arbeitet", "gewitter-kommt", "alpsegen-hoeren", "grossmutter-hoert", "peter-lernt-anders", "dorfschule-peter"],
-      line: "Jetzt muss Sprache praktisch werden: arbeiten, warnen, hören, lernen und jemandem helfen."
+      line: "Handgriffe, Wetter, Abendruf und Lernen greifen ineinander. Sprache muss jetzt tragen."
     },
     {
-      title: "3. Frankfurt widerspricht",
+      title: "3. Frankfurt wird eng",
       ids: ["ankunft-frankfurt", "frankfurter-stimmen", "clara-kennenlernen", "rottenmeier-tisch", "sehnsucht-alp", "frankfurt-verlorene-stadt"],
-      line: "Die Stadt bringt Regeln, Enge und fremde Stimmen. Heidi lernt, Tonfall und Macht zu unterscheiden."
+      line: "Türen, Regeln, Tonfall. Heidi merkt, dass viele Wörter nicht automatisch helfen."
     },
     {
-      title: "4. Zurückkommen und neu erzählen",
+      title: "4. Ihr kehrt verändert zurück",
       ids: ["rueckkehr-alp", "clara-auf-der-alp", "peter-eifersucht", "ziegen-verloren", "heidi-erzaehlt-weiter", "schlusskreis"],
-      line: "Die Rückkehr ist kein Reset: Clara, Peter und Heidi brauchen genauere, gerechtere Sprache."
+      line: "Die Alp ist vertraut, aber nicht wie vorher. Clara, Peter und Heidi brauchen genauere Worte."
     }
   ],
   transitions: {
-    "huette-einrichten": "Erst muss Heidi begreifen, wofür die Dinge in der Hütte da sind. Danach merkt sie im Heu, dass dieser Ort auch ein Körpergefühl hat.",
-    "bett-im-heu": "Aus Geruch und Rascheln wird Vertrautheit. Am nächsten Morgen werden aus der Herde einzelne Geissen mit Namen.",
-    "peter-stellt-ziegen-vor": "Wenn Schwänli und Schnecke unterscheidbar sind, kann Heidi sie auch glaubwürdig ansprechen.",
-    "ziegen-ansprechen": "Aus Lockrufen und genauen Verben entstehen erste Alp-Beobachtungen. Daraus wachsen Bauernregeln.",
-    "alp-spricht": "Die Bauernregel reicht nicht als fertige Wahrheit. Heidi muss lernen, den Großvater danach zu fragen.",
-    "almoehi-sprechen": "Nach dem Fragen kommt das Mithelfen: Heidi versteht den Großvater auch über Handgriffe.",
-    "grossvater-arbeitet": "Wer Handgriffe versteht, kann im Ernstfall schneller handeln. Das Gewitter prüft diese Sprache.",
-    "gewitter-kommt": "Nach der Gefahr wird der Abend hörbar. Der Alpsegen ordnet Mensch, Tier und Nacht anders als ein Befehl.",
-    "alpsegen-hoeren": "Vom Hören führt der Weg zur Großmutter: Dort wird Zuhören selbst zu einer Handlung.",
-    "grossmutter-hoert": "Aus geduldigem Zuhören entsteht ein Lernweg für Peter, der nicht von oben herab funktioniert.",
-    "peter-lernt-anders": "Der Lernweg wird jetzt konkret in der Dorfschule: Material, Satz, Rückmeldung.",
-    "dorfschule-peter": "Nach Alp und Schule kippt die Welt: Frankfurt bringt andere Räume, Regeln und Stimmen.",
-    "ankunft-frankfurt": "Die fremde Stadt wird nicht nur gesehen, sondern gehört: Manche Sätze helfen, andere beschämen.",
-    "frankfurter-stimmen": "Wenn Heidi Tonfall und Macht hört, kann sie Clara anders begegnen: nicht als Vorschrift, sondern als Gespräch.",
-    "clara-kennenlernen": "Freundschaft muss sich auch an Regeln bewähren. Am Tisch zeigt sich, ob Sprache hilft oder klein macht.",
-    "rottenmeier-tisch": "Harte Regeln lösen Heidis Fremdheit nicht. Im Heimweh wird sichtbar, was Frankfurt ihr nimmt.",
-    "sehnsucht-alp": "Das persönliche Heimweh führt zum historischen Blick: Auch Frankfurt selbst ist nicht unverändert geblieben.",
-    "frankfurt-verlorene-stadt": "Nach dem Blick auf den Bruch kann Heidi zurückkehren, aber nicht unverändert.",
-    "rueckkehr-alp": "Heidi bringt Frankfurt-Erfahrung auf die Alp zurück. Clara erlebt denselben Ort ganz anders.",
-    "clara-auf-der-alp": "Wenn Clara dazukommt, verändert sich auch Peter. Sein Gefühl braucht Verständnis und Grenze.",
-    "peter-eifersucht": "Aus Peters Kränkung wird eine konkrete Situation: Eine Geiss fehlt, und alle müssen sachlich handeln.",
-    "ziegen-verloren": "Der Suchplan bündelt Beobachten, Ortswörter und Zusammenarbeit. Danach kann Heidi erzählen, was sie gelernt hat.",
-    "heidi-erzaehlt-weiter": "Die Weitererzählung sammelt den Spielweg. Im Schlusskreis wird ausgewählt, was wirklich bleibt.",
-    "schlusskreis": "Ende des Spielwegs: Die Frankfurter Geiss hat nicht gesiegt; aus Meckern wurde brauchbare Sprache."
+    "huette-einrichten": "Ihr seid oben. Bevor etwas erklärt wird, zeigen Bank, Schüssel, Decke und Heu, wie man hier lebt.",
+    "bett-im-heu": "Die erste Nacht macht die Hütte körperlich: Heugeruch, Rascheln, Wärme, Wind.",
+    "peter-stellt-ziegen-vor": "Am Morgen ist die Herde nicht mehr irgendeine Herde. Schwänli und Schnecke bekommen Eigenheiten.",
+    "ziegen-ansprechen": "Wer eine Geiss kennt, ruft sie anders. Heidi versucht es mit Stimme, Nähe und einem genauen Verb.",
+    "alp-spricht": "Aus Beobachtungen werden Sprüche. Aber eine Bauernregel bleibt Erfahrung, kein Befehl an den Himmel.",
+    "almoehi-sprechen": "Heidi fragt nach. Der Großvater soll nicht geprüft werden; er soll zeigen, woran er etwas erkennt.",
+    "grossvater-arbeitet": "Jetzt zählen Hände mehr als Erklärungen. Heidi schaut genau, bevor sie mithilft.",
+    "gewitter-kommt": "Das Wetter zieht auf. Sprache muss kurz, klar und brauchbar werden.",
+    "alpsegen-hoeren": "Nach dem Gewitter kommt der Abend. Stimme und Glocke halten die Nacht zusammen.",
+    "grossmutter-hoert": "Bei der Großmutter wird es leiser. Eine Pause kann mehr öffnen als eine Rede.",
+    "peter-lernt-anders": "Peter braucht keinen Druck, sondern einen Weg aus seiner eigenen Welt.",
+    "dorfschule-peter": "In der Dorfschule wird dieser Weg greifbar: Karte, Satz, Stimme, Rückmeldung.",
+    "ankunft-frankfurt": "Dann wird alles enger. Heidi kommt in eine Stadt aus Türen, Treppen und Regeln.",
+    "frankfurter-stimmen": "In Frankfurt sprechen Menschen anders. Ein Satz kann helfen oder beschämen.",
+    "clara-kennenlernen": "Clara ist keine Aufgabe. Sie ist ein Kind mit eigener Welt.",
+    "rottenmeier-tisch": "Am Tisch wird die Regel scharf. Jetzt zeigt sich, ob Sprache erklärt oder verletzt.",
+    "sehnsucht-alp": "Heidi sagt nicht einfach, dass sie heimwehkrank ist. Ihr Körper und ihr Blick verraten es.",
+    "frankfurt-verlorene-stadt": "Das alte Frankfurt lässt sich nicht einfach besuchen. Bilder zeigen Nähe und Bruch zugleich.",
+    "rueckkehr-alp": "Heidi ist wieder oben. Der Ort ist vertraut, aber sie selbst kommt verändert zurück.",
+    "clara-auf-der-alp": "Nun erlebt Clara dieselbe Alp neu. Heidi muss helfen, ohne über sie zu bestimmen.",
+    "peter-eifersucht": "Peter steht daneben. Sein Gefühl ist verständlich, aber es darf nicht alles erlauben.",
+    "ziegen-verloren": "Dann fehlt Schwänli. Aus Sorge wird ein Suchplan mit genauen Ortswörtern.",
+    "heidi-erzaehlt-weiter": "Am Ende ordnet Heidi die Erinnerungen. Aus Erlebnissen wird eine mögliche Weitererzählung.",
+    "schlusskreis": "Zum Schluss zählt nicht alles zugleich. Eine Szene, ein Wort, eine Frage sollen bleiben."
   },
   rewards: [
     { object: "hay", text: "Heubüschel gewonnen: Die Frankfurter Geiss kaut endlich, bevor sie befiehlt." },
