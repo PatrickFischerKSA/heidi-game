@@ -803,6 +803,7 @@ function renderPartner() {
 function questStage(c, label) {
   return html`
     <section class="quest-stage">
+      ${sceneMedia(c)}
       <div class="quest-copy">
         <div class="quest-kicker">
           <span>${escapeHtml(label)}</span>
@@ -810,16 +811,20 @@ function questStage(c, label) {
           <span>Quest ${state.chapterIndex + 1} von ${state.content.chapters.length}</span>
         </div>
         <h1>${escapeHtml(c.title)}</h1>
-        <p>${escapeHtml(c.laptopFrame)}</p>
-        ${storyBeat(c)}
-        ${chaosPanel(c)}
+        <details class="story-drawer">
+          <summary>Worum geht es?</summary>
+          <p>${escapeHtml(c.laptopFrame)}</p>
+        </details>
+        <div class="event-row">
+          ${storyBeat(c)}
+          ${chaosPanel(c)}
+        </div>
         ${historicalNote(c)}
         <div class="quest-actions">
           <button type="button" class="secondary" data-prev-chapter ${state.chapterIndex === 0 ? "disabled" : ""}>Vorige Quest</button>
           <button type="button" data-next-chapter ${state.chapterIndex >= state.content.chapters.length - 1 ? "disabled" : ""}>Nächste Quest</button>
         </div>
       </div>
-      ${sceneMedia(c)}
     </section>
   `;
 }
@@ -864,11 +869,14 @@ function storyBeat(c) {
     <aside class="story-beat">
       <p class="eyebrow">Störfall: ${escapeHtml(STORY.name)}</p>
       <strong>${escapeHtml(trouble)}</strong>
-      <p>${escapeHtml(aim)}</p>
-      <div class="story-rules">
-        <span>Gute Antwort: Belohnung</span>
-        <span>Zu allgemein: Geissentritt</span>
-      </div>
+      <details>
+        <summary>Auftrag</summary>
+        <p>${escapeHtml(aim)}</p>
+        <div class="story-rules">
+          <span>Belohnung</span>
+          <span>Geissentritt</span>
+        </div>
+      </details>
     </aside>
   `;
 }
@@ -921,22 +929,30 @@ function sceneMedia(c) {
   if (!mediaItems.length) {
     return "";
   }
+  const [main, ...more] = mediaItems;
 
   return html`
-    <div class="scene-media-grid">
-      ${mediaItems.map((media) => `
-        <figure class="scene-media">
+    <div class="scene-media-grid stage-media">
+      <figure class="scene-media is-main">
+        <video src="${escapeHtml(main.src)}" autoplay muted loop playsinline preload="metadata"></video>
+        <figcaption>
+          <strong>${escapeHtml(main.label || c.place || "Szene")}</strong>
+          <details>
+            <summary>Bildhinweis</summary>
+            <span>${escapeHtml(main.caption || "")}</span>
+          </details>
+          <div class="media-controls">
+            ${main.hasAudio ? `<button type="button" class="secondary" data-toggle-media-sound>Videoton einschalten</button>` : ""}
+            ${main.audio?.src ? `<button type="button" class="secondary" data-audio-label="${escapeHtml(main.audio.label || "Audio")}" data-toggle-scene-audio>${escapeHtml(main.audio.label || "Audio einschalten")}</button><audio src="${escapeHtml(main.audio.src)}" preload="metadata" ${main.audio.loop ? "loop" : ""}></audio>` : ""}
+          </div>
+        </figcaption>
+      </figure>
+      ${more.length ? `<div class="scene-thumbs">${more.map((media) => `
+        <figure class="scene-media is-thumb">
           <video src="${escapeHtml(media.src)}" autoplay muted loop playsinline preload="metadata"></video>
-          <figcaption>
-            <strong>${escapeHtml(media.label || c.place || "Szene")}</strong>
-            <span>${escapeHtml(media.caption || "")}</span>
-            <div class="media-controls">
-              ${media.hasAudio ? `<button type="button" class="secondary" data-toggle-media-sound>Videoton einschalten</button>` : ""}
-              ${media.audio?.src ? `<button type="button" class="secondary" data-audio-label="${escapeHtml(media.audio.label || "Audio")}" data-toggle-scene-audio>${escapeHtml(media.audio.label || "Audio einschalten")}</button><audio src="${escapeHtml(media.audio.src)}" preload="metadata" ${media.audio.loop ? "loop" : ""}></audio>` : ""}
-            </div>
-          </figcaption>
+          <figcaption><strong>${escapeHtml(media.label || "Nebenclip")}</strong></figcaption>
         </figure>
-      `).join("")}
+      `).join("")}</div>` : ""}
     </div>
   `;
 }
@@ -1166,21 +1182,22 @@ function feedbackMarkup(chapterData, kind, text) {
   return html`
     <div class="qualified-feedback">
       <strong>${escapeHtml(feedback.title)}</strong>
-      <p>${escapeHtml(feedback.summary)}</p>
       <div class="game-feedback ${feedback.reward ? "is-reward" : "is-kick"}">
         <strong>${feedback.reward ? "Belohnung" : "Geissentritt"}</strong>
         <p>${escapeHtml(feedback.reward || feedback.kick)}</p>
       </div>
-      <div class="feedback-columns">
+      <details class="feedback-details">
+        <summary>Warum?</summary>
+        <p>${escapeHtml(feedback.summary)}</p>
         <div>
-          <p class="small"><strong>Schon tragfähig</strong></p>
+          <strong>Schon tragfähig</strong>
           <ul>${feedback.strengths.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
         </div>
         <div>
-          <p class="small"><strong>Jetzt überarbeiten</strong></p>
+          <strong>Jetzt überarbeiten</strong>
           <ul>${feedback.nextSteps.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
         </div>
-      </div>
+      </details>
     </div>
   `;
 }
