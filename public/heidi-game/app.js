@@ -21,7 +21,8 @@ const state = {
   voiceDrafts: {},
   recognition: null,
   listeningKey: "",
-  pollTimer: null
+  pollTimer: null,
+  playSection: "cards"
 };
 
 localStorage.setItem(storage.clientId, state.clientId);
@@ -661,16 +662,20 @@ function qrCard(role, title, subtitle) {
 function renderPartner() {
   state.mode = "partner";
   const c = chapter();
+  const sections = [
+    { id: "join", label: "Handys" },
+    { id: "path", label: "Questpfad" },
+    { id: "status", label: "Stand" },
+    { id: "write", label: "Schreiben" },
+    { id: "log", label: "Lernspur" }
+  ];
+  const active = activePlaySection(sections, "join");
   app.innerHTML = html`
     ${topbar("partner")}
-    <div class="layout">
-      <section class="stack">
-        ${questStage(c, "Laptop-Spielleitung")}
-        ${chapterTabs()}
-        ${statusStrip()}
-        ${teamTaskPanel()}
-      </section>
-      <aside class="stack">
+    <div class="play-layout">
+      ${questStage(c, "Laptop-Spielleitung")}
+      ${playSectionMenu(sections, active)}
+      ${active === "join" ? html`
         <div class="panel stack">
           <div>
             <p class="eyebrow">Hauptcomputer</p>
@@ -682,8 +687,11 @@ function renderPartner() {
             ${qrCard("B", "Schnecke", "Wörter finden und nachfragen")}
           </div>
         </div>
-        ${journalPanel()}
-      </aside>
+      ` : ""}
+      ${active === "path" ? chapterTabs() : ""}
+      ${active === "status" ? statusStrip() : ""}
+      ${active === "write" ? teamTaskPanel() : ""}
+      ${active === "log" ? journalPanel() : ""}
     </div>
   `;
 }
@@ -726,6 +734,18 @@ function chapterTabs() {
         ${state.content.chapters.map((item, index) => `<button type="button" title="${escapeHtml(item.title)}" data-chapter="${index}" aria-current="${index === state.chapterIndex}"><span>${index + 1}</span></button>`).join("")}
       </div>
     </div>
+  `;
+}
+
+function activePlaySection(items, fallback = "cards") {
+  return items.some((item) => item.id === state.playSection) ? state.playSection : fallback;
+}
+
+function playSectionMenu(items, active) {
+  return html`
+    <nav class="section-menu panel" aria-label="Arbeitsbereiche">
+      ${items.map((item) => `<button type="button" data-play-section="${escapeHtml(item.id)}" aria-current="${item.id === active}">${escapeHtml(item.label)}</button>`).join("")}
+    </nav>
   `;
 }
 
@@ -1093,12 +1113,19 @@ function roleCard(role, roleData) {
 function renderDesktop() {
   state.mode = "desktop";
   const c = chapter();
+  const sections = [
+    { id: "cards", label: "Ziegenkarten" },
+    { id: "write", label: "Schreibwerkstatt" },
+    { id: "path", label: "Questpfad" },
+    { id: "log", label: "Lernspur" }
+  ];
+  const active = activePlaySection(sections, "cards");
   app.innerHTML = html`
     ${topbar("desktop")}
     <div class="play-layout">
-      <section class="stack">
-        ${questStage(c, "Desktopmodus")}
-        ${chapterTabs()}
+      ${questStage(c, "Desktopmodus")}
+      ${playSectionMenu(sections, active)}
+      ${active === "cards" ? html`
         <div class="goat-board panel stack">
           <h2>Ziegenkarten nacheinander öffnen</h2>
           ${taskFlow(c)}
@@ -1111,9 +1138,10 @@ function renderDesktop() {
             ${state.revealB ? roleCard("B", c.roleB) : `<div class="goat-card-placeholder role-b">${playerProfile("B", "Schnecke")}<h3>Schnecke ist verdeckt</h3><p>Öffnet diese Karte erst nach dem Wechsel.</p></div>`}
           </div>
         </div>
-        ${(state.revealA && state.revealB) ? `<div class="panel stack"><p class="eyebrow">Gemeinsame Aufgabe</p><h2>${escapeHtml(c.teamTask)}</h2>${answerForm()}</div>` : ""}
-      </section>
-      ${journalPanel()}
+      ` : ""}
+      ${active === "write" ? (state.revealA && state.revealB ? `<div class="panel stack"><p class="eyebrow">Gemeinsame Aufgabe</p><h2>${escapeHtml(c.teamTask)}</h2>${answerForm()}</div>` : `<div class="panel notice"><strong>Noch gesperrt.</strong><p>Öffne zuerst Schwänli und Schnecke im Bereich Ziegenkarten. Danach erscheint hier die Schreibwerkstatt.</p></div>`) : ""}
+      ${active === "path" ? chapterTabs() : ""}
+      ${active === "log" ? journalPanel() : ""}
     </div>
   `;
 }
@@ -1121,18 +1149,23 @@ function renderDesktop() {
 function renderDemo() {
   state.mode = "demo";
   const c = chapter();
+  const sections = [
+    { id: "cards", label: "Ziegenkarten" },
+    { id: "write", label: "Schreibwerkstatt" },
+    { id: "path", label: "Questpfad" },
+    { id: "log", label: "Lernspur" },
+    { id: "didactics", label: "Didaktik" }
+  ];
+  const active = activePlaySection(sections, "cards");
   app.innerHTML = html`
     ${topbar("demo")}
     <div class="play-layout">
-      <section class="stack">
-        <div class="stack">
-          ${questStage(c, "Demomodus")}
-          <div class="toolbar">
-            <button type="button" class="secondary" data-toggle-didactics>${state.showDidactics ? "Didaktik ausblenden" : "Didaktik einblenden"}</button>
-            <button type="button" class="danger" data-reset-local>Aufgabe zurücksetzen</button>
-          </div>
-        </div>
-        ${chapterTabs()}
+      ${questStage(c, "Demomodus")}
+      <div class="toolbar compact-actions">
+        <button type="button" class="danger" data-reset-local>Aufgabe zurücksetzen</button>
+      </div>
+      ${playSectionMenu(sections, active)}
+      ${active === "cards" ? html`
         <div class="goat-board panel stack">
           <div>
             <p class="eyebrow">Ziegenkarten</p>
@@ -1143,15 +1176,18 @@ function renderDemo() {
             <div class="goat-handset">${roleCard("B", c.roleB)}${voiceQuestPanel("B", c)}</div>
           </div>
         </div>
+      ` : ""}
+      ${active === "write" ? html`
         <div class="panel stack">
           <p class="eyebrow">Laptop nach Austausch</p>
           <h2>${escapeHtml(c.teamTask)}</h2>
           ${taskFlow(c)}
           ${answerForm(c.example)}
         </div>
-        ${state.showDidactics ? didacticsPanel() : ""}
-      </section>
-      ${journalPanel()}
+      ` : ""}
+      ${active === "path" ? chapterTabs() : ""}
+      ${active === "log" ? journalPanel() : ""}
+      ${active === "didactics" ? didacticsPanel() : ""}
     </div>
   `;
 }
@@ -1411,6 +1447,10 @@ app.addEventListener("click", async (event) => {
   if (!button) return;
 
   if (button.dataset.nav) navigate(button.dataset.nav);
+  if (button.dataset.playSection) {
+    state.playSection = button.dataset.playSection;
+    renderCurrentMode();
+  }
   if (button.dataset.startRoom !== undefined) await startRoom();
   if (button.dataset.prevChapter !== undefined) await setChapter(Math.max(0, state.chapterIndex - 1));
   if (button.dataset.nextChapter !== undefined) await setChapter(Math.min(state.content.chapters.length - 1, state.chapterIndex + 1));

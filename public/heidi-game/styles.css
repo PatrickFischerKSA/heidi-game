@@ -215,6 +215,39 @@ p {
   background: var(--clay);
 }
 
+.section-menu {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 10px;
+  position: sticky;
+  top: 10px;
+  z-index: 4;
+  background:
+    linear-gradient(90deg, rgba(255, 252, 245, 0.94), rgba(232, 244, 241, 0.9)),
+    var(--paper);
+}
+
+.section-menu button {
+  flex: 0 0 auto;
+  min-width: 136px;
+  justify-content: center;
+  background: rgba(255, 252, 245, 0.88);
+  color: var(--forest);
+  border: 1px solid rgba(35, 63, 49, 0.18);
+}
+
+.section-menu button[aria-current="true"] {
+  background: var(--forest);
+  color: #fffaf0;
+  box-shadow: 0 10px 22px rgba(23, 32, 25, 0.16);
+}
+
+.compact-actions {
+  justify-content: flex-end;
+  margin-top: -4px;
+}
+
 .hero {
   display: grid;
   gap: 24px;
