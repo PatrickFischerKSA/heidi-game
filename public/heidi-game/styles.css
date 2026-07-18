@@ -277,15 +277,15 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(9px) saturate(1.24) contrast(1.04) brightness(1.04);
-  transform: scale(1.045);
+  filter: blur(4px) saturate(1.18) contrast(1.02) brightness(1.02);
+  transform: scale(1.025);
 }
 
 .front-scrim {
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(255, 252, 245, 0.22) 0%, rgba(255, 252, 245, 0.08) 48%, rgba(255, 252, 245, 0.02) 100%),
-    linear-gradient(180deg, rgba(25, 43, 31, 0.08), rgba(239, 231, 204, 0.08) 72%, rgba(239, 231, 204, 0.16));
+    linear-gradient(90deg, rgba(255, 252, 245, 0.1) 0%, rgba(255, 252, 245, 0.035) 48%, rgba(255, 252, 245, 0) 100%),
+    linear-gradient(180deg, rgba(25, 43, 31, 0.04), rgba(239, 231, 204, 0.03) 72%, rgba(239, 231, 204, 0.08));
 }
 
 .front-content {
@@ -308,21 +308,21 @@ p {
 
 .hero .eyebrow {
   color: #8d4d37;
-  text-shadow: 0 1px 14px rgba(255, 250, 240, 0.68);
+  text-shadow: 0 1px 10px rgba(255, 250, 240, 0.66);
 }
 
 .hero h1 {
   max-width: 960px;
   color: var(--ink);
   text-shadow:
-    0 2px 18px rgba(255, 250, 240, 0.86),
-    0 14px 44px rgba(23, 32, 25, 0.18);
+    0 2px 12px rgba(255, 250, 240, 0.76),
+    0 12px 34px rgba(23, 32, 25, 0.16);
 }
 
 .hero-copy > p:not(.eyebrow) {
   color: rgba(23, 32, 25, 0.82);
   font-size: clamp(1.05rem, 1.7vw, 1.34rem);
-  text-shadow: 0 2px 14px rgba(255, 250, 240, 0.76);
+  text-shadow: 0 2px 10px rgba(255, 250, 240, 0.68);
 }
 
 .chapter-grid,
@@ -390,15 +390,15 @@ p {
   gap: clamp(16px, 4vw, 34px);
   align-items: end;
   padding: clamp(18px, 3vw, 28px);
-  border: 1px solid rgba(255, 250, 240, 0.48);
+  border: 1px solid rgba(255, 250, 240, 0.34);
   border-radius: 8px;
   background:
-    linear-gradient(115deg, rgba(255, 250, 240, 0.2), rgba(255, 250, 240, 0.08)),
-    rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(18px) saturate(1.18);
+    linear-gradient(115deg, rgba(255, 250, 240, 0.12), rgba(255, 250, 240, 0.035)),
+    rgba(255, 255, 255, 0.018);
+  backdrop-filter: blur(10px) saturate(1.1);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.46),
-    0 18px 46px rgba(23, 32, 25, 0.12);
+    inset 0 1px 0 rgba(255, 255, 255, 0.32),
+    0 14px 34px rgba(23, 32, 25, 0.1);
 }
 
 .mode-primary h2 {
@@ -413,9 +413,9 @@ p {
 .mode-actions {
   display: grid;
   gap: 0;
-  border-top: 1px solid rgba(255, 250, 240, 0.28);
-  background: rgba(255, 250, 240, 0.06);
-  backdrop-filter: blur(10px) saturate(1.12);
+  border-top: 1px solid rgba(255, 250, 240, 0.18);
+  background: rgba(255, 250, 240, 0.025);
+  backdrop-filter: blur(6px) saturate(1.08);
   border-radius: 8px;
   overflow: hidden;
 }
@@ -428,10 +428,10 @@ p {
   padding: 14px 0;
   border: 0;
   padding: 14px 16px;
-  border-bottom: 1px solid rgba(255, 250, 240, 0.24);
+  border-bottom: 1px solid rgba(255, 250, 240, 0.16);
   border-radius: 0;
   color: var(--forest);
-  background: rgba(255, 250, 240, 0.035);
+  background: rgba(255, 250, 240, 0.015);
   text-align: left;
 }
 
@@ -454,18 +454,18 @@ p {
 
 .hero .host-login input {
   color: var(--ink);
-  background: rgba(255, 250, 240, 0.44);
-  border-color: rgba(255, 255, 255, 0.48);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.48);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 250, 240, 0.28);
+  border-color: rgba(255, 255, 255, 0.36);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34);
+  backdrop-filter: blur(7px);
 }
 
 .hero .host-login button {
   width: 100%;
-  background: rgba(255, 250, 240, 0.42);
+  background: rgba(255, 250, 240, 0.26);
   color: var(--forest);
-  border-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(12px);
+  border-color: rgba(255, 255, 255, 0.38);
+  backdrop-filter: blur(7px);
 }
 
 .layout {
