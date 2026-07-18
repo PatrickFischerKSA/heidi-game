@@ -277,15 +277,15 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: blur(16px) saturate(1.2) contrast(0.94);
-  transform: scale(1.08);
+  filter: blur(12px) saturate(1.22) contrast(1.02) brightness(1.08);
+  transform: scale(1.06);
 }
 
 .front-scrim {
   z-index: -1;
   background:
-    linear-gradient(90deg, rgba(16, 27, 19, 0.72) 0%, rgba(25, 38, 27, 0.58) 42%, rgba(16, 27, 19, 0.24) 100%),
-    linear-gradient(180deg, rgba(20, 28, 21, 0.42), rgba(236, 224, 190, 0.34) 72%, rgba(220, 218, 191, 0.62));
+    linear-gradient(90deg, rgba(255, 252, 245, 0.46) 0%, rgba(255, 252, 245, 0.2) 42%, rgba(255, 252, 245, 0.08) 100%),
+    linear-gradient(180deg, rgba(25, 43, 31, 0.18), rgba(239, 231, 204, 0.18) 72%, rgba(239, 231, 204, 0.34));
 }
 
 .front-content {
@@ -307,20 +307,22 @@ p {
 }
 
 .hero .eyebrow {
-  color: #f1c17d;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.42);
+  color: #8d4d37;
+  text-shadow: 0 1px 14px rgba(255, 250, 240, 0.68);
 }
 
 .hero h1 {
   max-width: 960px;
-  color: #fffaf0;
-  text-shadow: 0 18px 48px rgba(0, 0, 0, 0.58);
+  color: var(--ink);
+  text-shadow:
+    0 2px 18px rgba(255, 250, 240, 0.86),
+    0 14px 44px rgba(23, 32, 25, 0.18);
 }
 
 .hero-copy > p:not(.eyebrow) {
-  color: rgba(255, 250, 240, 0.9);
+  color: rgba(23, 32, 25, 0.82);
   font-size: clamp(1.05rem, 1.7vw, 1.34rem);
-  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.46);
+  text-shadow: 0 2px 14px rgba(255, 250, 240, 0.76);
 }
 
 .chapter-grid,
@@ -379,7 +381,7 @@ p {
   display: grid;
   gap: 12px;
   max-width: 980px;
-  color: #fffaf0;
+  color: var(--ink);
 }
 
 .mode-primary {
@@ -388,11 +390,15 @@ p {
   gap: clamp(16px, 4vw, 34px);
   align-items: end;
   padding: clamp(18px, 3vw, 28px);
-  border: 1px solid rgba(255, 250, 240, 0.22);
+  border: 1px solid rgba(255, 250, 240, 0.56);
   border-radius: 8px;
-  background: rgba(12, 24, 17, 0.38);
-  backdrop-filter: blur(18px) saturate(1.1);
-  box-shadow: 0 20px 54px rgba(0, 0, 0, 0.2);
+  background:
+    linear-gradient(115deg, rgba(255, 250, 240, 0.56), rgba(255, 250, 240, 0.28)),
+    rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(22px) saturate(1.22);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.62),
+    0 20px 54px rgba(23, 32, 25, 0.14);
 }
 
 .mode-primary h2 {
@@ -401,13 +407,17 @@ p {
 
 .mode-primary p {
   max-width: 680px;
-  color: rgba(255, 250, 240, 0.84);
+  color: rgba(23, 32, 25, 0.76);
 }
 
 .mode-actions {
   display: grid;
   gap: 0;
-  border-top: 1px solid rgba(255, 250, 240, 0.2);
+  border-top: 1px solid rgba(255, 250, 240, 0.42);
+  background: rgba(255, 250, 240, 0.18);
+  backdrop-filter: blur(16px) saturate(1.16);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 .mode-link {
@@ -417,10 +427,11 @@ p {
   gap: 16px;
   padding: 14px 0;
   border: 0;
-  border-bottom: 1px solid rgba(255, 250, 240, 0.2);
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 250, 240, 0.36);
   border-radius: 0;
-  color: #fffaf0;
-  background: transparent;
+  color: var(--forest);
+  background: rgba(255, 250, 240, 0.12);
   text-align: left;
 }
 
@@ -428,29 +439,32 @@ p {
   min-width: 135px;
   font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
   font-size: clamp(1.35rem, 2.5vw, 2rem);
-  color: #fffaf0;
-  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.38);
+  color: var(--ink);
+  text-shadow: 0 2px 12px rgba(255, 250, 240, 0.72);
 }
 
 .mode-link span {
   flex: 1;
-  color: rgba(255, 250, 240, 0.78);
+  color: rgba(23, 32, 25, 0.72);
 }
 
 .hero .host-login label {
-  color: rgba(255, 250, 240, 0.88);
+  color: rgba(23, 32, 25, 0.82);
 }
 
 .hero .host-login input {
   color: var(--ink);
-  background: rgba(255, 250, 240, 0.9);
+  background: rgba(255, 250, 240, 0.66);
+  border-color: rgba(255, 255, 255, 0.62);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.48);
 }
 
 .hero .host-login button {
   width: 100%;
-  background: #fffaf0;
+  background: rgba(255, 250, 240, 0.72);
   color: var(--forest);
-  border-color: rgba(255, 250, 240, 0.72);
+  border-color: rgba(255, 255, 255, 0.66);
+  backdrop-filter: blur(10px);
 }
 
 .layout {
