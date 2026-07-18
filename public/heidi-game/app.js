@@ -1173,7 +1173,7 @@ function chaosPanel(c) {
           <textarea name="response" required placeholder="Hier eure eigene Antwort schreiben."></textarea>
         </label>
         <div class="example-drawer" data-example-drawer>
-          <button type="button" class="secondary" data-show-chaos-example>Beispiel erst auf Nachfrage anzeigen</button>
+          <button type="button" class="secondary" data-show-chaos-example>Wie meinst du das?</button>
           <p hidden>${escapeHtml(chaos.example || c.example || "Schreibt konkret, kurz und passend zur Szene.")}</p>
         </div>
         <button type="submit">Questantwort speichern</button>
@@ -1366,7 +1366,7 @@ function answerForm(prefill = "") {
       <label><span>1. Erste Formulierung</span><textarea name="first" required>${escapeHtml(prefill)}</textarea></label>
       <div data-written-feedback="first">${feedbackMarkup(c, "first", prefill)}</div>
       <div class="example-drawer" data-answer-help>
-        <button type="button" class="secondary" data-show-answer-help>Hilfe zur Quest anzeigen</button>
+        <button type="button" class="secondary" data-show-answer-help>Wie meinst du das?</button>
         <div hidden>
           <strong>Hinweis</strong>
           <p>${escapeHtml(c.hint)}</p>
