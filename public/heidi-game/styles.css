@@ -302,6 +302,15 @@ p {
   top: 14px;
 }
 
+.play-layout {
+  display: grid;
+  gap: 18px;
+}
+
+.play-layout .learning-log {
+  max-width: none;
+}
+
 .stack {
   display: grid;
   gap: 14px;
@@ -811,6 +820,89 @@ p {
   box-shadow: none;
 }
 
+.goat-board {
+  overflow: hidden;
+  background:
+    linear-gradient(110deg, rgba(255, 252, 245, 0.86), rgba(232, 244, 241, 0.54)),
+    repeating-linear-gradient(94deg, rgba(35, 63, 49, 0.05) 0 1px, transparent 1px 18px);
+}
+
+.goat-stage {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(12px, 3vw, 34px);
+  min-height: 420px;
+  padding: 18px 8px 30px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+}
+
+.goat-stage > * {
+  flex: 0 0 min(520px, 82vw);
+  scroll-snap-align: start;
+}
+
+.goat-stage > :nth-child(2) {
+  margin-top: 42px;
+}
+
+.goat-stage .role-card,
+.goat-card-placeholder,
+.goat-handset {
+  min-height: auto;
+  transform: rotate(-0.6deg);
+}
+
+.goat-stage > :nth-child(2),
+.goat-stage > :nth-child(2) .role-card {
+  transform: rotate(0.7deg);
+}
+
+.goat-handset {
+  display: grid;
+  gap: 12px;
+  padding: 14px;
+  border: 8px solid #1e2922;
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, rgba(196, 218, 220, 0.28), rgba(248, 243, 232, 0.92) 36%),
+    var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.goat-card-placeholder {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border: 1px dashed rgba(35, 63, 49, 0.3);
+  border-radius: 8px;
+  background: rgba(255, 252, 245, 0.72);
+  box-shadow: 0 12px 28px rgba(22, 32, 24, 0.12);
+}
+
+.goat-card-placeholder.role-a {
+  border-top: 5px solid var(--role-a);
+}
+
+.goat-card-placeholder.role-b {
+  border-top: 5px solid var(--role-b);
+}
+
+.learning-log {
+  background:
+    linear-gradient(100deg, rgba(255, 252, 245, 0.9), rgba(239, 232, 207, 0.58)),
+    repeating-linear-gradient(0deg, rgba(35, 63, 49, 0.045) 0 1px, transparent 1px 22px);
+}
+
+.learning-log .journal-grid {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: start;
+}
+
+.learning-log .journal-entry:nth-child(even) {
+  margin-top: 18px;
+}
+
 .hidden {
   display: none !important;
 }
@@ -822,6 +914,19 @@ p {
 
   .layout > aside {
     position: static;
+  }
+
+  .goat-stage {
+    min-height: 0;
+    padding-bottom: 12px;
+  }
+
+  .goat-stage > * {
+    flex-basis: min(420px, 88vw);
+  }
+
+  .goat-stage > :nth-child(2) {
+    margin-top: 18px;
   }
 
   .quest-stage {

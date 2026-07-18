@@ -1095,25 +1095,25 @@ function renderDesktop() {
   const c = chapter();
   app.innerHTML = html`
     ${topbar("desktop")}
-    <div class="layout">
+    <div class="play-layout">
       <section class="stack">
         ${questStage(c, "Desktopmodus")}
         ${chapterTabs()}
-        <div class="panel stack">
+        <div class="goat-board panel stack">
           <h2>Ziegenkarten nacheinander öffnen</h2>
           ${taskFlow(c)}
           <div class="toolbar">
             <button type="button" class="secondary" data-reveal="A">${state.revealA ? "Schwänli verbergen" : "Schwänli öffnen"}</button>
             <button type="button" class="secondary" data-reveal="B">${state.revealB ? "Schnecke verbergen" : "Schnecke öffnen"}</button>
           </div>
-          <div class="chapter-grid">
-            ${state.revealA ? roleCard("A", c.roleA) : `<div class="card"><h3>Schwänli ist verdeckt</h3><p>Eine Person liest zuerst die andere Karte nicht mit.</p></div>`}
-            ${state.revealB ? roleCard("B", c.roleB) : `<div class="card"><h3>Schnecke ist verdeckt</h3><p>Öffnet diese Karte erst nach dem Wechsel.</p></div>`}
+          <div class="goat-stage">
+            ${state.revealA ? roleCard("A", c.roleA) : `<div class="goat-card-placeholder role-a">${playerProfile("A", "Schwänli")}<h3>Schwänli ist verdeckt</h3><p>Eine Person liest zuerst die andere Karte nicht mit.</p></div>`}
+            ${state.revealB ? roleCard("B", c.roleB) : `<div class="goat-card-placeholder role-b">${playerProfile("B", "Schnecke")}<h3>Schnecke ist verdeckt</h3><p>Öffnet diese Karte erst nach dem Wechsel.</p></div>`}
           </div>
         </div>
         ${(state.revealA && state.revealB) ? `<div class="panel stack"><p class="eyebrow">Gemeinsame Aufgabe</p><h2>${escapeHtml(c.teamTask)}</h2>${answerForm()}</div>` : ""}
       </section>
-      <aside>${journalPanel()}</aside>
+      ${journalPanel()}
     </div>
   `;
 }
@@ -1123,7 +1123,7 @@ function renderDemo() {
   const c = chapter();
   app.innerHTML = html`
     ${topbar("demo")}
-    <div class="layout">
+    <div class="play-layout">
       <section class="stack">
         <div class="stack">
           ${questStage(c, "Demomodus")}
@@ -1133,9 +1133,15 @@ function renderDemo() {
           </div>
         </div>
         ${chapterTabs()}
-        <div class="phone-sim-grid">
-          <div class="phone-frame">${roleCard("A", c.roleA)}${voiceQuestPanel("A", c)}</div>
-          <div class="phone-frame">${roleCard("B", c.roleB)}${voiceQuestPanel("B", c)}</div>
+        <div class="goat-board panel stack">
+          <div>
+            <p class="eyebrow">Ziegenkarten</p>
+            <h2>Schwänli und Schnecke tauschen ihre Hinweise aus</h2>
+          </div>
+          <div class="goat-stage demo-goats">
+            <div class="goat-handset">${roleCard("A", c.roleA)}${voiceQuestPanel("A", c)}</div>
+            <div class="goat-handset">${roleCard("B", c.roleB)}${voiceQuestPanel("B", c)}</div>
+          </div>
         </div>
         <div class="panel stack">
           <p class="eyebrow">Laptop nach Austausch</p>
@@ -1145,7 +1151,7 @@ function renderDemo() {
         </div>
         ${state.showDidactics ? didacticsPanel() : ""}
       </section>
-      <aside>${journalPanel()}</aside>
+      ${journalPanel()}
     </div>
   `;
 }
@@ -1208,8 +1214,11 @@ function renderTeacher() {
 function journalPanel() {
   const entries = journalEntries();
   return html`
-    <div class="panel stack">
-      <h2>Lernspur</h2>
+    <div class="panel stack learning-log">
+      <div>
+        <p class="eyebrow">Gesammelte Spuren</p>
+        <h2>Lernspur</h2>
+      </div>
       ${entries.length ? `<div class="journal-grid">${entries.map(renderJournalEntry).join("")}</div>` : `<p>Noch keine Einträge gespeichert.</p>`}
       <div class="toolbar">
         <button type="button" class="secondary" data-export-journal>Export</button>
