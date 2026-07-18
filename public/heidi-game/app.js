@@ -617,10 +617,36 @@ function joinAddress(role = "") {
   return url.toString();
 }
 
+function playerProfile(role, label = "") {
+  const profiles = {
+    A: {
+      name: "Ziege A",
+      src: "/heidi-game/assets/player-goat-a.jpg",
+      alt: "Weiße Ziege als Profilbild für Rolle A"
+    },
+    B: {
+      name: "Ziege B",
+      src: "/heidi-game/assets/player-goat-b.jpeg",
+      alt: "Gefleckte Ziege als Profilbild für Rolle B"
+    }
+  };
+  const profile = profiles[role] || profiles.A;
+  return html`
+    <div class="player-profile role-${role.toLowerCase()}">
+      <img src="${escapeHtml(profile.src)}" alt="${escapeHtml(profile.alt)}" loading="lazy">
+      <div>
+        <strong>${escapeHtml(label || profile.name)}</strong>
+        <span>Rolle ${escapeHtml(role)}</span>
+      </div>
+    </div>
+  `;
+}
+
 function qrCard(role, title, subtitle) {
   const url = joinAddress(role);
   return html`
     <article class="qr-card role-${role.toLowerCase()}">
+      ${playerProfile(role, title)}
       <div>
         <p class="eyebrow">${escapeHtml(title)}</p>
         <h3>Rolle ${escapeHtml(role)}</h3>
@@ -683,8 +709,8 @@ function statusStrip() {
   const ready = state.room?.roleReady || {};
   return html`
     <div class="status-strip">
-      <div class="status-item"><strong>Rolle A</strong><br>${occupied.A ? "verbunden" : "wartet"} · ${ready.A ? "ausgetauscht" : "noch geheim"}</div>
-      <div class="status-item"><strong>Rolle B</strong><br>${occupied.B ? "verbunden" : "wartet"} · ${ready.B ? "ausgetauscht" : "noch geheim"}</div>
+      <div class="status-item">${playerProfile("A", "Spieler A")}<span>${occupied.A ? "verbunden" : "wartet"} · ${ready.A ? "ausgetauscht" : "noch geheim"}</span></div>
+      <div class="status-item">${playerProfile("B", "Spieler B")}<span>${occupied.B ? "verbunden" : "wartet"} · ${ready.B ? "ausgetauscht" : "noch geheim"}</span></div>
       <div class="status-item"><strong>Kapitel</strong><br>${state.chapterIndex + 1} von ${state.content.chapters.length}</div>
     </div>
   `;
@@ -1005,6 +1031,7 @@ function renderPhoneRole() {
 function roleCard(role, roleData) {
   return html`
     <article class="role-card role-${role.toLowerCase()}">
+      ${playerProfile(role)}
       <h2>Rolle ${escapeHtml(role)}: ${escapeHtml(roleData.name)}</h2>
       <p>${escapeHtml(roleData.prompt)}</p>
       <ul class="token-list">${roleData.tokens.map((token) => `<li>${escapeHtml(token)}</li>`).join("")}</ul>

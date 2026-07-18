@@ -327,6 +327,45 @@ p {
   background: rgba(255, 255, 255, 0.54);
 }
 
+.status-item > span {
+  display: block;
+  margin-top: 6px;
+}
+
+.player-profile {
+  display: grid;
+  grid-template-columns: 54px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+
+.player-profile img {
+  width: 54px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 3px solid rgba(255, 250, 240, 0.92);
+  border-radius: 50%;
+  box-shadow: 0 6px 15px rgba(23, 32, 25, 0.18);
+}
+
+.player-profile strong,
+.player-profile span {
+  display: block;
+}
+
+.player-profile span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.player-profile.role-a img {
+  outline: 3px solid rgba(45, 104, 117, 0.28);
+}
+
+.player-profile.role-b img {
+  outline: 3px solid rgba(138, 73, 56, 0.28);
+}
+
 .scene-media-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
