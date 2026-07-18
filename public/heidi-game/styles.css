@@ -1002,10 +1002,8 @@ p {
   background: rgba(255, 252, 245, 0.62);
 }
 
-.example-drawer summary {
-  cursor: pointer;
-  font-weight: 800;
-  color: var(--forest);
+.example-drawer button {
+  width: fit-content;
 }
 
 .example-drawer p {

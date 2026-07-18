@@ -1172,10 +1172,10 @@ function chaosPanel(c) {
           <span>Schreibfeld: Eure Questantwort</span>
           <textarea name="response" required placeholder="Hier eure eigene Antwort schreiben."></textarea>
         </label>
-        <details class="example-drawer">
-          <summary>Beispiel anzeigen</summary>
-          <p>${escapeHtml(chaos.example || c.example || "Schreibt konkret, kurz und passend zur Szene.")}</p>
-        </details>
+        <div class="example-drawer" data-example-drawer>
+          <button type="button" class="secondary" data-show-chaos-example>Beispiel erst auf Nachfrage anzeigen</button>
+          <p hidden>${escapeHtml(chaos.example || c.example || "Schreibt konkret, kurz und passend zur Szene.")}</p>
+        </div>
         <button type="submit">Questantwort speichern</button>
       </form>
       ${options.length > 1 ? `<button type="button" class="secondary" data-chaos>Neue passende Störung</button>` : ""}
@@ -1293,10 +1293,6 @@ function sceneMedia(c) {
         <video src="${escapeHtml(main.src)}" autoplay muted loop playsinline preload="metadata"></video>
         <figcaption>
           <strong>${escapeHtml(main.label || c.place || "Szene")}</strong>
-          <details>
-            <summary>Bildhinweis</summary>
-            <span>${escapeHtml(main.caption || "")}</span>
-          </details>
           <div class="media-controls">
             ${main.hasAudio ? `<button type="button" class="secondary" data-toggle-media-sound>Videoton einschalten</button>` : ""}
             ${main.audio?.src ? `<button type="button" class="secondary" data-audio-label="${escapeHtml(main.audio.label || "Audio")}" data-toggle-scene-audio>${escapeHtml(main.audio.label || "Audio einschalten")}</button><audio src="${escapeHtml(main.audio.src)}" preload="metadata" ${main.audio.loop ? "loop" : ""}></audio>` : ""}
@@ -2059,6 +2055,12 @@ app.addEventListener("click", async (event) => {
     }
     state.chaosEvents[key] = next;
     renderCurrentMode();
+  }
+  if (button.dataset.showChaosExample !== undefined) {
+    const drawer = button.closest("[data-example-drawer]");
+    const paragraph = drawer?.querySelector("p");
+    if (paragraph) paragraph.hidden = false;
+    button.remove();
   }
   if (button.dataset.startRoom !== undefined) await startRoom();
   if (button.dataset.prevChapter !== undefined) await setChapter(Math.max(0, state.chapterIndex - 1));
