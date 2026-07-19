@@ -59,7 +59,7 @@ const FEEDBACK_PROFILES = {
     ],
     upgrade: "Überarbeitet so: Beobachtung konkret machen, Spruch kürzen, dann mit 'oft', 'manchmal' oder 'vielleicht' einschränken."
   },
-  "geissen-ansprechen": {
+  "ziegen-ansprechen": {
     aim: "Die Tieransprache soll natürlich klingen und zugleich genau beobachten.",
     checks: [
       ["Heidis Stimme", ["heidi", "komm", "nur", "kleine", "ruhig", "ich tue", "darf"], "Gebt Heidi einen kurzen Satz, der ein Kind auf der Alp wirklich sagen könnte."],
@@ -122,7 +122,7 @@ const FEEDBACK_PROFILES = {
     ],
     upgrade: "Streicht ein pauschales Adjektiv und ersetzt es durch Geruch, Geräusch oder Körperempfindung."
   },
-  "peter-stellt-geissen-vor": {
+  "peter-stellt-ziegen-vor": {
     aim: "Die Geissen sollen durch Namen und Verhalten unterscheidbar werden.",
     checks: [
       ["Namen", ["schwänli", "bärli", "name", "heißt"], "Gebt den Geissen Namen oder macht deutlich, wie Peter sie nennt."],
@@ -1179,6 +1179,7 @@ function chaosPanel(c) {
           <span>Schreibfeld: Eure Questantwort</span>
           <textarea name="response" required placeholder="Hier eure eigene Antwort schreiben."></textarea>
         </label>
+        <div data-save-feedback="chaos"></div>
         <div class="example-drawer" data-example-drawer>
           <button type="button" class="secondary" data-show-chaos-example>Wie meinst du das?</button>
           <p hidden>${escapeHtml(chaos.example || c.example || "Schreibt konkret, kurz und passend zur Szene.")}</p>
@@ -1383,6 +1384,7 @@ function answerForm(prefill = "") {
       <div data-written-feedback="revision">${feedbackMarkup(c, "revision", "")}</div>
       <label><span>3. Kurze Reflexion</span><textarea name="reflection" required placeholder="${escapeHtml(c.reflection)}"></textarea></label>
       <div data-written-feedback="reflection">${feedbackMarkup(c, "reflection", "")}</div>
+      <div data-save-feedback="answer"></div>
       <div class="toolbar">
         <button type="submit">Lernspur speichern</button>
       </div>
@@ -1392,13 +1394,39 @@ function answerForm(prefill = "") {
 
 async function saveAnswer(form) {
   const data = new FormData(form);
+  const c = chapter();
   const entries = [
     ["first", data.get("first")],
     ["revision", data.get("revision")],
     ["reflection", data.get("reflection")]
   ];
-  const feedbackEntries = entries.map(([kind, text]) => {
-    const feedback = qualifiedFeedback(chapter(), kind, text);
+  const decisions = entries.map(([kind, text]) => [kind, text, qualityDecision(c, kind, text)]);
+  const rejected = decisions.filter(([, , decision]) => !decision.accepted);
+
+  for (const [kind, text, decision] of decisions) {
+    const target = form.querySelector(`[data-written-feedback="${kind}"]`);
+    if (target) target.innerHTML = decision.accepted ? feedbackMarkup(c, kind, text) : qualityGateMarkup(decision);
+  }
+
+  const saveFeedback = form.querySelector("[data-save-feedback]");
+  if (rejected.length) {
+    if (saveFeedback) {
+      saveFeedback.innerHTML = html`
+        <div class="save-refusal">
+          <strong>Diese Lernspur ist noch nicht bereit.</strong>
+          <p>Überarbeitet zuerst ${rejected.map(([kind]) => kindLabel(kind)).join(", ")}. Erst dann wächst die Schiefertafel weiter.</p>
+        </div>
+      `;
+    }
+    const [firstRejectedKind] = rejected[0];
+    form.querySelector(`[name="${firstRejectedKind}"]`)?.focus();
+    return;
+  }
+
+  if (saveFeedback) saveFeedback.innerHTML = "";
+
+  const feedbackEntries = decisions.map(([kind, text, decision]) => {
+    const feedback = decision.feedback;
     return [
       `${kind}-feedback`,
       [
@@ -1452,12 +1480,59 @@ function normalizeFeedbackText(value) {
     .replaceAll("ä", "ae")
     .replaceAll("ö", "oe")
     .replaceAll("ü", "ue")
-    .replaceAll("ß", "ss");
+    .replaceAll("ß", "ss")
+    .replace(/[^a-z0-9\s.-]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+const SYNONYM_GROUPS = [
+  ["geiss", "geissen", "geisslein", "ziege", "ziegen", "tier", "tiere", "herde", "schwaenli", "schnecke", "baerli"],
+  ["huette", "haus", "stube", "raum", "maiensaess", "alpstube"],
+  ["grossvater", "alm-oehi", "almoehi", "opa", "alter", "oehi"],
+  ["peter", "geissenpeter", "hirte", "bub"],
+  ["bitte", "darf", "duerfte", "kann ich", "koennte ich", "frag", "frage", "fragen"],
+  ["handgriff", "legt", "stellen", "stellt", "schiebt", "nimmt", "haelt", "zeigt", "rueckt", "hebt", "setzt", "wischt"],
+  ["wetter", "himmel", "wolke", "wolken", "wind", "regen", "gewitter", "donner", "licht", "abendrot", "morgenrot"],
+  ["alp", "berg", "wiese", "hang", "gras", "stein", "felsen", "weite", "heuboden"],
+  ["frankfurt", "stadt", "haus", "haeuser", "strasse", "treppe", "salon", "zerstoert", "zerstoerung", "nicht mehr"],
+  ["hilfe", "helfen", "hilft", "zeigt", "erklaert", "fair", "freundlich", "ohne beschaemen"],
+  ["vorsicht", "vielleicht", "oft", "manchmal", "koennte", "nicht immer", "erfahrung"],
+  ["spruch", "regel", "bauernregel", "merksatz", "reim"],
+  ["begründen", "weil", "dadurch", "deshalb", "darum", "denn"]
+];
+
+function expandedFeedbackTerms(terms = []) {
+  const normalizedTerms = terms.map(normalizeFeedbackText).filter(Boolean);
+  const expanded = new Set(normalizedTerms);
+  for (const group of SYNONYM_GROUPS) {
+    const normalizedGroup = group.map(normalizeFeedbackText).filter(Boolean);
+    const belongs = normalizedGroup.some((groupTerm) =>
+      normalizedTerms.some((term) => term === groupTerm || term.includes(groupTerm) || groupTerm.includes(term))
+    );
+    if (belongs) {
+      normalizedGroup.forEach((term) => expanded.add(term));
+    }
+  }
+  return [...expanded];
+}
+
+function feedbackMatchesTerm(normalized, term) {
+  if (!normalized || !term) return false;
+  if (normalized.includes(term)) return true;
+  const tokens = normalized.split(/\s+/).filter(Boolean);
+  const termTokens = term.split(/\s+/).filter(Boolean);
+  if (termTokens.length > 1) {
+    return termTokens.every((termToken) => feedbackMatchesTerm(normalized, termToken));
+  }
+  if (term.length < 5) return false;
+  const stem = term.slice(0, Math.min(6, term.length));
+  return tokens.some((token) => token.startsWith(stem) || term.startsWith(token.slice(0, Math.min(6, token.length))));
 }
 
 function feedbackIncludes(text, terms) {
   const normalized = normalizeFeedbackText(text);
-  return terms.some((term) => normalized.includes(normalizeFeedbackText(term)));
+  return expandedFeedbackTerms(terms).some((term) => feedbackMatchesTerm(normalized, term));
 }
 
 function kindLabel(kind) {
@@ -1465,7 +1540,15 @@ function kindLabel(kind) {
   if (kind === "revision") return "Überarbeitung";
   if (kind === "reflection") return "Reflexion";
   if (kind === "voice") return "mündlicher Beitrag";
+  if (kind === "questantwort") return "Questantwort";
   return "Eingabe";
+}
+
+function qualityExpectation(kind) {
+  if (kind === "voice") return { minHits: 2, minWords: 8 };
+  if (kind === "reflection") return { minHits: 1, minWords: 12 };
+  if (kind === "questantwort") return { minHits: 2, minWords: 18 };
+  return { minHits: 2, minWords: 25 };
 }
 
 function qualifiedFeedback(chapterData, kind, text) {
@@ -1487,17 +1570,19 @@ function qualifiedFeedback(chapterData, kind, text) {
 
   const strengths = [];
   const nextSteps = [];
+  const missingLabels = [];
   let hits = 0;
   for (const [label, terms, suggestion] of profile.checks) {
     if (feedbackIncludes(text, terms)) {
       hits += 1;
       strengths.push(`${label}: erkennbar angelegt.`);
     } else {
+      missingLabels.push(label);
       nextSteps.push(`${label}: ${suggestion}`);
     }
   }
 
-  if (kind === "first" && words < 25) {
+  if ((kind === "first" || kind === "questantwort") && words < qualityExpectation(kind).minWords) {
     nextSteps.push("Erste Fassung: Ergänzt mindestens einen konkreten Satz mehr, damit die Szene oder Erklärung prüfbar wird.");
   }
   if (kind === "revision" && words < 25) {
@@ -1524,21 +1609,65 @@ function qualifiedFeedback(chapterData, kind, text) {
     summary: `${profile.aim} ${profile.upgrade}`,
     hits,
     words,
+    missingLabels,
     reward: rewardForFeedback(hits, words, kind),
     kick: kickForFeedback(hits, words, kind)
   };
 }
 
 function rewardForFeedback(hits, words, kind) {
-  const enoughWords = kind === "voice" ? words >= 8 : words >= 25;
-  if (hits < 2 || !enoughWords) return "";
+  const expectation = qualityExpectation(kind);
+  if (hits < expectation.minHits || words < expectation.minWords) return "";
   return STORY.rewards[(hits + words + kind.length) % STORY.rewards.length];
 }
 
 function kickForFeedback(hits, words, kind) {
-  const enoughWords = kind === "voice" ? words >= 8 : words >= 18;
-  if (hits >= 2 && enoughWords) return "";
+  const expectation = qualityExpectation(kind);
+  if (hits >= expectation.minHits && words >= expectation.minWords) return "";
   return STORY.kicks[(hits + words + kind.length) % STORY.kicks.length];
+}
+
+function qualityDecision(chapterData, kind, text) {
+  const feedback = qualifiedFeedback(chapterData, kind, text);
+  const expectation = qualityExpectation(kind);
+  const accepted = feedback.hits >= expectation.minHits && feedback.words >= expectation.minWords;
+  const missing = [];
+  if (feedback.hits < expectation.minHits) {
+    missing.push(`${expectation.minHits - feedback.hits} weitere konkrete Spur(en) aus der Quest`);
+  }
+  if (feedback.words < expectation.minWords) {
+    missing.push(`${expectation.minWords - feedback.words} Wort/Wörter mehr`);
+  }
+  return { accepted, feedback, expectation, missing };
+}
+
+function qualityGateMarkup(decision) {
+  const { feedback, missing } = decision;
+  const reaction = feedback.kick || STORY.kicks[0];
+  return html`
+    <div class="qualified-feedback quality-gate">
+      <strong>Noch nicht gespeichert</strong>
+      <div class="game-feedback is-kick">
+        ${objectCutout(reactionObject(reaction), reactionTitle(reaction, "Geissentritt"))}
+        <div>
+          <strong>Die Geiss bockt noch.</strong>
+          <p>${escapeHtml(missing.length ? `Es fehlt: ${missing.join(", ")}.` : "Die Antwort trifft die Quest noch nicht genau genug.")}</p>
+        </div>
+      </div>
+      <details class="feedback-details" open>
+        <summary>So bessert ihr nach</summary>
+        <p>${escapeHtml(feedback.summary)}</p>
+        <div>
+          <strong>Schon tragfähig</strong>
+          <ul>${feedback.strengths.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+        </div>
+        <div>
+          <strong>Jetzt konkret ergänzen</strong>
+          <ul>${feedback.nextSteps.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>
+        </div>
+      </details>
+    </div>
+  `;
 }
 
 function feedbackMarkup(chapterData, kind, text) {
@@ -1999,7 +2128,13 @@ async function saveVoiceDraft(key) {
   state.voiceDrafts[key] = text;
   const [chapterIndex, role] = key.split(":");
   const chapterData = state.content.chapters[Number(chapterIndex)] || chapter();
-  const feedback = qualifiedFeedback(chapterData, "voice", text);
+  const decision = qualityDecision(chapterData, "voice", text);
+  const feedback = decision.feedback;
+  const feedbackTarget = feedbackTargetForVoice(key);
+  if (!decision.accepted) {
+    if (feedbackTarget) feedbackTarget.innerHTML = qualityGateMarkup(decision);
+    return;
+  }
   const feedbackText = [
     feedback.title,
     `Spielreaktion: ${reactionText(feedback.reward || feedback.kick)}`,
@@ -2041,13 +2176,22 @@ async function saveChaosResponse(form) {
   if (!text) return;
   const c = chapter();
   const chaos = currentChaos(c);
-  const feedback = qualifiedFeedback(c, "first", text);
+  const decision = qualityDecision(c, "questantwort", text);
+  const feedbackTarget = form.querySelector("[data-save-feedback]");
+  if (!decision.accepted) {
+    if (feedbackTarget) feedbackTarget.innerHTML = qualityGateMarkup(decision);
+    form.querySelector("textarea")?.focus();
+    return;
+  }
+  if (feedbackTarget) feedbackTarget.innerHTML = "";
+  const feedback = decision.feedback;
   const reaction = feedback.reward || feedback.kick;
   const entryText = [
     `Hauptauftrag: ${c.teamTask}`,
     `Störung: ${chaos.title}`,
     `Antwort: ${text}`,
-    `Spielreaktion: ${reactionText(reaction)}`
+    `Spielreaktion: ${reactionText(reaction)}`,
+    `Feedback: ${feedback.strengths.join(" ")}`
   ].join("\n");
 
   if (state.mode === "partner" && state.room?.code) {
@@ -2174,6 +2318,19 @@ app.addEventListener("input", (event) => {
     const chapterData = state.content.chapters[Number(chapterIndex)] || chapter();
     const feedbackTarget = feedbackTargetForVoice(key);
     if (feedbackTarget) feedbackTarget.innerHTML = feedbackMarkup(chapterData, "voice", transcript.value);
+    return;
+  }
+
+  const chaosFormElement = event.target.closest("[data-chaos-form]");
+  if (chaosFormElement && event.target.name === "response") {
+    const feedbackTarget = chaosFormElement.querySelector("[data-save-feedback]");
+    const text = event.target.value;
+    if (!String(text || "").trim()) {
+      if (feedbackTarget) feedbackTarget.innerHTML = "";
+      return;
+    }
+    const decision = qualityDecision(chapter(), "questantwort", text);
+    if (feedbackTarget) feedbackTarget.innerHTML = decision.accepted ? feedbackMarkup(chapter(), "questantwort", text) : qualityGateMarkup(decision);
     return;
   }
 

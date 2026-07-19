@@ -48,3 +48,13 @@ test("keeps every quest connected to a journey phase, transition and Geiss distu
     assert.match(app, new RegExp(`ids: \\[[^\\]]*"${id}"`, "s"), `${id} needs a journey phase`);
   }
 });
+
+test("requires qualified answers before quests are saved", async () => {
+  const app = await readFile("public/heidi-game/app.js", "utf8");
+
+  assert.match(app, /const SYNONYM_GROUPS = \[/, "feedback needs synonym groups");
+  assert.match(app, /function qualityDecision\(/, "feedback needs an acceptance decision");
+  assert.match(app, /Noch nicht gespeichert/, "weak answers must be refused visibly");
+  assert.match(app, /if \(!decision\.accepted\)/, "saving must stop below the threshold");
+  assert.match(app, /data-save-feedback="chaos"/, "quest answers need direct feedback near the input");
+});
