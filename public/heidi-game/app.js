@@ -1829,12 +1829,34 @@ function journalPanel() {
         <p class="eyebrow">Gesammelte Spuren</p>
         <h2>Lernspur</h2>
       </div>
+      ${slateProgress(entries)}
       ${entries.length ? `<div class="journal-grid">${entries.map(renderJournalEntry).join("")}</div>` : `<p>Noch keine Einträge gespeichert.</p>`}
       <div class="toolbar">
         <button type="button" class="secondary" data-export-journal>Export</button>
         <button type="button" class="secondary" data-print>Drucken</button>
       </div>
     </div>
+  `;
+}
+
+function solvedChapterIndexes(entries = journalEntries()) {
+  const solvedKinds = new Set(["questantwort", "revision", "reflection"]);
+  return [...new Set(entries
+    .filter((entry) => solvedKinds.has(String(entry.kind || "")) && String(entry.text || "").trim())
+    .map((entry) => Number(entry.chapterIndex))
+    .filter((index) => Number.isInteger(index) && index >= 0))];
+}
+
+function slateProgress(entries = journalEntries()) {
+  const solved = new Set(solvedChapterIndexes(entries));
+  const total = state.content.chapters.length;
+  return html`
+    <figure class="slate-progress" aria-label="${solved.size} von ${total} Aufgaben gelöst">
+      <div class="slate-pieces" style="--solved:${solved.size};--total:${total}">
+        ${state.content.chapters.map((item, index) => `<span class="slate-piece" aria-label="${escapeHtml(item.title)}" aria-current="${solved.has(index)}" title="${escapeHtml(item.title)}">${solved.has(index) ? index + 1 : ""}</span>`).join("")}
+      </div>
+      <figcaption>Heidi lernt die Stadt Frankfurt lesen, beschreibt Klara aber lieber die Alp</figcaption>
+    </figure>
   `;
 }
 
