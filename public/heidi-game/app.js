@@ -914,23 +914,21 @@ function renderHome() {
           <h1>Heidi - Geissen, Regeln, Stimmen</h1>
           <p>${escapeHtml(STORY.premise)}</p>
         </div>
-        <div class="mode-river">
-          <section class="mode-primary">
-            <div>
-              <p class="eyebrow">Für die Klasse</p>
-              <h2>Als Gruppe spielen</h2>
-              <p>Tragt euren Gruppennamen ein. Danach erscheinen zwei QR-Codes: einer für Schwänli, einer für Schnecke.</p>
-            </div>
+        <div class="front-objects" aria-label="Spielstart">
+          <section class="front-object group-object">
+            <p class="eyebrow">Für die Klasse</p>
+            <h2>Als Gruppe spielen</h2>
+            <p>Tragt euren Gruppennamen ein. Danach erscheinen zwei QR-Codes: einer für Schwänli, einer für Schnecke.</p>
             <form class="host-login" data-host-login>
               <label>Gruppenname<input name="hostName" value="${escapeHtml(state.hostName)}" placeholder="z. B. Tisch 3, Gruppe Alpwind oder Klasse 2b" required></label>
               <button type="submit">Gruppe anmelden</button>
             </form>
           </section>
-          <div class="mode-actions" aria-label="Weitere Einstiege">
-            <button type="button" class="mode-link" data-nav="desktop"><strong>Desktop</strong><span>Zwei Personen spielen an einem Bildschirm.</span></button>
-            <button type="button" class="mode-link" data-nav="demo"><strong>Demo</strong><span>Handyansichten, Beispiele und Kapitelwahl ansehen.</span></button>
-            <button type="button" class="mode-link" data-nav="teacher"><strong>Lehrpersonen</strong><span>Einstellungen, Inhaltsmodell und Export öffnen.</span></button>
-          </div>
+          <nav class="front-object entry-objects" aria-label="Weitere Einstiege">
+            <button type="button" class="entry-object is-desktop" data-nav="desktop"><strong>Desktop</strong><span>Zwei Personen spielen an einem Bildschirm.</span></button>
+            <button type="button" class="entry-object is-demo" data-nav="demo"><strong>Demo</strong><span>Handyansichten, Beispiele und Kapitelwahl ansehen.</span></button>
+            <button type="button" class="entry-object is-teacher" data-nav="teacher"><strong>Lehrpersonen</strong><span>Einstellungen, Inhaltsmodell und Export öffnen.</span></button>
+          </nav>
         </div>
       </div>
     </section>

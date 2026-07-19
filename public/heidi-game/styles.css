@@ -377,73 +377,94 @@ p {
   margin-top: 6px;
 }
 
-.mode-river {
+.front-objects {
+  position: relative;
   display: grid;
-  gap: clamp(18px, 3vw, 30px);
-  max-width: 1060px;
+  min-height: clamp(360px, 42vw, 560px);
   color: var(--ink);
 }
 
-.mode-primary {
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.75fr);
-  gap: clamp(16px, 4vw, 34px);
-  align-items: end;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  backdrop-filter: none;
-  box-shadow: none;
+.front-object {
+  position: absolute;
 }
 
-.mode-primary h2 {
+.group-object {
+  left: 0;
+  bottom: clamp(96px, 16vw, 178px);
+  width: min(52vw, 720px);
+  display: grid;
+  gap: 12px;
+}
+
+.group-object h2 {
   max-width: 650px;
 }
 
-.mode-primary p {
-  max-width: 680px;
-  color: rgba(23, 32, 25, 0.82);
-  text-shadow: 0 2px 12px rgba(255, 250, 240, 0.66);
+.group-object p {
+  max-width: 690px;
+  color: rgba(23, 32, 25, 0.84);
+  text-shadow: 0 2px 12px rgba(255, 250, 240, 0.68);
 }
 
-.mode-actions {
-  display: grid;
-  gap: 0;
-  max-width: 980px;
-  border-top: 1px solid rgba(255, 250, 240, 0.28);
-  background: transparent;
-  backdrop-filter: none;
-  border-radius: 0;
-  overflow: visible;
+.group-object .host-login {
+  width: min(430px, 100%);
+  margin-top: 8px;
 }
 
-.mode-link {
-  width: 100%;
+.entry-objects {
+  inset: auto 0 0 auto;
+  width: min(48vw, 720px);
+  min-height: clamp(230px, 24vw, 330px);
+}
+
+.entry-object {
+  position: absolute;
   min-height: 0;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 14px 0;
+  width: fit-content;
+  max-width: min(32vw, 460px);
+  display: grid;
+  gap: 4px;
+  padding: 0;
   border: 0;
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(255, 250, 240, 0.26);
   border-radius: 0;
   color: var(--forest);
   background: transparent;
   text-align: left;
+  transform-origin: left center;
 }
 
-.mode-link strong {
-  min-width: 135px;
+.entry-object:hover {
+  transform: translateY(-2px) scale(1.015);
+}
+
+.entry-object.is-desktop {
+  left: 2%;
+  top: 2%;
+}
+
+.entry-object.is-demo {
+  right: 8%;
+  top: 36%;
+}
+
+.entry-object.is-teacher {
+  left: 22%;
+  bottom: 2%;
+}
+
+.entry-object strong {
   font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  font-size: clamp(1.7rem, 4.4vw, 4rem);
+  line-height: 0.94;
   color: var(--ink);
-  text-shadow: 0 2px 12px rgba(255, 250, 240, 0.72);
+  text-shadow:
+    0 2px 12px rgba(255, 250, 240, 0.76),
+    0 12px 34px rgba(23, 32, 25, 0.14);
 }
 
-.mode-link span {
-  flex: 1;
-  color: rgba(23, 32, 25, 0.72);
+.entry-object span {
+  color: rgba(23, 32, 25, 0.76);
+  text-shadow: 0 2px 10px rgba(255, 250, 240, 0.62);
 }
 
 .hero .host-login label {
@@ -1653,14 +1674,29 @@ p {
     flex-direction: column;
   }
 
-  .mode-primary {
-    grid-template-columns: 1fr;
-    align-items: start;
+  .front-objects {
+    min-height: 620px;
   }
 
-  .mode-link {
-    align-items: flex-start;
-    flex-direction: column;
+  .front-object {
+    position: relative;
+  }
+
+  .group-object {
+    left: auto;
+    bottom: auto;
+    width: min(100%, 560px);
+  }
+
+  .entry-objects {
+    inset: auto;
+    width: min(100%, 560px);
+    min-height: 270px;
+    margin-top: 34px;
+  }
+
+  .entry-object {
+    max-width: 78%;
   }
 
   .app-shell {
