@@ -1863,6 +1863,7 @@ function slateProgress(entries = journalEntries()) {
   return html`
     <figure class="slate-progress" aria-label="${solved.size} von ${total} Aufgaben gelöst">
       <div class="slate-pieces" style="--solved:${solved.size};--total:${total}">
+        <video src="/heidi-game/assets/tafel-background.mp4" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
         ${state.content.chapters.map((item, index) => `<span class="slate-piece" aria-label="${escapeHtml(item.title)}" aria-current="${solved.has(index)}" title="${escapeHtml(item.title)}">${solved.has(index) ? index + 1 : ""}</span>`).join("")}
       </div>
       <figcaption>Heidi lernt die Stadt Frankfurt lesen, beschreibt Klara aber lieber die Alp</figcaption>
