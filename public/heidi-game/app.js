@@ -1145,27 +1145,27 @@ function chaosPanel(c) {
   const chaos = currentChaos(c);
   const options = questChaosOptions(c);
   return html`
-    <aside class="chaos-panel">
-      <section class="main-assignment">
+    <aside class="chaos-panel meadow-task">
+      <section class="main-assignment meadow-bloom assignment-bloom">
         <p class="eyebrow">Auftrag</p>
         <h2>${escapeHtml(chaos.assignment || c.teamTask)}</h2>
       </section>
-      <div class="object-card-head">
+      <div class="object-card-head meadow-bloom disturbance-bloom">
         ${objectCutout(chaos.object, chaos.title)}
         <div>
           <p class="eyebrow">Störung der Geiss</p>
           <strong>${escapeHtml(chaos.title)}</strong>
         </div>
       </div>
-      <div class="chaos-plain">
+      <div class="chaos-plain meadow-leaf">
         <span>Das passiert gerade</span>
         <p>${escapeHtml(chaos.text)}</p>
       </div>
-      <div class="chaos-task">
+      <div class="chaos-task meadow-leaf">
         <span>So löst ihr die Quest</span>
         <p>${escapeHtml(chaos.task)}</p>
       </div>
-      <form class="object-response" data-chaos-form>
+      <form class="object-response meadow-writing" data-chaos-form>
         <label>
           <span>Schreibfeld: Eure Questantwort</span>
           <textarea name="response" required placeholder="Hier eure eigene Antwort schreiben."></textarea>
@@ -1238,17 +1238,16 @@ function storyBeatText(c) {
 function chapterTabs() {
   const progress = ((state.chapterIndex + 1) / state.content.chapters.length) * 100;
   return html`
-    <div class="quest-map panel">
+    <div class="quest-map quest-meadow" style="--quest-progress:${progress}%">
       <div class="quest-map-head">
         <div>
-          <p class="eyebrow">Questpfad</p>
+          <p class="eyebrow">Alpblumenwiese</p>
           <strong>${escapeHtml(chapter().title)}</strong>
         </div>
         <span>${state.chapterIndex + 1}/${state.content.chapters.length}</span>
       </div>
-      <div class="quest-progress" aria-hidden="true"><span style="width:${progress}%"></span></div>
-      <div class="chapter-tabs" aria-label="Kapitel">
-        ${state.content.chapters.map((item, index) => `<button type="button" title="${escapeHtml(item.title)}" data-chapter="${index}" aria-current="${index === state.chapterIndex}"><span>${index + 1}</span></button>`).join("")}
+      <div class="flower-field" aria-label="Quests als Alpblumen">
+        ${state.content.chapters.map((item, index) => `<button type="button" class="quest-flower flower-${(index % 6) + 1}" title="${escapeHtml(item.title)}" data-chapter="${index}" aria-current="${index === state.chapterIndex}" style="--x:${(index * 37) % 92}%;--y:${18 + ((index * 29) % 64)}%;--tilt:${((index % 5) - 2) * 7}deg"><span>${index + 1}</span><em>${escapeHtml(item.title)}</em></button>`).join("")}
       </div>
     </div>
   `;
