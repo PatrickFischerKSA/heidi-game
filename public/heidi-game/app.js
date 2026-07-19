@@ -1030,6 +1030,14 @@ function qrCard(role, title, subtitle) {
   `;
 }
 
+function meadowUnderlay() {
+  return html`
+    <div class="meadow-underlay" aria-hidden="true">
+      <video src="/heidi-game/assets/wiese-background.mp4" autoplay muted loop playsinline preload="metadata"></video>
+    </div>
+  `;
+}
+
 function renderPartner() {
   state.mode = "partner";
   const c = chapter();
@@ -1044,6 +1052,7 @@ function renderPartner() {
   app.innerHTML = html`
     ${topbar("partner")}
     <div class="play-layout">
+      ${meadowUnderlay()}
       ${questStage(c, "Laptop-Spielleitung")}
       ${playSectionMenu(sections, active)}
       ${active === "join" ? html`
@@ -1236,9 +1245,8 @@ function storyBeatText(c) {
 }
 
 function chapterTabs() {
-  const progress = ((state.chapterIndex + 1) / state.content.chapters.length) * 100;
   return html`
-    <div class="quest-map quest-meadow" style="--quest-progress:${progress}%">
+    <div class="quest-map quest-meadow">
       <div class="quest-map-head">
         <div>
           <p class="eyebrow">Alpblumenwiese</p>
@@ -1692,6 +1700,7 @@ function renderDesktop() {
   app.innerHTML = html`
     ${topbar("desktop")}
     <div class="play-layout">
+      ${meadowUnderlay()}
       ${questStage(c, "Desktopmodus")}
       ${playSectionMenu(sections, active)}
       ${active === "cards" ? html`
@@ -1733,6 +1742,7 @@ function renderDemo() {
   app.innerHTML = html`
     ${topbar("demo")}
     <div class="play-layout">
+      ${meadowUnderlay()}
       ${questStage(c, "Demomodus")}
       <div class="toolbar compact-actions">
         <button type="button" class="danger" data-reset-local>Aufgabe zurücksetzen</button>
