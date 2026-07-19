@@ -379,8 +379,8 @@ p {
 
 .mode-river {
   display: grid;
-  gap: 12px;
-  max-width: 980px;
+  gap: clamp(18px, 3vw, 30px);
+  max-width: 1060px;
   color: var(--ink);
 }
 
@@ -389,16 +389,12 @@ p {
   grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.75fr);
   gap: clamp(16px, 4vw, 34px);
   align-items: end;
-  padding: clamp(18px, 3vw, 28px);
-  border: 1px solid rgba(255, 250, 240, 0.34);
-  border-radius: 8px;
-  background:
-    linear-gradient(115deg, rgba(255, 250, 240, 0.12), rgba(255, 250, 240, 0.035)),
-    rgba(255, 255, 255, 0.018);
-  backdrop-filter: blur(10px) saturate(1.1);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.32),
-    0 14px 34px rgba(23, 32, 25, 0.1);
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
 }
 
 .mode-primary h2 {
@@ -407,17 +403,19 @@ p {
 
 .mode-primary p {
   max-width: 680px;
-  color: rgba(23, 32, 25, 0.76);
+  color: rgba(23, 32, 25, 0.82);
+  text-shadow: 0 2px 12px rgba(255, 250, 240, 0.66);
 }
 
 .mode-actions {
   display: grid;
   gap: 0;
-  border-top: 1px solid rgba(255, 250, 240, 0.18);
-  background: rgba(255, 250, 240, 0.025);
-  backdrop-filter: blur(6px) saturate(1.08);
-  border-radius: 8px;
-  overflow: hidden;
+  max-width: 980px;
+  border-top: 1px solid rgba(255, 250, 240, 0.28);
+  background: transparent;
+  backdrop-filter: none;
+  border-radius: 0;
+  overflow: visible;
 }
 
 .mode-link {
@@ -427,11 +425,11 @@ p {
   gap: 16px;
   padding: 14px 0;
   border: 0;
-  padding: 14px 16px;
-  border-bottom: 1px solid rgba(255, 250, 240, 0.16);
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 250, 240, 0.26);
   border-radius: 0;
   color: var(--forest);
-  background: rgba(255, 250, 240, 0.015);
+  background: transparent;
   text-align: left;
 }
 
@@ -450,22 +448,32 @@ p {
 
 .hero .host-login label {
   color: rgba(23, 32, 25, 0.82);
+  text-shadow: 0 2px 12px rgba(255, 250, 240, 0.64);
 }
 
 .hero .host-login input {
   color: var(--ink);
-  background: rgba(255, 250, 240, 0.28);
-  border-color: rgba(255, 255, 255, 0.36);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.34);
-  backdrop-filter: blur(7px);
+  background:
+    linear-gradient(115deg, rgba(255, 250, 240, 0.2), rgba(255, 250, 240, 0.055)),
+    rgba(255, 255, 255, 0.025);
+  border-color: rgba(255, 255, 255, 0.42);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.48),
+    0 10px 24px rgba(23, 32, 25, 0.08);
+  backdrop-filter: blur(9px) saturate(1.12);
 }
 
 .hero .host-login button {
   width: 100%;
-  background: rgba(255, 250, 240, 0.26);
+  background:
+    linear-gradient(115deg, rgba(255, 250, 240, 0.18), rgba(255, 250, 240, 0.045)),
+    rgba(255, 255, 255, 0.022);
   color: var(--forest);
-  border-color: rgba(255, 255, 255, 0.38);
-  backdrop-filter: blur(7px);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.46),
+    0 10px 24px rgba(23, 32, 25, 0.08);
+  backdrop-filter: blur(9px) saturate(1.12);
 }
 
 .layout {
