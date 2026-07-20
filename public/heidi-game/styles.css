@@ -548,9 +548,9 @@ p {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(248, 243, 232, 0.36), rgba(248, 243, 232, 0.14) 48%, rgba(248, 243, 232, 0.28)),
-    radial-gradient(circle at 24% 20%, rgba(255, 252, 245, 0.3), transparent 28%),
-    radial-gradient(circle at 78% 72%, rgba(35, 63, 49, 0.14), transparent 34%);
+    linear-gradient(90deg, rgba(248, 243, 232, 0.54), rgba(248, 243, 232, 0.28) 48%, rgba(248, 243, 232, 0.46)),
+    radial-gradient(circle at 24% 20%, rgba(255, 252, 245, 0.48), transparent 30%),
+    radial-gradient(circle at 78% 72%, rgba(35, 63, 49, 0.1), transparent 34%);
   backdrop-filter: blur(1px);
 }
 
@@ -1326,17 +1326,25 @@ p {
 }
 
 .goat-guide {
+  position: relative;
   display: grid;
   gap: 10px;
   border: 0;
-  border-radius: 0;
-  padding: 0;
-  background: transparent;
+  border-radius: 42% 58% 44% 56% / 18% 22% 78% 82%;
+  padding: 18px 22px 20px;
+  max-width: 1120px;
+  color: #102018;
+  background:
+    radial-gradient(ellipse at 18% 20%, rgba(255, 252, 242, 0.9), rgba(255, 252, 242, 0.62) 46%, rgba(255, 252, 242, 0.22) 72%, transparent 100%),
+    linear-gradient(90deg, rgba(248, 243, 232, 0.72), rgba(248, 243, 232, 0.36));
+  text-shadow: 0 1px 2px rgba(255, 252, 242, 0.86);
+  backdrop-filter: blur(8px) saturate(1.08);
 }
 
 .goat-guide > strong {
-  color: var(--forest);
+  color: #0e2b1f;
   font-size: 1.12rem;
+  text-shadow: 0 1px 2px rgba(255, 252, 242, 0.9);
 }
 
 .goat-guide ol {
@@ -1352,6 +1360,14 @@ p {
   grid-template-columns: auto 1fr;
   gap: 9px;
   align-items: start;
+  color: #24352a;
+  font-weight: 520;
+  text-shadow: 0 1px 2px rgba(255, 252, 242, 0.82);
+}
+
+.goat-guide li strong {
+  color: #0f251b;
+  font-weight: 900;
 }
 
 .goat-guide li > span {
