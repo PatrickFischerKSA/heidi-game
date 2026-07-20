@@ -322,9 +322,11 @@ p {
 }
 
 .hero-copy > p:not(.eyebrow) {
-  color: rgba(23, 32, 25, 0.82);
+  color: rgba(255, 248, 232, 0.92);
   font-size: clamp(1.05rem, 1.7vw, 1.34rem);
-  text-shadow: 0 2px 10px rgba(255, 250, 240, 0.68);
+  text-shadow:
+    0 2px 12px rgba(13, 24, 18, 0.62),
+    0 0 2px rgba(13, 24, 18, 0.52);
 }
 
 .chapter-grid,
