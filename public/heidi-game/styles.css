@@ -1333,18 +1333,18 @@ p {
   border-radius: 42% 58% 44% 56% / 18% 22% 78% 82%;
   padding: 18px 22px 20px;
   max-width: 1120px;
-  color: #102018;
+  color: #1b1914;
   background:
-    radial-gradient(ellipse at 18% 20%, rgba(255, 252, 242, 0.9), rgba(255, 252, 242, 0.62) 46%, rgba(255, 252, 242, 0.22) 72%, transparent 100%),
-    linear-gradient(90deg, rgba(248, 243, 232, 0.72), rgba(248, 243, 232, 0.36));
-  text-shadow: 0 1px 2px rgba(255, 252, 242, 0.86);
+    radial-gradient(ellipse at 18% 20%, rgba(255, 249, 232, 0.92), rgba(255, 249, 232, 0.68) 46%, rgba(255, 249, 232, 0.24) 72%, transparent 100%),
+    linear-gradient(90deg, rgba(250, 241, 218, 0.76), rgba(250, 241, 218, 0.4));
+  text-shadow: 0 1px 2px rgba(255, 250, 238, 0.92);
   backdrop-filter: blur(8px) saturate(1.08);
 }
 
 .goat-guide > strong {
-  color: #0e2b1f;
+  color: #6f2f22;
   font-size: 1.12rem;
-  text-shadow: 0 1px 2px rgba(255, 252, 242, 0.9);
+  text-shadow: 0 1px 2px rgba(255, 250, 238, 0.94);
 }
 
 .goat-guide ol {
@@ -1360,13 +1360,13 @@ p {
   grid-template-columns: auto 1fr;
   gap: 9px;
   align-items: start;
-  color: #24352a;
+  color: #353027;
   font-weight: 520;
-  text-shadow: 0 1px 2px rgba(255, 252, 242, 0.82);
+  text-shadow: 0 1px 2px rgba(255, 250, 238, 0.9);
 }
 
 .goat-guide li strong {
-  color: #0f251b;
+  color: #14120f;
   font-weight: 900;
 }
 
@@ -1377,7 +1377,7 @@ p {
   display: grid;
   place-items: center;
   color: #fffaf0;
-  background: var(--forest);
+  background: #6f2f22;
   font-weight: 850;
 }
 
