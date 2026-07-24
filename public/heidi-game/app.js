@@ -338,77 +338,77 @@ const STORY = {
       object: "rule",
       title: "Sie frisst die Hausregel",
       text: "Rottenmeiers Regelstimme schnappt nach der wichtigsten Regel im Raum und macht daraus sofort ein Verbot.",
-      task: "Rettet die Regel: Sagt in einem Satz, was davon nützlich ist, und streicht den Teil, der nur einschüchtert.",
+      task: "Analysiert die Regel in einem Satz: Welche Information ist hilfreich, welcher Anteil ist bloßer Einschüchterungston? Formuliert daraus eine brauchbare Fassung.",
       example: "Nützlich ist, dass Heidi weiß, was am Tisch gilt; unnötig ist der scharfe Befehlston."
     },
     {
       object: "rule",
       title: "Sie frisst etwas Verbotenes",
       text: "Schnecke hat an einem Gegenstand geknabbert, der bestimmt nicht für Geissen gedacht war.",
-      task: "Beschreibt den Schaden konkret und formuliert eine ruhige Reaktion, die nicht sofort in Geschrei kippt.",
+      task: "Beschreibt den Schaden sachlich und formuliert eine Reaktion, die Verantwortung klärt, ohne in bloßen Tadel zu kippen.",
       example: "Die Ecke der Regel ist angefressen; Heidi nimmt das Blatt weg und sagt ruhig: Das ist kein Heu."
     },
     {
       object: "hoof",
       title: "Sie bockt am falschen Ort",
       text: "Die Geiss stellt sich quer, senkt den Kopf und bewegt sich keinen Schritt weiter.",
-      task: "Findet eine Frage oder einen Lockruf, mit dem Heidi die Situation löst, ohne die Geiss zu beschämen.",
+      task: "Formuliert eine situationsgenaue Ansprache: Heidi soll die Geiss lenken, ohne aus der Szene eine Strafe oder Vermenschlichung zu machen.",
       example: "Komm, Schwänli, nur bis zum Schemel; dort wartet frisches Heu."
     },
     {
       object: "bell",
       title: "Sie meckert alles durcheinander",
       text: "Aus der Geiss kommt ein wütendes Meckern: halb Tischregel, halb Alpwetter, halb beleidigter Salon.",
-      task: "Sortiert das Meckern: Was ist Beobachtung, was ist Angst, was ist nur Befehlston?",
+      task: "Ordnet das Meckern analytisch: Welche Aussage ist Beobachtung, welche verrät Unsicherheit, welche ist nur Befehlston?",
       example: "Beobachtung: Der Wind wird kalt. Angst: Sie kennt die Alp nicht. Befehlston: Alles sofort ordentlich!"
     },
     {
       object: "hoof",
       title: "Sie tritt gegen den Satz",
       text: "Kaum ist eine Antwort geschrieben, tritt die Geiss mit dem Huf daneben: Der Satz sei zu glatt.",
-      task: "Macht den Satz widerstandsfähiger: ein genaueres Verb, ein sichtbares Detail, eine vorsichtige Begründung.",
+      task: "Überarbeitet den Satz so, dass er prüfbar wird: genaueres Verb, sichtbares Detail, vorsichtige Begründung.",
       example: "Die Geissen drängen nicht nur zusammen; sie bleiben dicht beim Stein, weil der Wind kälter wird."
     },
     {
       object: "word",
       title: "Sie klaut ein Alpwörterchen",
       text: "Schnecke bemerkt: Ein wichtiges Wort ist weg. Zwischen Meckern und Regelton ist es verschwunden.",
-      task: "Holt das Wort zurück, indem ihr es in einem neuen, klaren Satz benutzt.",
+      task: "Setzt das fehlende Wort in einem neuen Satz so ein, dass seine Bedeutung aus dem Zusammenhang erkennbar wird.",
       example: "Das Wort 'zupfen' gehört zurück: Schnecke zupft am Kraut, statt einfach nur zu fressen."
     },
     {
       object: "hat",
       title: "Sie verwechselt Hilfe mit Befehl",
       text: "Die Geiss will helfen, aber alles klingt wie Kommandoton: sofort, ordentlich, still!",
-      task: "Schreibt den Befehl in eine hilfreiche Bitte um.",
+      task: "Überführt den Befehl in eine hilfreiche Bitte: gleiche Information, anderer Ton, klarer nächster Schritt.",
       example: "Statt 'Sofort still!' sagt Clara: Setz dich neben mich, ich zeige dir die Regel."
     },
     {
       object: "stool",
       title: "Melkzeit mit Widerstand",
       text: "Schwänli steht bereit, aber Rottenmeiers Regelstimme erklärt den Melkschemel für unzulässig.",
-      task: "Formuliert eine ruhige Melk-Anweisung in drei Schritten: annähern, beruhigen, melken.",
+      task: "Formuliert eine genaue Melk-Anweisung in drei Schritten: vorsichtig annähern, das Tier beruhigen, den Arbeitsvorgang sauber beginnen.",
       example: "Zuerst stellt Heidi den Schemel leise hin, dann streicht sie Schwänli über den Hals, danach beginnt sie langsam zu melken."
     },
     {
       object: "bucket-spill",
       title: "Der Kübel kippt",
       text: "Ein bockiger Tritt, und der Milchkübel fällt um. Die Milch läuft über den Boden, unter die Bank, mitten durch die schöne Ordnung.",
-      task: "Beschreibt die Sauerei genau und macht daraus einen Plan: Wer hält die Geiss, wer rettet den Rest, wer wischt?",
+      task: "Beschreibt die Sauerei präzise und entwickelt daraus einen Handlungsplan: Tier sichern, Rest retten, Boden reinigen.",
       example: "Die Milch läuft unter die Bank; Peter hält die Geiss, Heidi stellt den Kübel auf, Schnecke holt den Lappen."
     },
     {
       object: "milk",
       title: "Milch durch die Gegend",
       text: "Die Geiss meckert triumphierend, während eine weiße Spur quer durch die Hütte läuft.",
-      task: "Verwandelt das Chaos in Sprache: ein Satz über das sichtbare Durcheinander, ein Satz über die Lösung.",
+      task: "Verwandelt das Chaos in eine geordnete Mini-Diagnose: ein Satz zum sichtbaren Problem, ein Satz zur nächsten Handlung.",
       example: "Eine weiße Spur zieht vom Kübel zur Tür; Heidi wischt zuerst den Weg frei, damit niemand ausrutscht."
     },
     {
       object: "cheese",
       title: "Fast Käse",
       text: "Diesmal bleibt der Kübel stehen. Wenn die Antwort genau genug ist, kann aus der Milch später Käse werden.",
-      task: "Schreibt eine kurze Käse-Regel: Was muss zuerst ruhig, sauber oder geduldig geschehen?",
+      task: "Formuliert eine Käse-Regel als Ursache-Folge-Satz: Welche ruhige, saubere oder geduldige Handlung ist Voraussetzung dafür, dass aus Milch später Käse werden kann?",
       example: "Bleibt die Geiss ruhig und der Kübel sauber, kann aus der Milch später Käse werden."
     }
   ],
@@ -417,196 +417,196 @@ const STORY = {
       object: "rule",
       title: "Die Geiss frisst die Bauernregel an",
       text: "Auf dem Zettel steht nur noch: 'Wenn die Geissen dicht beim Stein ...' Der Schluss fehlt, und Fräulein Rottenmeier behauptet, das Wetter müsse jetzt gehorchen.",
-      task: "Schreibt eine eigene Bauernregel aus einer sichtbaren Alp-Beobachtung. Sie braucht drei Teile: Beobachtung, kurzer Spruch, vorsichtige Erklärung.",
+      task: "Entwickelt eine Bauernregel aus einer überprüfbaren Alpbeobachtung. Trennt in eurer Antwort Beobachtung, Spruchform und vorsichtige Erklärung.",
       example: "Beobachtung: Die Geissen drängen zum Stein. Regel: 'Drängen die Geissen dicht zum Stein, zieht oft kühler Wind herein.' Erklärung: Vielleicht spüren sie Wind früher; sicher ist es nicht."
     }],
     "ziegen-ansprechen": [{
       object: "bell",
       title: "Die Geiss hört nicht auf 'Sie da!'",
       text: "Rottenmeiers Stimme ruft steif in die Wiese. Schwänli hebt nur kurz den Kopf, Schnecke zupft weiter am Kraut.",
-      task: "Schreibt drei Sätze: Heidi ruft eine Geiss natürlich an, Peter erklärt mit einem genauen Verb, was sie tut, und Heidi übernimmt dieses Wort.",
+      task: "Verfasst eine dreiteilige Mini-Szene: Heidis Ansprache, Peters praktische Präzisierung, Heidis Übernahme eines genaueren Verbs.",
       example: "Heidi sagt: 'Schwänli, komm nur ein Stück näher.' Peter sagt: 'Sie zupft am Kraut, die läuft gleich weiter.' Heidi merkt sich: zupfen ist genauer als fressen."
     }],
     "almoehi-sprechen": [{
       object: "stool",
       title: "Die Geiss stellt sich zwischen Heidi und den Großvater",
       text: "Gerade will Heidi fragen, da schiebt die Geiss den Schemel vor den Großvater, als müsse erst ein Verhör beginnen.",
-      task: "Formuliert zwei höfliche Fragen an den Großvater: eine zur Bedeutung der Bauernregel, eine zu einem sichtbaren Beispiel auf der Alp.",
+      task: "Formuliert zwei Gesprächsfragen an den Großvater: eine zur Bedeutung der Bauernregel, eine zu einem sichtbaren Beispiel auf der Alp.",
       example: "Großvater, du hast gesagt: 'Morgenrot mit Regen droht.' Was bedeutet das? Woran siehst du heute, ob wirklich Regen kommen könnte?"
     }],
     "frankfurter-stimmen": [{
       object: "hat",
       title: "Die Geiss meckert wie eine Hausordnung",
       text: "In Frankfurt klingt jede Hilfe plötzlich nach Befehl. Rottenmeiers Regelstimme macht daraus: 'Sofort ordentlich sein!'",
-      task: "Schreibt drei klare Sätze: Was wurde wörtlich gesagt? Was macht der Tonfall daraus? Wie könnte derselbe Hinweis Heidi fair helfen?",
+      task: "Analysiert die Regelrede in drei Sätzen: wörtliche Aussage, Wirkung des Tonfalls, faire hilfreiche Alternative.",
       example: "Wörtlich wird eine Tischregel genannt. Der scharfe Ton beschämt Heidi. Fair wäre: 'Leg die Serviette hierher; ich zeige dir, wann du sie nimmst.'"
     }],
     "peter-lernt-anders": [{
       object: "hay",
       title: "Die Geiss schiebt die Buchstaben ins Heu",
       text: "Peter soll lesen, aber die Geiss verstreut die Karten zwischen Heu, Wegbild und Geissennamen.",
-      task: "Entwerft einen Lernweg in drei Schritten, der zu Peter passt: Material, Lesesatz, ermutigende Rückmeldung.",
+      task: "Entwerft einen dreistufigen Lernweg für Peter. Jeder Schritt braucht Material, Lesesatz oder Handlung und eine ermutigende Rückmeldung.",
       example: "1. Peter legt Geissennamen zu Bildern. 2. Er liest: 'Schwänli geht zum Steg.' 3. Die Großmutter sagt: 'Du hast den Namen erkannt; jetzt lesen wir das Wegwort.'"
     }],
     "heidi-erzaehlt-weiter": [{
       object: "cloth",
       title: "Die Geiss zieht die letzte Buchseite weg",
       text: "Fräulein Rottenmeier blökt: 'Was nicht im Buch steht, ist verboten!' Heidi darf aber eine mögliche Fortsetzung erzählen, wenn sie sie als eigene Erfindung kennzeichnet.",
-      task: "Schreibt den Anfang einer möglichen Fortsetzung. Beginnt so, dass klar ist: Das ist eure Weitererzählung, keine Behauptung über Spyri.",
+      task: "Schreibt den Anfang einer möglichen Fortsetzung. Markiert sprachlich, dass es eure Interpretation und keine Behauptung über Spyri ist.",
       example: "Vielleicht hätte Heidi später erzählt: Wenn der Abendhimmel rot wurde, hörte ich wieder Großvaters Stimme und prüfte erst, was ich wirklich sah."
     }],
     "huette-einrichten": [{
       object: "bucket",
       title: "Der Kübel steht am falschen Platz",
       text: "In der Hütte ist wenig Platz. Die Geiss stößt fast an Kübel, Bank und Decke, weil niemand genau sagt, was wohin gehört.",
-      task: "Schreibt vier Sätze: zwei Gegenstände benennen, Heidi höflich fragen lassen, einen Handgriff des Großvaters zeigen.",
+      task: "Verfasst vier Sätze: zwei funktionale Gegenstände der Hütte, Heidis höfliche Frage, ein stummer Handgriff des Großvaters als Antwort.",
       example: "Heidi bleibt bei der Bank stehen. 'Darf ich die Decke zum Heu legen?' Der Großvater schiebt ihr die Schüssel näher und stellt den Kübel an die Wand."
     }],
     "bett-im-heu": [{
       object: "hay",
       title: "Die Geiss erklärt das Heu zum Durcheinander",
       text: "Schnecke wühlt im Heu, Fräulein Rottenmeier rümpft die Nase. Für Heidi ist das Heu aber kein Chaos, sondern ein Schlafplatz mit Geruch, Geräusch und Wärme.",
-      task: "Schreibt fünf Sätze über Heidis Einschlafen. Mindestens ein Geruch, ein Geräusch und eine Körperempfindung müssen vorkommen.",
+      task: "Schreibt fünf Sätze über Heidis Einschlafen. Der Text muss Geruch, Geräusch, Körperempfindung und den Übergang zur Ruhe konkret machen.",
       example: "Das Heu roch trocken und warm. Wenn Heidi den Kopf bewegte, raschelten die Halme. Ihr Rücken wurde schwer, und draußen blieb nur der Wind."
     }],
     "peter-stellt-ziegen-vor": [{
       object: "bell",
       title: "Die Geiss vertauscht die Namensglocken",
       text: "Fräulein Rottenmeier will Nummern statt Namen. Peter hält dagegen: Jede Geiss hat eine Eigenheit.",
-      task: "Erfindet drei Geissennamen mit je einer sichtbaren Eigenheit und macht daraus einen Dialog zwischen Heidi und Peter.",
+      task: "Entwickelt drei unterscheidbare Geissen: Name, sichtbares Verhalten, kurze Erklärung im Dialog zwischen Heidi und Peter.",
       example: "Peter sagt: 'Das ist Schwänli. Sie läuft nie zuerst, findet aber jedes Kraut am Wegrand.' Heidi fragt: 'Und warum heißt die andere Schnecke?'"
     }],
     "gewitter-kommt": [{
       object: "bucket-spill",
       title: "Die Geiss stößt den Kübel an, als der Wind dreht",
       text: "Der Himmel wird dunkler, der Wind kühler, und die Herde rückt enger zusammen. Jetzt hilft kein langer Vortrag.",
-      task: "Schreibt fünf kurze Sätze: Beobachtung, Warnung, Entscheidung, Handgriff, Rückweg.",
+      task: "Formuliert fünf kurze Handlungssätze: Wetterbeobachtung, Warnung, Entscheidung, konkrete Handlung an der Herde, Rückweg.",
       example: "Die Wolken hängen tief. Peter warnt: 'Wir gehen zurück.' Heidi hält Schwänli nahe am Weg. Schnecke läuft hinterher. Bei der Hütte zählen sie die Herde."
     }],
     "alpsegen-hoeren": [{
       object: "bell",
       title: "Die Glocke mischt sich in den Alpsegen",
       text: "Zwischen Stimme, Echo und Glocke meckert die Geiss dazwischen. Trotzdem soll zuerst gehört werden, bevor erklärt wird.",
-      task: "Schreibt eine Hörnotiz: Was klingt? Was könnte der Alpsegen leisten? Welche Wörter zeigen Respekt?",
+      task: "Verfasst eine Hörnotiz mit drei Ebenen: Klangbeobachtung, mögliche Funktion des Alpsegens, respektvolle Einordnung.",
       example: "Die Stimme klingt weit und getragen. Die Wiederholung wirkt ruhig. Es ist wie eine Bitte um Schutz für Menschen und Tiere in der Nacht."
     }],
     "grossvater-arbeitet": [{
       object: "stool",
       title: "Der Schemel steht genau im Arbeitsweg",
       text: "Der Großvater sagt wenig. Die Geiss steht im Weg. Nur genaue Handgriffe bringen Heidi weiter.",
-      task: "Schreibt eine Anleitung für einen kleinen Handgriff in der Hütte. Die Verben müssen sichtbar machen, was Heidi tun soll.",
+      task: "Schreibt eine genaue Handlungsanweisung für einen kleinen Arbeitsvorgang in der Hütte. Jedes Verb muss sichtbar machen, was Heidi tut.",
       example: "Zuerst hältst du die Schüssel mit beiden Händen. Dann gießt du langsam ein. Erst wenn nichts mehr tropft, stellst du sie auf die Bank."
     }],
     "ankunft-frankfurt": [{
       object: "hat",
       title: "Rottenmeiers Stimme steht in der Tür",
       text: "Treppen, Türen, Stimmen, enge Blicke: Heidi kommt nicht in eine Alp, sondern in ein Haus voller Regeln.",
-      task: "Schreibt einen Ankunftsabsatz mit drei Stadtbeobachtungen und zwei vorsichtigen Vergleichen zur Alp.",
+      task: "Schreibt einen Ankunftsabsatz aus Heidis Wahrnehmung: drei konkrete Stadtbeobachtungen, zwei vorsichtige Vergleiche zur Alp, kein pauschales Stadturteil.",
       example: "Die Häuser standen dicht, und der Himmel war nur ein Streifen. Auf der Alp konnte der Blick weit laufen. Hier führte jede Tür zur nächsten Regel."
     }],
     "clara-kennenlernen": [{
       object: "cloth",
       title: "Die Geiss zieht den Vorhang zwischen Heidi und Clara",
       text: "Fräulein Rottenmeier möchte das Kennenlernen ordnen. Heidi und Clara brauchen aber echte Fragen, keine Vorführung.",
-      task: "Schreibt sechs Dialogzeilen. Heidi und Clara stellen je eine Frage und bieten je etwas aus ihrer eigenen Welt an.",
+      task: "Schreibt sechs Dialogzeilen. Beide Figuren stellen je eine ernst gemeinte Frage und bieten je etwas aus ihrer eigenen Lebenswelt an.",
       example: "Heidi fragt: 'Darf ich dir erzählen, wie Peter die Geissen ruft?' Clara sagt: 'Ja, und danach zeige ich dir mein Bergbuch.'"
     }],
     "rottenmeier-tisch": [{
       object: "cloth",
       title: "Die Serviette wird zum Amtsblatt",
       text: "Die Geiss legt die Serviette hin, als wäre sie ein Gesetz. Heidi soll lernen, aber nicht beschämt werden.",
-      task: "Schreibt dieselbe Tischregel in drei Fassungen: verletzend, neutral, hilfreich. Entscheidet, welche Fassung Heidi weiterbringt.",
+      task: "Formuliert dieselbe Tischregel in drei Fassungen: verletzend, neutral, hilfreich. Begründet, welche Fassung Heidi wirklich weiterbringt.",
       example: "Verletzend: 'Wie kann man nur so essen!' Neutral: 'Die Serviette bleibt auf dem Schoß.' Hilfreich: 'Leg die Serviette hierher; ich zeige es dir.'"
     }],
     "sehnsucht-alp": [{
       object: "hay",
       title: "Die Geiss versteckt ein Stück Alp im Zimmer",
       text: "Ein Heuhalm, ein Geruch, ein Klang: In Frankfurt kommt die Alp in Heidis Kopf zurück, ohne dass jemand das Wort Heimweh sagen muss.",
-      task: "Schreibt eine Heimweh-Szene ohne das Wort 'Heimweh'. Zeigt ein Körperzeichen und ein Erinnerungsbild.",
+      task: "Schreibt eine Heimweh-Szene ohne das Wort 'Heimweh'. Zeigt Körperzeichen, Erinnerungsbild und konkreten Gegensatz zwischen Zimmer und Alp.",
       example: "Heidi stand am Fenster und suchte Himmel zwischen den Dächern. Das Brot blieb liegen. In ihrem Kopf hörte sie Peters Ruf nach Schwänli."
     }],
     "frankfurt-verlorene-stadt": [{
       object: "rule",
       title: "Zwei Frankfurt-Bilder liegen übereinander",
       text: "Ein Bild zeigt eine rekonstruierte Stadt um 1890, das andere die Zerstörung 1944. Fräulein Rottenmeier tut so, als sei beides dieselbe Gegenwart.",
-      task: "Erklärt in drei Sätzen: rekonstruiertes Frankfurt um 1890, Zerstörung 1944, heutiger Abstand zu Spyris Stadtraum.",
+      task: "Ordnet die beiden Frankfurt-Filme historisch ein: rekonstruiertes Stadtbild um 1890, Zerstörung 1944, heutiger Abstand zu Spyris Stadtraum.",
       example: "Die 1890-Szene nähert sich der Stadtwelt an, die Heidi fremd gewesen sein könnte. 1944 kam eine spätere Katastrophe. Darum existiert Spyris Frankfurt heute so nicht mehr."
     }],
     "rueckkehr-alp": [{
       object: "bell",
       title: "Die Glocke läutet zu früh zur Rückkehr",
       text: "Die Geiss will sofort Jubel. Aber Heidis Rückkehr ist zugleich vertraut und verändert.",
-      task: "Schreibt die ersten fünf Sätze der Rückkehr. Zeigt einmal Wiedererkennen und einmal, dass Frankfurt in Heidi nachwirkt.",
+      task: "Schreibt die ersten fünf Sätze der Rückkehr. Zeigt Wiedererkennen, Nachwirkung Frankfurts und eine veränderte Beziehung zu Sprache oder Schweigen.",
       example: "Heidi blieb vor der Hütte stehen. Der Wind roch wieder nach Gras. 'Großvater', sagte sie nur. Frankfurt lag hinter ihr, aber nicht ganz fort."
     }],
     "grossmutter-hoert": [{
       object: "bell",
       title: "Die Geiss meckert zu laut neben der Großmutter",
       text: "Lauter wird es nicht besser. Die Großmutter hört gerade deshalb gut zu, weil sie Pausen zulässt.",
-      task: "Schreibt eine Zuhörszene: höchstens zwei kurze Sätze der Großmutter, dazu eine Pause oder ein Blick, der Heidis Erzählen verändert.",
+      task: "Schreibt eine Zuhörszene. Die Großmutter spricht höchstens zwei kurze Sätze; Pause, Blick oder Rückfrage müssen Heidis Erzählen sichtbar verändern.",
       example: "Die Großmutter sagte: 'Erzähl weiter, Kind.' Dann wartete sie. Heidi sah auf ihre Hände und begann langsamer, bis sie das Wort für ihre Angst fand."
     }],
     "peter-eifersucht": [{
       object: "hoof",
       title: "Die Geiss tritt neben Peters Gefühl",
       text: "Peter ist verletzt, aber ein Tritt macht nichts besser. Die Szene muss Gefühl und Grenze auseinanderhalten.",
-      task: "Schreibt eine kurze Szene und danach zwei Auswertungssätze: einer versteht Peters Gefühl, einer setzt eine klare Grenze.",
+      task: "Schreibt eine kurze Szene und danach zwei Auswertungssätze: einer rekonstruiert Peters Gefühl, einer benennt die Grenze seines Handelns.",
       example: "Peter tritt einen Stein weg und schweigt. Man kann verstehen, dass er Angst hat, Heidi zu verlieren. Trotzdem darf er Clara nicht verletzen."
     }],
     "dorfschule-peter": [{
       object: "rule",
       title: "Die Geiss frisst die Lesekarte an",
       text: "Auf der Karte steht nur noch: 'Schwänli geht zum ...' Peter braucht eine Aufgabe, die er spielen und lesen kann.",
-      task: "Entwerft eine Schulaufgabe mit Material, Lesesatz und ermutigender Rückmeldung.",
+      task: "Entwerft eine spielbare Schulaufgabe mit Material, genauem Lesesatz, erwarteter Handlung und ermutigender Rückmeldung.",
       example: "Material: Karten mit Geissennamen und Wegbildern. Satz: 'Schwänli geht zum Steg.' Rückmeldung: 'Du hast Schwänli erkannt; jetzt lesen wir das Wegwort.'"
     }],
     "clara-auf-der-alp": [{
       object: "bucket",
       title: "Die Geiss schiebt Clara den Milchkübel vor die Füße",
       text: "Alles ist hell, nah und ungewohnt. Heidi darf Clara helfen, aber nicht über sie bestimmen.",
-      task: "Schreibt zwei Perspektiven: zuerst Claras Wahrnehmung, dann Heidis behutsames Angebot.",
+      task: "Schreibt einen Perspektivwechsel: zuerst Claras körperliche Wahrnehmung der Alp, dann Heidis behutsames Angebot.",
       example: "Clara blinzelte, weil das Licht auf der Wiese so hell war. Heidi sagte: 'Wir müssen nicht schnell gehen; ich zeige dir erst den flachen Weg.'"
     }],
     "ziegen-verloren": [{
       object: "bell",
       title: "Eine Glocke fehlt im Klang",
       text: "Schwänli ist nicht bei der Herde. Jetzt braucht es keine Panik, sondern Orte, Reihenfolge und einen Ruf.",
-      task: "Schreibt einen Suchplan in vier Schritten und einen kurzen Lockruf für die Geiss.",
+      task: "Schreibt einen Suchplan in vier geordneten Schritten mit genauen Ortsangaben und einem passenden Lockruf für die Geiss.",
       example: "Zuerst gehen wir zum flachen Stein oberhalb des Stegs. Dann schauen wir beim Bach. Heidi ruft: 'Schwänli, komm her, hier ist der Weg!'"
     }],
     "schlusskreis": [{
       object: "cheese",
       title: "Der letzte Käse wird nur verteilt, wenn etwas hängen bleibt",
       text: "Am Ende drängt alles auf einmal herein: Alp, Frankfurt, Schule, Regeln, Glocken. Der Schlusskreis braucht Auswahl.",
-      task: "Wählt eine Szene, ein genaueres Wort, eine gute Frage und einen Satz darüber, was Heidi dadurch gelernt haben könnte.",
+      task: "Wählt eine Schlüsselszene, ein präziser gewordenes Wort und eine gute Frage. Erklärt anschließend, was Heidi dadurch über Sprache, Regeln oder Zugehörigkeit gelernt haben könnte.",
       example: "Ich wähle die Szene mit der fehlenden Geiss, weil Heidi dort genauer sprechen muss. Das Wort 'oberhalb' hilft. Die Frage 'Wo stand sie zuletzt?' macht aus Angst einen Plan."
     }]
   },
   beats: {
-    "alp-spricht": ["Rottenmeiers Regelstimme hält Bauernregeln für Amtsbefehle: Wenn Abendrot ist, müsse das Wetter gehorchen.", "Erfindet eine Regel, die klingt wie Alp-Erfahrung, aber nicht so tut, als könne sie den Himmel kommandieren."],
-    "ziegen-ansprechen": ["Rottenmeiers Stimme ruft jede Geiss mit 'Sie da!' und wundert sich, dass niemand folgt.", "Findet eine Stimme, mit der Heidi eine Geiss wirklich ansprechen könnte: kurz, freundlich, beobachtend."],
-    "almoehi-sprechen": ["Rottenmeiers Regelstimme will den Almöhi verhören: Name, Zweck, Wetterzuständigkeit.", "Heidi braucht eine Frage, die den Großvater öffnet, statt ihn wie ein Formular auszufüllen."],
+    "alp-spricht": ["Rottenmeiers Regelstimme hält Bauernregeln für Amtsbefehle: Wenn Abendrot ist, müsse das Wetter gehorchen.", "Entwickelt eine Bauernregel, die aus Beobachtung entsteht, sprechbar klingt und ihre eigene Unsicherheit mitdenkt."],
+    "ziegen-ansprechen": ["Rottenmeiers Stimme ruft jede Geiss mit 'Sie da!' und wundert sich, dass niemand folgt.", "Zeigt, wie Heidi eine Geiss anspricht, ohne ihr menschliche Gedanken zu unterschieben: Stimme, Verhalten, genaues Verb."],
+    "almoehi-sprechen": ["Rottenmeiers Regelstimme will den Almöhi verhören: Name, Zweck, Wetterzuständigkeit.", "Heidi braucht Fragen, die Bedeutung und Beobachtung klären, ohne das Gespräch in ein Verhör zu verwandeln."],
     "frankfurter-stimmen": ["In Frankfurt merkt Heidi: Auch Menschen können mit Regeln verletzen. Manche Sätze helfen, manche machen klein.", "Trennt Hausregel, Tonfall und faire Hilfe, damit Heidi nicht nur gehorcht, sondern versteht."],
-    "peter-lernt-anders": ["Rottenmeiers Regelstimme will Peter an den Tisch nageln, bis die Buchstaben ordentlich stehen.", "Baut einen Lernweg, der von Peters Wegen, Geissen und Händen ausgeht."],
-    "heidi-erzaehlt-weiter": ["Die Geiss behauptet, alles müsse exakt im Buch stehen, sonst sei es verboten.", "Markiert eure Weitererzählung als möglich und verankert sie in einer konkreten Erinnerung."],
-    "huette-einrichten": ["Rottenmeiers Regelstimme sucht in der Hütte nach Klingel, Teppichordnung und Besuchsformular.", "Macht sichtbar, wie Heidi über Gegenstände und Handgriffe ankommt."],
-    "bett-im-heu": ["Rottenmeiers Stimme erklärt Heu zum unzulässigen Bettmaterial.", "Zeigt, warum das Heu für Heidi nicht Armut, sondern Wärme, Geruch und Ruhe bedeutet."],
-    "peter-stellt-ziegen-vor": ["Rottenmeiers Regelstimme will Nummern statt Namen: Geiss 1, Geiss 2, Geiss 3.", "Gebt den Geissen Eigenheiten, damit aus Herde einzelne Wesen werden."],
-    "gewitter-kommt": ["Rottenmeiers Regelstimme verlangt einen schriftlichen Donner-Antrag, während die Wolken schon tief hängen.", "Macht aus Beobachtung einen schnellen, praktischen Plan."],
-    "alpsegen-hoeren": ["Rottenmeiers Stimme hört den Alpsegen und fragt, ob das eine Hausordnung mit Melodie sei.", "Findet Worte dafür, wie ein Ruf Schutz, Abend und Gemeinschaft bedeuten kann."],
+    "peter-lernt-anders": ["Rottenmeiers Regelstimme will Peter an den Tisch nageln, bis die Buchstaben ordentlich stehen.", "Entwerft einen Lernweg, der von Peters Alltag ausgeht und erklärt, warum Beschämung literarisch und pädagogisch nicht trägt."],
+    "heidi-erzaehlt-weiter": ["Die Geiss behauptet, alles müsse exakt im Buch stehen, sonst sei es verboten.", "Markiert eure Weitererzählung als Interpretation und verankert sie in einer konkreten Erinnerung."],
+    "huette-einrichten": ["Rottenmeiers Regelstimme sucht in der Hütte nach Klingel, Teppichordnung und Besuchsformular.", "Zeigt über Dinge und Handgriffe, wie Heidi die Ordnung der Hütte erschließt."],
+    "bett-im-heu": ["Rottenmeiers Stimme erklärt Heu zum unzulässigen Bettmaterial.", "Macht Heidis Erfahrung im Heu über Sinneseindrücke nachvollziehbar, ohne sie sentimental zu überhöhen."],
+    "peter-stellt-ziegen-vor": ["Rottenmeiers Regelstimme will Nummern statt Namen: Geiss 1, Geiss 2, Geiss 3.", "Macht aus der Herde unterscheidbare Tiere, indem ihr Namen mit beobachtbarem Verhalten verbindet."],
+    "gewitter-kommt": ["Rottenmeiers Regelstimme verlangt einen schriftlichen Donner-Antrag, während die Wolken schon tief hängen.", "Formuliert aus Beobachtung eine kurze, handlungsfähige Notfallsequenz."],
+    "alpsegen-hoeren": ["Rottenmeiers Stimme hört den Alpsegen und fragt, ob das eine Hausordnung mit Melodie sei.", "Beschreibt Klang, mögliche Funktion und kulturellen Respekt, ohne den Alpsegen zu verspotten oder zu verklären."],
     "grossvater-arbeitet": ["Rottenmeiers Regelstimme kommentiert jeden Handgriff, bis kein Holz mehr gespalten wird.", "Beschreibt Arbeit so genau, dass Schweigen und Können verständlich werden."],
-    "ankunft-frankfurt": ["Frankfurt tut so, als sei alles selbstverständlich: Türen, Treppen, Stimmen, Regeln.", "Zeigt Heidis erste Überforderung: Geräusche, Regeln, Höhe, Enge."],
-    "clara-kennenlernen": ["Rottenmeiers Regelstimme will Freundschaft nach Sitzordnung vergeben.", "Lasst Clara und Heidi vorsichtig Kontakt aufnehmen, ohne dass eine die andere vorführt."],
+    "ankunft-frankfurt": ["Frankfurt tut so, als sei alles selbstverständlich: Türen, Treppen, Stimmen, Regeln.", "Zeigt Heidis Überforderung über konkrete Stadtwahrnehmung, nicht über ein pauschales Urteil."],
+    "clara-kennenlernen": ["Rottenmeiers Regelstimme will Freundschaft nach Sitzordnung vergeben.", "Lasst Clara und Heidi über ernst gemeinte Fragen und gegenseitige Angebote Kontakt aufnehmen."],
     "rottenmeier-tisch": ["Am Tisch fühlt sich Rottenmeiers Regelstimme plötzlich mächtig: Serviette, Haltung, Schweigen!", "Verwandelt eine steife Tischregel in einen Satz, der Heidi wirklich helfen könnte."],
-    "sehnsucht-alp": ["Rottenmeiers Regelstimme findet Heimweh unordentlich: Gefühle sollen bitte im Schrank bleiben.", "Macht Heidis Sehnsucht konkret, ohne sie zu verkitschen."],
+    "sehnsucht-alp": ["Rottenmeiers Regelstimme findet Heimweh unordentlich: Gefühle sollen bitte im Schrank bleiben.", "Zeigt Heidis Sehnsucht indirekt über Körper, Erinnerung und den Gegensatz zwischen Zimmer und Alp."],
     "frankfurt-verlorene-stadt": ["Heidi sucht Spyris Frankfurt und stößt auf Bilder einer Stadt, die so nicht mehr existiert.", "Erklärt den historischen Bruch, ohne die Heidi-Szene zu verlieren."],
-    "rueckkehr-alp": ["Rottenmeiers Regelstimme will die Rückkehr als Reisebericht abstempeln lassen.", "Zeigt, was sich an Heidi verändert hat, wenn sie wieder oben ankommt."],
-    "grossmutter-hoert": ["Die Geiss spricht extra laut, weil sie Zuhören mit Lautstärke verwechselt.", "Findet eine Sprache, die Rücksicht nimmt und trotzdem lebendig erzählt."],
-    "peter-eifersucht": ["Rottenmeiers Regelstimme würde Peters Eifersucht sofort bestrafen und abhaken.", "Sucht die Kränkung hinter der Tat und eine Antwort, die Verantwortung möglich macht."],
-    "dorfschule-peter": ["Rottenmeiers Regelstimme marschiert in die Dorfschule und will alle Buchstaben geradeziehen.", "Entwerft eine Aufgabe, bei der Peter nicht beschämt wird."],
-    "clara-auf-der-alp": ["Rottenmeiers Stimme ruft: 'Alp ist kein Sanatorium!' und macht Claras ersten Schritt unnötig schwer.", "Beschreibt Claras Ankommen auf der Alp konkret und vorsichtig."],
-    "ziegen-verloren": ["Eine Geiss fehlt, und Rottenmeiers Regelstimme möchte zuerst ein Verlustprotokoll.", "Macht aus Sorge einen Suchplan mit Ortswörtern und Lockruf."],
-    "schlusskreis": ["Am Ende will Rottenmeiers Regelstimme wissen, ob jetzt endlich Ordnung herrscht.", "Wählt die stärkste Szene und erklärt, was sie an Sprache verändert hat."]
+    "rueckkehr-alp": ["Rottenmeiers Regelstimme will die Rückkehr als Reisebericht abstempeln lassen.", "Zeigt Wiedererkennen, Veränderung und die Nachwirkung Frankfurts in wenigen präzisen Sätzen."],
+    "grossmutter-hoert": ["Die Geiss spricht extra laut, weil sie Zuhören mit Lautstärke verwechselt.", "Macht sichtbar, wie Zuhören eine Erzählung verändert: Pause, Blick, Rückfrage, neue Wörter."],
+    "peter-eifersucht": ["Rottenmeiers Regelstimme würde Peters Eifersucht sofort bestrafen und abhaken.", "Trennt nachvollziehbares Gefühl und problematische Handlung, damit Verantwortung möglich wird."],
+    "dorfschule-peter": ["Rottenmeiers Regelstimme marschiert in die Dorfschule und will alle Buchstaben geradeziehen.", "Entwerft eine konkrete Leseaufgabe, die Erfolg ermöglicht, ohne Peter bloßzustellen."],
+    "clara-auf-der-alp": ["Rottenmeiers Stimme ruft: 'Alp ist kein Sanatorium!' und macht Claras ersten Schritt unnötig schwer.", "Beschreibt Claras Ankommen körperlich genau und formuliert Heidis Hilfe als Angebot."],
+    "ziegen-verloren": ["Eine Geiss fehlt, und Rottenmeiers Regelstimme möchte zuerst ein Verlustprotokoll.", "Verwandelt Sorge in einen geordneten Suchplan mit präzisen Ortsangaben und passendem Lockruf."],
+    "schlusskreis": ["Am Ende will Rottenmeiers Regelstimme wissen, ob jetzt endlich Ordnung herrscht.", "Wählt eine Schlüsselszene und erklärt, was sich daran im Umgang mit Sprache verändert hat."]
   }
 };
 
@@ -985,17 +985,17 @@ function playerProfile(role, label = "") {
 function goatJob(role) {
   if (role === "A") {
     return {
-      short: "sieht zuerst",
-      title: "Schwänli sieht zuerst.",
-      text: "Du sammelst, was in der Szene wirklich sichtbar, hörbar oder spürbar ist. Sag es kurz, bevor ihr deutet.",
-      prompt: "Beginne mit: Ich sehe ... / Ich höre ... / Mir fällt auf ..."
+      short: "sichert Beobachtungen",
+      title: "Schwänli sichert Beobachtungen.",
+      text: "Du sammelst überprüfbare Details aus Szene, Bild oder Ton: sichtbar, hörbar, spürbar. Formuliere zuerst Befunde, bevor ihr deutet.",
+      prompt: "Beginne mit: Auffällig ist ... / Hörbar wird ... / Die Szene zeigt ..."
     };
   }
   return {
-    short: "fragt nach",
-    title: "Schnecke fragt nach.",
-    text: "Du bringst Wörter, Fragen und Ordnung hinein. Hilf, aus Schwänlis Beobachtung eine brauchbare Antwort zu machen.",
-    prompt: "Frage: Welches Wort passt genauer? Was fehlt noch? Wie klingt es vorsichtiger?"
+    short: "präzisiert Sprache",
+    title: "Schnecke präzisiert Sprache.",
+    text: "Du prüfst Wörter, Ton und Aufbau. Hilf, aus Schwänlis Beobachtung eine genaue, begründete und vorsichtig formulierte Antwort zu machen.",
+    prompt: "Frage: Welcher Begriff passt genauer? Was fehlt als Begründung? Wo muss die Aussage eingeschränkt werden?"
   };
 }
 
@@ -1004,9 +1004,9 @@ function goatCardGuide(compact = false) {
     <aside class="goat-guide ${compact ? "is-compact" : ""}">
       <strong>So funktionieren die Geissenkarten</strong>
       <ol>
-        <li><span>1</span><p><strong>Getrennt lesen.</strong> Schwänli und Schnecke bekommen verschiedene Hinweise. Nicht sofort alles vermischen.</p></li>
-        <li><span>2</span><p><strong>Laut austauschen.</strong> Jede Geiss sagt ihren Hinweis in eigenen Worten. Wenn ein Mikrofon verlangt wird, zuerst ins Handy sprechen.</p></li>
-        <li><span>3</span><p><strong>Gemeinsam schreiben.</strong> Erst danach öffnet ihr die Schreibwerkstatt und macht aus beiden Hinweisen eine Antwort.</p></li>
+        <li><span>1</span><p><strong>Getrennt vorbereiten.</strong> Schwänli sichert Beobachtungen, Schnecke prüft Sprache und Aufbau. Haltet die Hinweise zunächst auseinander.</p></li>
+        <li><span>2</span><p><strong>Mündlich abgleichen.</strong> Jede Geiss fasst ihren Hinweis in eigenen Worten zusammen. Wenn ein Mikrofon verlangt wird, sprecht zuerst ins Handy.</p></li>
+        <li><span>3</span><p><strong>Gemeinsam ausformulieren.</strong> Erst danach öffnet ihr die Schreibwerkstatt und verbindet Beobachtung, Deutung und sprachliche Präzisierung zu einer Antwort.</p></li>
       </ol>
     </aside>
   `;
@@ -1348,18 +1348,18 @@ function taskFlow(c) {
     <div class="task-flow" aria-label="Arbeitsfluss">
       <article>
         <span>1</span>
-        <strong>Schwänli sagt, was da ist</strong>
-        <p>${escapeHtml(c.roleA.name)}: Beobachtung, Stimme oder erster Eindruck aus der Szene.</p>
+        <strong>Schwänli sichert Material</strong>
+        <p>${escapeHtml(c.roleA.name)}: konkrete Beobachtung, hörbare Stimme, Bilddetail oder erster Befund aus der Szene.</p>
       </article>
       <article>
         <span>2</span>
-        <strong>Schnecke macht es genauer</strong>
-        <p>${escapeHtml(c.roleB.name)}: Wörter, Fragen, Ordnung oder Vorsicht für die Antwort.</p>
+        <strong>Schnecke schärft die Sprache</strong>
+        <p>${escapeHtml(c.roleB.name)}: passende Begriffe, klärende Fragen, Aufbau, Begründung oder vorsichtige Einschränkung.</p>
       </article>
       <article>
         <span>3</span>
-        <strong>Ihr schreibt gemeinsam</strong>
-        <p>Verbindet beide Karten zu einer Antwort. Danach überarbeitet ihr: ${escapeHtml(c.revisionPrompt)}</p>
+        <strong>Ihr formuliert eine belastbare Antwort</strong>
+        <p>Verbindet beide Karten zu einem Textprodukt. Danach überarbeitet ihr gezielt: ${escapeHtml(c.revisionPrompt)}</p>
       </article>
     </div>
   `;

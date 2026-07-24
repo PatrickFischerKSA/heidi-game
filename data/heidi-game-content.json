@@ -69,7 +69,7 @@
           "so macht man es"
         ]
       },
-      "teamTask": "Schreibt eine Szene mit vier Sätzen: Heidi benennt zwei Gegenstände, bittet um Erlaubnis und versteht aus einem Handgriff des Großvaters, wo ihr Platz ist.",
+      "teamTask": "Verfasst eine knappe Ankunftsszene in vier Sätzen. Zeigt an zwei konkreten Gegenständen, wie die Hütte funktioniert; lasst Heidi eine höfliche Frage stellen; beendet die Szene mit einem stummen Handgriff des Großvaters, aus dem Heidi ihre neue Ordnung erkennt.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -78,7 +78,7 @@
         "prompt": "Sprich Heidis vorsichtige Bitte in der Hütte ins Handy. Sie soll einen konkreten Gegenstand nennen.",
         "minWords": 8
       },
-      "hint": "Die Szene wird stärker, wenn nicht erklärt wird, dass die Hütte einfach ist. Lasst die Gegenstände und Handgriffe sprechen.",
+      "hint": "Erklärt nicht allgemein, dass die Hütte einfach ist. Die soziale Ordnung der Hütte soll aus Dingen, Raum und Handgriffen lesbar werden.",
       "revisionPrompt": "Ersetzt allgemeine Wörter wie 'Ding' oder 'machen' durch konkrete Gegenstände und Handgriffe.",
       "example": "Heidi bleibt bei der Bank stehen und fragt: 'Darf ich die Decke hier zum Heu legen, Großvater?' Er nickt nur und schiebt ihr die Schüssel näher.",
       "reflection": "Welche konkreten Wörter machen die Hütte sofort sichtbar?"
@@ -118,7 +118,7 @@
           "ein Geruch"
         ]
       },
-      "teamTask": "Schreibt einen Absatz von fünf Sätzen über Heidis erstes Einschlafen im Heu. Verwendet mindestens einen Geruch, ein Geräusch und eine Körperempfindung.",
+      "teamTask": "Schreibt einen dichten Beschreibungsabsatz von fünf Sätzen. Heidis erstes Einschlafen im Heu soll über Wahrnehmung entstehen: mindestens ein Geruch, ein Geräusch, eine Körperempfindung und ein leiser Übergang von Unruhe zu Ruhe.",
       "voiceQuest": {
         "required": false,
         "roles": [
@@ -171,7 +171,7 @@
           "bleibt zurück"
         ]
       },
-      "teamTask": "Erfindet für drei Geissen je einen Namen und eine konkrete Eigenheit. Schreibt daraus einen Dialog zwischen Heidi und Peter.",
+      "teamTask": "Entwickelt drei unterscheidbare Geissen. Gebt jeder einen Namen und ein beobachtbares Verhalten; schreibt anschließend einen kurzen Dialog, in dem Peter Heidi zeigt, dass Kennen hier genaueres Beobachten bedeutet.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -225,7 +225,7 @@
           "flüstern"
         ]
       },
-      "teamTask": "Schreibt eine kurze Szene mit drei Sätzen: Heidi spricht eine Geiss an, Peter reagiert praktisch, und Heidi lernt ein genaueres Wort für das, was die Geiss tut.",
+      "teamTask": "Schreibt eine dreiteilige Mini-Szene: Heidi versucht, eine Geiss anzusprechen; Peter korrigiert nicht belehrend, sondern praktisch; Heidi übernimmt ein präziseres Verb für die Bewegung oder das Fressen der Geiss.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -298,7 +298,7 @@
           "gilt nicht immer"
         ]
       },
-      "teamTask": "Erfindet eine eigene Bauernregel aus einer sichtbaren Beobachtung auf der Alp. Schreibt zuerst die Beobachtung, dann euren Spruch und danach eine vorsichtige Erklärung: Was könnte daran stimmen, und warum gilt es nicht immer?",
+      "teamTask": "Entwickelt eine eigene Bauernregel aus einer überprüfbaren Alpbeobachtung. Eure Antwort besteht aus drei klar getrennten Teilen: Beobachtung, knapper Spruch, vorsichtige Deutung. Erklärt, was an der Regel plausibel sein könnte und warum sie keine sichere Vorhersage ist.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -349,7 +349,7 @@
           "Zeigst du es mir?"
         ]
       },
-      "teamTask": "Formuliert zwei Fragen, mit denen Heidi aus einer Bauernregel ein Gespräch mit dem Großvater macht. Eine Frage soll die Bedeutung klären, eine Frage soll nach einem sichtbaren Beispiel fragen.",
+      "teamTask": "Formuliert zwei Gesprächsfragen für Heidi. Die erste klärt die Bedeutung einer Bauernregel, die zweite verlangt ein sichtbares Beispiel auf der Alp. Achtet darauf, dass Heidi neugierig prüft, ohne den Großvater zu belehren.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -398,7 +398,7 @@
           "am Schluss"
         ]
       },
-      "teamTask": "Schreibt eine Anleitung für einen kleinen Handgriff in der Hütte. Sie muss so konkret sein, dass Heidi ihn nachmachen könnte.",
+      "teamTask": "Schreibt eine präzise Handlungsanweisung für einen kleinen Arbeitsvorgang in der Hütte. Die Reihenfolge, die Gegenstände und die Verben müssen so genau sein, dass Heidi den Vorgang ohne zusätzliche Erklärung nachmachen könnte.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -445,7 +445,7 @@
           "nasses Gras"
         ]
       },
-      "teamTask": "Schreibt eine Notfall-Abfolge in fünf kurzen Sätzen: Beobachtung, Warnung, Entscheidung, Handgriff, Rückweg.",
+      "teamTask": "Formuliert eine Notfallsequenz in fünf kurzen Sätzen. Jeder Satz übernimmt eine andere Funktion: Wetterbeobachtung, Warnung, Entscheidung, konkrete Handlung an der Herde, geordneter Rückweg.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -499,7 +499,7 @@
           "nicht nachmachen"
         ]
       },
-      "teamTask": "Schreibt eine kurze Hörnotiz: Was hört ihr? Was könnte der Alpsegen leisten? Welche Wörter zeigen Respekt vor dieser Tradition?",
+      "teamTask": "Verfasst eine Hörnotiz zum Alpsegen. Trennt genau zwischen Klangbeobachtung, möglicher Funktion und respektvoller Einordnung der Tradition. Vermeidet Spott, Kitsch und vorschnelle religiöse Deutung.",
       "voiceQuest": {
         "required": false,
         "roles": [
@@ -548,7 +548,7 @@
           "weiterreden"
         ]
       },
-      "teamTask": "Schreibt eine Zuhörszene: Die Großmutter spricht höchstens zwei kurze Sätze, und trotzdem verändert sich Heidis Erzählen.",
+      "teamTask": "Schreibt eine Szene, in der Zuhören Handlung wird. Die Großmutter darf höchstens zwei kurze Sätze sprechen; zeigt stattdessen über Pause, Blick, Körperhaltung oder Rückfrage, wie sich Heidis Erzählen verändert.",
       "voiceQuest": {
         "required": false,
         "roles": [
@@ -611,7 +611,7 @@
           "Ermutigung"
         ]
       },
-      "teamTask": "Entwerft einen Lernweg für Peter mit drei Schritten. Verbindet Großmutters ruhiges Zuhören mit Peters Welt auf der Alp und erklärt, warum Drohung oder Beschämung hier problematisch wären.",
+      "teamTask": "Entwerft einen dreistufigen Lernweg für Peter. Jeder Schritt braucht Material, Handlung und sprachliches Ziel. Verbindet Großmutters ruhiges Zuhören mit Peters Alpalltag und erklärt, warum Drohung oder Beschämung Lernen hier blockieren würden.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -662,7 +662,7 @@
           "loben"
         ]
       },
-      "teamTask": "Entwerft eine konkrete Schulaufgabe für Peter mit Material, Satz und Rückmeldung. Sie muss in der Dorfschule spielbar sein.",
+      "teamTask": "Entwerft eine konkrete Leseaufgabe für Peter, die in der Dorfschule spielbar wäre. Nennt das Material auf dem Tisch, den genauen Lesesatz, die erwartete Handlung und eine Rückmeldung, die korrigiert, ohne zu beschämen.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -722,7 +722,7 @@
           "Ordnung"
         ]
       },
-      "teamTask": "Schreibt einen Ankunftsabsatz: drei konkrete Stadtbeobachtungen und zwei vorsichtige Vergleiche mit der Alp.",
+      "teamTask": "Schreibt einen Ankunftsabsatz aus Heidis Wahrnehmung. Verwendet drei konkrete Stadtbeobachtungen und zwei vorsichtige Vergleiche mit der Alp; vermeidet ein pauschales Urteil über Frankfurt.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -786,7 +786,7 @@
           "Korrektur"
         ]
       },
-      "teamTask": "Erklärt in drei Sätzen: Was wird wörtlich gesagt? Was wird durch Tonfall und Situation gemeint? Wie könnte man Heidi fairer helfen, ohne sie zu beschämen?",
+      "teamTask": "Analysiert eine Frankfurter Regelrede in drei Sätzen. Trennt wörtliche Aussage, Wirkung von Tonfall und Situation sowie eine faire Alternative, die Heidi informiert, ohne sie zu beschämen.",
       "voiceQuest": {
         "required": false,
         "roles": [
@@ -827,7 +827,7 @@
           "Freundschaft"
         ]
       },
-      "teamTask": "Schreibt einen Dialog von sechs Zeilen, in dem Heidi und Clara je eine Frage stellen und je etwas aus ihrer eigenen Welt anbieten.",
+      "teamTask": "Schreibt einen Dialog von sechs Zeilen, in dem Heidi und Clara nicht bloß freundlich sind, sondern vorsichtig Nähe herstellen. Beide Figuren stellen je eine ernst gemeinte Frage und bieten je etwas aus ihrer eigenen Lebenswelt an.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -869,7 +869,7 @@
           "nächstes Mal"
         ]
       },
-      "teamTask": "Schreibt dieselbe Tischregel in drei Fassungen: verletzend, neutral und hilfreich. Entscheidet, welche Fassung Heidi wirklich weiterbringt.",
+      "teamTask": "Formuliert dieselbe Tischregel in drei Fassungen: verletzend, neutral und hilfreich. Begründet anschließend in einem Satz, welche Fassung Heidi tatsächlich beim Lernen unterstützt und warum.",
       "voiceQuest": {
         "required": false,
         "roles": [
@@ -911,7 +911,7 @@
           "Peters Ruf"
         ]
       },
-      "teamTask": "Schreibt eine Heimweh-Szene ohne das Wort 'Heimweh' zu verwenden. Mindestens ein Körperzeichen und ein Erinnerungsbild müssen vorkommen.",
+      "teamTask": "Schreibt eine Heimweh-Szene, ohne das Wort 'Heimweh' zu verwenden. Zeigt den inneren Zustand indirekt über ein Körperzeichen, ein wiederkehrendes Erinnerungsbild und einen konkreten Gegensatz zwischen Zimmer und Alp.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -970,7 +970,7 @@
           "historischer Bruch"
         ]
       },
-      "teamTask": "Schreibt eine Erklärung für Mitschülerinnen und Mitschüler: Warum existiert Spyris Frankfurt heute so nicht mehr? Verwendet beide Filme, aber formuliert respektvoll.",
+      "teamTask": "Schreibt eine historische Einordnung für Mitschülerinnen und Mitschüler. Erklärt, warum Spyris Frankfurt heute so nicht mehr existiert: rekonstruiertes Stadtbild um 1890, Zerstörung 1944, heutiger Abstand. Verwendet beide Filme, ohne die Bilder sensationshaft gleichzusetzen.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -1020,7 +1020,7 @@
           "du bist da"
         ]
       },
-      "teamTask": "Schreibt die ersten fünf Sätze der Rückkehr. Mindestens ein Satz zeigt, dass Heidi den Ort kennt, und einer zeigt, dass sie verändert zurückkommt.",
+      "teamTask": "Schreibt die ersten fünf Sätze von Heidis Rückkehr auf die Alp. Ein Satz muss Wiedererkennen zeigen, ein Satz die Nachwirkung Frankfurts, ein Satz eine veränderte Beziehung zu Sprache oder Schweigen.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -1069,7 +1069,7 @@
           "nicht drängen"
         ]
       },
-      "teamTask": "Schreibt eine Szene aus zwei Perspektiven: erst Claras Wahrnehmung, dann Heidis behutsame Begleitung.",
+      "teamTask": "Schreibt eine Szene mit Perspektivwechsel. Beginnt mit Claras körperlicher Wahrnehmung der Alp und wechselt dann zu Heidis Begleitung. Heidis Hilfe soll als Angebot formuliert sein, nicht als Bestimmung über Clara.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -1111,7 +1111,7 @@
           "verstehen"
         ]
       },
-      "teamTask": "Schreibt eine Szene, in der Peter eifersüchtig ist. Danach formuliert ihr zwei Sätze: einer versteht sein Gefühl, einer benennt eine Grenze.",
+      "teamTask": "Schreibt eine kurze Szene, in der Peters Eifersucht sichtbar wird, ohne ihn sofort zu verurteilen oder zu entschuldigen. Ergänzt danach zwei Auswertungssätze: einer rekonstruiert sein Gefühl, einer benennt die Grenze seines Handelns.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -1165,7 +1165,7 @@
           "zurückrufen"
         ]
       },
-      "teamTask": "Schreibt einen Suchplan in vier Schritten und einen kurzen Ruf, mit dem Heidi die Geiss lockt.",
+      "teamTask": "Schreibt einen Suchplan in vier geordneten Schritten. Jeder Schritt braucht eine genaue Ortsangabe; ergänzt außerdem einen kurzen Lockruf, der zu Heidi und zur vermissten Geiss passt.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -1205,7 +1205,7 @@
           "Heute verstehe ich"
         ]
       },
-      "teamTask": "Schreibt gemeinsam den Anfang einer möglichen Fortsetzung aus Heidis späterer Sicht. Verwendet eine Bauernregel oder eine konkrete Erinnerung, aber macht klar, dass es eure Weitererzählung ist.",
+      "teamTask": "Schreibt den Anfang einer möglichen Fortsetzung aus Heidis späterer Sicht. Markiert ausdrücklich, dass es eure literarische Weitererzählung ist, und verankert sie in einer Bauernregel oder einer konkreten Erinnerung aus der Alpzeit.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -1247,7 +1247,7 @@
           "Beleg"
         ]
       },
-      "teamTask": "Schreibt euren Schlusskreis-Beitrag: eine Szene, ein genaueres Wort, eine gute Frage und ein Satz darüber, was Heidi dadurch gelernt haben könnte.",
+      "teamTask": "Verfasst euren Schlusskreis-Beitrag als kurze Auswertung. Wählt eine Schlüsselszene, ein präziser gewordenes Wort und eine gute Frage; erklärt anschließend, was Heidi dadurch über Sprache, Regeln oder Zugehörigkeit gelernt haben könnte.",
       "voiceQuest": {
         "required": true,
         "roles": [
