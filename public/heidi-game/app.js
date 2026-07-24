@@ -270,7 +270,7 @@ const FEEDBACK_PROFILES = {
 
 const STORY = {
   name: "Fräulein Rottenmeier",
-  premise: "Auf der Alp treffen Heidis Staunen, Schwänlis Meckern, Schneckes Eigensinn und Fräulein Rottenmeiers Regelstimme aufeinander. Die Spielenden helfen, aus Beobachtung, Tadel, Fragen und Heimweh eine Sprache zu machen, die trägt.",
+  premise: "Auf der Alp treffen Heidis Staunen, Schwänlis Meckern, Schneckes Eigensinn und Fräulein Rottenmeiers strenger Befehlston aufeinander. Die Spielenden helfen, aus Beobachtung, Tadel, Fragen und Heimweh eine Sprache zu machen, die trägt.",
   journey: [
     {
       title: "1. Ihr erreicht die Alp",
@@ -337,7 +337,7 @@ const STORY = {
     {
       object: "rule",
       title: "Sie frisst die Hausregel",
-      text: "Rottenmeiers Regelstimme schnappt nach der wichtigsten Regel im Raum und macht daraus sofort ein Verbot.",
+      text: "Fräulein Rottenmeier schnappt nach der wichtigsten Regel im Raum und macht daraus sofort ein Verbot.",
       task: "Analysiert die Regel in einem Satz: Welche Information ist hilfreich, welcher Anteil ist bloßer Einschüchterungston? Formuliert daraus eine brauchbare Fassung.",
       example: "Nützlich ist, dass Heidi weiß, was am Tisch gilt; unnötig ist der scharfe Befehlston."
     },
@@ -386,7 +386,7 @@ const STORY = {
     {
       object: "stool",
       title: "Melkzeit mit Widerstand",
-      text: "Schwänli steht bereit, aber Rottenmeiers Regelstimme erklärt den Melkschemel für unzulässig.",
+      text: "Schwänli steht bereit, aber Fräulein Rottenmeier erklärt den Melkschemel für unzulässig.",
       task: "Formuliert eine genaue Melk-Anweisung in drei Schritten: vorsichtig annähern, das Tier beruhigen, den Arbeitsvorgang sauber beginnen.",
       example: "Zuerst stellt Heidi den Schemel leise hin, dann streicht sie Schwänli über den Hals, danach beginnt sie langsam zu melken."
     },
@@ -423,7 +423,7 @@ const STORY = {
     "ziegen-ansprechen": [{
       object: "bell",
       title: "Die Geiss hört nicht auf 'Sie da!'",
-      text: "Rottenmeiers Stimme ruft steif in die Wiese. Schwänli hebt nur kurz den Kopf, Schnecke zupft weiter am Kraut.",
+      text: "Fräulein Rottenmeier ruft steif in die Wiese. Schwänli hebt nur kurz den Kopf, Schnecke zupft weiter am Kraut.",
       task: "Verfasst eine dreiteilige Mini-Szene: Heidis Ansprache, Peters praktische Präzisierung, Heidis Übernahme eines genaueren Verbs.",
       example: "Heidi sagt: 'Schwänli, komm nur ein Stück näher.' Peter sagt: 'Sie zupft am Kraut, die läuft gleich weiter.' Heidi merkt sich: zupfen ist genauer als fressen."
     }],
@@ -437,7 +437,7 @@ const STORY = {
     "frankfurter-stimmen": [{
       object: "hat",
       title: "Die Geiss meckert wie eine Hausordnung",
-      text: "In Frankfurt klingt jede Hilfe plötzlich nach Befehl. Rottenmeiers Regelstimme macht daraus: 'Sofort ordentlich sein!'",
+      text: "In Frankfurt klingt jede Hilfe plötzlich nach Befehl. Fräulein Rottenmeier macht daraus: 'Sofort ordentlich sein!'",
       task: "Analysiert die Regelrede in drei Sätzen: wörtliche Aussage, Wirkung des Tonfalls, faire hilfreiche Alternative.",
       example: "Wörtlich wird eine Tischregel genannt. Der scharfe Ton beschämt Heidi. Fair wäre: 'Leg die Serviette hierher; ich zeige dir, wann du sie nimmst.'"
     }],
@@ -499,7 +499,7 @@ const STORY = {
     }],
     "ankunft-frankfurt": [{
       object: "hat",
-      title: "Rottenmeiers Stimme steht in der Tür",
+      title: "Fräulein Rottenmeier steht in der Tür",
       text: "Treppen, Türen, Stimmen, enge Blicke: Heidi kommt nicht in eine Alp, sondern in ein Haus voller Regeln.",
       task: "Schreibt einen Ankunftsabsatz aus Heidis Wahrnehmung: drei konkrete Stadtbeobachtungen, zwei vorsichtige Vergleiche zur Alp, kein pauschales Stadturteil.",
       example: "Die Häuser standen dicht, und der Himmel war nur ein Streifen. Auf der Alp konnte der Blick weit laufen. Hier führte jede Tür zur nächsten Regel."
@@ -583,30 +583,30 @@ const STORY = {
     }]
   },
   beats: {
-    "alp-spricht": ["Rottenmeiers Regelstimme hält Bauernregeln für Amtsbefehle: Wenn Abendrot ist, müsse das Wetter gehorchen.", "Entwickelt eine Bauernregel, die aus Beobachtung entsteht, sprechbar klingt und ihre eigene Unsicherheit mitdenkt."],
-    "ziegen-ansprechen": ["Rottenmeiers Stimme ruft jede Geiss mit 'Sie da!' und wundert sich, dass niemand folgt.", "Zeigt, wie Heidi eine Geiss anspricht, ohne ihr menschliche Gedanken zu unterschieben: Stimme, Verhalten, genaues Verb."],
-    "almoehi-sprechen": ["Rottenmeiers Regelstimme will den Almöhi verhören: Name, Zweck, Wetterzuständigkeit.", "Heidi braucht Fragen, die Bedeutung und Beobachtung klären, ohne das Gespräch in ein Verhör zu verwandeln."],
+    "alp-spricht": ["Fräulein Rottenmeier missversteht Bauernregeln als Amtsbefehle: Wenn Abendrot ist, müsse das Wetter gehorchen.", "Entwickelt eine Bauernregel, die aus Beobachtung entsteht, sprechbar klingt und ihre eigene Unsicherheit mitdenkt."],
+    "ziegen-ansprechen": ["Fräulein Rottenmeier ruft jede Geiss mit 'Sie da!' und wundert sich, dass niemand folgt.", "Zeigt, wie Heidi eine Geiss anspricht, ohne ihr menschliche Gedanken zu unterschieben: Stimme, Verhalten, genaues Verb."],
+    "almoehi-sprechen": ["Fräulein Rottenmeier würde den Almöhi verhören: Name, Zweck, Wetterzuständigkeit.", "Heidi braucht Fragen, die Bedeutung und Beobachtung klären, ohne das Gespräch in ein Verhör zu verwandeln."],
     "frankfurter-stimmen": ["In Frankfurt merkt Heidi: Auch Menschen können mit Regeln verletzen. Manche Sätze helfen, manche machen klein.", "Trennt Hausregel, Tonfall und faire Hilfe, damit Heidi nicht nur gehorcht, sondern versteht."],
-    "peter-lernt-anders": ["Rottenmeiers Regelstimme will Peter an den Tisch nageln, bis die Buchstaben ordentlich stehen.", "Entwerft einen Lernweg, der von Peters Alltag ausgeht und erklärt, warum Beschämung literarisch und pädagogisch nicht trägt."],
+    "peter-lernt-anders": ["Fräulein Rottenmeier will Peter an den Tisch setzen, bis die Buchstaben ordentlich stehen.", "Entwerft einen Lernweg, der von Peters Alltag ausgeht und erklärt, warum Beschämung literarisch und pädagogisch nicht trägt."],
     "heidi-erzaehlt-weiter": ["Die Geiss behauptet, alles müsse exakt im Buch stehen, sonst sei es verboten.", "Markiert eure Weitererzählung als Interpretation und verankert sie in einer konkreten Erinnerung."],
-    "huette-einrichten": ["Rottenmeiers Regelstimme sucht in der Hütte nach Klingel, Teppichordnung und Besuchsformular.", "Zeigt über Dinge und Handgriffe, wie Heidi die Ordnung der Hütte erschließt."],
-    "bett-im-heu": ["Rottenmeiers Stimme erklärt Heu zum unzulässigen Bettmaterial.", "Macht Heidis Erfahrung im Heu über Sinneseindrücke nachvollziehbar, ohne sie sentimental zu überhöhen."],
-    "peter-stellt-ziegen-vor": ["Rottenmeiers Regelstimme will Nummern statt Namen: Geiss 1, Geiss 2, Geiss 3.", "Macht aus der Herde unterscheidbare Tiere, indem ihr Namen mit beobachtbarem Verhalten verbindet."],
-    "gewitter-kommt": ["Rottenmeiers Regelstimme verlangt einen schriftlichen Donner-Antrag, während die Wolken schon tief hängen.", "Formuliert aus Beobachtung eine kurze, handlungsfähige Notfallsequenz."],
-    "alpsegen-hoeren": ["Rottenmeiers Stimme hört den Alpsegen und fragt, ob das eine Hausordnung mit Melodie sei.", "Beschreibt Klang, mögliche Funktion und kulturellen Respekt, ohne den Alpsegen zu verspotten oder zu verklären."],
-    "grossvater-arbeitet": ["Rottenmeiers Regelstimme kommentiert jeden Handgriff, bis kein Holz mehr gespalten wird.", "Beschreibt Arbeit so genau, dass Schweigen und Können verständlich werden."],
+    "huette-einrichten": ["Fräulein Rottenmeier sucht in der Hütte nach Klingel, Teppichordnung und Besuchsformular.", "Zeigt über Dinge und Handgriffe, wie Heidi die Ordnung der Hütte erschließt."],
+    "bett-im-heu": ["Fräulein Rottenmeier erklärt Heu zum unzulässigen Bettmaterial.", "Macht Heidis Erfahrung im Heu über Sinneseindrücke nachvollziehbar, ohne sie sentimental zu überhöhen."],
+    "peter-stellt-ziegen-vor": ["Fräulein Rottenmeier will Nummern statt Namen: Geiss 1, Geiss 2, Geiss 3.", "Macht aus der Herde unterscheidbare Tiere, indem ihr Namen mit beobachtbarem Verhalten verbindet."],
+    "gewitter-kommt": ["Fräulein Rottenmeier verlangt einen schriftlichen Donner-Antrag, während die Wolken schon tief hängen.", "Formuliert aus Beobachtung eine kurze, handlungsfähige Notfallsequenz."],
+    "alpsegen-hoeren": ["Fräulein Rottenmeier hört den Alpsegen und fragt, ob das eine Hausordnung mit Melodie sei.", "Beschreibt Klang, mögliche Funktion und kulturellen Respekt, ohne den Alpsegen zu verspotten oder zu verklären."],
+    "grossvater-arbeitet": ["Fräulein Rottenmeier kommentiert jeden Handgriff, bis kein Holz mehr gespalten wird.", "Beschreibt Arbeit so genau, dass Schweigen und Können verständlich werden."],
     "ankunft-frankfurt": ["Frankfurt tut so, als sei alles selbstverständlich: Türen, Treppen, Stimmen, Regeln.", "Zeigt Heidis Überforderung über konkrete Stadtwahrnehmung, nicht über ein pauschales Urteil."],
-    "clara-kennenlernen": ["Rottenmeiers Regelstimme will Freundschaft nach Sitzordnung vergeben.", "Lasst Clara und Heidi über ernst gemeinte Fragen und gegenseitige Angebote Kontakt aufnehmen."],
-    "rottenmeier-tisch": ["Am Tisch fühlt sich Rottenmeiers Regelstimme plötzlich mächtig: Serviette, Haltung, Schweigen!", "Verwandelt eine steife Tischregel in einen Satz, der Heidi wirklich helfen könnte."],
-    "sehnsucht-alp": ["Rottenmeiers Regelstimme findet Heimweh unordentlich: Gefühle sollen bitte im Schrank bleiben.", "Zeigt Heidis Sehnsucht indirekt über Körper, Erinnerung und den Gegensatz zwischen Zimmer und Alp."],
+    "clara-kennenlernen": ["Fräulein Rottenmeier will Freundschaft nach Sitzordnung vergeben.", "Lasst Clara und Heidi über ernst gemeinte Fragen und gegenseitige Angebote Kontakt aufnehmen."],
+    "rottenmeier-tisch": ["Am Tisch wird Fräulein Rottenmeiers Befehlston besonders deutlich: Serviette, Haltung, Schweigen!", "Verwandelt eine steife Tischregel in einen Satz, der Heidi wirklich helfen könnte."],
+    "sehnsucht-alp": ["Fräulein Rottenmeier findet Heimweh unordentlich: Gefühle sollen bitte im Schrank bleiben.", "Zeigt Heidis Sehnsucht indirekt über Körper, Erinnerung und den Gegensatz zwischen Zimmer und Alp."],
     "frankfurt-verlorene-stadt": ["Heidi sucht Spyris Frankfurt und stößt auf Bilder einer Stadt, die so nicht mehr existiert.", "Erklärt den historischen Bruch, ohne die Heidi-Szene zu verlieren."],
-    "rueckkehr-alp": ["Rottenmeiers Regelstimme will die Rückkehr als Reisebericht abstempeln lassen.", "Zeigt Wiedererkennen, Veränderung und die Nachwirkung Frankfurts in wenigen präzisen Sätzen."],
+    "rueckkehr-alp": ["Fräulein Rottenmeier würde die Rückkehr am liebsten als Reisebericht abstempeln lassen.", "Zeigt Wiedererkennen, Veränderung und die Nachwirkung Frankfurts in wenigen präzisen Sätzen."],
     "grossmutter-hoert": ["Die Geiss spricht extra laut, weil sie Zuhören mit Lautstärke verwechselt.", "Macht sichtbar, wie Zuhören eine Erzählung verändert: Pause, Blick, Rückfrage, neue Wörter."],
-    "peter-eifersucht": ["Rottenmeiers Regelstimme würde Peters Eifersucht sofort bestrafen und abhaken.", "Trennt nachvollziehbares Gefühl und problematische Handlung, damit Verantwortung möglich wird."],
-    "dorfschule-peter": ["Rottenmeiers Regelstimme marschiert in die Dorfschule und will alle Buchstaben geradeziehen.", "Entwerft eine konkrete Leseaufgabe, die Erfolg ermöglicht, ohne Peter bloßzustellen."],
-    "clara-auf-der-alp": ["Rottenmeiers Stimme ruft: 'Alp ist kein Sanatorium!' und macht Claras ersten Schritt unnötig schwer.", "Beschreibt Claras Ankommen körperlich genau und formuliert Heidis Hilfe als Angebot."],
-    "ziegen-verloren": ["Eine Geiss fehlt, und Rottenmeiers Regelstimme möchte zuerst ein Verlustprotokoll.", "Verwandelt Sorge in einen geordneten Suchplan mit präzisen Ortsangaben und passendem Lockruf."],
-    "schlusskreis": ["Am Ende will Rottenmeiers Regelstimme wissen, ob jetzt endlich Ordnung herrscht.", "Wählt eine Schlüsselszene und erklärt, was sich daran im Umgang mit Sprache verändert hat."]
+    "peter-eifersucht": ["Fräulein Rottenmeier würde Peters Eifersucht sofort bestrafen und abhaken.", "Trennt nachvollziehbares Gefühl und problematische Handlung, damit Verantwortung möglich wird."],
+    "dorfschule-peter": ["Fräulein Rottenmeier marschiert in die Dorfschule und will alle Buchstaben geradeziehen.", "Entwerft eine konkrete Leseaufgabe, die Erfolg ermöglicht, ohne Peter bloßzustellen."],
+    "clara-auf-der-alp": ["Fräulein Rottenmeier ruft: 'Alp ist kein Sanatorium!' und macht Claras ersten Schritt unnötig schwer.", "Beschreibt Claras Ankommen körperlich genau und formuliert Heidis Hilfe als Angebot."],
+    "ziegen-verloren": ["Eine Geiss fehlt, und Fräulein Rottenmeier möchte zuerst ein Verlustprotokoll.", "Verwandelt Sorge in einen geordneten Suchplan mit präzisen Ortsangaben und passendem Lockruf."],
+    "schlusskreis": ["Am Ende will Fräulein Rottenmeier wissen, ob jetzt endlich Ordnung herrscht.", "Wählt eine Schlüsselszene und erklärt, was sich daran im Umgang mit Sprache verändert hat."]
   }
 };
 
@@ -1240,7 +1240,7 @@ function alpInventory() {
 
 function storyBeatText(c) {
   return STORY.beats[c.id] || [
-    "Rottenmeiers Regelstimme will aus der Szene sofort eine starre Vorschrift machen.",
+    "Fräulein Rottenmeier will aus der Szene sofort eine starre Vorschrift machen.",
     "Schwänli und Schnecke müssen zeigen, was man wirklich sieht, hört oder sagen kann."
   ];
 }
