@@ -10,14 +10,14 @@
   "assumptions": [
     "Der Prototyp sammelt keine Namen und speichert Raumdaten nur im laufenden Serverprozess.",
     "Heidis späteres Schreiben wird als offene Weitererzählung markiert, nicht als Aussage über Spyris Roman.",
-    "Freie Antworten werden nicht als sicher richtig oder falsch bewertet; Rückmeldungen regen Vergleich, Präzisierung und Überarbeitung an."
+    "Freie Antworten bekommen Rückmeldungen, die zeigen, was schon überzeugt und was noch genauer werden muss."
   ],
   "learningConcept": {
-    "short": "Fräulein Rottenmeier macht aus vielem sofort eine Vorschrift. Die Spielenden helfen Schwänli, Schnecke und Heidi, aus Meckern, Tadel und Unsicherheit wieder brauchbare Sprache zu machen.",
+    "short": "Fräulein Rottenmeier macht aus vielem sofort eine Vorschrift. Die Spielenden helfen Schwänli, Schnecke und Heidi, aus Meckern, Tadel und Unsicherheit verständliche Sätze zu machen.",
     "whyItWorks": [
-      "Die beiden Geissenperspektiven sind komplementär: Beobachtung und Wortmaterial müssen mündlich zusammengeführt werden.",
-      "Die erste Formulierung bleibt sichtbar und wird erst durch Hinweis, Kontext oder Partnerfeedback überarbeitet.",
-      "Das Lernjournal macht sichtbar, ob Sprache genauer, zusammenhängender und begründeter wird."
+      "Schwänli und Schnecke erhalten unterschiedliche Hinweise. Erst wenn beide laut austauschen, wird die Antwort vollständig.",
+      "Die erste Fassung bleibt sichtbar. Danach wird sie mit Hinweis, Szene und Partnerfeedback überarbeitet.",
+      "Das Lernjournal macht sichtbar, ob die Antworten genauer, zusammenhängender und besser begründet werden."
     ]
   },
   "teacherDefaults": {
@@ -43,7 +43,7 @@
         "type": "video",
         "src": "/heidi-game/assets/alpatmosphaere-loop.m4v",
         "label": "Alpatmosphäre",
-        "caption": "Die Hütte wird nicht erklärt, sondern über Arbeit, Gegenstände und kurze Sätze erschlossen.",
+        "caption": "Die Hütte zeigt sich über Arbeit, Gegenstände und kurze Sätze.",
         "hasAudio": false
       },
       "languageGoal": "Gegenstände, Handgriffe und höfliche Bitten genau benennen.",
@@ -69,7 +69,7 @@
           "so macht man es"
         ]
       },
-      "teamTask": "Verfasst eine knappe Ankunftsszene in vier Sätzen. Zeigt an zwei konkreten Gegenständen, wie die Hütte funktioniert; lasst Heidi eine höfliche Frage stellen; beendet die Szene mit einem stummen Handgriff des Großvaters, aus dem Heidi ihre neue Ordnung erkennt.",
+      "teamTask": "Schreibt eine knappe Ankunftsszene in vier Sätzen. Zwei Gegenstände müssen wichtig werden, Heidi stellt eine höfliche Frage, und am Ende zeigt der Großvater mit einem Handgriff, wo ihr Platz ist.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -78,7 +78,7 @@
         "prompt": "Sprich Heidis vorsichtige Bitte in der Hütte ins Handy. Sie soll einen konkreten Gegenstand nennen.",
         "minWords": 8
       },
-      "hint": "Erklärt nicht allgemein, dass die Hütte einfach ist. Die soziale Ordnung der Hütte soll aus Dingen, Raum und Handgriffen lesbar werden.",
+      "hint": "Erklärt nicht allgemein, dass die Hütte einfach ist. Zeigt an Dingen, Raum und Handgriffen, wie man dort lebt.",
       "revisionPrompt": "Ersetzt allgemeine Wörter wie 'Ding' oder 'machen' durch konkrete Gegenstände und Handgriffe.",
       "example": "Heidi bleibt bei der Bank stehen und fragt: 'Darf ich die Decke hier zum Heu legen, Großvater?' Er nickt nur und schiebt ihr die Schüssel näher.",
       "reflection": "Welche konkreten Wörter machen die Hütte sofort sichtbar?"
@@ -140,7 +140,7 @@
         "type": "video",
         "src": "/heidi-game/assets/ziegen-loop.m4v",
         "label": "Geissen auf der Alp",
-        "caption": "Die Geissen werden über Namen, Eigenheiten und Peters praktische Sprache unterscheidbar.",
+        "caption": "Die Geissen werden über Namen, Eigenheiten und Peters praktische Wörter unterscheidbar.",
         "hasAudio": false,
         "audio": {
           "src": "/heidi-game/assets/ziegen-meckern.mp3",
@@ -214,7 +214,7 @@
         ]
       },
       "roleB": {
-        "name": "Wortmaterial",
+        "name": "Passende Wörter",
         "prompt": "Du sammelst passende Wörter für Bewegung und Stimme: meckern, zupfen, springen, trotten, locken, beruhigen, rufen, flüstern.",
         "tokens": [
           "meckern",
@@ -225,7 +225,7 @@
           "flüstern"
         ]
       },
-      "teamTask": "Schreibt eine dreiteilige Mini-Szene: Heidi versucht, eine Geiss anzusprechen; Peter korrigiert nicht belehrend, sondern praktisch; Heidi übernimmt ein präziseres Verb für die Bewegung oder das Fressen der Geiss.",
+      "teamTask": "Schreibt eine kurze Szene in drei Teilen: Heidi versucht, eine Geiss anzusprechen; Peter korrigiert nicht belehrend, sondern praktisch; Heidi übernimmt ein präziseres Verb für die Bewegung oder das Fressen der Geiss.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -276,7 +276,7 @@
           "hasAudio": false
         }
       ],
-      "languageGoal": "Bauernregeln als verdichtete Alltagssprache verstehen, mit Beobachtungen verbinden und selbst eine vorsichtige Regel erfinden.",
+      "languageGoal": "Bauernregeln als kurze Erfahrungssätze verstehen, mit Beobachtungen verbinden und selbst eine vorsichtige Regel erfinden.",
       "laptopFrame": "Auf der Alp werden Wetter, Tiere und Arbeit oft in kurzen Sprüchen erklärt. Heidi hört solche Bauernregeln und merkt: Sie klingen einfach, aber man muss fragen, was sie bedeuten. Danach versucht sie, aus einer eigenen Beobachtung selbst eine kleine Bauernregel zu machen.",
       "roleA": {
         "name": "Heidi beobachtet",
@@ -298,7 +298,7 @@
           "gilt nicht immer"
         ]
       },
-      "teamTask": "Entwickelt eine eigene Bauernregel aus einer überprüfbaren Alpbeobachtung. Eure Antwort besteht aus drei klar getrennten Teilen: Beobachtung, knapper Spruch, vorsichtige Deutung. Erklärt, was an der Regel plausibel sein könnte und warum sie keine sichere Vorhersage ist.",
+      "teamTask": "Entwickelt eine eigene Bauernregel aus einer überprüfbaren Alpbeobachtung. Eure Antwort besteht aus drei klar getrennten Teilen: Beobachtung, knapper Spruch, vorsichtige Erklärung. Erklärt, was an der Regel plausibel sein könnte und warum sie keine sichere Vorhersage ist.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -327,7 +327,7 @@
           "label": "Alpsegen anhören"
         }
       },
-      "languageGoal": "Präzise und offene Fragen zu Erfahrungssprache formulieren.",
+      "languageGoal": "Genaue und offene Fragen zu Bauernregeln stellen.",
       "laptopFrame": "Der Almöhi spricht wenig. Wenn er eine Bauernregel sagt, muss Heidi lernen, so nachzufragen, dass aus einem kurzen Spruch ein Gespräch wird.",
       "roleA": {
         "name": "Großvaters Spruch",
@@ -349,7 +349,7 @@
           "Zeigst du es mir?"
         ]
       },
-      "teamTask": "Formuliert zwei Gesprächsfragen für Heidi. Die erste klärt die Bedeutung einer Bauernregel, die zweite verlangt ein sichtbares Beispiel auf der Alp. Achtet darauf, dass Heidi neugierig prüft, ohne den Großvater zu belehren.",
+      "teamTask": "Schreibt zwei Fragen, die Heidi dem Großvater stellen könnte. Die erste fragt nach der Bedeutung einer Bauernregel, die zweite nach einem sichtbaren Beispiel auf der Alp. Heidi soll neugierig sein, nicht belehrend.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -374,7 +374,7 @@
         "caption": "Die Aufgabe macht aus stiller Arbeit eine Abfolge genauer Verben.",
         "hasAudio": false
       },
-      "languageGoal": "Arbeitsabläufe mit präzisen Verben erklären.",
+      "languageGoal": "Arbeitsabläufe mit genauen Verben erklären.",
       "laptopFrame": "Der Großvater erklärt wenig mit langen Sätzen. Heidi lernt, indem sie zusieht: nehmen, halten, schieben, gießen, tragen, warten.",
       "roleA": {
         "name": "Heidi schaut auf Hände",
@@ -398,7 +398,7 @@
           "am Schluss"
         ]
       },
-      "teamTask": "Schreibt eine präzise Handlungsanweisung für einen kleinen Arbeitsvorgang in der Hütte. Die Reihenfolge, die Gegenstände und die Verben müssen so genau sein, dass Heidi den Vorgang ohne zusätzliche Erklärung nachmachen könnte.",
+      "teamTask": "Schreibt eine genaue Anleitung für einen kleinen Arbeitsvorgang in der Hütte. Reihenfolge, Gegenstände und Verben müssen so klar sein, dass Heidi den Vorgang ohne weitere Erklärung nachmachen könnte.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -420,11 +420,11 @@
         "type": "video",
         "src": "/heidi-game/assets/gewitter-berge-loop.m4v",
         "label": "Gewitter in den Bergen",
-        "caption": "Das Gewitter ist keine Mutprobe, sondern eine Situation für genaue Warnsprache und besonnenes Handeln.",
+        "caption": "Das Gewitter ist keine Mutprobe. Jetzt müssen Warnung und Handlung zusammenpassen.",
         "hasAudio": true
       },
       "languageGoal": "Warnungen, Beobachtungen und Handlungsanweisungen klar unterscheiden.",
-      "laptopFrame": "Auf der Alp kann Wetter schnell ernst werden. Jetzt zählt, ob die Sprache hilft: Was sieht man? Was bedeutet Gefahr? Was muss man tun?",
+      "laptopFrame": "Auf der Alp kann Wetter schnell ernst werden. Jetzt zählt, ob die Sätze helfen: Was sieht man? Was bedeutet Gefahr? Was muss man tun?",
       "roleA": {
         "name": "Heidi merkt Veränderung",
         "prompt": "Heidi sieht dunklere Wolken, spürt Wind und merkt, dass die Tiere enger zusammenbleiben. Sie soll nicht dramatisieren, aber rechtzeitig sprechen.",
@@ -445,17 +445,17 @@
           "nasses Gras"
         ]
       },
-      "teamTask": "Formuliert eine Notfallsequenz in fünf kurzen Sätzen. Jeder Satz übernimmt eine andere Funktion: Wetterbeobachtung, Warnung, Entscheidung, konkrete Handlung an der Herde, geordneter Rückweg.",
+      "teamTask": "Schreibt fünf kurze Notfallsätze: Was sieht Heidi? Was ist gefährlich? Was wird entschieden? Was geschieht mit der Herde? Wie kommen alle zurück?",
       "voiceQuest": {
         "required": true,
         "roles": [
           "A",
           "B"
         ],
-        "prompt": "Sprecht nacheinander eine Warnung und eine klare Anweisung ins Handy. Keine Panik, aber deutlich.",
+        "prompt": "Sprecht nacheinander eine Warnung und einen klaren Auftrag ins Handy. Keine Panik, aber deutlich.",
         "minWords": 10
       },
-      "hint": "Eine Warnung sagt, warum Eile nötig ist. Eine Anweisung sagt, was jetzt konkret zu tun ist.",
+      "hint": "Eine Warnung sagt, warum Eile nötig ist. Ein Auftrag sagt, was jetzt konkret zu tun ist.",
       "revisionPrompt": "Markiert in euren fünf Sätzen: Beobachtung, Warnung, Entscheidung, Handgriff und Rückweg.",
       "example": "Die Wolken liegen tief über dem Grat. Peter sagt: 'Wir gehen zurück, bevor das Gras rutschig wird.' Heidi hält die hintere Geiss nahe am Weg.",
       "reflection": "Welche Wörter beruhigen, obwohl sie vor Gefahr warnen?"
@@ -475,7 +475,7 @@
           "label": "Alpsegen anhören"
         }
       },
-      "languageGoal": "Klang, Wiederholung und religiös-kulturelle Sprache respektvoll beschreiben.",
+      "languageGoal": "Klang, Wiederholung und religiöse Tradition respektvoll beschreiben.",
       "laptopFrame": "Der Alpsegen ist kein Rätsel und keine Zauberformel. Er ist ein gesprochener oder gesungener Schutzwunsch in einer bestimmten alpinen Tradition.",
       "roleA": {
         "name": "Hören",
@@ -499,7 +499,7 @@
           "nicht nachmachen"
         ]
       },
-      "teamTask": "Verfasst eine Hörnotiz zum Alpsegen. Trennt genau zwischen Klangbeobachtung, möglicher Funktion und respektvoller Einordnung der Tradition. Vermeidet Spott, Kitsch und vorschnelle religiöse Deutung.",
+      "teamTask": "Schreibt eine Hörnotiz zum Alpsegen. Beschreibt zuerst, was ihr hört. Erklärt dann, wozu der Alpsegen dienen könnte. Bleibt respektvoll: kein Spott, kein Kitsch, keine vorschnelle religiöse Erklärung.",
       "voiceQuest": {
         "required": false,
         "roles": [
@@ -611,7 +611,7 @@
           "Ermutigung"
         ]
       },
-      "teamTask": "Entwerft einen dreistufigen Lernweg für Peter. Jeder Schritt braucht Material, Handlung und sprachliches Ziel. Verbindet Großmutters ruhiges Zuhören mit Peters Alpalltag und erklärt, warum Drohung oder Beschämung Lernen hier blockieren würden.",
+      "teamTask": "Schreibt drei Lernschritte für Peter. Jeder Schritt braucht etwas Greifbares auf dem Tisch, eine klare Handlung und einen Satz, den Peter lesen oder sagen kann. Erklärt kurz, warum Drohung oder Bloßstellung hier nicht helfen.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -638,7 +638,7 @@
         "hasAudio": true
       },
       "languageGoal": "Eine Lernschwierigkeit konkret und ermutigend beschreiben.",
-      "laptopFrame": "Peter sitzt in der Schule nicht einfach als 'schlechter Schüler'. Er bringt eine andere Lebenswelt mit. Sprache kann ihn beschämen oder ihm einen Weg zeigen.",
+      "laptopFrame": "Peter sitzt in der Schule nicht einfach als 'schlechter Schüler'. Er bringt eine andere Lebenswelt mit. Worte können ihn beschämen oder ihm einen Weg zeigen.",
       "roleA": {
         "name": "Peter im Unterricht",
         "prompt": "Peter sieht Buchstaben, aber sie hängen noch nicht sicher mit Dingen aus seiner Welt zusammen.",
@@ -662,7 +662,7 @@
           "loben"
         ]
       },
-      "teamTask": "Entwerft eine konkrete Leseaufgabe für Peter, die in der Dorfschule spielbar wäre. Nennt das Material auf dem Tisch, den genauen Lesesatz, die erwartete Handlung und eine Rückmeldung, die korrigiert, ohne zu beschämen.",
+      "teamTask": "Schreibt eine konkrete Leseaufgabe für Peter, die in der Dorfschule spielbar wäre. Nennt, was auf dem Tisch liegt, welchen Satz Peter liest, was er danach tun soll und wie man ihn verbessert, ohne ihn bloßzustellen.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -699,7 +699,7 @@
       ],
       "historicalNote": "Die Frankfurt-Szenen arbeiten mit historischem Abstand: Spyris Stadtraum gehört ins 19. Jahrhundert und wurde durch spätere Geschichte tief verändert.",
       "languageGoal": "Ortswechsel durch konkrete Kontraste erzählen.",
-      "laptopFrame": "Heidi kommt aus der Weite in eine Stadt. Der Unterschied soll nicht abstrakt heißen 'Stadt ist schlecht', sondern konkret werden: Geräusche, Wege, Kleidung, Hausordnung, Blickachsen.",
+      "laptopFrame": "Heidi kommt aus der Weite in eine Stadt. Der Unterschied soll nicht abstrakt heißen 'Stadt ist schlecht', sondern konkret werden: Geräusche, Wege, Kleidung, Regeln im Haus, Blickachsen.",
       "roleA": {
         "name": "Heidi staunt",
         "prompt": "Du sammelst, was Heidi sofort auffallen könnte: enge Straßen, fremde Stimmen, hohe Häuser, Regeln an Türen und Treppen.",
@@ -708,7 +708,7 @@
           "hohe Häuser",
           "fremde Stimmen",
           "Treppen",
-          "Hausordnung"
+          "Regeln im Haus"
         ]
       },
       "roleB": {
@@ -738,14 +738,14 @@
     },
     {
       "id": "frankfurter-stimmen",
-      "title": "Frankfurt spricht in Regeln",
+      "title": "In Frankfurt gelten andere Regeln",
       "place": "Frankfurt",
       "mediaItems": [
         {
           "type": "video",
           "src": "/heidi-game/assets/frankfurt-1890-loop.m4v",
           "label": "Frankfurt um 1890 (rekonstruiert)",
-          "caption": "Eine angenäherte, KI-belebte Vorstellung der Stadtwelt, in der Heidi Regeln, Standeszeichen und städtische Sprache erlebt.",
+          "caption": "Eine angenäherte, KI-belebte Vorstellung der Stadtwelt: enge Wege, Standeszeichen, fremde Stimmen.",
           "hasAudio": true
         },
         {
@@ -758,13 +758,13 @@
         {
           "type": "video",
           "src": "/heidi-game/assets/frankfurt-dorfschule-loop.m4v",
-          "label": "Frankfurter Schul- und Regelraum",
-          "caption": "Dieses Material gehört zur Frankfurter Welt: Unterricht, Ordnung und gesellschaftliche Regeln prägen, wie Sprache dort wirkt.",
+          "label": "Frankfurter Schule und Regeln",
+          "caption": "Dieses Material gehört zur Frankfurter Welt: Unterricht, Ordnung und Rangunterschiede prägen, wie Menschen miteinander sprechen.",
           "hasAudio": true
         }
       ],
       "historicalNote": "Spyris Frankfurt ist kein heutiges Frankfurt. Die Stadt, ihre Straßenbilder, Innenräume und sozialen Zeichen gehören zu einer historischen Welt, die durch Modernisierung und besonders durch die Zerstörungen des Zweiten Weltkriegs tiefgreifend verändert wurde.",
-      "languageGoal": "Zwischen wörtlicher Aussage, Tonfall, sozialer Regel und Absicht unterscheiden.",
+      "languageGoal": "Unterscheiden, was gesagt wird, wie es klingt und was es mit Heidi macht.",
       "laptopFrame": "In Frankfurt gibt es viele Wörter, Regeln und Erwartungen, aber Heidi versteht nicht automatisch, was von ihr verlangt wird. Dieses Frankfurt ist außerdem ein historischer Stadtraum, der heute so nicht mehr existiert.",
       "roleA": {
         "name": "Wahrnehmen",
@@ -786,7 +786,7 @@
           "Korrektur"
         ]
       },
-      "teamTask": "Analysiert eine Frankfurter Regelrede in drei Sätzen. Trennt wörtliche Aussage, Wirkung von Tonfall und Situation sowie eine faire Alternative, die Heidi informiert, ohne sie zu beschämen.",
+      "teamTask": "Schreibt drei Sätze zu einer strengen Frankfurter Zurechtweisung: Was wird wörtlich gesagt? Wie wirkt der Ton auf Heidi? Wie könnte man es fair sagen, damit Heidi versteht, was gemeint ist?",
       "voiceQuest": {
         "required": false,
         "roles": [
@@ -795,7 +795,7 @@
         "prompt": "Sprich die Aussage einmal neutral und einmal scharf. Beschreibe danach kurz, wie der Ton die Bedeutung verändert.",
         "minWords": 8
       },
-      "hint": "Achtet darauf, ob die Aussage eine Information, eine Regel, eine Kritik oder eine Machtausübung ist.",
+      "hint": "Achtet darauf, ob der Satz wirklich hilft oder ob er Heidi vor allem klein macht.",
       "revisionPrompt": "Überarbeitet eure Erklärung so, dass zwischen Aussage, Absicht und fairer Hilfe unterschieden wird.",
       "example": "Wörtlich wird eine Regel genannt. Der scharfe Ton zeigt aber auch Tadel und Abstand. Fairer wäre: 'In diesem Haus bleiben die Schuhe hier; ich zeige es dir.'",
       "reflection": "Warum kann eine Stadt voller Wörter für Heidi trotzdem sprachlich fremd sein?"
@@ -846,8 +846,8 @@
       "id": "rottenmeier-tisch",
       "title": "Die Serviette wird Gesetz",
       "place": "Frankfurt",
-      "languageGoal": "Regelsprache, Tadel und hilfreiche Erklärung unterscheiden.",
-      "laptopFrame": "Am Tisch werden Regeln sichtbar. Entscheidend ist, ob Sprache nur beschämt oder ob sie erklärt, was jemand lernen kann.",
+      "languageGoal": "Regel, Tadel und hilfreiche Erklärung unterscheiden.",
+      "laptopFrame": "Am Tisch werden Regeln sichtbar. Entscheidend ist, ob Worte nur beschämen oder ob sie erklären, was jemand lernen kann.",
       "roleA": {
         "name": "Heidi versteht die Regel nicht",
         "prompt": "Heidi merkt zu spät, dass am Tisch andere Erwartungen gelten. Sie braucht Erklärung, nicht bloß Tadel.",
@@ -878,7 +878,7 @@
         "prompt": "Sprich die hilfreiche Fassung der Tischregel ins Handy. Sie soll klar sein, aber nicht beschämen.",
         "minWords": 10
       },
-      "hint": "Hilfreiche Sprache nennt die Regel und zeigt den nächsten Schritt.",
+      "hint": "Eine hilfreiche Formulierung nennt die Regel und zeigt den nächsten Schritt.",
       "revisionPrompt": "Macht die hilfreiche Fassung noch konkreter: Was genau soll Heidi tun?",
       "example": "Verletzend: 'Wie kann man nur so essen!' Neutral: 'Die Serviette bleibt auf dem Schoß.' Hilfreich: 'Leg die Serviette hierher; ich zeige dir, wann du sie nimmst.'",
       "reflection": "Warum ist eine klare Regel manchmal freundlicher als ein langer Tadel?"
@@ -891,12 +891,12 @@
       "laptopFrame": "Heidis Heimweh soll nicht allgemein behauptet werden. Es zeigt sich darin, was ihr Körper tut, welche Bilder wiederkommen und was in Frankfurt fehlt.",
       "roleA": {
         "name": "Körperzeichen",
-        "prompt": "Heidi merkt Heimweh an kleinen Dingen: sie isst wenig, schaut aus dem Fenster, hört innerlich die Alp, schläft unruhig.",
+        "prompt": "Heidi merkt Heimweh an kleinen Dingen: sie isst wenig, schaut aus dem Fenster, erinnert sich an Geräusche von der Alp und schläft unruhig.",
         "tokens": [
           "Fenster",
           "wenig essen",
           "unruhig schlafen",
-          "inneres Bild",
+          "Erinnerungsbild",
           "Atem"
         ]
       },
@@ -911,13 +911,13 @@
           "Peters Ruf"
         ]
       },
-      "teamTask": "Schreibt eine Heimweh-Szene, ohne das Wort 'Heimweh' zu verwenden. Zeigt den inneren Zustand indirekt über ein Körperzeichen, ein wiederkehrendes Erinnerungsbild und einen konkreten Gegensatz zwischen Zimmer und Alp.",
+      "teamTask": "Schreibt eine Heimweh-Szene, ohne das Wort 'Heimweh' zu verwenden. Zeigt Heidis Zustand indirekt über ein Körperzeichen, ein wiederkehrendes Erinnerungsbild und einen konkreten Gegensatz zwischen Zimmer und Alp.",
       "voiceQuest": {
         "required": true,
         "roles": [
           "A"
         ],
-        "prompt": "Sprich einen Satz aus Heidis innerer Stimme ins Handy, ohne das Wort Heimweh zu benutzen.",
+        "prompt": "Sprich einen Satz aus Heidis Gedanken ins Handy, ohne das Wort Heimweh zu benutzen.",
         "minWords": 10
       },
       "hint": "Das Verbot des Wortes 'Heimweh' zwingt euch, genauer zu zeigen, was passiert.",
@@ -1020,7 +1020,7 @@
           "du bist da"
         ]
       },
-      "teamTask": "Schreibt die ersten fünf Sätze von Heidis Rückkehr auf die Alp. Ein Satz muss Wiedererkennen zeigen, ein Satz die Nachwirkung Frankfurts, ein Satz eine veränderte Beziehung zu Sprache oder Schweigen.",
+      "teamTask": "Schreibt die ersten fünf Sätze von Heidis Rückkehr auf die Alp. Ein Satz muss Wiedererkennen zeigen, ein Satz die Nachwirkung Frankfurts, ein Satz einen veränderten Umgang mit Worten oder Schweigen.",
       "voiceQuest": {
         "required": true,
         "roles": [
@@ -1101,7 +1101,7 @@
         ]
       },
       "roleB": {
-        "name": "Faire Deutung",
+        "name": "Faire Erklärung",
         "prompt": "Du unterscheidest Gefühl, Handlung und Verantwortung. Ein Gefühl kann verständlich sein, eine verletzende Handlung trotzdem falsch.",
         "tokens": [
           "Gefühl",
@@ -1217,7 +1217,7 @@
       "hint": "Eine gute Weitererzählung macht kenntlich, dass sie interpretiert: 'Vielleicht', 'Ich stelle mir vor', 'Später könnte Heidi ...'.",
       "revisionPrompt": "Überarbeitet euren Anfang so, dass Wahrnehmung, Gefühl und Erkenntnis verbunden sind.",
       "example": "Vielleicht hätte Heidi später erzählt: Wenn der Himmel am Abend rot wurde, hörte ich wieder Großvaters Stimme. Er hatte gesagt, man solle solche Regeln kennen, aber auch die Augen offen behalten.",
-      "reflection": "Wie hat sich eure Sprache vom ersten Kapitel bis hier verändert: vom Beobachten über das Fragen bis zum Erzählen?"
+      "reflection": "Wie haben sich eure Antworten vom ersten Kapitel bis hier verändert: vom Beobachten über das Fragen bis zum Erzählen?"
     },
     {
       "id": "schlusskreis",
@@ -1247,7 +1247,7 @@
           "Beleg"
         ]
       },
-      "teamTask": "Verfasst euren Schlusskreis-Beitrag als kurze Auswertung. Wählt eine Schlüsselszene, ein präziser gewordenes Wort und eine gute Frage; erklärt anschließend, was Heidi dadurch über Sprache, Regeln oder Zugehörigkeit gelernt haben könnte.",
+      "teamTask": "Schreibt euren Schlussbeitrag. Wählt eine wichtige Szene, ein genauer gewordenes Wort und eine gute Frage. Erklärt anschließend, was Heidi dadurch über Wörter, Regeln oder ihren Platz gelernt haben könnte.",
       "voiceQuest": {
         "required": true,
         "roles": [
