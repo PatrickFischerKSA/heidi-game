@@ -73,3 +73,18 @@ test("chapter changes reset role readiness but keep journal", () => {
   assert.deepEqual(changed.roleReady, { A: false, B: false });
   assert.equal(changed.journal.length, 1);
 });
+
+test("ending a room makes its code unusable", () => {
+  const manager = createRoomManager();
+  const room = manager.createRoom();
+
+  manager.joinRoom(room.code, { role: "A", clientId: "phone-a" });
+  const ended = manager.endRoom(room.code);
+
+  assert.deepEqual(ended, { code: room.code, ended: true });
+  assert.equal(manager.getRoom(room.code), null);
+  assert.throws(
+    () => manager.joinRoom(room.code, { role: "B", clientId: "phone-b" }),
+    /existiert nicht mehr/
+  );
+});

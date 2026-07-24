@@ -183,6 +183,14 @@ export function createRoomManager() {
       room.roleReady = { A: false, B: false };
       touch(room);
       return publicRoom(room);
+    },
+
+    endRoom(code) {
+      const normalized = String(code || "").trim().toUpperCase();
+      const room = validateRoom(rooms, normalized);
+      touch(room);
+      rooms.delete(normalized);
+      return { code: normalized, ended: true };
     }
   };
 }

@@ -81,6 +81,14 @@ export function createApp() {
     }
   });
 
+  app.post("/api/rooms/:code/end", (request, response) => {
+    try {
+      response.json(rooms.endRoom(request.params.code));
+    } catch (error) {
+      response.status(error.status || 400).json({ error: error.code || "end_failed", message: error.message });
+    }
+  });
+
   app.get(["/", "/join", "/desktop", "/demo", "/teacher"], (_request, response) => {
     response.sendFile(path.join(publicDir, "index.html"));
   });

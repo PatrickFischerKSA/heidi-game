@@ -950,6 +950,28 @@ async function startRoom(hostName = state.hostName) {
   startPolling();
 }
 
+async function endCurrentRoom() {
+  if (!state.room?.code) {
+    navigate("home");
+    return;
+  }
+  const confirmed = window.confirm("Dieses Spiel wirklich beenden? Der Raumcode wird ungültig, die Handys werden getrennt und die Lernspur dieses Raums wird gelöscht.");
+  if (!confirmed) return;
+  try {
+    await api(`/api/rooms/${state.room.code}/end`, { method: "POST", body: "{}" });
+  } catch (error) {
+    console.warn(error);
+  }
+  stopPolling();
+  state.room = null;
+  state.role = null;
+  state.chapterIndex = 0;
+  state.playSection = "join";
+  state.revealA = false;
+  state.revealB = false;
+  navigate("home");
+}
+
 function joinAddress(role = "") {
   const url = new URL("/join", location.origin);
   url.searchParams.set("code", state.room?.code || "");
@@ -1061,6 +1083,10 @@ function renderPartner() {
             <p class="eyebrow">Eure Gruppe</p>
             <h2>${escapeHtml(state.hostName)}</h2>
             <p>Scanne den passenden QR-Code: Eine Person spielt Schwänli, eine Person spielt Schnecke. Beide Geissen müssen sprechen, bevor die gemeinsame Lösung entsteht. Der Raumcode bleibt als Reserve sichtbar: <strong>${escapeHtml(state.room?.code || "----")}</strong></p>
+            <div class="room-exit">
+              <button type="button" class="danger" data-end-room>Spiel beenden</button>
+              <span>Beendet diesen Raum, trennt die Handys und kehrt zum Start zurück.</span>
+            </div>
           </div>
           ${goatCardGuide()}
           <div class="qr-grid">
@@ -2109,6 +2135,9 @@ function startPolling() {
       if (changed) renderCurrentMode();
     } catch {
       stopPolling();
+      state.room = null;
+      state.role = null;
+      if (state.mode === "phone") renderJoin();
     }
   }, 1300);
 }
@@ -2304,6 +2333,7 @@ app.addEventListener("click", async (event) => {
     button.remove();
   }
   if (button.dataset.startRoom !== undefined) await startRoom();
+  if (button.dataset.endRoom !== undefined) await endCurrentRoom();
   if (button.dataset.prevChapter !== undefined) await setChapter(Math.max(0, state.chapterIndex - 1));
   if (button.dataset.nextChapter !== undefined) await setChapter(Math.min(state.content.chapters.length - 1, state.chapterIndex + 1));
   if (button.dataset.chapter !== undefined) await setChapter(Number(button.dataset.chapter));

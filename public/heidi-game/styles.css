@@ -1306,6 +1306,20 @@ p {
   gap: 12px;
 }
 
+.room-exit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.room-exit span {
+  max-width: 42ch;
+  color: rgba(23, 32, 25, 0.78);
+  font-size: 0.95rem;
+}
+
 .qr-card {
   display: grid;
   gap: 10px;

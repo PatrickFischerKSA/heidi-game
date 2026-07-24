@@ -207,6 +207,11 @@ export class RoomObject {
       return json(publicRoom(room));
     }
 
+    if (request.method === "POST" && action === "end") {
+      await this.ctx.storage.delete("room");
+      return json({ code: room.code, ended: true });
+    }
+
     return errorResponse(404, "not_found", "Unbekannte Raumaktion.");
   }
 }
@@ -268,7 +273,8 @@ export default {
         "role-ready": "role-ready",
         submissions: "submissions",
         chapter: "chapter",
-        reset: "reset"
+        reset: "reset",
+        end: "end"
       };
       const action = actionMap[subroute];
       if (!action) {
