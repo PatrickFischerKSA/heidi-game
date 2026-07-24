@@ -13,11 +13,11 @@
     "Freie Antworten bekommen Rückmeldungen, die zeigen, was schon überzeugt und was noch genauer werden muss."
   ],
   "learningConcept": {
-    "short": "Die Spielenden übernehmen Schwänli und Schnecke. Die beiden Geissen merken, bocken, bremsen und treiben die Szene voran. Heidi und Geissenpeter helfen, daraus verständliche menschliche Sätze zu machen.",
+    "short": "Die Spielenden übernehmen Schwänli und Schnecke. Die beiden Geissen merken früh, wenn etwas nicht stimmt: ein Geräusch, ein falscher Weg, ein scharfer Ton. Heidi und Peter helfen, daraus klare Sätze zu machen.",
     "whyItWorks": [
-      "Schwänli gibt der Szene ein erstes Zeichen: Was ist sichtbar, hörbar, spürbar oder unruhig?",
+      "Schwänli zeigt, was sie bemerkt: Was ist sichtbar, hörbar oder spürbar?",
       "Schnecke stellt sich quer, wenn ein Satz zu glatt, zu sicher oder zu ungenau bleibt.",
-      "Heidi übersetzt Schwänlis Zeichen in eine Wahrnehmung oder Frage. Geissenpeter übersetzt Schneckes Einwand in ein praktisches Alpwort oder eine Handlung.",
+      "Heidi macht daraus eine Beobachtung oder Frage. Peter sagt, wie man es auf der Alp konkret machen würde.",
       "Das Lernjournal macht sichtbar, ob die Antworten genauer, zusammenhängender und besser begründet werden."
     ]
   },
@@ -235,7 +235,7 @@
         "prompt": "Sprich Heidis Satz an eine Geiss ins Handy. Er soll freundlich, kurz und natürlich klingen.",
         "minWords": 7
       },
-      "hint": "Die Tiere müssen nicht wie Menschen antworten. Stark wird die Szene, wenn Heidi genau sieht, was passiert, und Peter mit einem einfachen Alpwort oder einer praktischen Bemerkung hilft.",
+      "hint": "Die Tiere müssen nicht wie Menschen antworten. Stark wird die Szene, wenn Heidi genau sieht, was passiert, und Peter mit einem einfachen Wort oder einer praktischen Bemerkung hilft.",
       "revisionPrompt": "Überarbeitet eure Szene so, dass ein genaues Verb vorkommt und Heidis Satz wirklich gesprochen werden könnte.",
       "example": "Heidi sagt leise: 'Komm nur, Schneehöppli, ich tue dir nichts.' Peter lacht: 'Sie zupft nur am Kraut, die läuft gleich weiter.' Da merkt Heidi: Die Geiss frisst nicht einfach, sie zupft.",
       "reflection": "Warum klingt eine kurze, genaue Tieransprache glaubwürdiger als eine lange Erklärung?"
@@ -390,7 +390,7 @@
       },
       "roleB": {
         "name": "Arbeitswörter",
-        "prompt": "Du sammelst genaue Verben und verbindest sie mit Reihenfolge-Wörtern: zuerst, dann, danach, erst wenn, am Schluss.",
+        "prompt": "Du sammelst genaue Verben und verbindest sie mit Wörtern für die Reihenfolge: zuerst, dann, danach, erst wenn, am Schluss.",
         "tokens": [
           "zuerst",
           "dann",
@@ -835,7 +835,7 @@
           "A",
           "B"
         ],
-        "prompt": "Sprecht je eine Frage aus eurer Geissenperspektive ins Handy. Beide Fragen sollen freundlich und nicht verletzend sein.",
+        "prompt": "Sprecht je eine Frage aus Sicht eurer Geiss ins Handy. Beide Fragen sollen freundlich und nicht verletzend sein.",
         "minWords": 14
       },
       "hint": "Freundschaft entsteht nicht durch Mitleid, sondern durch echtes Interesse und Gegenseitigkeit.",

@@ -162,8 +162,8 @@ const FEEDBACK_PROFILES = {
     aim: "Frankfurt soll über konkrete Kontraste zur Alp erfahrbar werden.",
     checks: [
       ["Stadtbeobachtung", ["häuser", "straße", "treppe", "kutsche", "tür", "fenster"], "Nennt Dinge der Stadt, die Heidi sieht."],
-      ["Alp-Kontrast", ["alp", "weite", "luft", "himmel", "blick", "wind"], "Vergleicht vorsichtig mit der Alp."],
-      ["Kein Pauschalurteil", ["nicht einfach", "anders", "fremd", "wirkt"], "Vermeidet Stadt-ist-schlecht-Sätze und bleibt bei Beobachtungen."]
+      ["Vergleich mit der Alp", ["alp", "weite", "luft", "himmel", "blick", "wind"], "Vergleicht vorsichtig mit der Alp."],
+      ["Kein Pauschalurteil", ["nicht einfach", "anders", "fremd", "wirkt"], "Vermeidet pauschale Sätze über die Stadt und bleibt bei Beobachtungen."]
     ],
     upgrade: "Ersetzt 'Frankfurt ist schlimm' durch eine Beobachtung wie 'Der Himmel ist nur als Streifen zu sehen'."
   },
@@ -270,7 +270,7 @@ const FEEDBACK_PROFILES = {
 
 const STORY = {
   name: "Fräulein Rottenmeier",
-  premise: "Ihr spielt Schwänli und Schnecke. Die beiden Geissen merken früher als die Menschen, wenn etwas nicht stimmt: ein falscher Ton, ein unsicherer Weg, ein zu glatter Satz. Heidi und Geissenpeter übersetzen euer Meckern, Bremsen und Drängen in klare Sätze.",
+  premise: "Ihr spielt Schwänli und Schnecke. Die beiden Geissen merken früher als die Menschen, wenn etwas nicht stimmt: ein falscher Ton, ein unsicherer Weg, ein zu glatter Satz. Heidi und Peter helfen, aus eurem Meckern, Bremsen und Drängen klare Sätze zu machen.",
   journey: [
     {
       title: "1. Ihr erreicht die Alp",
@@ -408,7 +408,7 @@ const STORY = {
       object: "cheese",
       title: "Fast Käse",
       text: "Diesmal bleibt der Kübel stehen. Wenn die Antwort genau genug ist, kann aus der Milch später Käse werden.",
-      task: "Schreibt eine Käse-Regel als Wenn-dann-Satz: Welche ruhige, saubere oder geduldige Handlung muss zuerst gelingen, damit aus Milch später Käse werden kann?",
+      task: "Schreibt eine Regel für den Käse: Was muss zuerst ruhig, sauber oder geduldig gelingen, damit aus Milch später Käse werden kann?",
       example: "Bleibt die Geiss ruhig und der Kübel sauber, kann aus der Milch später Käse werden."
     }
   ],
@@ -987,14 +987,14 @@ function goatJob(role) {
     return {
       short: "spürt, was los ist",
       title: "Schwänli spürt die Szene zuerst.",
-      text: "Du bist Schwänli. Du achtest auf alles, was eine Geiss merken würde: Bewegung, Geräusche, Unruhe, Nähe, Futter, Weg, Wetter. Aus deinen Zeichen macht Heidi eine erste menschliche Beobachtung.",
-      prompt: "Gib Heidi ein Zeichen: Was fällt dir auf? Was riechst, hörst oder siehst du?"
+      text: "Du bist Schwänli. Du achtest auf alles, was eine Geiss merken würde: Bewegung, Geräusche, Unruhe, Nähe, Futter, Weg, Wetter. Heidi macht daraus eine erste Beobachtung.",
+      prompt: "Was fällt dir auf? Was riechst, hörst oder siehst du?"
     };
   }
   return {
     short: "bremst und prüft",
     title: "Schnecke prüft, ob der Satz stimmt.",
-    text: "Du bist Schnecke. Du bist störrisch genug, um ungenaue Sätze nicht einfach durchzulassen. Du prüfst: Passt das Wort? Ist der Satz zu sicher? Fehlt ein sichtbares Detail? Geissenpeter übersetzt deine Skepsis in praktische Alpsprache.",
+    text: "Du bist Schnecke. Du bist störrisch genug, um ungenaue Sätze nicht einfach durchzulassen. Du prüfst: Passt das Wort? Ist der Satz zu sicher? Fehlt ein sichtbares Detail? Peter sagt dann, wie man es auf der Alp konkret machen würde.",
     prompt: "Stell dich quer: Was muss genauer, vorsichtiger oder praktischer werden?"
   };
 }
@@ -1004,9 +1004,9 @@ function goatCardGuide(compact = false) {
     <aside class="goat-guide ${compact ? "is-compact" : ""}">
       <strong>Ihr spielt als Schwänli und Schnecke</strong>
       <ol>
-        <li><span>1</span><p><strong>Schwänli gibt ein Zeichen.</strong> Was merkt die Geiss in dieser Szene: Geräusch, Weg, Futter, Gefahr, Nähe, Unruhe?</p></li>
+        <li><span>1</span><p><strong>Schwänli merkt etwas.</strong> Was fällt der Geiss in dieser Szene auf: Geräusch, Weg, Futter, Gefahr, Nähe, Unruhe?</p></li>
         <li><span>2</span><p><strong>Schnecke stellt sich quer.</strong> Was ist noch zu ungenau, zu glatt oder zu sicher gesagt? Sprecht euch ab; bei Mikrofon-Quests zuerst ins Handy.</p></li>
-        <li><span>3</span><p><strong>Heidi und Geissenpeter übersetzen.</strong> Heidi macht daraus eine menschliche Frage oder Beobachtung. Geissenpeter gibt den praktischen Alp-Satz dazu. Erst dann schreibt ihr die gemeinsame Lösung.</p></li>
+        <li><span>3</span><p><strong>Heidi und Peter helfen beim Formulieren.</strong> Heidi macht daraus eine Frage oder Beobachtung. Peter ergänzt, was man auf der Alp konkret tun oder sagen würde. Erst dann schreibt ihr die gemeinsame Lösung.</p></li>
       </ol>
     </aside>
   `;
@@ -1348,18 +1348,18 @@ function taskFlow(c) {
     <div class="task-flow geiss-loop" aria-label="Arbeitsfluss">
       <article>
         <span>1</span>
-        <strong>Schwänli gibt Heidi ein Zeichen</strong>
+        <strong>Schwänli zeigt Heidi, was auffällt</strong>
         <p>${escapeHtml(c.roleA.name)}: Was fällt der Geiss auf? Daraus macht Heidi eine erste Beobachtung oder Frage.</p>
       </article>
       <article>
         <span>2</span>
         <strong>Schnecke zwingt zur Genauigkeit</strong>
-        <p>${escapeHtml(c.roleB.name)}: Was stimmt noch nicht ganz? Geissenpeter übersetzt das in ein praktisches Wort, einen Weg oder eine Handlung.</p>
+        <p>${escapeHtml(c.roleB.name)}: Was stimmt noch nicht ganz? Peter ergänzt ein genaues Wort, einen Weg oder eine Handlung.</p>
       </article>
       <article>
         <span>3</span>
-        <strong>Ihr schreibt als Geissenteam</strong>
-        <p>Verbindet Schwänlis Zeichen, Schneckes Einwand, Heidis Satz und Geissenpeters Alpwort. Danach überarbeitet ihr gezielt: ${escapeHtml(c.revisionPrompt)}</p>
+        <strong>Ihr schreibt gemeinsam</strong>
+        <p>Verbindet, was Schwänli bemerkt, was Schnecke einwendet, was Heidi daraus sagt und was Peter praktisch ergänzt. Danach überarbeitet ihr gezielt: ${escapeHtml(c.revisionPrompt)}</p>
       </article>
     </div>
     ${translationBridge(c)}
@@ -1368,13 +1368,13 @@ function taskFlow(c) {
 
 function translationBridge(c) {
   return html`
-    <aside class="translation-bridge" aria-label="Übersetzung durch Heidi und Geissenpeter">
+    <aside class="translation-bridge" aria-label="Hilfe durch Heidi und Peter">
       <div>
-        <strong>Heidi übersetzt Schwänli</strong>
+        <strong>Heidi macht daraus eine Beobachtung</strong>
         <p>${escapeHtml(heidiTranslationPrompt(c))}</p>
       </div>
       <div>
-        <strong>Geissenpeter übersetzt Schnecke</strong>
+        <strong>Peter macht es konkret</strong>
         <p>${escapeHtml(peterTranslationPrompt(c))}</p>
       </div>
     </aside>
@@ -1383,34 +1383,34 @@ function translationBridge(c) {
 
 function heidiTranslationPrompt(c) {
   if (c.place === "Frankfurt") {
-    return "Heidi sagt nicht einfach: Stadt ist schlimm. Sie nimmt Schwänlis Unruhe ernst und verwandelt sie in eine konkrete Wahrnehmung: Tür, Treppe, Stimme, Abstand, Blick.";
+    return "Heidi sagt nicht einfach: Stadt ist schlimm. Sie nimmt Schwänlis Unruhe ernst und nennt konkret, was sie wahrnimmt: Tür, Treppe, Stimme, Abstand, Blick.";
   }
   if (c.id.includes("schule") || c.id.includes("peter")) {
-    return "Heidi merkt, wo Peter stockt. Aus Schwänlis Zeichen wird eine einfache Frage: Womit kann Peter anfangen, ohne bloßgestellt zu werden?";
+    return "Heidi merkt, wo Peter stockt. Daraus wird eine einfache Frage: Womit kann Peter anfangen, ohne bloßgestellt zu werden?";
   }
   if (c.id.includes("gewitter")) {
-    return "Heidi übersetzt Schwänlis Unruhe in eine Warnung: Was hat sich sichtbar verändert, und warum muss jetzt jemand handeln?";
+    return "Heidi nimmt Schwänlis Unruhe ernst: Was hat sich sichtbar verändert, und warum muss jetzt jemand handeln?";
   }
   if (c.id.includes("alpsegen")) {
     return "Heidi hört zuerst. Aus Schwänlis Stillwerden wird keine Erklärung, sondern eine genaue Hörbeobachtung.";
   }
-  return "Heidi macht aus Schwänlis Zeichen einen menschlichen Satz: Was ist sichtbar, hörbar oder spürbar, ohne schon alles zu erklären?";
+  return "Heidi sagt, was Schwänli bemerkt: Was ist sichtbar, hörbar oder spürbar, ohne schon alles zu erklären?";
 }
 
 function peterTranslationPrompt(c) {
   if (c.place === "Frankfurt") {
-    return "Geissenpeter fragt zurück wie auf der Alp: Was hilft wirklich? Was ist nur scharfer Ton? Daraus entsteht eine faire, klare Fassung.";
+    return "Peter fragt einfach zurück: Was hilft wirklich? Was ist nur scharfer Ton? Daraus entsteht eine faire, klare Fassung.";
   }
   if (c.id.includes("schule") || c.id.includes("peter")) {
-    return "Geissenpeter holt den Satz zurück in Peters Alltag: Geissennamen, Weg, Bild, kurze Handlung. Erst dann wird Lesen brauchbar.";
+    return "Peter verbindet den Satz mit seinem Alltag: Geissennamen, Weg, Bild, kurze Handlung. Erst dann wird Lesen brauchbar.";
   }
   if (c.id.includes("gewitter")) {
-    return "Geissenpeter macht aus Schneckes Widerstand eine Reihenfolge: Herde sammeln, Weg wählen, ruhig zurückgehen.";
+    return "Peter macht aus Schneckes Widerstand eine Reihenfolge: Herde sammeln, Weg wählen, ruhig zurückgehen.";
   }
   if (c.id.includes("alpsegen")) {
-    return "Geissenpeter hält die Erklärung knapp: Klang, Abend, Schutzwunsch, Respekt. Kein Spott, keine große Behauptung.";
+    return "Peter hält die Erklärung knapp: Klang, Abend, Schutzwunsch, Respekt. Kein Spott, keine große Behauptung.";
   }
-  return "Geissenpeter macht Schneckes Einwand praktisch: Welches Alpwort, welcher Handgriff oder welche Reihenfolge fehlt noch?";
+  return "Peter fragt nach dem Konkreten: Welches genaue Wort, welcher Handgriff oder welche Reihenfolge fehlt noch?";
 }
 
 function answerForm(prefill = "") {
@@ -1841,8 +1841,8 @@ function renderPhoneRole() {
       <h1>${escapeHtml(roleData.name)}</h1>
       ${roleCard(role, roleData)}
       ${voiceQuestPanel(role, c)}
-      <button type="button" data-ready="${role}" ${voiceComplete ? "" : "disabled"}>${state.room.roleReady?.[role] ? "Geissenzeichen angekommen" : "Mein Geissenzeichen ist bereit"}</button>
-      <div class="notice"><p>${needsVoice ? "Diese Geiss muss ihr Zeichen zuerst per Handy-Mikrofon festhalten." : "Sprich mit der anderen Geiss."} Auf dem Laptop wird die gemeinsame Lösung erst freigeschaltet, wenn Schwänli und Schnecke beide bereit sind.</p></div>
+      <button type="button" data-ready="${role}" ${voiceComplete ? "" : "disabled"}>${state.room.roleReady?.[role] ? "Beitrag angekommen" : "Mein Beitrag ist bereit"}</button>
+      <div class="notice"><p>${needsVoice ? "Diese Geiss muss ihren Beitrag zuerst per Handy-Mikrofon festhalten." : "Sprich mit der anderen Geiss."} Auf dem Laptop wird die gemeinsame Lösung erst freigeschaltet, wenn Schwänli und Schnecke beide bereit sind.</p></div>
     </section>
   `;
 }
@@ -1858,7 +1858,7 @@ function roleCard(role, roleData) {
         <p class="small">${escapeHtml(job.prompt)}</p>
       </div>
       <div class="translator-note ${role === "A" ? "is-heidi" : "is-peter"}">
-        <span>${role === "A" ? "Heidis Übersetzung" : "Geissenpeters Übersetzung"}</span>
+        <span>${role === "A" ? "Was Heidi daraus macht" : "Was Peter dazu sagt"}</span>
         <h2>${escapeHtml(roleData.name)}</h2>
         <p>${escapeHtml(roleData.prompt)}</p>
       </div>
@@ -1886,7 +1886,7 @@ function renderDesktop() {
       ${active === "cards" ? html`
         <div class="goat-board panel stack">
           <div>
-          <p class="eyebrow">Geissenspiel</p>
+          <p class="eyebrow">Schwänli und Schnecke</p>
           <h2>Schwänli und Schnecke bringen Heidi ins Sprechen</h2>
           </div>
           ${goatCardGuide()}
@@ -1896,8 +1896,8 @@ function renderDesktop() {
             <button type="button" class="secondary" data-reveal="B">${state.revealB ? "Schnecke verbergen" : "Schnecke öffnen"}</button>
           </div>
           <div class="goat-stage">
-            ${state.revealA ? roleCard("A", c.roleA) : `<div class="goat-card-placeholder role-a">${playerProfile("A", "Schwänli")}<h3>Schwänli wartet</h3><p>Öffnet Schwänli: Diese Geiss merkt zuerst, was in der Szene los ist, und gibt Heidi ein Zeichen.</p></div>`}
-            ${state.revealB ? roleCard("B", c.roleB) : `<div class="goat-card-placeholder role-b">${playerProfile("B", "Schnecke")}<h3>Schnecke wartet</h3><p>Öffnet Schnecke: Diese Geiss bremst, meckert und zwingt Geissenpeter zu einem genaueren Alp-Satz.</p></div>`}
+            ${state.revealA ? roleCard("A", c.roleA) : `<div class="goat-card-placeholder role-a">${playerProfile("A", "Schwänli")}<h3>Schwänli wartet</h3><p>Öffnet Schwänli: Diese Geiss merkt zuerst, was in der Szene los ist, und hilft Heidi beim Hinschauen.</p></div>`}
+            ${state.revealB ? roleCard("B", c.roleB) : `<div class="goat-card-placeholder role-b">${playerProfile("B", "Schnecke")}<h3>Schnecke wartet</h3><p>Öffnet Schnecke: Diese Geiss bremst, meckert und bringt Peter dazu, genauer zu werden.</p></div>`}
           </div>
         </div>
       ` : ""}
@@ -1931,7 +1931,7 @@ function renderDemo() {
       ${active === "cards" ? html`
         <div class="goat-board panel stack">
           <div>
-            <p class="eyebrow">Geissenspiel</p>
+            <p class="eyebrow">Schwänli und Schnecke</p>
             <h2>Schwänli und Schnecke treiben die Szene an</h2>
           </div>
           ${goatCardGuide(true)}
